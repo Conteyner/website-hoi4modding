@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+
+
+
+    <h1 id="section1">Структура файлов мода</h1>
+    <div class="block">
+        <h2 id="section2">Локальный мод</h2>
+        <p>
+            Локальные файлы мода должны находиться в папке
+            <i>~/.local/share/Paradox Interactive/Hearts of Iron IV/mod</i> или <i>C:\Users\<Имя пользователя>
+                    \Documents\Paradox Interactive\Hearts of Iron IV\mod</i>,
+            которая должна содержать:
+        </p>
+    </div>
+
+
+    <div id="table-of-contents">
+        <ul>
+            <li><a href="#section1">Структура файлов мода</a>
+                <ul>
+                    <li><a href="#section2">Локальный мод</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#section3">Моды Steam Workshop</a>
+            </li>
+        </ul>
+        <li><a href="#section4">Создание нового мода</a>
+        </li>
+        </ul>
+        <li><a href="#section5">Общие правила</a>
+        </li>
+        </ul>
+        <li><a href="#section6">Создание простого <br>локального мода</a>
+        </li>
+        </ul>
+        <li><a href="#section7">Создание сабмода</a>
+        </li>
+        </ul>
+        <li><a href="#section8">Добавление содержимого <br>мода</a>
+        </li>
+        </ul>
+        <li><a href="#section9">Советы</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <p>
+            Файл '.mod', указывающий программе запуска,
+            что делать с папкой модов (Только для локального использования,
+            название может быть любым; этот файл не загружается при публикации мода через Steam Workshop).<br>
+            Папка мода или zip, содержащая данные мода. Данные мода должны иметь ту же
+            структуру файлов и папок, что и каталог самой игры. <br>
+            Файл descriptor.mod в папке мода - этот файл должен содержать ту же информацию,
+            что и первый файл .mod (Примечание: Файл должен использовать имя descriptor.mod
+            и НЕ должен быть сохранен в формате UTF-8 BOM) <br>
+            Картинка мода (необязательно) - файл с именем thumbnail.png в папке mod, который
+            будет служить картинкой мода Steam Workshop (Примечание: Файл должен использовать формат
+            .png и имя 'thumbnail.png'; размеры не
+            важны, но должны быть в соотношении 1:1). Кроме того, размер файлов эскизов не должен
+            превышать 1 МБ, иначе они не смогут быть загружены на ParadoxMods.
+        </p>
+
+
+
+
+
+        <p>
+            Инструмент настройки модов в программе запуска игры может создать базовую структуру автоматически. Просто
+            перейдите на вкладку Mods,
+            затем нажмите Mod Tools и Create Mod. Обратите внимание, что имена папок и файлов чувствительны к регистру в
+            Mac OS X и Linux.
+        </p>
+        <h2 id="section3">Моды Steam Workshop</h2>
+        <p>
+            Подписанные и загруженные моды из мастерской steam находятся
+            в <i>.../Paradox Interactive/Hearts of Iron IV/workshop/content/394360</i> или иногда
+            <i>...\SteamLibrary\steamapps\workshop\content\394360</i>
+            Моды, загруженные из Мастерской Steam, обрабатываются иначе, чем установленные или созданные вручную:
+            Хотя .mod файлы модов будут появляться в папке mod (представленной remote_file_id),
+            содержимое мода будет храниться в <i>...\Paradox\Hearts of Iron IV\workshop\content\394360\<remote_file_id>
+                    </i>.
+            Remote_file_id - это идентификатор, который присваивается модам из мастерской. ID отображается как имя
+            .mod и zip файлов мода, но далее представлен в .mod и descriptor.mod файлах как таковой:
+        </p>
+        <div class="card">
+            <div class="textincard">
+                <pre>
+name="New Ideologies"
+archive="workshop/content/281990/678893824/newideologies.zip"
+tags={
+	"Balance"
+	"Gameplay"
+}
+remote_file_id="678893824"
+supported_version="1.11.*"                    
+        </pre>
+            </div>
+        </div>
+        <P>
+            <STRONG>Примечание</STRONG>: Новые моды, начиная с версии игры 1.9.0, больше не хранятся в .zip архиве.
+        </P>
+    </div>
+
+        <h1 id="section4">   Создание нового мода      </h1>
+            <div class="block">
+                <h2 id="section5">
+
+                    Общие правила
+
+                </h2>
+                <lI>
+                    Моды изменяют игру с помощью той же структуры файлов, что и в ванильной игре.
+                </lI>
+                <lI>
+                    Загружаются все соответствующие файлы, найденные в папке.
+                </lI>
+                <lI>
+                    Все файлы .txt должны использовать UTF-8 без формата BOM, файлы локализации должны использовать формат UTF-8 BOM.
+                </lI>
+                <lI>
+                    Чтобы перезаписать ванильный файл, используйте то же имя файла.
+                </lI>
+                <lI>
+                    Чтобы добавить содержимое без изменения файлов ванили, используйте другое имя файла.
+                </lI>
+                <lI>
+                    Игра не будет проверять изменения дальше каталога файлов. 
+                    Если вы пытаетесь добавить строку в текстовый файл, необходимо скопировать весь 
+                    текстовый файл и добавить строку внутри этого текстового файла.
+                </lI>
+                <h2 id="section6">
+                    Создание простого локального мода
+                </h2>
+                <p>
+                    Например, чтобы создать мод под названием 
+                    "Test1", создайте новый текстовый файл test1.mod и папку test1 в <i>...\Paradox\Hearts of Iron IV\mod</i>.
+                    Содержимое test1.mod должно быть следующим:
+                </p>
+                <div class="card">
+                    <div class="textincard">
+                        <pre>
+name="Test1"
+path="mod/test1"
+tags={
+	"Alternative History"
+}
+picture="thumbnail.png"
+supported_version="1.11.*"                
+                </pre>
+                    </div>
+                </div>
+                <p>
+                Это делается для того, чтобы предоставить программе запуска игры информацию о моде. Сюда входит название мода, 
+                местоположение (из файла мода), теги (дополнительные дескрипторы), название картинки и поддерживаемая версия игры.
+            </p>
+            <h2 id="section7">
+                Создание сабмода
+            </h2>   
+            <p>
+                Иногда вы хотите, чтобы ваш мод зависел от других модов, а также требовал определенного порядка загрузки.
+                Обычно моды загружаются в алфавитном порядке (поэтому мод, последний в списке, перезаписывает более ранний). 
+                Но некоторые вещи могут повлиять на это, поэтому, если вам нужен определенный порядок загрузки и 
+                вы четко знаете, что у вас есть зависимости, это нужно указать, включив полное имя мода в .mod файл в разделе "зависимости".
+            </p>
+            <div class="card">
+                <div class="textincard">
+                    <pre>
+name="testmodB"
+path="mod/testmodb/"
+<span style="color: rgb(30, 129, 46)">
+# это гарантирует, что мы сначала загрузим testmodA, прежде чем будет загружен наш testmodB</span>
+dependencies= { 
+	"testmodA" 
+}
+supported_version="1.11.*"                
+            </pre>
+                </div>
+            </div>        
+            </div>
+
+            <h1 id="section7">
+                Добавление содержимого мода
+            </h1>   
+            <div class = "block">
+                <p>
+                    Например, простой модификацией может быть изменение текста, который появляется в игре.
+
+                    Чтобы изменить кавычки, появляющиеся на экране загрузки, 
+                    скопируйте файл "<i>localisation/loading_tips_I_english.yml</i>" из
+                    ванильной установки игры "<i>.../Hearts of Iron IV/localisation/loading_tips_I_english.yml</i>" в папку "<i>localisation</i>", 
+                    которую вы создадите в новой папке "<i>mod/test1</i>".
+
+                    Теперь структура файлов выглядит следующим образом:
+                </p>
+                <div class="card">
+                    <div class="textincard">
+                        <pre>
+ ...\Paradox Interactive\Hearts of Iron IV\mod
+     test1.mod
+     test1 (dir)
+       localisation (dir)
+         loading_tips_L_english.yml
+                        </pre>
+                    </div>
+                </div>  
+                            <p>
+                                Поскольку файл "loading_tips_I_english.yml" не изменен, игра будет работать так же, как обычно. Однако если его изменить, то 
+                                информация будет использоваться игрой вместо обычного "loading_tips_I_english.yml". Измените файл "loading_tips_I_english.yml" 
+                                в папке mod так, чтобы он содержал следующее:
+                            </p>  
+                            <div class="card">
+                                <div class="textincard">
+                                    <pre>
+ l_english:
+  LOADING_TIP_0:0 "Test1 mod"
+                                    </pre>
+                                </div>
+                            </div>  
+                            <p>
+                                Когда игра загружается с активным модом на английском языке, единственной отображаемой надписью будет "Test1 mod".
+                            </p>
+
+
+            </div>
+
+            <h1 id="section9">
+                
+                Советы
+            </h1>
+            <div class="block">
+                <p>
+                    Чтобы понять, как работают определенные вещи в коде, 
+                    может быть полезно заглянуть в файлы игры и поискать вещи, похожие на то, что должен изменить ваш мод.
+                </p>
+                <p>
+                    Кроме того, вы можете искать файлы модов других пользователей в <i>...\steamapps\workshop\content\394360</i>
+                </p>
+                <p>
+                    Постарайтесь свести к минимуму перезапись ванильных файлов, 
+                    это облегчит вам управление содержимым вашего мода, чтобы поддерживать его в актуальном состоянии, и уменьшит риск конфликта с другими модами.
+                </p>
+                <p>
+                    При тестировании мода может быть очень полезно заглянуть 
+                    в журнал ошибок <i>...\Documents\Paradox Interactive\Hearts of Iron IV\logs\error.log</i>, чтобы понять, когда что-то не работает.
+                </p>
+                <p>
+                    Чтобы ваш мод обновлялся между небольшими обновлениями, 
+                    замените третью цифру в вашей версии на *. Например, замените «1.5.4» на «1.5.*», чтобы этот мод работал со всеми версиями 1.5.
+                </p>
+            </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
