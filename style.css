@@ -103,8 +103,19 @@ a {
     border-radius: 5px;
     padding: 10;
     width:70%;
-    margin:0 auto;
+    margin: auto;
   }
+
+  .block p, .block ul, .block li , .block a, .block h2 {
+    padding-left: 7px;
+    max-width: 98%;
+    word-wrap: break-word;
+    }
+
+    i {
+
+    }
+    
 
   button {
     outline: none;
@@ -127,18 +138,21 @@ a {
 
 
 
-    #table-of-contents {
+  #table-of-contents {
     float: left;
     border: 1px solid #ccc;
+    padding-left: 5px;
     margin-left: 20px;
   }
   
 
   
   #table-of-contents ul {
+
     list-style-type: none;
     padding-left: 0;
     margin-top: 0;
+    margin-top: 20px;
   }
   
   #table-of-contents ul ul {
@@ -161,8 +175,8 @@ a {
 
 /* редактор кода */
 .card {
-  width: 500px;
-  height: 300px;
+  width: 100%;
+  height: 350px;
   background: rgb(255, 255, 255);
   border-radius: 0.4em;
   box-shadow: 0.3em 0.3em 0.7em #00000015;
