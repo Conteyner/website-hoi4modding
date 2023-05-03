@@ -1,6 +1,8 @@
 body {
     background-color: #000000;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(to right, #f6fafa, #c6c8ca);
     background-size: 400% 400%;
     font-size: 18px;
@@ -8,8 +10,8 @@ body {
 
   #leftButton {
     position: absolute;
-    left: 15px;
-    top: 14px;
+    left: 0;
+    top: 5px;
 
   }
 
@@ -19,6 +21,7 @@ body {
     align-items: center;
     height: 60px;
     background-color: rgba(26, 26, 26, 0.85);
+    
 }
 
 .icon {
@@ -196,3 +199,16 @@ a {
  }
 
  /* <span style="color: rgb(30, 129, 46);"  */
+
+ footer {
+  background-color: #333333;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+.footer-highlight {
+  color: #FFA500;
+  font-weight: bold;
+}
