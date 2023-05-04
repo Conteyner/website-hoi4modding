@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+    <h1>Моддинг портретов</h1>  
+    <div class="block">
+        <p>
+            Портреты, используемые случайными лидерами стран и военачальниками, 
+            указаны в <i>/Hearts of Iron IV/portraits</i>. Необходимо указать файлы в <i>/Hearts of Iron IV/interface/_random_portraits.gfx</i>, иначе игра не будет отображать изображения.
+        </p>
+        <h2>Портреты</h2>
+       <p>
+        Портреты используются для назначения пула изображений определенным группам стран или конкретной стране, которые затем будут использованы, когда игрок создаст военного лидера или через эффект будет заменен лидер страны или военный лидер.
+        <br>
+        Это происходит в следующем формате:
+       </p> 
+       <div class="card">
+        <div class="textincard">
+          <pre>
+default = { <span style="color: rgb(30, 129, 46);">
+    # ... </span>
+}
+continent = {
+    name = &lt;continent&gt; <span style="color: rgb(30, 129, 46);">
+     # ... </span>
+}
+<tag> = { <span style="color: rgb(30, 129, 46);">
+    # ... </span>
+}
+  </pre>
+        </div>
+      </div>
+      <p>
+default - это запасные портреты, используемые, когда ни одно другое определение не соответствует текущей области видимости. <br>
+
+continent определяет портреты для каждого континента, то есть они применяются к любой нации со столицей на указанном континенте. <br>
+
+tag определяет портреты для указанного тега, переопределяя определение континента, если оно также соответствует одному из них. <br>
+
+Фактические определения портретов выглядят следующим образом: <br>
+      </p>
+
+      <div class="card" style="height: 800px;">
+        <div class="textincard">
+          <pre>
+male = {
+    <path>
+}
+female = {
+    <path>
+}
+    
+army = {
+    male = {
+        <path>
+    }
+    female = {
+        <path>
+    }
+}
+navy = {
+    male = {
+        <path>
+    }
+    female = {
+        <path>
+    }
+}
+political = {
+    <ideology> = {
+        male = {
+            <path>
+        }
+        female = {
+            <path>
+        }
+    }
+}
+  </pre>
+        </div>
+      </div>
+<p>
+Можно использовать несколько путей, чтобы добавить пул портретов к каждому определению. <br>
+
+Верхний мужской и женский пути могут быть использованы для любого типа лидера. <br>
+
+Пути армии используются для фельдмаршалов и командиров корпусов. <br>
+
+Пути флота используются для командующих флотом. <br>
+
+Политические пути используются для лидеров стран с указанными идеологиями.
+</p>
+
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
