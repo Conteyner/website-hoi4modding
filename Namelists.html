@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+
+    <h1>Список имен</h1>
+    <div id="table-of-contents">
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#section1">Названия дивизий</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section2">Названия Флота</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="#section3">Общие названия</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section4">Оперативные кодовые<br> названия</a>
+    </div>
+
+
+    <div class="block">
+        <h2 id="section1">Названия дивизий</h2>
+        <p>
+            Названия подразделений определяются в <i>/Hearts of Iron IV/common/units/names_divisions </i>
+            в текстовых файлах для конкретной страны. Имя файла не имеет значения, но обычно он имеет следующий формат <i>TAG_names_divisions.txt</i>.
+        </p>
+        <p>
+            После создания файла начните со списка имен, установленного в вашем OOB, 
+            который находится в <i>/Hearts of Iron IV/history/units</i>, например, NEP_MTN_01. Вы должны следовать следующему форматированию
+        </p>
+
+        <div class="card" style="height: 500px ">
+            <div class="textincard">
+              <pre>
+NEP_MTN_01 = { <span style="color: rgb(30, 129, 46);"># DIVISIONS_NAME_GROUP, установленный в папке ваших юнитов</span>
+	name = "Mountain Divisions" <span style="color: rgb(30, 129, 46);"># Имя, которое вы хотите использовать для списка имен, может быть строкой или заключено в кавычки.</span>
+	for_countries = { NEP } <span style="color: rgb(30, 129, 46);"># Устанавливает, какие страны могут использовать этот список имен, измените NEP на тег вашей страны.</span>
+	can_use = { always = yes } <span style="color: rgb(30, 129, 46);"># Триггер страны, который может заблокировать/разблокировать группу имен при определенных условиях</span>
+	division_types = { "mountaineers" } <span style="color: rgb(30, 129, 46);"># Устанавливает, какие типы юнитов могут использовать список, замените на любой тип юнита.</span>
+	fallback_name = "%d Nepali Dibhijana" <span style="color: rgb(30, 129, 46);"># Он будет использоваться, если у вас закончились нумерованные деления. 
+                                                #Всегда используйте либо %d для десятичных чисел, либо %s для римских цифр, 
+                                                #но вы  можете изменить остальные значения.</span>
+	link_numbering_with = { NEP_INF_01 } <span style="color: rgb(30, 129, 46);"># Альтернатива запасному имени, если у вас закончились номера в этой группе,
+                                            #вы можете использовать другой список после нее.</span>
+	ordered = {
+		1 = { "%d Nepali Dibhijana" } <span style="color: rgb(30, 129, 46);"># Первая дивизия.</span>
+		2 = { "%d Nepali Dibhijana" } <span style="color: rgb(30, 129, 46);"># Числа всегда должны начинаться с 1 и идти вверх</span>
+		4 = { "%d Nepali Dibhijana" } <span style="color: rgb(30, 129, 46);"># Номера не обязательно должны быть последовательными</span>
+	}
+}
+        </pre>
+        </div>
+        </div>        
+
+    </div>
+
+    <div class="block">
+        <h2 id="section2">Названия Флота</h2>
+        <p> 
+            Названия кораблей определяются в <i>/Hearts of Iron IV/common/units/names_ships</i> в текстовых файлах для конкретной страны. <Br>
+                 Имя файла не имеет значения, но обычно он имеет следующий формат <i>TAG_ship_names.txt</i>.
+
+            В этом файле название не зависит от установленного имени в вашем OOB-файле, как в названиях подразделений, вместо этого это любой корабль. Вы должны следовать следующему форматированию
+        </p>
+
+
+
+         <div class="card" style="height: 300px ">
+            <div class="textincard">
+              <pre>
+PAK_DD_HISTORICAL = { <span style="color: rgb(30, 129, 46);"># Любое имя по вашему желанию</span>
+	name = NAME_THEME_HISTORICAL_DESTROYERS <span style="color: rgb(30, 129, 46);"># Имя, которое отображается в морском дизайнере, может быть строкой или в кавычках.</span>
+	for_countries = { PAK } <span style="color: rgb(30, 129, 46);"># Устанавливает, какие страны могут использовать этот список имен, измените PAK на тег вашей страны</span>
+	type = ship <span style="color: rgb(30, 129, 46);"># Не меняйте</span>
+	ship_types = { ship_hull_light destroyer } <span style="color: rgb(30, 129, 46);"># Первый - технология MTG, второй - не MTG. Установите на нужную технологию</span>
+	prefix = "PNS " <span style="color: rgb(30, 129, 46);"># Имя, которое появляется перед вашими кораблями</span>
+	fallback_Name = "Destroyer %d" <span style="color: rgb(30, 129, 46);"># Это будет использоваться, если у вас закончатся пронумерованные деления. 
+    #Всегда используйте либо %d для десятичных чисел, либо %s для римских цифр, но остальное можно изменить</span>
+	unique = {
+		"Shamsher" "Tippu Sultan" "Tariq" <span style="color: rgb(30, 129, 46);"># Перечислите названия кораблей, которые могут использовать, не используйте запятые</span>
+	}
+}
+        </pre>
+        </div>
+        </div>       
+    </div>
+
+
+    <div class="block">
+        <h2 id="section3">Общие названия</h2>
+        <p> Определены в <i>/Hearts of Iron IV/common/units/names/*.txt</i>, для стран, 
+            у которых нет конкретных названий для типов снаряжения, особенно для пользовательского снаряжения, которое не каждая нация будет использовать. </p>
+
+            <div class="card" style="height: 200px ">
+                <div class="textincard">
+                  <pre>
+generic = { <span style="color: rgb(30, 129, 46);"># Применяет его ко всем странам</span>
+	submarine = { <span style="color: rgb(30, 129, 46);"># Название оборудования</span>
+		prefix = "" <span style="color: rgb(30, 129, 46);"># Название, которое идет перед оборудованием</span>
+		generic = { "Submarine" } <span style="color: rgb(30, 129, 46);"># Устанавливает название оборудования</span>
+		unique = {  } <span style="color: rgb(30, 129, 46);"># Для типового оборудования ничего не указывайте здесь</span>
+	}
+}
+                </pre>
+            </div>
+            </div>  
+
+
+
+
+    </div>
+
+    <div class="block">
+        <h2 id="section4">Оперативные кодовые названия</h2>
+        <p>
+            Хранящиеся в <i>/Hearts of Iron IV/common/units/codenames_operatives</i>, 
+            эти кодовые имена будут случайным образом присвоены оперативникам указанных стран. Пример определения выглядит следующим образом
+        </p>
+        <div class="card" style="height: 350px ">
+            <div class="textincard">
+              <pre>
+codename_list_id = {				<span style="color: rgb(30, 129, 46);"># Идентификатор namelist</span>
+	name = codename_list_name		<span style="color: rgb(30, 129, 46);"># Имя списка имен, может совпадать с ID</span>
+
+	for_countries = { TAG1 TAG2 }	<span style="color: rgb(30, 129, 46);"># Страны, использующие его</span>
+
+	type = codename					<span style="color: rgb(30, 129, 46);"># Чтобы сообщить игре, что это список кодовых имен</span>
+
+	fallback_name = "Agent %d"		<span style="color: rgb(30, 129, 46);"># В случае, если уникальность закончится.</span>
+
+	unique = {						<span style="color: rgb(30, 129, 46);"># Уникальные кодовые имена, 1 оперативник - 1 кодовое имя</span>
+		"Codename 1"
+		"Codename 2"
+	}
+}
+                </pre>
+            </div>
+            </div>  
+    </div>
+
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
