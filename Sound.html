@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+
+    <h1>Моддинг звука</h1>
+    <div id="table-of-contents">
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#section1">Звук</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section2">Звуковые эффекты</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="#section3">Falloff</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section4">Категории</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section5">Компрессоры</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class = "block">
+    <p>
+        Определения звуков находятся в <I>/Hearts of Iron IV/sound</I>. 
+        Звуковой файл должен быть сохранен как WAV-файл в стерео, как моно канал, с частотой 44100 Гц и как 32-битный плавающий файл.
+
+Все файлы звуковых определений должны быть сохранены как файлы .asset.
+    </p>
+
+    <h2 id="section1">
+     Звук
+    </h2>
+    <P>
+        Звуковая запись используется для определения звука. Она имеет следующий формат:
+    </P>
+
+    <div class="card" style="height: 200px ">
+        <div class="textincard">
+          <pre>
+sound = {
+    name = &lt;name&gt;
+    file = &lt;path&gt;
+    always_load = &lt;bool&gt;
+    volume = &lt;float&gt;
+}
+  </pre>
+        </div>
+      </div>
+
+      <p>
+<strong>name</strong> - имя звукового определения, на которое ссылаются другие файлы. <br> <br>
+
+<strong>file</strong> - путь к звуковому файлу, относительно папки звуков Hearts of Iron IV. <br><br>
+
+<strong>always_load</strong> определяет, будет ли звук загружаться всегда. <br><br>
+
+<strong>volume</strong> определяет громкость звука.
+      </p>
+
+
+
+
+</div>
+
+<h1 id="section2">Моддинг звука</h1>
+<div class="block">
+    <p>
+    Запись звукового эффекта используется для определения звукового эффекта. Она имеет следующий формат:
+</p>
+
+
+<div class="card" style="height: 710px ">
+    <div class="textincard">
+      <pre>
+soundeffect = {
+    name = &lt;name&gt;
+    falloff = &lt;name&gt;
+    sounds = {
+        sound = &lt;name&gt;
+    }
+    
+    loop = &lt;bool&gt;
+    is3d = &lt;bool&gt;
+    random_sound_when_looping = &lt;bool&gt;
+    
+    max_audible = &lt;int&gt;
+    max_audible_behaviour = &lt;type&gt;
+    
+    volume = &lt;float&gt;
+    fade_in = &lt;float&gt;
+    fade_out = &lt;float&gt;
+    
+    delay_random_offset = {
+        &lt;float&gt;
+        &lt;float&gt;
+    }
+    playbackrate_random_offset = {
+        &lt;float&gt;
+        &lt;float&gt;
+    }
+    volume_random_offset = {
+        &lt;float&gt;
+        &lt;float&gt;
+    }
+}
+</pre>
+</div>
+</div>
+<p>
+
+    name - имя звукового эффекта. <br>
+
+falloff - запись falloff, используемая звуковым эффектом. <br>
+
+sounds - звуковые записи, используемые звуковым эффектом. <br>
+
+loop определяет, зацикливается ли звуковой эффект.  <br>
+
+is3d определяет, должен ли звуковой эффект использовать 3D-звук.    <br>
+
+random_sound_when_looping определяет, выбирает ли звуковой эффект случайный звук при зацикливании, а не выбирает его итеративно.    <br>
+
+max_audible определяет максимальное количество экземпляров звукового эффекта в один момент времени. <br>
+
+max_audible_behaviour определяет, что произойдет, если количество экземпляров превысит max_audible. Это всегда отказ.   <br>
+
+volume определяет громкость звукового эффекта.  <br>
+
+fade_in определяет продолжительность затухания звукового эффекта.   <br>
+
+fade_out определяет продолжительность затухания звукового эффекта.  <br>
+
+delay_random_offset определяет минимальное и максимальное случайное смещение задержки между звуковыми циклами.  <br>
+
+playbackrate_random_offset определяет минимальное и максимальное случайное смещение скорости воспроизведения между звуковыми циклами.   <br>
+
+volume_random_offset определяет минимальное и максимальное случайное смещение громкости между звуковыми циклами.    
+</p>
+</div>
+
+<h1 id="section3">Falloff</h1>
+<div class="block">
+    <p>
+        Записи Falloff определяют атрибуты падения для звука. Они добавляются в звуковые эффекты и имеют следующий формат:
+
+
+</p>
+
+<div class="card" style="height: 180px ">
+    <div class="textincard">
+      <pre>
+falloff = {
+    name = &lt;name&gt;
+    
+    min_distance = &lt;float&gt;
+    max_distance = &lt;float&gt;
+    height_scale = &lt;float&gt;
+}
+</pre>
+</div>
+</div>
+<p>
+name - имя записи falloff. <br>
+
+min_distance - минимальное расстояние до применения falloff, т.е. максимальная громкость. <br>
+
+max_distance - максимальное расстояние до того, как звук не будет слышен. <br>
+
+height_scale - скаляр для высоты между источником звука и камерой игрока. 
+</p>
+</div>
+
+<h1 id="section4">Категории</h1>
+<div class="block">
+    <p> 
+        Звуковые эффекты могут быть помещены в категории звуков, к которым применяется определенный компрессор. Категории имеют следующий формат:
+    </p>
+    <div class="card" style="height: 370px ">
+        <div class="textincard">
+          <pre>
+category = {
+    name = &lt;name&gt;
+    soundeffects = {
+        &lt;name&gt;
+    }
+    compressor = {
+        enabled = yes
+        pregain = &lt;float&gt;
+        postgain = &lt;float&gt;
+        ratio = &lt;float&gt;
+        threshold = &lt;float&gt;
+        attacktime = &lt;float&gt;
+        releasetime = &lt;float&gt;
+    }
+}
+    </pre>
+    </div>
+    </div>
+<p>
+name - название категории звуковых эффектов. <Br>
+
+soundeffects - список звуковых эффектов, принадлежащих категории. <Br>
+
+compressor - компрессор, используемый для данной категории, подробнее об атрибутах см. ниже.
+</p>
+
+</div>
+
+
+<h1 id="section5">Компрессоры</h1>
+<div class="block">
+
+    <p>
+Существует два глобальных компрессора: master_compressor используется для звуков, а music_compressor - для музыки. Отдельные компрессоры могут быть определены для звуков в категориях. <Br>
+
+Компрессоры используют следующий формат:
+    </p>
+
+    <div class="card" style="height: 220px ">
+        <div class="textincard">
+          <pre>
+&lt;name&gt; = {
+    pregain = &lt;float&gt;
+    postgain = &lt;float&gt;
+    ratio = &lt;float&gt;
+    threshold = &lt;float&gt;
+    attacktime = &lt;float&gt;
+    releasetime = &lt;float&gt;
+}
+    </pre>
+    </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+    </div>
+</footer>
+
+
+</body>
+</html>
