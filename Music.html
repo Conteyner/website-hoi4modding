@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+    <h1>Музыка</h1>
+    <div class="block">
+        <p>
+            Музыкальные файлы хранятся в формате *.ogg в папке <i>/Hearts of Iron IV/music/</i> или в одной из ее подпапок.
+        </p>
+        <p>
+            <a href="https://runite-drill.github.io/music-mod-creation-tool/">Music Mod Creation Tool</a> - это быстрый и простой в использовании инструмент для создания модов, 
+            который сгенерирует все описанные ниже файлы для добавления музыки и радиостанции в игру.
+        </p>
+    </div>
+    <h1>
+        Определение песни
+    </h1>
+    <div class = "block">
+        <p>
+            Песни определяются в файлах формата *.asset, расположенных в той же папке, что и файлы *.ogg. Определение имеет следующий формат:
+        </p>
+        <div class="card" style="height: 150px ">
+            <div class="textincard">
+              <pre>
+music = {
+    name = "song_name"
+    file = "song_file.ogg"
+    volume = 0.65
+}
+      </pre>
+            </div>
+          </div>
+          <p>
+name - это идентификатор песни, а также ключ локализации для присвоения имени в файле локализации как song_name:0 "Имя песни". Оно не может содержать более 63 символов.
+file - имя файла песни, включая расширение *.ogg.
+volume позволяет регулировать громкость *.ogg-файла без его редактирования.
+          </p>
+
+    </div>
+    <h1>
+        Назначение на станцию
+    </h1>
+    <div class = "block" >
+        <p>
+Для правильной работы песни должны быть назначены на станцию. Назначения хранятся в файлах *.txt, в той же папке, что и файлы *.asset и *.ogg.
+Перед определением композиций файл назначений должен быть назначен станции. Одной и той же станции может быть назначено несколько файлов. Это делается с помощью следующей строки кода:
+<br>
+<i>music_station = "station_name"</i>
+        </p>
+
+        <p>
+            Типичное задание на песню оформляется соответствующим образом:
+        </p>
+        <div class="card" style="height: 300px ">
+            <div class="textincard">
+              <pre>
+music = {
+    song = "song_name"
+    chance = {
+        factor = 1
+        modifier = {
+            factor = 0
+            has_war = no
+        }
+    }
+}
+      </pre>
+            </div>
+          </div>
+
+          <p>
+song принимает идентификатор песни, определяемый как ее название в файле *.asset. <br>
+chance определяет шанс того, что песня будет выбрана, если режим воспроизведения установлен на Weighted Shuffle. <br>
+Допустимыми аргументами являются factor - умножение шанса, <br>
+add - прибавление к шансу и base - полная замена шанса. modifier = {} позволяет аргументу, изменяющему шанс, выполняться только в том случае, если выполнены все триггеры.
+          </p>
+
+
+    </div>
+
+    <h1>
+        Радиостанции
+    </h1>
+    <div class = "block">
+        <p>
+            Радиостанция определяется как файл пользовательского интерфейса, 
+        <i>/Hearts of Iron IV/interface/*.gui</i>. Содержимое файла должно быть следующим, при этом <i>MUSIC STATION</i> заменяется названием музыкальной станции:
+        </p>
+
+        <div class="card" style="height: 2800px ">
+            <div class="textincard">
+              <pre>
+guiTypes = {
+	containerWindowType = {
+		name = "&lt;MUSIC STATION&gt;_faceplate"
+		position = { x =0 y=0 }
+		size = { width = 590 height = 46 }
+
+		iconType ={
+			name ="musicplayer_header_bg"
+			spriteType = "GFX_musicplayer_header_bg"
+			position = { x= 0 y = 0 }
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "track_name"
+			position = { x = 72 y = 20 }
+			font = "hoi_20b"
+			text = "Roger Pontare - Nar vindarna viskar mitt namn"
+			maxWidth = 450
+			maxHeight = 25
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "track_elapsed"
+			position = { x = 124 y = 30 }
+			font = "hoi_18b"
+			text = "00:00"
+			maxWidth = 50
+			maxHeight = 25
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "track_duration"
+			position = { x = 420 y = 30 }
+			font = "hoi_18b"
+			text = "02:58"
+			maxWidth = 50
+			maxHeight = 25
+			format = center
+		}
+
+		buttonType = {
+			name = "prev_button"
+			position = { x = 220 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_previous_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+			pdx_tooltip = "MUSICPLAYER_PREV"
+		}
+
+		buttonType = {
+			name = "play_button"
+			position = { x = 263 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_play_pause_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+		}
+
+		buttonType = {
+			name = "next_button"
+			position = { x = 336 y = 20 }
+			quadTextureSprite ="GFX_musicplayer_next_button"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+			pdx_tooltip = "MUSICPLAYER_NEXT"
+		}
+
+		extendedScrollbarType = {
+			name = "volume_slider"
+			position = { x = 100 y = 45}
+			size = { width = 75 height = 18 }
+			tileSize = { width = 12 height = 12}
+			maxValue =100
+			minValue =0
+			stepSize =1
+			startValue = 50
+			horizontal = yes
+			orientation = lower_left
+			origo = lower_left
+			setTrackFrameOnChange = yes
+
+			slider = {
+				name = "Slider"	
+				quadTextureSprite = "GFX_scroll_drager"
+				position = { x=0 y = 1 }
+				pdx_tooltip = "MUSICPLAYER_ADJUST_VOL"
+			}
+
+			track = {
+				name = "Track"
+				quadTextureSprite = "GFX_volume_track"
+				position = { x=0 y = 3 }
+				alwaystransparent = yes
+				pdx_tooltip = "MUSICPLAYER_ADJUST_VOL"
+			}
+		}
+
+		buttonType = {
+			name = "shuffle_button"
+			position = { x = 425 y = 20 }
+			quadTextureSprite ="GFX_toggle_shuffle_buttons"
+			buttonFont = "Main_14_black"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_close
+		}
+	}
+
+	containerWindowType={
+		name = "&lt;MUSIC STATION&gt;_stations_entry"
+		size = { width = 162 height = 130 }
+		
+		checkBoxType = {
+			name = "select_station_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "&lt;SPRITE&gt;"
+			clicksound = decisions_ui_button
+		}
+	}
+}
+      </pre>
+            </div>
+          </div>
+
+          <p>
+            Название присваивается с помощью его ID в качестве ключа локализации в файле /Hearts of Iron IV/localisation/language/*_l_language.yml: MUSIC STATION:0 "Название музыкальной станции".
+                Обложке альбома назначается спрайт как quadTextureSprite в select_station_button. Спрайт должен быть определен в файле /Hearts of Iron IV/interface/*.gfx следующим образом:
+          </p>
+          <div class="card" style="height: 150px ">
+            <div class="textincard">
+              <pre>
+	spriteType = {
+		name = "<SPRITE>"
+		texturefile = "gfx//interface//topbar//musicplayer//<FILE NAME>.dds"
+		noOfFrames = 2
+	}                
+              </pre>
+            </div>
+          </div>
+          <p>
+            Файл *.dds должен быть разделен по горизонтали на 2 спрайта: когда он не выбран, и когда он выбран.
+          </p>
+        
+
+
+    </div>
+
+    
+    <footer>
+        <div class="footer-content">
+            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
