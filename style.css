@@ -1,180 +1,176 @@
 body {
-    background-color: #000000;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #f6fafa, #c6c8ca);
-    background-size: 400% 400%;
-    font-size: 18px;
-  }
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f6fafa, #c6c8ca);
+  background-size: 400% 400%;
+  font-size: 18px;
+}
 
-  #leftButton {
-    position: absolute;
-    left: 0;
-    top: 5px;
+#leftButton {
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
 
-  }
-
-  .header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 60px;
-    background-color: rgba(26, 26, 26, 0.85);
-    
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  background-color: rgba(26, 26, 26, 0.85);
 }
 
 .icon {
-	height: 40px;
-	margin: 0 10px;
-	transition: all 0.3s ease;
+  height: 40px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
 }
 .icon:hover {
-	transform: scale(1.3);
+  transform: scale(1.3);
 }
 
-.content, .header {
-    opacity: 0;
+.content,
+.header {
+  opacity: 0;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.content, .header {
-    animation: fadeIn 1s ease-out forwards;
+.content,
+.header {
+  animation: fadeIn 1s ease-out forwards;
 }
 
-
-  
 h1 {
-    font-size: 50px;
-    text-align: center;
-  }
-  
-a {
-    text-decoration: none;
-    color: rgb(62, 36, 109);
-
+  font-size: 50px;
+  text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(62, 36, 109);
+}
 
+button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
 
-   
-   button span {
-    position: relative;
-    z-index: 10;
-    transition: color 0.4s;
-   }
-   
-   button:hover span {
-    color: black;
-   }
-   
-   button::before,
-   button::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-   }
-   
-   button::before {
-    content: "";    
-    background: #000;
-    width: 120%;
-    left: -10%;
-    transform: skew(30deg);
-    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-   }
-   
-   button:hover::before {
-    transform: translate3d(100%, 0, 0);
-   }
-   
+button:hover span {
+  color: black;
+}
 
-   .block {
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10;
-    width:70%;
-    margin: auto;
-  }
+button::before,
+button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
 
-  .block p, .block ul, .block li , .block a, .block h2 {
-    padding-left: 7px;
-    max-width: 98%;
-    word-wrap: break-word;
-    }
+button::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
 
-    i {
+button:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
 
-    }
-    
+.block {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10;
+  width: 70%;
+  margin: auto;
+}
 
-  button {
-    outline: none;
-    cursor: pointer;
-    border: none;
-    padding: 0.9rem 2rem;
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    position: relative;
-    display: inline-block;
-    letter-spacing: 0.05rem;
-    font-weight: 700;
-    font-size: 17px;
-    border-radius: 500px;
-    overflow: hidden;
-    background: #ffffff;
-    color: ghostwhite;
-  }
+.block p,
+.block ul,
+.block li,
+.block a,
+.block h2 {
+  padding-left: 7px;
+  max-width: 98%;
+  word-wrap: break-word;
+}
 
+i {
+}
 
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #ffffff;
+  color: ghostwhite;
+}
 
-  #table-of-contents {
-    float: left;
-    border: 1px solid #ccc;
-    padding-left: 5px;
-    margin-left: 20px;
-  }
-  
+#table-of-contents {
+  float: left;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  margin-left: 20px;
+  padding-right: 5px;
+}
 
-  
-  #table-of-contents ul {
+#table-of-contents li {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: baseline;
+}
 
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 0;
-    margin-top: 20px;
-  }
-  
-  #table-of-contents ul ul {
-    list-style-type: circle;
-  }
-  
-  #table-of-contents li {
-    margin-bottom: 5px;
-  }
-  
-  #table-of-contents a {
-    text-decoration: none;
-    color: #4a4a4a;
-  }
-  
-  #table-of-contents a:hover {
-    text-decoration: underline;
-  }
+#table-of-contents ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-top: 20px;
+}
 
+#table-of-contents ul ul {
+  list-style-type: circle;
+}
+
+#table-of-contents li {
+  margin-bottom: 5px;
+}
+
+#table-of-contents a {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+
+#table-of-contents a:hover {
+  text-decoration: underline;
+}
 
 /* редактор кода */
 .card {
@@ -185,30 +181,48 @@ a {
   box-shadow: 0.3em 0.3em 0.7em #00000015;
   transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: rgb(250, 250, 250) 0.2em solid;
- }
- 
- .card:hover {
+}
+
+.card:hover {
   border: #006fff 0.2em solid;
- }
+}
 
-
-
- .textincard {
+.textincard {
   padding-left: 1px;
- color: #1f0925;
- }
+  color: #1f0925;
+}
 
- /* <span style="color: rgb(30, 129, 46);"  */
+/* <span style="color: rgb(30, 129, 46);"  */
 
- footer {
+footer {
   background-color: #333333;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
 }
 
 .footer-highlight {
-  color: #FFA500;
+  color: #ffa500;
   font-weight: bold;
+}
+
+/* Таблица */
+
+table {
+  border-collapse: collapse;
+  border: 1px solid grey;
+}
+
+th {
+  border: 1px solid grey;
+}
+
+td {
+  border: 1px solid grey;
+}
+
+td,
+th {
+  padding: 10px;
 }
