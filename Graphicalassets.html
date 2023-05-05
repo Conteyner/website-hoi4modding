@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+
+    <h1>Список имен</h1>
+    <div id="table-of-contents">
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#section1"> Sprite Types</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section2">spriteType</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="#section3">frameAnimatedSpriteType</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section4"> progressbartype</a>
+                </li>   </ul>
+                <ul>
+                    <li>
+                        <a href="#section5"> corneredTileSpriteType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#section6">  maskedShieldType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#section7">animatedmaptext</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#section8">textcolors</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#section9">bitmapfont</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#section10">bitmapfont_override</a>
+                    </li>
+                </ul>
+    </div>
+
+    <div class="block">
+    <p>
+        Графические активы - это файлы изображений, которые были определены в файле .gfx. Это связывает изображение с именем сценария, на который затем ссылаются файлы интерфейса .gui.
+    </p>
+    <p>
+        Файлы графических активов можно найти в <i>/Hearts of Iron IV/interface/*.gfx</i>.
+    </p>
+    <p>
+        Обратите внимание, что для многих активов, таких как определения активов технологий и оборудования, <br>изображение может быть указано для определенного тега, т.е. GFX_ENG_&lt;имя&gt;, который отображает актив только для указанного тега.<br>
+         Это переопределит базовый актив с тем же именем. <br>Это также относится к графической культуре, <br>т.е. GFX_african_&lt;имя&gt;.
+    </p>
+
+    <h1 id="section1">Sprite Types</h1>
+    <h2 id="section2">spriteType</h2>
+
+            <p>
+                Запись актива spriteType и textSpriteType следует этому формату:
+            </p>
+            
+    <div class="card" style="height: 800px ">
+        <div class="textincard">
+          <pre>
+spriteTypes = {
+    spriteType = {
+        name = "GFX_&lt;name&gt;"
+        texturefile = &lt;path&gt;
+        noOfFrames = &lt;int&gt;
+        effectFile = &lt;path&gt;
+        
+        allwaystransparent = &lt;bool&gt;
+        legacy_lazy_load = &lt;bool&gt;
+        transparencecheck = &lt;bool&gt;
+        
+        animation = {
+            animationmaskfile = &lt;path&gt;
+            animationtexturefile = &lt;path&gt;
+            animationrotation = &lt;float&gt;
+            animationlooping = &lt;bool&gt;
+            animationtime = &lt;float&gt;
+            animationdelay = &lt;float&gt;
+            animationblendmode = &lt;mode&gt;
+            animationtype = &lt;type&gt;
+            animationrotationoffset = { 
+                x = &lt;float&gt;
+                y = &lt;float&gt;
+            }
+            animationtexturescale = {
+                x = &lt;float&gt;
+                y = &lt;float&gt;
+            }
+            animationframes = {
+                &lt;int&gt; &lt;int&gt;<span style="color: rgb(30, 129, 46);"># etc</span>
+            }
+        }
+    }
+}
+    </pre>
+    </div>
+    </div>
+<p>
+    имя - это имя, которое вы дали активу. Оно может иметь префикс с различными другими сегментами, например, idea для идейных образов и т.д.
+</p>
+<p>
+    texturefile - это путь к изображению, основанный на <I>/Hearts of Iron IV/</I>, то есть вы включаете только папки внутри этой папки, а не полный путь к файлу.
+</p>
+<p>
+    noOfFrames используется для изображений с несколькими кадрами внутри, например, GFX_unit_level имеет пять изображений внутри для каждого из изображений уровня подразделения, и поэтому в определении актива будет установлено noOfFrames = 5.
+</p>
+<p>
+    effectFile используется для определения состояния эффекта для применения к изображению, т.е. эффект нажатия кнопки для изображения кнопки. 
+    Эффекты находятся в файле <i>/Hearts of Iron IV/gfx/FX/*.lua</i>. Для добавления нескольких эффектов можно задать несколько.
+</p>
+<p>
+    allwaystransparent определяет, можно ли нажимать на изображение и взаимодействовать с ним. 
+    Если да, то изображение не будет иметь всплывающей подсказки и на него нельзя будет нажать при использовании в игре.
+</p>
+<p>
+    legacy_lazy_load определяет, будет ли изображение загружаться.
+</p>
+<p>
+    transparencecheck определяет, будет ли изображение ограничено своим альфа-каналом относительно щелчков игрока. В противном случае границами являются размеры изображения.
+</p>
+<p>
+    область анимации используется для добавления анимации к изображению. Он использует следующие атрибуты:
+</p>
+<p>
+    animationmaskfile управляет изображением маски для анимации.
+</p>
+<p>
+    animationtexturefile управляет цветным изображением, используемым для анимации.
+</p>
+<p>
+    animationrotation управляет вращением анимационного изображения. По умолчанию он равен -90 по часовой стрелке.
+</p>
+<P>
+    animationlooping контролирует, зацикливается ли анимация.
+</P>
+<p>
+    animationtime управляет продолжительностью анимации. Она измеряется в секундах.
+</p>
+<P>
+    animationdelay управляет задержкой между циклами анимации. Она измеряется в секундах.
+</P>
+<P>
+    animationblendmode управляет режимом наложения для анимационного изображения. Это может быть режим добавления, умножения или наложения.
+</P>
+<P>
+    animationtype управляет типом анимации. Это может быть прокрутка, вращение или пульсация.
+</P>
+<P>
+    animationrotationoffset управляет смещениями x и y для поворота.
+</P>
+<p>
+    animationtexturescale управляет масштабом анимационного изображения.
+</p>
+<P>
+    animationframes устанавливает количество кадров в анимационном изображении.
+</P>
+<p>
+    Имейте в виду, что максимальный размер файла спрайта .dds составляет около 16 МБ.
+</p>
+</div>
+
+</div>
+
+
+<h1 id="section3">frameAnimatedSpriteType</h1>
+<div class="block">
+    <p>
+    Запись актива frameAnimatedSpriteType имеет следующий формат:
+</p>
+<div class="card" style="height: 400px ">
+    <div class="textincard">
+      <pre>
+spriteTypes = {
+    frameAnimatedSpriteType = {
+        name = "GFX_&lt;name&gt;"
+        texturefile = "&lt;path&gt;"
+        noOfFrames = &lt;int&gt;
+        effectFile = "&lt;path"
+        
+        animation_rate_fps = &lt;int&gt;
+        looping = &lt;bool&gt;
+        play_on_show = &lt;bool&gt;
+        pause_on_loop = &lt;float&gt;
+        
+        allwaystransparent = &lt;bool&gt;
+    }
+}        
+      </pre>
+    </div>
+</div>
+
+<p>
+    имя - это имя, которое вы дали активу. Оно может иметь префикс с различными другими сегментами, например, idea для идейных образов и т.д.
+</p>
+
+<p>
+    texturefile - это путь к изображению, основанный на /Hearts of Iron IV/, то есть вы включаете только папки внутри этой папки, а не полный путь к файлу.
+</p>
+<p>
+    noOfFrames используется для изображений с несколькими кадрами внутри, например, GFX_unit_level 
+    имеет пять изображений внутри для каждого из изображений уровня подразделения, и поэтому в определении актива будет установлено noOfFrames = 5.
+</p>
+<p>
+    effectFile используется для определения состояния эффекта для применения к изображению, т.е. эффект нажатия кнопки для изображения кнопки. 
+    Эффекты находятся в файле <i>/Hearts of Iron IV/gfx/FX/*.lua</i>. Для добавления нескольких эффектов можно задать несколько.
+</p>
+<p>
+    animation_rate_fps - скорость воспроизведения анимации.
+</p>
+<P>
+    looping определяет, зацикливается ли анимация.
+</P>
+<P>
+    play_on_show определяет, начинает ли анимация воспроизводиться, когда она видна.
+</P>
+<p>
+    pause_on_loop определяет длительность паузы после цикла анимации.
+</p>
+<p>
+    allwaystransparent определяет, будет ли изображение ограничено своим альфа-каналом в отношении щелчков игрока. В противном случае границами являются размеры изображения.
+</p>
+
+</div>
+<h1 id="section4">progressbartype</h1>
+<div class = "block">
+    <p>
+        Запись актива типа progressbartype используется для прогресс-баров. Он имеет следующий формат:
+    </p>
+    <div class="card" style="height: 400px ">
+        <div class="textincard">
+          <pre>
+spriteTypes = {
+    progressbartype = {
+        name = "GFX_&lt;name&gt;"
+        textureFile1 = "&lt;path&gt;"
+        textureFile2 = "&lt;path&gt;"
+        color = { &lt;r> &lt;g&gt; &lt;b&gt; }
+        colortwo = { &lt;r&gt; &lt;g&gt; &lt;b&gt; }
+        size = { 
+            x = &lt;int&gt;
+            y = &lt;int&gt;
+        }
+        effectFile = &lt;path&gt;
+        
+        horizontal = &lt;bool&gt;
+    }
+}
+          </pre>
+        </div>
+    </div>   
+
+    <p>
+        имя - это имя, которое вы дали активу. Оно может иметь префикс с различными другими сегментами, например, idea для идейных образов и т.д.
+    </p>
+    <p>
+        textureFile1 - это изображение, которое будет использоваться для индикатора выполнения.
+    </p>   
+    <p>
+        textureFile2 - это изображение, которое будет использоваться для фона индикатора выполнения.
+    </p>   
+    <p>
+        color определяет непрогрессирующий цвет полосы. Это десятичный RGB.
+    </p>
+    <p>
+        colortwo определяет прогрессирующий цвет полосы. Это десятичный RGB.
+    </p>
+    <P>
+        size определяет размер секции прогресс-бара по высоте и ширине.
+    </P>
+    <p>
+        effectFile используется для определения состояния эффекта для применения к изображению, т.е. эффект нажатия кнопки 
+        для изображения кнопки. Эффекты находятся в файле <i>/Hearts of Iron IV/gfx/FX/*.lua</i>. Для добавления нескольких эффектов можно задать несколько.
+    </p>
+    <p>
+        horizontal определяет, будет ли прогресс-бар горизонтальным или нет. По умолчанию полоса горизонтальна.
+    </p>
+</div>
+
+    <h1 id="section5">corneredTileSpriteType</h1>
+    <div class = "block"> 
+        <p>
+            Запись актива corneredTileSpriteType
+            используется для текстур, которые укладываются на плитку, чтобы заполнить размер элемента интерфейса, в котором они используются. Она имеет следующий формат:
+        </p>
+        <div class="card" style="height: 520px ">
+            <div class="textincard">
+              <pre>
+spriteTypes = {
+    corneredTileSpriteType = {
+        name = "GFX_&lt;name&gt;"
+        texturefile = "&lt;path&gt;"
+        noOfFrames = &lt;int&gt;
+        size = {
+            x = &lt;int&gt;
+            y = &lt;int&gt;
+        }
+        borderSize = {
+            x = &lt;int&gt;
+            y = &lt;int&gt;
+        }
+        effectFile = &lt;path&gt;
+        
+        allwaystransparent = &lt;bool&gt;
+        tilingCenter = &lt;bool&gt;
+        
+        looping = &lt;bool&gt;
+        animation_rate_spf = &lt;int&gt;
+    }
+}                
+              </pre>
+            </div>
+        </div>
+
+        <p>
+        имя - это имя, которое вы дали активу. Оно может иметь префикс с различными другими сегментами, например, idea для идейных образов и т.д.
+    </p>
+    
+    <p>
+        texturefile - это путь к изображению, основанный на /Hearts of Iron IV/, то есть вы включаете только папки внутри этой папки, а не полный путь к файлу.
+    </p>
+    <p>
+        noOfFrames используется для изображений с несколькими кадрами внутри, например, GFX_unit_level 
+        имеет пять изображений внутри для каждого из изображений уровня подразделения, и поэтому в определении актива будет установлено noOfFrames = 5.
+    </p>     
+    <P>
+        size определяет размер клетки.
+    </P>      
+    <p>
+        borderSize определяет размер границы.
+    </p>
+    <p>
+        effectFile используется для определения состояния эффекта для применения к изображению, т.е. эффект нажатия кнопки для изображения кнопки. 
+        Эффекты находятся в файле <i>/Hearts of Iron IV/gfx/FX/*.lua</i>. Для добавления нескольких эффектов можно задать несколько.
+    </p>
+    <p>
+        allwaystransparent определяет, будет ли изображение ограничено своим альфа-каналом в отношении щелчков игрока. В противном случае границами являются размеры изображения.
+    </p>
+    <p>
+        tilingCenter определяет, используется ли для черепицы центр изображения, а не левый верхний угол.
+    </p>   
+    <p>
+        looping определяет, зациклена ли анимация.
+    </p> 
+    <p>
+        animation_rate_spf определяет частоту кадров, с которой воспроизводится анимация.
+    </p>
+
+</div>
+
+<h1 id="section6">maskedShieldType</h1>
+<div class = "block">
+    <p>
+        Для щитов стран используется запись актива maskedShieldType. Он имеет следующий формат:
+    </p>    
+    <div class="card" style="height: 240px ">
+        <div class="textincard">
+          <pre>
+
+spriteTypes = {
+    corneredTileSpriteType = {
+        name = "GFX_&lt;name&gt;"
+        textureFile1 = &lt;path&gt;
+        textureFile2 = &lt;path&gt;
+        effectFile = &lt;path&gt;
+    }
+}
+            
+          </pre>
+        </div>
+    </div>
+
+        <p>
+            имя - это имя, которое вы дали активу. Оно может иметь префикс с различными другими сегментами, например, idea для идейных образов и т.д.
+        </p>
+
+    <p>
+        textureFile1 - это изображение, которое будет использоваться для индикатора выполнения.
+    </p>   
+    <p>
+        textureFile2 - это изображение, которое будет использоваться для фона индикатора выполнения.
+    </p> 
+    <p>
+        effectFile используется для определения состояния эффекта для применения к изображению, т.е. эффект нажатия кнопки для изображения кнопки. 
+        Эффекты находятся в файле <i>/Hearts of Iron IV/gfx/FX/*.lua</i>. Для добавления нескольких эффектов можно задать несколько.
+    </p>
+</div>
+
+<h1 id="section7">animatedmaptext</h1>
+<div class = "block">
+    <P>
+        Запись актива animatedmaptext используется для текста, который появляется на карте. Он имеет следующий формат:
+    </P>
+    <div class="card" style="height: 500px ">
+        <div class="textincard">
+          <pre>
+objectTypes = {
+    animatedmaptext = {
+        name = &lt;name&gt;
+        speed = &lt;float&gt;
+        textblock = {
+            text = &lt;string&gt;
+            color = { &lt;r&gt; &lt;g&gt; &lt;b&gt; }
+            font = &lt;path&gt;
+            position = { 
+                x = &lt;int&gt;
+                y = &lt;int&gt;
+            }
+            size = {
+                x = &lt;int&gt;
+                y = &lt;int&gt;
+            }
+            format = &lt;type&gt;
+            cull_distance = &lt;float&gt;
+        }
+    }
+}            
+          </pre>
+        </div>
+    </div>
+    <p>
+        name - это название текста карты. Невозможно добавить пользовательские.
+    </p>
+    <P>
+        скорость - время затухания текста.
+    </P>
+    <p>
+        textblock управляет атрибутами отображаемого текста.
+    </p>
+
+</div>
+
+<h1 id="section8">textcolors</h1>
+<div class = "block">
+
+    <p>
+        Запись textcolors определяет цвета текста, используемые в локализации с помощью символа §. Она имеет следующий формат:
+    </p>
+
+
+    <div class="card" style="height: 170px ">
+        <div class="textincard">
+          <pre>
+bitmapfonts = {
+    textcolors = {
+        &lt;symbol&gt; = { &lt;r&gt; &lt;g&gt; &lt;b&gt; }
+    }
+}            
+          </pre>
+        </div>
+    </div>
+
+    <p>
+        символ - это символ, используемый в локализации, т.е. H.
+    </p>
+    <p>
+        RGB - это цвет, который применяется в символе. Это целочисленный RGB.
+    </p>
+
+</div>
+
+<h1 id="section9">bitmapfont</h1>
+<div class = "block"> 
+    <p>
+        Запись bitmapfont определяет шрифт, используемый в игре. Она имеет следующий формат:
+    </p>
+    <div class="card" style="height: 450px ">
+        <div class="textincard">
+          <pre>
+bitmapfonts = {
+    bitmapfont = {
+        name = &lt;name&gt;
+        path = &lt;path&gt;
+        color = &lt;hex&gt;
+        border_color = &lt;hex&gt;
+        fontfiles = {
+            &lt;path&gt;
+            &lt;path&gt;
+        }
+        textcolors = {
+            &lt;symbol&gt; = { &lt;r&gt; &lt;g&gt; &lt;b&gt; }
+        }
+        cursor_offset = {
+            &lt;int&gt;
+            &lt;int&gt;
+        }
+    }
+}
+          </pre>
+        </div>
+    </div>
+
+    <p>
+        name - ссылочное имя шрифта для других графических файлов.
+    </p>
+    <p>
+        path - путь к шрифту. Шрифты находятся в <i>/Hearts of Iron IV/gfx/fonts/</i>.
+    </p>
+    <p>
+        color - это цвет шрифта по умолчанию. Он представляет собой шестнадцатеричный код RGB.
+    </p>
+    <p>
+        border_color - цвет границы шрифта. Это шестнадцатеричный код RGB.
+    </p>
+    <p>
+        fontfiles используется, когда для одного шрифта есть несколько изображений шрифтов, например, для поддержки английского и кириллицы. Он используется вместо path.
+    </p>
+    <p>
+        textcolors изменяет глобальные текстовые цвета для шрифта, в который он вложен.
+    </p>
+    <p>
+        cursor_offset смещает текстовый курсор для шрифта. Определяет позицию x, а затем позицию y.
+    </p>
+
+</div>
+
+<h1 id="section10">bitmapfont_override</h1>
+<div class = "block"> 
+    <p> 
+        Запись bitmapfont_override используется для переопределения шрифта для определенной локали. Она имеет следующий формат:
+    </p>
+    <div class="card" style="height: 320px ">
+        <div class="textincard">
+          <pre>
+bitmapfonts = {
+    bitmapfont_override = {
+        name = &lt;name&gt;
+        fontfiles = {
+            &lt;path&gt;
+            &lt;path&gt;
+        }
+        languages = {
+            &lt;language&gt;
+            &lt;language&gt;
+        }
+    }
+}
+          </pre>
+        </div>
+    </div>
+<p>
+    name - имя шрифта, который нужно переопределить.
+</p>
+<p>
+    fontfiles используется, когда для одного шрифта есть несколько изображений шрифтов, например, для поддержки English и Cryllic. Он используется вместо path.
+</p>
+<p>
+    languages определяет, для каких языков применяется это переопределение.
+</p>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+    </div>
+</footer>
+
+</body>
+
+</html>
