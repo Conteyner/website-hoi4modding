@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+    <h1>Моддинг сущностей</h1>
+    <div id="table-of-contents">
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#section1">Добавление сетки</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section2">Анимация</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="#section3">Добавление объекта</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section4">State</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section5"> Event </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section6"> Attach </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section7"> Sound </a>
+            </li>
+        </ul>
+        <li>
+            <a href="#section8"> Locator </a>
+        </li>
+    </ul>
+    <li>
+        <a href="#section9"> Добавление анимации </a>
+    </li>
+</ul>
+    </div>
+    <div class="block">
+    <p>
+        Сущности - это определения, используемые в Hearts of Iron IV для связи моделей 
+        с объектами сценария, которые используются в таких местах, как ambient_objects.txt.
+    </p>
+    <p>
+        Файлы .gfx и .asset находятся в <i>/Hearts of Iron IV/gfx/entities/</i>.
+    </p>
+    <p>
+        Файлы анимаций .asset находятся в <i>/Hearts of Iron IV/gfx/models/</i>.
+    </p>
+
+        <h1 id="section1">Добавление сетки</h1>
+        <p>
+            Чтобы добавить сетку, вам нужно добавить .gfx файл в ваш мод, который включает в себя определение сетки. Вот общий пример:
+        </p>
+        <div class="card" style="height: 200px ">
+            <div class="textincard">
+                <pre>
+objectTypes = {
+    pdxmesh = {
+        name = "name_of_mesh"
+        file = "gfx/models/name_of_mesh.mesh"
+        animation = { id = "idle" type = "name_of_animation" }				
+        scale = 1.0
+    }                    
+                </pre>
+            </div>
+        </div>
+        <p>
+    name - имя сетки, на которую затем ссылаются в файле .asset.<br>
+    file - относительный путь к файлу модели, с которой ассоциирована сетка.<br>
+    animation - область видимости, добавляемая для каждой анимации, связанной с сеткой.<br>
+    scale - это скаляр для размера модели.
+        </p>
+        <h2 id="section2">Анимация</h2>
+        <p>
+            Область видимости анимации содержит эти атрибуты:
+
+        </p>
+        <p>
+            id - имя анимации в pdxmesh. <br>
+    type - имя фактической анимации, определенное в файле .asset.
+        </p>
+    </div>
+    <h1 id="section3">Добавление объекта</h1>
+    <div class = "block">
+        <p>
+После того как сетка определена, необходимо добавить определение сущности, чтобы использовать ее в сценарии. Это делается в файле .asset, который нужно добавить в мод.
+
+Вот пример всех возможных атрибутов:
+        </p>
+        <div class="card" style="height: 1200px ">
+            <div class="textincard">
+                <pre>
+entity = {
+    name = "name_of_entity"
+    pdxmesh = "mesh_to_use"
+    scale = 1.0
+    cull_radius = 100
+
+    default_state = "idle"
+    get_state_from_parent = yes
+
+    locator = {
+        name = "example"
+        position = { 0.0 0.0 0.0 }
+    }
+
+    state = { 
+        name = "idle" 
+        state_time = 0.0
+        
+        animation = "idle"
+        animation_blend_time = 0.0
+        animation_speed = 1.0
+        looping = yes
+        
+        next_state = "idle"
+        
+        chance = 2
+        propagate_state = {
+            node = "idle"
+        }
+        
+        event = {
+            time = 1.0
+            trigger_once = yes
+            
+            node = "example_node"
+            light=  "example_light"
+            
+            particle = "example_particle"
+            keep_particle = yes
+            
+            sound = {
+                soundeffect = "example_soundeffect"
+            }
+        }
+    }
+    
+    attach = {
+        name = "name"
+        &lt;node&gt; = "example_entity"
+    }
+}
+                </pre>
+            </div>
+        </div>
+        <p>
+            name - имя сущности, на которую ссылаются в таких местах, как ambient_objects.txt. <br>
+    pdxmesh - сетка, связанная с сущностью. <br>
+    state - область видимости, добавляемая для каждой анимации, связанной с сеткой, и связывающая анимацию с состоянием анимации. <br>
+    locator - область видимости, добавляющая узел к сущности. <br>
+    scale - скаляр для размера сущности. <br>
+    cull_radius - расстояние, на котором сущность будет удалена из рендеринга. <br>
+    default_state - состояние анимации по умолчанию для сущности. <br>
+    get_state_from_parent наследует состояние родительской сущности (т.е. используется сущностью оружия, которая является частью солдата). <br>
+    attach - это область видимости, которая присоединяет другую сущность к узлу скелета текущей сущности. <br>
+
+Обратите внимание, что доступные состояния зависят от того, где используется сущность (т.е. сущность подразделения получит боевое состояние, а сущность здания - состояние здания и т.д.). Все сущности разделяют состояние простоя.
+        </p>
+
+        <h2 id="section4">State</h2>
+        <p>
+            Область действия состояния содержит следующие атрибуты: <Br>
+
+    name - имя состояния, в которое может перейти модель. Все модели имеют состояние бездействия. <Br>
+    state_time - продолжительность текущего состояния. <Br>
+    looping определяет, зацикливается это состояние или нет. <Br>
+    event - область действия, которая применяет эффект частицы или звука. <Br>
+    animation - состояние анимации (из pdxmesh) для воспроизведения. <Br>
+    animation_blend_time - время смешивания между текущей и указанной анимацией. <Br>
+    animation_speed - скорость воспроизведения анимации. <Br>
+    next_state задает следующее состояние для текущего состояния.  <Br>
+    chance определяет вероятность возникновения этого состояния, если оно имеет общее название с несколькими другими состояниями 
+    (например, тренировка, отжимание, прыжок с домкратом и т.д.). <Br>
+    propagate_state распространяет текущее состояние на указанный узел.
+        </p>
+        <h2 id="section5">Event</h2>
+        <p>
+            Область действия события содержит эти атрибуты: <br>
+
+    time - продолжительность события в секундах. <br>
+    particle - частица для отображения. <br>
+    keep_particle определяет, сохраняется ли частица после завершения события. <br>
+    trigger_once определяет, произойдет ли событие только один раз. <br>
+    sound - область видимости, применяющая звуковой эффект. <br>
+    node указывает узел локатора или узел модели для установки начала позиции события. <br>
+    light указывает свет для отображения.
+        </p>
+        <h2 id="section6">Attach</h2>
+        <p>
+            name - это имя присоединяемой сущности.<br>
+            &lt;node&gt; - это имя узла из скелета сущностей, а value - это сущность, которую нужно присоединить.
+        </p>
+        <h2 id="section7">Sound</h2>
+        <p>
+            Область действия звука содержит следующие атрибуты: <br>
+
+    soundeffect - звуковой эффект для воспроизведения.
+        </p>
+        <h2 id="section8">Locator</h2>
+        <p>
+            Область действия локатора содержит эти атрибуты: <Br>
+
+    name - имя узла локатора. <Br>
+    position - позиция узла локатора, значениями которой являются координаты x, y и z.
+             </p>
+
+    </div>
+    <h1 id="section9">Добавление анимации</h1>
+    <div class="block">
+    <p>
+        Анимации для моделей добавляются в файл .asset, находящийся в <i>/Hearts of Iron IV/gfx/models/</i> или вложенных папках. <Br>
+
+Вот общий пример:
+    </p>
+
+        <div class="card" style="height: 120px ">
+            <div class="textincard">
+                <pre>
+animation = {
+    name = "animation_name"
+    file = "animation_name.anim"
+}
+                </pre>
+            </div>
+        </div>
+        <p>
+            name - имя анимации, на которую потом будут ссылаться в pdxmesh. <br>
+file - относительный путь к файлу анимации <br>
+        </p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+        </div>
+    </footer>
+
+    <button onclick="topFunction()" id="scroll-to-top" title="Наверх">&#8593;</button>
+    <script src="script.js"></script>    
+
+</body>
+</html>
