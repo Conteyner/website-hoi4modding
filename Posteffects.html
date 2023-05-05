@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+    <h1>Моддинг сущностей</h1>
+    <div id="table-of-contents">
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#section1">Значения постэффекта</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section2">Объемы</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="#section3">Позиция oбъема</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section4">Высота oбъемa</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#section5"> Советы </a>
+    </li>
+</ul>
+    </div>
+    <div class="block">
+    <p>Постэффекты - это эффекты цветокоррекции, которые применяются к освещению в определенных областях (объемах) на карте. 
+        Они используются для тонирования освещения в областях, где освещение заметно отличается, например, в пустынях. </p>
+        <p>
+            Все постэффекты находятся в файле <i></i>/Hearts of Iron IV/gfx/posteffect_volumes.txt</i>.
+        </p>
+        <h1 id="section1">Значения постэффекта</h1>
+        <p>
+            Запись значений постэффекта соответствует этому формату:
+        </p>
+        <div class="card" style="height: 420px ">
+            <div class="textincard">
+                <pre>
+
+posteffect_values = {
+    name = &lt;name&gt;
+    inherit = &lt;name&gt;
+    
+    lut = &lt;path&gt;
+    
+    hdr_min_adjustment = &lt;float&gt;
+    hdr_max_adjustment = &lt;float&gt;
+    
+    BLOOM_WIDTH = &lt;float&gt;
+    BLOOM_SCALE = &lt;float&gt;
+    BRIGHT_THRESHOLD = &lt;float&gt;
+    
+    tonemap_middlegrey = &lt;float&gt;
+    
+}                
+</pre>
+            </div>
+        </div>
+        <p>
+ name - имя записи значений постэффекта. <br>
+
+inherit заставляет значения для текущего постэффекта наследоваться от указанного постэффекта. <br>
+ 
+lut - путь к карте тонов, используемой для этой записи.  <br>
+
+hdr_min_adjustment определяет минимальную корректировку, используемую в эффекте HDR. <br>
+
+hdr_max_adjustment определяет максимальную корректировку, используемую в эффекте HDR. <br>
+
+BLOOM_WIDTH определяет ширину эффекта bloom. <br>
+
+BLOOM_SCALE определяет масштаб эффекта расцветки. <br>
+
+BRIGHT_THRESHOLD определяет порог эффекта расцветки. <br>
+
+tonemap_middlegrey определяет средний серый цвет, используемый в тоновой карте.
+        </p>
+    </div>
+
+        <h1 id="section2">Объемы</h1>
+        <div class="block">
+           <h2 id="section3">Позиция oбъемa</h2>
+           <p>
+            Запись объема определяет область на карте, в которой применяются значения постэффекта. Она имеет следующий формат:
+           </p>
+           <div class="card" style="height: 500px ">
+            <div class="textincard">
+                <pre>
+posteffect_volumes = {
+    posteffect_volume = {
+        name = &lt;name&gt;
+        posteffect_values_day = &lt;name&gt;
+        posteffect_values_night = &lt;name&gt;
+        posteffect_values_day_winter = &lt;name&gt;
+        posteffect_values_night_winter = &lt;name&gt;
+        
+        position = {
+            &lt;x&gt;
+            &lt;y&gt;
+            &lt;z&gt;
+        }
+        size = {
+            &lt;width&gt;
+            &lt;height&gt;
+            &lt;depth&gt;
+        }
+        fade_distance = &lt;float&gt;
+    }
+}                    
+                </pre>
+            </div>
+           </div>
+
+<p>
+    name - имя записи объема. <br>
+
+    posteffect_values_day - запись значений постэффекта для использования в течение дня. <br>
+    
+    posteffect_values_night - запись значений постэффекта для использования в ночное время. <br>
+    
+    posteffect_values_day_winter - запись значений постэффекта для использования днем в зимние месяцы. <br>
+    
+    posteffect_values_night_winter - запись значений постэффекта для использования ночью в зимние месяцы. <br>
+    
+    position определяет местоположение центра объема. <br>
+    
+    size определяет размер поля объема. <br>
+    
+    fade_distance определяет расстояние затухания для значений постэффекта.   
+</p>
+
+    </div>
+
+
+        <h1 id="section4">Высота oбъемa</h1>
+        <div class="block">
+           <p>
+            Запись объема высоты задает высоту, на которой применяются значения постэффекта. Он имеет следующий формат:
+           </p>
+           <div class="card" style="height: 250px ">
+            <div class="textincard">
+                <pre>
+posteffect_volumes = {
+    posteffect_height_volume = {
+        name = &lt;name&gt;
+        posteffect_values_day = &lt;name&gt;
+        posteffect_values_night = &lt;name&gt;
+        
+        height = &lt;float&gt;
+        fade_distance = &lt;float&gt;
+    }
+}                   
+                </pre>
+            </div>
+           </div>
+           <p>
+            name - имя записи объема. <Br>
+
+            posteffect_values_day - запись значений постэффекта для использования в течение дня. <Br>
+            
+            posteffect_values_night - запись значений постэффекта для использования в ночное время. <Br>
+            
+            height определяет, на какой высоте будут применяться значения. <Br>
+            
+            fade_distance определяет расстояние затухания для значений постэффекта.
+           </p>
+        </div>
+        
+        <h1 id="section5">Советы</h1>
+        <div class="block">
+           <p> 
+            Используйте консольные команды: <i>PostEffectVolumes.Enabled</i> и <i>PostEffectVolumes.Draw</i> при работе с постэффектами.  
+            В настоящее время только для разработчиков. <Br>
+
+Вы можете перезагрузить постэффекты с помощью команды reload posteffectvolumes в консоли. <Br>
+           </p>
+        </div>
+
+
+
+
+    
+
+     <footer>
+        <div class="footer-content">
+            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+        </div>
+    </footer>
+
+    <button onclick="topFunction()" id="scroll-to-top" title="Наверх">&#8593;</button>
+    <script src="script.js"></script>    
+
+</body>
+</html>       
