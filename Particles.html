@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <A href="index.html"><button id="leftButton"> <span>Назад</span>
+            </button></A>
+        <a href="https://discord.gg/east-showdown-1024735523589324830"><img class="icon" id="discord-icon"
+                src="discord.png" alt="Дискорд"></a>
+        <a href="https://github.com/Conteyner/website-hoi4modding"><img class="icon" id="github-icon" src="github.png"
+                alt="Гитхаб"></a>
+
+    </div>
+
+    <h1>Моддинг Частиц</h1>
+    <div class="block">
+        <p>
+            Частицы - это специальные объекты, используемые другими объектами для создания визуальных эффектов, таких как молния, снег и т.д. <br>
+
+Частицы определяются в файлах .asset, которые находятся в <i>/Hearts of Iron IV/gfx/particles/</i>.
+        </p>
+    </div>
+    <h1>
+        Добавление света
+    </h1>
+    <div class="block">
+    <p>
+Огни - это особые типы частиц, на которые ссылаются в сущностях, например, вспышка дула пистолета во время анимации боя.
+
+Вот общий пример:
+    </p>
+    <div class="card" style="height: 750px ">
+        <div class="textincard">
+          <pre>
+light = {
+    name = "name_of_light"
+    
+    color = {
+        r = { &lt;float&gt; }
+        g = { &lt;float&gt; }
+        b = { &lt;float&gt; }
+    }
+    
+    intensity = &lt;float&gt;, fade
+    radius = &lt;float&gt;
+    falloff = &lt;float&gt;
+    
+    position = {
+        x = &lt;float&gt;
+        y = &lt;float&gt;
+        z = &lt;float&gt;
+    }
+    
+    animation = {
+        name = "name_of_animation"
+        start = &lt;float&gt;
+        duration = &lt;float&gt;
+        repeat = yes
+        op = &lt;type&gt;
+        minValue = &lt;float&gt;
+        maxValue = &lt;float&gt;
+        curve = {
+            &lt;?&gt;
+        }
+    }
+}            
+          </pre>
+        </div>
+    </div>
+    <P>
+        name - название светильника. <br>
+    color - цвет света. Значения принимаются в десятичном формате RGB. <br>
+    intensity - интенсивность света, а второе значение - затухает ли он. <br>
+    radius - радиус света. <br>
+    falloff - градиент падения света. <br>
+    position - положение света относительно объекта, использующего его. <br>
+    animation - анимация, которая будет воспроизводиться для света.
+    </P>
+
+</div>
+
+<h1>
+    Добавление света
+</h1>
+<div class="block">
+<p>
+    name - имя анимации. <Br>
+    start - начальная позиция кривой. <Br>
+    duration - продолжительность анимации. <Br>
+    repeat определяет, будет ли анимация повторяться. <Br>
+    op определяет способ смешивания нескольких источников. Может быть мультипликативным (MUL), аддитивным (ADD) или абсолютным (ABS).  <Br>
+    minValue - минимальное значение на кривой. <Br>
+    maxValue - максимальное значение на кривой. <Br>
+    curve - кривая, используемая для света.
+</p>
+
+</div>
+
+
+
+
+<button onclick="topFunction()" id="scroll-to-top" title="Наверх">&#8593;</button>
+<script src="script.js"></script>
+<footer>
+    <div class="footer-content">
+        <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+    </div>
+</footer>
+
+
+</body>
+</html>
