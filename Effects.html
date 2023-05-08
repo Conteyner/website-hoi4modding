@@ -99,7 +99,7 @@
         <h1>Список эффектов</h1>
         <table>
             <tr>
-                <th>Эффект</th>
+                <th>Название</th>
                 <th>Использование</th>
                 <th>Целевой тип</th>
                 <th>Пример</th>
@@ -897,11 +897,671 @@ controller = {
         </p>
 
     </div>
-    <footer>
-        <div class="footer-content">
-            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
-        </div>
-    </footer>
+    <div class="block">
+        <h2> Любой масштаб  </h2>
+        <p>
+            Может использоваться в диапазонах стран, стейтов или символов.
+        </p>
+
+        <table>
+            <tr>
+                <th>Название</th>
+                <th>Параметры</th>
+                <th>Примеры</th>
+                <th>Описание</th>
+                <th>Версия</th>
+            </tr>
+
+
+        <!--  -->
+
+
+    <tr id="add_dynamic_modifier">
+    <td>add_dynamic_modifier
+    </td>
+    <td><code>модификатор = &lt;modifier_string&gt;</code><br>Имя модификатора.<br><code>scope = &lt;scope&gt;</code><br>Если вы укажете его, ваш динамический модификатор будет привязан к этой области видимости. Необязательно.<br><code>days = x</code> <br>Модификаторы будут удалены по истечении x дней. Дополнительно.
+    </td>
+    <td><pre>
+add_dynamic_modifier = {
+    modifier = example_dynamic_modifier
+    scope = GER
+    days = 14
+    }
+    </pre>
+    </td>
+    <td>
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="remove_dynamic_modifier">
+    <td>remove_dynamic_modifier
+    </td>
+    <td><code>modifier = &lt;modifier_string&gt;</code><br>Имя модификатора.
+    </td>
+    <td><pre>remove_dynamic_modifier <Br>= { modifier = sabotaged_ressources }</pre>
+    </td>
+    <td>Удаляет динамический модификатор из текущей области видимости
+    </td>
+
+    <td>1.6
+    </td></tr>
+    <tr id="force_update_dynamic_modifier">
+    <td>force_update_dynamic_modifier
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>force_update_dynamic_modifier = yes</pre>
+    </td>
+    <td>Принудительное обновление эффектов, задаваемых переменными в динамических модификаторах.
+    </td>
+
+    <td>1.6
+    </td></tr>
+    <tr id="set_global_flag">
+    <td>set_global_flag
+    </td>
+    <td><code>&lt;flag&gt;</code><br>An unique string to identify the global flag with.<br>
+    <p><b>или</b><br>
+    <code>flag = &lt;flag&gt;</code><br>Флаг для установки.<br>
+    <code>days = &lt;int&gt;</code><br>Устанавливает флаг на указанное количество дней. Дополнительно.<br>
+    <code>value = &lt;int&gt;</code><br>Новое значение флага по шкале от -2 147 483 648 to 2 147 483 647.
+    </p>
+    </td>
+    <td><pre>
+set_global_flag = my_flag
+set_global_flag = {
+ flag = my_flag
+ days = 123
+ value = 1
+}
+</pre>
+    </td>
+    <td>Определяет глобальный флаг.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="play_song">
+    <td>play_song
+    </td>
+    <td><code>&lt;название песни из .asset&gt;</code><br>Музыкальный файл, расположенный в папке "Музыка" и .asset
+    </td>
+    <td><pre>play_song = "general_peace_1"</pre>
+    </td>
+    <td>Воспроизводит аудиодорожку
+    </td>
+    <td>1.9.3
+    </td></tr>
+    <tr id="clr_global_flag">
+    <td>clr_global_flag
+    </td>
+    <td><code>&lt;flag&gt;</code><br>Уникальная строка глобального флага для очистки.
+    </td>
+    <td><pre>clr_global_flag = my_flag</pre>
+    </td>
+    <td>Очищает определенный глобальный флаг.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="modify_global_flag">
+    <td>modify_global_flag
+    </td>
+    <td><code>flag = &lt;flag&gt;</code><br>Глобальный флаг для изменения.<br>
+    <p><code>value = &lt;value&gt;</code><br>Значение, на которое нужно установить: 0 или 1<br>
+    </p>
+    </td>
+    <td>
+    <pre>
+modify_global_flag = {
+  flag = my_flag
+  value = 1
+}
+    </pre>
+    </td>
+    <td>Изменяет глобальный флаг.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="custom_effect_tooltip">
+    <td>custom_effect_tooltip
+    </td>
+    <td><code>&lt;string&gt;</code><br>Локализованная строка для отображения во всплывающей подсказке.
+    </td>
+    <td><pre>custom_effect_tooltip = my_tooltip_tt</pre>
+    </td>
+    <td>Отображает локализованный ключ во всплывающей подсказке эффекта.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="log">
+    <td>log
+    </td>
+    <td><code>&lt;string&gt;</code><br>An string to in the game.log
+    </td>
+    <td><pre>log = "myVariable: [?myVariable]"</pre>
+    </td>
+    <td>Отображает строку в файле /Hearts of Iron IV/logs/game.log каталога пользователя при выполнении, а также отображается в консоли, если она открыта в момент выполнения эффекта логирования..
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="save_event_target_as">
+    <td>save_event_target_as
+    </td>
+    <td><code>&lt;string&gt;</code><br>Уникальная строка для идентификации цели события.
+    </td>
+    <td><pre>
+capital_scope = {
+  save_event_target_as = my_state
+}
+    </pre>
+    </td>
+    <td>Сохраняет текущую область видимости в виде ключа. Очищается по окончании выполнения (т.е. по окончании события).
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="save_global_event_target_as">
+    <td>save_global_event_target_as
+    </td>
+    <td><code>&lt;string&gt;</code><br>Уникальная строка для идентификации цели глобального события с.
+    </td>
+    <td><pre>
+random_other_country = {
+  save_global_event_target_as = my_country
+}
+    </pre>
+    </td>
+    <td>Сохраняет текущую область видимости в виде ключа. Сохраняется после выполнения, пока не будет очищен с помощью эффекта.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="clear_global_event_target">
+    <td>clear_global_event_target
+    </td>
+    <td><code>&lt;string&gt;</code><br>Уникальная строка глобальной цели события для очистки.
+    </td>
+    <td><pre>clear_global_event_target = my_country</pre>
+    </td>
+    <td>Очистка конкретной глобальной цели события.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="clear_global_event_targets">
+    <td>clear_global_event_targets
+    </td>
+    <td><code>yes</code><br>Boolean.
+    </td>
+    <td><pre>clear_global_event_targets = yes</pre>
+    </td>
+    <td>Очищает все глобальные цели событий.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="sound_effect">
+    <td>sound_effect
+    </td>
+    <td><code>&lt;string&gt;</code><br>Ссылка на звук из файла .asset.
+    </td>
+    <td><pre>sound_effect = "boom"</pre>
+    </td>
+    <td>Воспроизводит указанный звук один раз.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="randomize_weather">
+    <td>randomize_weather
+    </td>
+    <td><code>&lt;int&gt;</code><br>начальное целое число.
+    </td>
+    <td><pre>randomize_weather = 12345</pre>
+    </td>
+    <td>Случайным образом определяет погоду с помощью указанного значения.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_province_name">
+    <td>set_province_name
+    </td>
+    <td><code>id = &lt;id&gt;</code><br>Идентификатор провинции, которую необходимо изменить.
+    <p><code>name = &lt;string&gt;</code><br>Имя, на которое нужно изменить провинцию.
+    </p>
+    </td>
+    <td><pre>
+set_province_name = {
+  id = 325
+  name = LOC_KEY
+}
+    </pre>
+    <pre>set_province_name = <br>{ id = 325 name = "Новое имя" }
+    </pre>
+    </td>
+    <td>Изменяет название указанной провинции/победной точки на указанное имя.
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="reset_province_name">
+    <td>reset_province_name
+    </td>
+    <td><code>&lt;id&gt;</code><br>Идентификатор провинции, которую необходимо сбросить.
+    </td>
+    <td><pre>reset_province_name = 325
+    </pre>
+    </td>
+    <td>Сбрасывает название указанной провинции.
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="damage_units">
+    <td>damage_units
+    </td>
+    <td><code>province = &lt;id&gt;</code><br>Провинция, где можно нанести ущерб подразделениям.<br>
+    <p><code>state = &lt;id&gt;</code><br>Государство, где можно нанести ущерб подразделениям.<br>
+    <code>region = &lt;id&gt;</code><br>Стратегический регион, где можно нанести урон подразделениям.<br>
+    <code>limit = { &lt;triggers&gt; }</code><br>Единицы будут удаляться только в том случае, если для страны, которой принадлежат эти единицы, выполнены триггеры, указанные в них.<br>
+    <code>damage = &lt;fraction&gt;</code><br>Процент ущерба, нанесенного подразделениям.<br>
+    <code>org_damage = &lt;fraction&gt;</code><br>Процент ущерба, нанесенного подразделениям, в частности, организации.<br>
+    <code>str_damage = &lt;fraction&gt;</code><br>Процент урона, наносимого юнитам по силе, в частности.<br>
+    <code>ratio = &lt;yes&gt;</code><br>Наносит урон в соотношении к общей организации/силе подразделения, если установлено.<br>
+    <code>template = &lt;string&gt;</code><br>Если указано, требуется, чтобы имя шаблона соответствовало.<br>
+    <code>army = &lt;bool&gt;</code><br>Наносит урон армейским подразделениям.<br>
+    <code>navy = &lt;bool&gt;</code><br>Наносит урон военно-морским подразделениям.
+    </p>
+    </td>
+    <td><pre>
+damage_units = {
+ province = 42
+ state = 5
+ region = 5
+ limit = { has_country_flag = TAG_test }
+ damage = 0.5
+ org_damage = 0.5
+ str_damage = 0.5
+ ratio = yes
+ template = "имя_шаблона"
+ army = no
+ navy = yes
+    }
+</pre>
+    </td>
+    <td>Повреждает единицы в указанной области.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="create_entity">
+    <td>create_entity
+    </td>
+    <td><code>entity = &lt;gfx_entry&gt;</code><br>Сущность для порождения, определяется в файлах /Hearts of Iron IV/gfx/entities/*.asset.<br>
+    <p><code>id = int</code><br>Идентификатор номера, на который могут ссылаться другие эффекты. Дополнительно.<br>
+    <code>var = &lt;variable&gt;</code><br>Если указано, то id сущности будет храниться с помощью этой переменной. Необязательно.<br>
+    <code>x = &lt;int&gt;</code><br>Положение X объекта.<br>
+    <code>y = &lt;int&gt;</code><br>Положение Y объекта.<br>
+    <code>z = &lt;int&gt;</code><br>Положение Z объекта.<br>
+    <code>province = &lt;int&gt;</code><br>Провинция, середину которой следует использовать в качестве позиции субъекта.<br>
+    <code>state = &lt;int&gt;</code><br>Государство, середину которого следует использовать в качестве позиции объекта.<br>
+    <code>rotation = &lt;decimal&gt;</code><br>Вращение объекта в радианах.<br>
+    <code>scale = &lt;decimal&gt;</code><br>Размер предприятия.<br>
+    <code>min_zoom = &lt;decimal&gt;</code><br>Минимальный уровень масштабирования, необходимый для просмотра объекта.<br>
+    <code>visible = &lt;scripted_trigger&gt;</code><br>Сценарий триггера, который должен быть выполнен для страны, чтобы она увидела сущность.
+    </p>
+    </td>
+    <td><pre>
+create_entity = {
+ entity = имя_существа
+ id = 123
+ var = имя_варианта
+ x = 42
+ y = 21
+ z = 3
+ province = 123
+ state = 42
+ rotation = 1.2
+ scale = 10.0
+ min_zoom = 100.0
+ visible = имя_сценария_триггера
+    }
+</pre>
+    </td>
+    <td>Создает объект.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="destroy_entity">
+    <td>destroy_entity
+    </td>
+    <td><code>&lt;id&gt;</code><br>Идентификатор объекта, который необходимо уничтожить.
+    </td>
+    <td><pre>destroy_entity = 123</pre>
+    </td>
+    <td>Удаляет объект
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_entity_movement">
+    <td>set_entity_movement
+    </td>
+    <td><code>id = &lt;ID&gt;</code><br>Идентификатор объекта для изменения.<br>
+    <p><code>ratio = &lt;int&gt;</code><br>Расстояние между начальной позицией и целевой позицией, в которую должен быть помещен объект.<br>
+    <code>rotation = &lt;int&gt;</code><br>Вращение, применяемое <i>после</i> позиционирования.<br>
+    <b>start</b> и <b>target</b> arguments:<br>
+    </p>
+    <dl><dd><code>x = &lt;int&gt;</code><br></dd>
+    <dd>Положение точки по оси X.<br></dd>
+    <dd><code>y = &lt;int&gt;</code><br></dd>
+    <dd>Положение точки по оси Y.<br></dd>
+    <dd><code>z = &lt;int&gt;</code><br></dd>
+    <dd>Положение точки по оси Z.<br></dd>
+    <dd><code>province = &lt;int&gt;</code><br></dd>
+    <dd>Провинция, середина которой используется в качестве точки.<br></dd>
+    <dd><code>state = &lt;int&gt;</code><br></dd>
+    <dd>Государство, середина которого используется в качестве точки.</dd></dl>
+    </td>
+    <td><pre>
+set_entity_movement = {
+ id = 123
+ start = {
+   x = 42
+   y = 21
+   z = 3
+    }
+   target = {
+    province = 124
+     }
+    ratio = 0.5
+    rotation = 1.2
+    }</pre>
+    </td>
+    <td>Устанавливает положение и поворот объекта с помощью двух координат.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_entity_position">
+    <td>set_entity_position
+    </td>
+    <td><code>id = &lt;id&gt;</code><br><code>x = &lt;int&gt;</code><br><code>y = &lt;int&gt;</code><br><code>z = &lt;int&gt;</code><br><code>province = &lt;int&gt;</code><br><code>state = &lt;int&gt;</code>
+    </td>
+    <td><pre>
+set_entity_position = {
+    id = 123
+    x = 42
+    y = 21
+    z = 3
+    province = 123
+    state = 42
+    }
+</pre>
+    </td>
+    <td>Устанавливает положение существующего объекта
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_entity_rotation">
+    <td>set_entity_rotation
+    </td>
+    <td><code>id = &lt;ID&gt;</code><br>Идентификатор объекта для изменения.<br>
+    <p><code>rotation = &lt;decimal&gt;</code><br>Новый угол в радианах.
+    </p>
+    </td>
+    <td><pre>
+set_entity_rotation = {
+    id = 123
+    rotation = 0.23
+    }</pre>
+    </td>
+    <td>Устанавливает текущий обращенный угол существующего объекта.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_entity_scale">
+    <td>set_entity_scale
+    </td>
+    <td><code>id = &lt;ID&gt;</code><br>Идентификатор объекта для изменения.<br>
+    <p><code>scale = &lt;decimal&gt;</code><br>Масштаб, на который нужно изменить сущность.
+    </p>
+    </td>
+    <td><pre>
+set_entity_scale = {
+    id = 123
+    scale = 5.0
+    }</pre>
+    </td>
+    <td>Устанавливает размер существующего объекта.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_entity_animation">
+    <td>set_entity_animation
+    </td>
+    <td><code>id = &lt;int&gt;</code><br>Идентификатор объекта для изменения.<br>
+    <p><code>animation = &lt;animation_type&gt;</code><br>Анимационная запись для применения.
+    </p>
+    </td>
+    <td><pre>
+set_entity_animation = {
+    id = 123
+    animation = "shoot_lasers"
+    }</pre>
+    </td>
+    <td>Устанавливает анимацию указанного объекта.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="build_railway">
+    <td>build_railway
+    </td>
+    <td><code>level = &lt;int&gt;</code><br>По умолчанию 1<br>
+    <p><code>build_only_on_allied = &lt;bool&gt;</code><br>Нет по умолчанию, если да и в области действия страны, то будет строить только на союзных территориях для данной страны.<br>
+    <code>fallback = &lt;bool&gt;</code><br>По умолчанию нет, если да, то каждый вариант будет пытаться вернуться к следующему доступному варианту.<br>
+    <code>path = { &lt;list of provinces&gt; }</code><br>
+    <code>start_province = &lt;int&gt;</code><br>
+    <code>target_province = &lt;int&gt;</code><br>
+    <code>start_state = &lt;int&gt;</code><br>
+    <code>target_state = &lt;int&gt;</code><br>Если используется начальное государство/целевое государство, игра выберет провинцию с наилучшим снабжением. Если использовать начальная провинция/целевая провинция, игра свяжет эти две провинции.
+    </p>
+    </td>
+    <td><pre>
+build_railway = {
+    level = 1
+    build_only_on_allied = yes
+    controller_priority = {
+        base = 1
+         modifier = {
+           tag = MAN
+           add = 2
+        }
+    }
+    fallback = yes
+    path = { 42 10 20 30 40 84 }
+    start_province = 42
+    target_province = 84
+    }
+    </pre>
+    <pre>
+build_railway = {
+    level = 1
+    build_only_on_allied = yes
+    controller_priority = {
+      base = 1
+        modifier = {
+            tag = MAN
+            add = 2
+        }
+    }
+    fallback = yes
+    path = { 50 10 20 30 40 100 }
+    start_state = 50
+    target_state = 100
+}
+    </pre>
+    </td>
+    <td>Добавляет железнодорожный уровень между двумя провинциями или вдоль заданного пути.
+    </td>
+    <td>1.11
+    </td></tr>
+    </tbody><tfoot></tfoot>
+</table>
+    </div>
+    
+</div>
+
+        <!-- -->
+
+    
+    <div class = "block">
+        <h2>
+        Пограничные конфликты
+    </h2>
+    <table>
+    <tr>
+        <th>Название</th>
+        <th>Параметры</th>
+        <th>Примеры</th>
+        <th>Описание</th>
+        <th>Версия</th>
+    </tr>
+
+        <!---->
+
+
+<tbody>
+    <tr>
+        <td>
+            start_border_war
+        </td>
+        <td>
+            <code>change_state_after_war = &lt;bool&gt;</code><br>Меняется ли государство после войны.
+            <p>
+                <b>Attacker or Defender scope</b><br>
+                <code>state = &lt;id&gt; / &lt;variable&gt;</code><br>Государство, на стороне которого ведется борьба.<br>
+                <code>num_provinces = &lt;id&gt;</code><br>Количество провинций, используемых в государстве.<br>
+                <code>on_win = &lt;id&gt;</code><br>Событие, которое запускается для стороны при выигрыше.<br>
+                <code>on_lose = &lt;id&gt;</code><br>Событие, которое должно произойти для стороны при проигрыше.<br>
+                <code>on_cancel = &lt;id&gt;</code><br>Событие, которое произойдет для стороны при ничьей.<br>
+                <code>modifier = &lt;decimal&gt;</code><br>Модификатор на бой. По умолчанию равен 0.<br>
+                <code>dig_in_factor = &lt;decimal&gt;</code><br>Модификатор, применяемый к бонусам за раскопки. По умолчанию равен 1.<br>
+                <code>terrain_factor = &lt;decimal&gt;</code><br>Модификатор, применяемый к бонусам местности. По умолчанию равен 1.<br>
+            </p>
+        </td>
+        <td>
+            <pre>
+start_border_war = {
+    change_state_after_war = no
+    attacker = {
+        state = 527
+        num_provinces = 4
+        on_win = japan_border_conflict.2
+        on_lose = japan_border_conflict.3
+        on_cancel = japan_border_conflict.4
+        modifier = 0.1
+        dig_in_factor = 0
+        terrain_factor = 0
+    }	
+    defender = {
+        state = 408
+        num_provinces = 4
+        on_win = japan_border_conflict.3
+        on_lose = japan_border_conflict.2
+        on_cancel = japan_border_conflict.4
+    }
+}
+</pre>
+        </td>
+        <td>
+            Начинает пограничную войну для указанных атакующего и обороняющегося. Страны-участницы являются владельцами указанных государств.
+        </td>
+
+        <td>
+            1.5
+        </td>
+    </tr>
+    <tr>
+        <td>
+            set_border_war_data
+        </td>
+        <td>
+            <code>attacker = &lt;id&gt; / &lt;variable&gt;</code><br>Страна нападающего.
+            <p>
+                <code>defender = &lt;id&gt; / &lt;variable&gt;</code><br>Страна защитника.<br><code>attacker_modifier = &lt;id&gt; / &lt;variable&gt;</code><br>Модификатор, применяемый к силе нападающего.<br><code>defender_modifier = &lt;id&gt; / &lt;variable&gt;</code><br>Модификатор, применяемый к силе нападающего.<br><code>combat_width = &lt;id&gt; / &lt;variable&gt;</code><br>Боевая ширина, используемая в пограничном военном сражении.
+            </p>
+        </td>
+        <td>
+            <pre>
+set_border_war_data = {
+    attacker = 527
+    defender = 408
+    defender_modifier = 0.15
+    combat_width = 100
+}
+</pre>
+        </td>
+        <td>
+            Устанавливает бонусы или штрафы для атакующего и обороняющегося в продолжающейся пограничной войне. Используется после <b>start_border_war</b>.
+        </td>
+
+        <td>
+            1.5
+        </td>
+    </tr>
+    <tr id="cancel_border_war">
+        <td>
+            cancel_border_war
+        </td>
+        <td>
+            <code>attacker = &lt;id&gt; / &lt;variable&gt;</code><br>Страна нападающего.
+            <p>
+                <code>defender = &lt;id&gt; / &lt;variable&gt;</code><br>Страна защитника.<br><code>dont_fire_events = &lt;bool&gt;</code><br>Останавливает события из <b>start_border_war</b> от обстрела.
+            </p>
+        </td>
+        <td>
+            <pre>
+cancel_border_war = {
+    dont_fire_events = yes
+    defender = 408
+    attacker = 527
+}
+</pre>
+        </td>
+        <td>
+            Отменяет продолжающуюся пограничную войну без победителя.
+        </td>
+
+        <td>
+            1.5
+        </td>
+    </tr>
+    <tr id="finalize_border_war">
+        <td>
+            finalize_border_war
+        </td>
+        <td>
+            <code>attacker = &lt;id&gt; / &lt;variable&gt;</code><br>Страна нападающего.
+            <p>
+                <code>defender = &lt;id&gt; / &lt;variable&gt;</code><br>Страна защитника.<br><code>attacker_win = &lt;bool&gt;</code><br>Нападающий становится победителем.<br><code>defender_win = &lt;bool&gt;</code><br>Защитник становится победителем.
+            </p>
+        </td>
+        <td>
+            <pre>
+finalize_border_war = {
+    attacker_win = yes
+    attacker = 527
+    defender = 408
+}
+</pre>
+        </td>
+        <td>
+            Прекращение продолжающейся пограничной войны.
+        </td>
+
+        <td>
+            1.5
+        </td>
+    </tr>
+</tbody><tfoot></tfoot>
+</table>
+
+        <!---->
+
+
+    </div>
+    
+
 
     <button onclick="topFunction()" id="scroll-to-top" title="Наверх">&#8593;</button>
     <script src="script.js"></script>
