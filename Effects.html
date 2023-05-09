@@ -1565,22 +1565,22 @@ finalize_border_war = {
         <table>
             <thead>
                 <tr>
-                
+                <th>
                         Названия
                     </th>
-                
+                    <th>
                         Параметры
                     </th>
-                
+                    <th>
                         Примеры
                     </th>
-            
+                    <th>
                         Описание
                     </th>
-            
+                    <th>
                         Notes
                     </th>
-                    
+                    <th>
                         Версия
                     </th>
                 </tr>
@@ -1591,27 +1591,30 @@ finalize_border_war = {
                         set_country_flag
                     </td>
                     <td>
-                        <code>&lt;flag&gt;</code><br>An unique string to identify the country flag with.<br>
+                        <code>&lt;flag&gt;</code><br>Уникальная строка для идентификации флага страны.<br>
                         <p>
-                            <b>OR</b><br>
-                            <code>flag = &lt;flag&gt;</code><br>The flag to set.<br>
-                            <code>days = &lt;int&gt;</code><br>Sets the flag to last for the specified amount of days. Optional.<br>
-                            <code>value = &lt;int&gt;</code><br>The new value of the flag on the scale from -2 147 483 648 to 2 147 483 647.
+                            <b>ИЛИ</b><br>
+                            <code>flag = &lt;flag&gt;</code><br>Флаг для установки.<br>
+                            <code>days = &lt;int&gt;</code><br>Устанавливает флаг на указанное количество дней. Дополнительно.<br>
+                            <code>value = &lt;int&gt;</code><br>Новое значение флага по шкале от -2 147 483 648 до 2 147 483 647.
                         </p>
                     </td>
                     <td>
-                        <pre>set_country_flag = my_flag</pre>
-            <pre>set_country_flag = {
-                flag = my_flag
-                days = 123
-                value = 1
-            }</pre>
+                        <pre>
+set_country_flag = my_flag
+                        </pre>
+            <pre>
+set_country_flag = {
+    flag = my_flag
+    days = 123
+    value = 1
+}</pre>
                     </td>
                     <td>
-                        Defines a country flag.
+                        Определяет флаг страны.
                     </td>
                     <td>
-                        No tooltip is shown. <a href="/Data_structures#Flags" title="Data structures">The flag in this effect is used in the meaning of 'boolean flag', used to store information.</a> <b>In order to change the flag that represents the country, see <a href="/Cosmetic_tag_modding" title="Cosmetic tag modding">cosmetic tags.</a></b>
+                        Подсказка не отображается.Флаг в этом эффекте используется в значении 'булев флаг', используемый для хранения информации. Для того чтобы изменить флаг, представляющий страну, см. косметические теги.</a>
                     </td>
                     <td>
                         1.0
@@ -1622,13 +1625,13 @@ finalize_border_war = {
                         clr_country_flag
                     </td>
                     <td>
-                        <code>&lt;flag&gt;</code><br>The unique string of a country flag to clear.
+                        <code>&lt;flag&gt;</code><br>Уникальная строка флага страны для очистки.
                     </td>
                     <td>
                         <pre>clr_country_flag = my_flag</pre>
                     </td>
                     <td>
-                        Clears a defined country flag.
+                        Очищает определенный флаг страны.
                     </td>
                     <td>
                         &nbsp;
@@ -1642,23 +1645,24 @@ finalize_border_war = {
                         modify_country_flag
                     </td>
                     <td>
-                        <code>flag = &lt;flag&gt;</code><br>The country flag to modify.
+                        <code>flag = &lt;flag&gt;</code><br>Флаг страны для изменения.
                         <p>
-                            <code>value = &lt;value&gt;</code><br>The value to set it to: 0 or 1
+                            <code>value = &lt;value&gt;</code><br>Значение, на которое его нужно установить: 0 или 1
                         </p>
                     </td>
                     <td>
-                        <pre>modify_country_flag = {
-                flag = my_flag
-                value = 1
-            }
+                        <pre>
+modify_country_flag = {
+    flag = my_flag
+    value = 1
+}
             </pre>
                     </td>
                     <td>
-                        Modifies a country flag.
+                        Изменение флага страны.
                     </td>
                     <td>
-                        Use <a href="/Variables" class="mw-redirect" title="Variables">variables</a> instead.
+                        Вместо этого используйте переменные.
                     </td>
                     <td>
                         1.3
@@ -1669,26 +1673,32 @@ finalize_border_war = {
                         country_event
                     </td>
                     <td>
-                        <code>id = &lt;event&gt;</code><br>The event to fire.
+                        <code>id = &lt;event&gt;</code><br>Событие для запуска.
                         <p>
-                            <code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of days. Optional.<br><code>hours = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of hours. Optional.<br><code>random_hours = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random_hours</i>, inclusive) of <b>hours</b> to the scheduled fire time. Optional.<br><code>random_days = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random_days</i>, inclusive) of days to the scheduled fire time. Optional.
+                            <code>days = &lt;int&gt; / &lt;переменная&gt;</code><br>Вызывает 
+                            событие через указанное количество дней. Дополнительно.<br><code>hours = &lt;int&gt; / &lt;переменная&gt;</code><br>
+                            Вызывает событие через указанное количество часов. 
+                            Дополнительно.<br><code>random_hours = &lt;int&gt; / &lt;переменная&gt;</code><br>Добавляет случайное число 
+                            (между <i>0</i> и <i>random_hours</i>, инклюзивный)  <b>hours</b> до запланированного времени. Дополнительно.<br><code>random_days = &lt;int&gt; / &lt;переменная&gt;</code><br>Добавляет случайное число (между<i>0</i> и <i>random_days</i>, включительно) дней до запланированного времени. Необязательно.
                         </p>
                     </td>
                     <td>
-                        <pre>country_event = {
-                id = my_event.1
-                days = 10
-                random_hours = 12
-                random_days = 10
-            }
+                        <pre>
+country_event = {
+    id = my_event.1
+    days = 10
+    random_hours = 12
+    random_days = 10
+}
             </pre>
             <pre>country_event = my_event.1</pre>
                     </td>
                     <td>
-                        Fires the specified event for the current country.
+                        Вызывает указанное событие для текущей страны.
                     </td>
                     <td>
-                        Where triggers do not need to be repeatedly checked <code>random</code> can be a performance light alternative to <code>mean_time_to_happen</code> for scheduling events. Shortened variant exists if the event's ID is used instead of arguments.
+                        Где триггеры не нуждаются в многократной проверке 
+                        <code>random</code> может быть легкой альтернативой производительности <code>mean_time_to_happen</code> для планирования событий. Сокращенный вариант существует, если вместо аргументов используется идентификатор события.
                     </td>
                     <td>
                         1.0
@@ -1701,26 +1711,35 @@ finalize_border_war = {
                     <td>
                         <code>id = &lt;event&gt;</code><br>The event to fire.
                         <p>
-                            <code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of days. Optional.<br><code>hours = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of hours. Optional.<br><code>random_hours = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random_hours</i>, inclusive) of <b>hours</b> to the scheduled fire time. Optional.<br><code>random_days = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random_days</i>, inclusive) of days to the scheduled fire time. Optional.
+                            <code>days = &lt;int&gt; / &lt;переменная&gt;</code><br>
+                            Запускает событие через указанное количество дней. 
+                            Опционально.<br><code>hours = &lt;int&gt; / &lt;переменная&gt;</code><br>
+                            Запускает событие через указанное количество часов. 
+                            Опционально.<br><code>random_hours = &lt;int&gt; / &lt;переменная&gt;</code><br>
+                            Добавляет случайное число (между <i>0</i> и <i>random_hours</i>, inclusive)  <b>hours</b> 
+                            до запланированного времени пожара. Опционально.<br><code>random_days = &lt;int&gt; / &lt;переменная&gt;</code><br>
+                            Добавляет случайное число (между <i>0</i> и <i>random_days</i>, включительно) дней до запланированного времени пожара.
+                            Опционально.
                         </p>
                     </td>
                     <td>
-                        <pre>news_event = {
-                id = my_event.1
-                days = 10
-                random_hours = 12
-                random_days = 10
-            }
+                        <pre>
+news_event = {
+    id = my_event.1
+    days = 10
+    random_hours = 12
+    random_days = 10
+}
             </pre>
             <pre>news_event = my_event.1</pre>
                     </td>
                     <td>
-                        Fires the specified news event for the current country.
+                        Вызывает указанное новостное событие для текущей страны.
                     </td>
                     <td>
-                        The news event uses a different interface to the country event.<br>
+                        Событие новости использует интерфейс, отличный от интерфейса события страны.<br>
                         <p>
-                            Where triggers do not need to be repeatedly checked <code>random</code> can be a performance light alternative to <code>mean_time_to_happen</code> for scheduling events. Shortened variant exists if the event's ID is used instead of arguments.
+                            Где триггеры не нуждаются в многократной проверке <code>random</code> может быть легкой альтернативой производительности <code>mean_time_to_happen</code> для планирования событий. Сокращенный вариант существует, если вместо аргументов используется идентификатор события.
                         </p>
                     </td>
                     <td>
@@ -1732,13 +1751,13 @@ finalize_border_war = {
                         set_cosmetic_tag
                     </td>
                     <td>
-                        <code>&lt;string&gt;</code><br>The cosmetic tag to switch to.
+                        <code>&lt;string&gt;</code><br>Косметический тег для перехода на.
                     </td>
                     <td>
                         <pre>set_cosmetic_tag = SAF_SOV_communism</pre>
                     </td>
                     <td>
-                        Makes the current scope use the specified cosmetic tag, changing name and flag.
+                        Заставляет текущую область видимости использовать указанный косметический тег, изменяя имя и флаг.
                     </td>
                     <td>
                         &nbsp;
@@ -1758,7 +1777,7 @@ finalize_border_war = {
                         <pre>drop_cosmetic_tag = yes</pre>
                     </td>
                     <td>
-                        Makes the current scope drop the current cosmetic tag they are using.
+                        Заставляет текущую область видимости отбросить текущий косметический тег, который они используют.
                     </td>
                     <td>
                         &nbsp;
@@ -1774,21 +1793,22 @@ finalize_border_war = {
                     <td>
                         <code>&lt;rule&gt;</code><br>Boolean.<br>
                         <p>
-                            <code>desc = &lt;localisation key&gt;</code><br>The localisation used as the rule's description.
+                            <code>desc = &lt;localisation key&gt;</code><br>Локализация, используемая в качестве описания правила.
                         </p>
                     </td>
                     <td>
-                        <pre>set_rule = {
-                desc = TAG_my_rule_description
-                can_create_factions = yes
-            }
+                        <pre>
+set_rule = {
+desc = TAG_my_rule_description
+can_create_factions = yes
+}
             </pre>
                     </td>
                     <td>
-                        Toggles the special game rules for the current scope.
+                        Переключает специальные правила игры для текущей области видимости.
                     </td>
                     <td>
-                        Possible rules:
+                        Возможные правила:
                         <ul>
                             <li>can_boost_other_ideologies</li>
                             <li>can_create_factions</li>
@@ -1808,34 +1828,35 @@ finalize_border_war = {
                             <li>can_puppet</li>
                             <li>can_send_volunteers</li>
                             <li>can_use_kamikaze_pilots</li>
-                            <li>units_deployed_to_overlord (subjects only)</li>
+                            <li>units_deployed_to_overlord (только субъекты)</li>
                         </ul>
                     </td>
                     <td>
                         1.0
                     </td>
                 </tr>
-                <tr id="set_party_rule">
+                <tr>
                     <td>
                         set_party_rule
                     </td>
                     <td>
-                        <code>ideology = &lt;ideology group&gt;</code><br>Ideology group of the party.<br>
+                        <code>ideology = &lt;ideology group&gt;</code><br>Идеологическая группа партии.<br>
                         <p>
-                            <code>desc = &lt;localisation key&gt;</code><br>A description used for the rule. Optional, defaults to being the same as default.<br>
-                            <code>&lt;rule&gt; = &lt;bool&gt;</code><br>Rule's new value.
+                            <code>desc = &lt;localisation key&gt;</code><br>Описание, используемое для правила. Необязательно, по умолчанию равно значению по умолчанию.<br>
+                            <code>&lt;rule&gt; = &lt;bool&gt;</code><br>Новое значение правила.
                         </p>
                     </td>
                     <td>
-                        <pre>set_party_rule = {
-                ideology = democratic
-                desc = TAG_my_rule_description
-                can_create_factions = yes
-            }
+                        <pre>
+set_party_rule = {
+    ideology = democratic
+    desc = TAG_my_rule_description
+    can_create_factions = yes
+}
             </pre>
                     </td>
                     <td>
-                        Toggles the special game rules for the current scope's political party.
+                        Переключает специальные правила игры для политической партии текущего прицела.
                     </td>
                     <td>
                     </td>
@@ -1848,22 +1869,23 @@ finalize_border_war = {
                         set_relation_rule
                     </td>
                     <td>
-                        <code>target = &lt;scope&gt;</code><br>Target of the rule.<br>
+                        <code>target = &lt;scope&gt;</code><br>Цель правила.<br>
                         <p>
-                            <code>desc = &lt;localisation key&gt;</code><br>A description used for the rule. Optional, defaults to being the same as default.<br>
-                            <code>&lt;rule&gt; = &lt;bool&gt;</code><br>Rule's new value.
+                            <code>desc = &lt;localisation key&gt;</code><br>Описание, используемое для правила. Необязательно, по умолчанию равно значению по умолчанию.<br>
+                            <code>&lt;rule&gt; = &lt;bool&gt;</code><br>Новое значение правила.
                         </p>
                     </td>
                     <td>
-                        <pre>set_relation_rule = {
-                target = SOV
-                desc = TAG_my_rule_description
-                can_not_declare_war = yes
-            }
+                        <pre>
+set_relation_rule = {
+    target = SOV
+    desc = TAG_my_rule_description
+    can_not_declare_war = yes
+}
             </pre>
                     </td>
                     <td>
-                        Toggles the special game rules for the current scope in diplomacy towards the specified country only.
+                        Переключает специальные правила игры для текущего масштаба в дипломатии только по отношению к указанной стране.
                     </td>
                     <td>
                     </td>
@@ -1876,16 +1898,16 @@ finalize_border_war = {
                         scoped_sound_effect
                     </td>
                     <td>
-                        <code>&lt;string&gt;</code><br>A sound reference from an .asset file.
+                        <code>&lt;string&gt;</code><br>Ссылка на звук из файла .asset.
                     </td>
                     <td>
                         <pre>scoped_sound_effect = "boom"</pre>
                     </td>
                     <td>
-                        Plays the specified sound once only for the current country.
+                        Воспроизводит указанный звук один раз только для текущей страны.
                     </td>
                     <td>
-                        The sound effect must be properly defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/sound/</span> More info can be found in the <a href="/Sound_modding" title="Sound modding">Sound modding</a> article.
+                        Звуковой эффект должен быть правильно определен в /Hearts of Iron IV/sound/.
                     </td>
                     <td>
                         1.6
@@ -1896,16 +1918,17 @@ finalize_border_war = {
                         scoped_play_song
                     </td>
                     <td>
-                        <code>&lt;song title from .asset&gt;</code><br>A music file located in the music folder and .asset
+                        <code>&lt;название песни из .asset&gt;</code><br>Музыкальный файл, расположенный в папке music и .asset
                     </td>
                     <td>
                         <pre>scoped_play_song = "general_peace_1"</pre>
                     </td>
                     <td>
-                        Plays an audio track for the specified country only.
+                        Воспроизводит аудиодорожку только для указанной страны.
                     </td>
                     <td>
-                        The song must be defined in a music station in order to work. More information can be found in the <a href="/Music_modding" title="Music modding">Music modding</a> page. If you wish to simply play a sound, the scoped_sound_effect effect should be used instead.
+                        Чтобы песня работала, она должна быть определена на музыкальной станции. 
+                        Более подробную информацию можно найти на странице Музыкальный моддинг. Если вы хотите просто воспроизвести звук, вместо этого следует использовать эффект scoped_sound_effect.
                     </td>
                     <td>
                         1.9.3
@@ -1916,14 +1939,14 @@ finalize_border_war = {
                         goto_province
                     </td>
                     <td>
-                        <code>&lt;id&gt;</code><br>The id of the province go to.
+                        <code>&lt;id&gt;</code><br>Ид провинции.
                     </td>
                     <td>
                         <pre>goto_province = 325
             </pre>
                     </td>
                     <td>
-                        Moves the camera position over the specified province.
+                        Перемещает положение камеры по указанной провинции.
                     </td>
                     <td>
                     </td>
@@ -1936,7 +1959,7 @@ finalize_border_war = {
                         goto_state
                     </td>
                     <td>
-                        <code>&lt;scope&gt; / &lt;variable&gt;</code><br>The id of the state go to.
+                        <code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Идентификатор государства.
                     </td>
                     <td>
                         <pre>goto_state = 1
@@ -1945,7 +1968,7 @@ finalize_border_war = {
             </pre>
                     </td>
                     <td>
-                        Moves the camera position over the specified state.
+                        Переміщує положення камери над вказаним станом.
                     </td>
                     <td>
                     </td>
@@ -1958,17 +1981,17 @@ finalize_border_war = {
                         change_tag_from
                     </td>
                     <td>
-                        <code>&lt;scope&gt; / &lt;variable&gt;</code><br>The country to change from.<br>
+                        <code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Страна, из которой можно переехать.<br>
                     </td>
                     <td>
                         <pre>change_tag_from = ROOT</pre>
             <pre>change_tag_from = var:from.country</pre>
                     </td>
                     <td>
-                        Switches the player to the current scope from the target scope.
+                        Переключает игрока в текущую область видимости из целевой области видимости.
                     </td>
                     <td>
-                        The country the player becomes needs to be the scope in which the command is used.
+                        Страна, в которую попадает игрок, должна быть той, в которой используется команда.
                     </td>
                     <td>
                         1.0
@@ -1985,38 +2008,40 @@ finalize_border_war = {
                         <pre>reserve_dynamic_country = yes</pre>
                     </td>
                     <td>
-                        Reserves the dynamic country, making sure that it does not get recycled for civil war even if it does not exist.
+                        Сохраняет динамику страны, гарантируя, что она не будет переработана для гражданской войны, даже если ее не существует.
                     </td>
                     <td>
-                        Usually used in combination with <a href="#create_dynamic_country">create_dynamic_country</a>.
+                        Обычно используется в сочетании с create_dynamic_country</a>.
                     </td>
                     <td>
                         1.9
                     </td>
                 </tr>
-                <tr id="force_update_map_mode">
+                <tr >
                     <td>
                         force_update_map_mode
                     </td>
                     <td>
-                        <code>limit = { ... }</code><br>Triggers required for the map mode to refresh. Optional.<br>
+                        <code>limit = { ... }</code><br>Триггеры, необходимые для обновления режима карты. Дополнительно.<br>
                         <p>
-                            <code>mapmode = &lt;id&gt;</code><br>The ID of the custom map mode.
+                            <code>mapmode = &lt;id&gt;</code><br>Идентификатор пользовательского режима карты.
                         </p>
                     </td>
                     <td>
-                        <pre>force_update_map_mode = {
-                limit = {
-                    is_ai = no
-                }
-                mapmode = my_map_mode
-            }</pre>
+                        <pre>
+force_update_map_mode = {
+    limit = {
+        is_ai = no
+    }
+    mapmode = my_map_mode
+}
+</pre>
                     </td>
                     <td>
-                        Forcefully refreshes the specified mapmode for the player, rather than waiting for a daily update.
+                        Принудительно обновляет указанный режим карты для игрока, вместо того чтобы ждать ежедневного обновления.
                     </td>
                     <td>
-                        Map modes are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/map_modes/*.txt</span>
+                        Режимы карты определены в /Hearts of Iron IV/common/map_modes/*.txt</span>
                     </td>
                     <td>
                         1.11
@@ -2027,25 +2052,25 @@ finalize_border_war = {
                         add_ai_strategy
                     </td>
                     <td>
-                        <code>type = &lt;type&gt;</code><br>The type of strategy.<br>
+                        <code>type = &lt;type&gt;</code><br>Тип стратегии.<br>
                         <p>
-                            <code>id = &lt;scope&gt;</code><br>What country the strategy is against.<br>
-                            <code>value = &lt;int&gt;</code><br>The weighting added by the strategy.
+                            <code>id = &lt;scope&gt;</code><br>Против какой страны направлена стратегия.<br>
+                            <code>value = &lt;int&gt;</code><br>.
                         </p>
                     </td>
                     <td>
-                        <pre>add_ai_strategy = {
-                type = alliance
-                id = GER
-                value = 200
-            }
+                        <pre>
+add_ai_strategy = {
+    type = alliance
+    id = GER
+    value = 200
+}
             </pre>
                     </td>
                     <td>
-                        Sets an AI strategy for the current scope.
+                        Устанавливает стратегию искусственного интеллекта для текущего диапазона.
                     </td>
                     <td>
-                        See <a href="/AI_modding" title="AI modding">AI Modding</a> for more details.
                     </td>
                     <td>
                         1.0
@@ -2056,23 +2081,24 @@ finalize_border_war = {
                         create_dynamic_country
                     </td>
                     <td>
-                        <code>original_tag = &lt;tag&gt;</code><br>The original tag to be used by the country.<br>
+                        <code>original_tag = &lt;tag&gt;</code><br>Оригинальный тег, который будет использоваться страной.<br>
                         <p>
-                            <code>copy_tag = &lt;tag&gt;</code><br>If specified, copies stuff from this tag rather than the original tag.<br>
-                            <code>&lt;effects&gt;</code><br>Effects that will be executed on the new dynamic country.<br>
+                            <code>copy_tag = &lt;tag&gt;</code><br>Если указано, копирует материал из этого тега, а не из исходного тега.<br>
+                            <code>&lt;effects&gt;</code><br>Эффекты, которые будут выполнены для новой динамической страны.<br>
                         </p>
                     </td>
                     <td>
-                        <pre>create_dynamic_country = {
-                original_tag = POL
-                copy_tag = SOV
-                add_political_power = 100
-                transfer_state = 123
-            }
+                        <pre>
+create_dynamic_country = {
+    original_tag = POL
+    copy_tag = SOV
+    add_political_power = 100
+    transfer_state = 123
+}
             </pre>
                     </td>
                     <td>
-                        Creates a new dynamic country, akin to ones used in civil wars.
+                        Создает новую динамичную страну, подобную тем, которые используются в гражданских войнах.
                     </td>
                     <td>
                         1.9
