@@ -3198,7 +3198,3095 @@ create_dynamic_country = {
     </td></tr></tbody><tfoot></tfoot>
     </table>
     </div>
+    <div class="block">
+        <h2>Автономия</h2>
+        <table>
 
+            <thead>
+
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+
+            </thead>
+    <tbody>
+    <tr id="puppet">
+    <td>puppet
+    </td>
+    <td><code>&lt;scope&gt;</code><br>The target country.<br>
+    <p><b>OR</b><br>
+    <code>target = &lt;scope&gt;</code><br>The target country.<br>
+    <code>end_wars = &lt;bool&gt;</code><br>Whether the target country will peace out in all of its non-civil wars it's participating in. Defaults to true.<br>
+    <code>end_civil_wars = &lt;bool&gt;</code><br>Whether the target country will peace out in all of its civil wars it's participating in. Defaults to true.<br>
+    </p>
+    </td>
+    <td><pre>puppet = GER</pre>
+    <pre>puppet = {
+        target = ITA
+        end_wars = no
+    }</pre>
+    </td>
+    <td>Makes the specified country a subject of the current scope.
+    </td>
+    <td>The autonomous state picked is one which contains <code>default = yes</code> and where <code>allowed = { ... }</code> is fulfilled within the <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/commmon/autonomous_states/</span> definition, rather than necessarily being autonomy_puppet. <b>Results in a crash-to-desktop if the game is unable to find any such autonomous states.</b>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="end_puppet">
+    <td>end_puppet
+    </td>
+    <td><code>&lt;scope&gt;</code><br>The target country.
+    </td>
+    <td><pre>end_puppet = GER</pre>
+    </td>
+    <td>Removes the subject status between the target and the current scope.
+    </td>
+    <td>Must be used within the overlord's scope.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_autonomy_ratio">
+    <td>add_autonomy_ratio
+    </td>
+    <td><code>value = &lt;float&gt;</code><br>The freedom score to add.
+    <p><code>localization = &lt;string&gt;</code><br>The localization key for the modifier.
+    </p>
+    </td>
+    <td><pre>add_autonomy_ratio = {
+        value = 0.1
+        localization = AST_adopt_westminster
+    }
+    </pre>
+    </td>
+    <td>Adds a freedom score ratio modifier to the current scope.
+    </td>
+    <td>Used in the subject's scope.
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="add_autonomy_score">
+    <td>add_autonomy_score
+    </td>
+    <td><code>value = &lt;float&gt;</code><br>The freedom score to add.
+    <p><code>localization = &lt;string&gt;</code><br>The localization key for the modifier.
+    </p>
+    </td>
+    <td><pre>add_autonomy_score = {
+        value = 10
+        localization = EXAMPLE
+    }
+    </pre>
+    </td>
+    <td>Adds an exact freedom score modifier to the current scope.
+    </td>
+    <td>Used in the subject's scope.
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="set_autonomy">
+    <td>set_autonomy
+    </td>
+    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The subject country.
+    <p><code>autonomy_state = &lt;type&gt;</code><br>The type of autonomy state to set.<br>
+    <code>freedom_level = &lt;float&gt;</code><br>The new freedom level value. Optional.<br>
+    <code>end_wars = &lt;yes/no&gt;</code><br>Will end any wars the subject is involved in.<br>
+    <code>end_civil_wars = &lt;yes/no&gt;</code><br>Will end any civil wars the subject is subject to<br>
+    </p>
+    </td>
+    <td><pre>set_autonomy = {
+        target = AST
+        autonomy_state = autonomy_free
+        end_wars = no
+        end_civil_wars = no
+    }
+    </pre>
+    </td>
+    <td>Sets the autonomy level for the specified country, <b>including independence</b>.
+    </td>
+    <td>The autonomy_free state will free the subject, <b>however this effect has to be executed within the scope of the target country's current overlord</b> for this to have effect. The autonomy states are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/*.txt</span> files.
+    </td>
+    <td>1.3
+    </td></tr></tbody><tfoot></tfoot>
+
+    </tbody>
+        </table>
+    </div>
+        </table>
+        <div class="block">
+            <h2>Автономия</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+    
+                </thead>
+        <tbody>
+    <tr id="add_legitimacy">
+    <td>add_legitimacy
+    </td>
+    <td>Adds legitimacy to a government in exile.
+    </td>
+    <td><pre>add_legitimacy = 10</pre>
+    </td>
+    <td>Adds legitimacy.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="set_legitimacy">
+    <td>set_legitimacy
+    </td>
+    <td>Sets the legitimacy of governments in exile.
+    </td>
+    <td><pre>set_legitimacy = 10</pre>
+    </td>
+    <td>Sets legitimacy.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="become_exiled_in">
+    <td>become_exiled_in
+    </td>
+    <td>Makes a country a government in exile in a set country, with a set starting legitimacy.
+    </td>
+    <td><pre>become_exiled_in = { target = &lt;Host tag&gt; legitimacy = &lt;0-100&gt; (starting legitimacy, optional) }</pre>
+    </td>
+    <td>Creates a government in exile.
+    </td>
+    <td>Must be fired from ROOT, the country that should be exiled, or a TAG specification must be used.
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="end_exile">
+    <td>end_exile
+    </td>
+    <td>Ends a government in exile.
+    </td>
+    <td><pre>end_exile = yes</pre>
+    </td>
+    <td>Ends a government in exile.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+            
+        </div>
+        <div class="block">
+            <h2>Война</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+    
+                </thead>
+        <tbody>
+    <tr id="add_threat">
+    <td>add_threat
+    </td>
+    <td><code>&lt;int&gt;</code><br>The amount to change by.
+    </td>
+    <td><pre>add_threat = 10</pre>
+    </td>
+    <td>Adjusts the level of World Tension.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_named_threat">
+    <td>add_named_threat
+    </td>
+    <td><code>threat = &lt;int&gt;</code><br>The amount to change by.
+    <p><code>name = &lt;string&gt;</code><br>The localization string.
+    </p>
+    </td>
+    <td><pre>add_named_threat = {
+        threat = 5
+        name = GER_rhineland
+    }
+    </pre>
+    </td>
+    <td>Adjusts the level of World Tension and adds an entry in the World Tension tooltip.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="annex_country">
+    <td>annex_country
+    </td>
+    <td><code>target = &lt;scope&gt;</code><br>Which country to annex.
+    <p><code>transfer_troops = yes</code><br>Whether to transfer the troops of the annexed country.
+    </p>
+    </td>
+    <td><pre>annex_country = {
+        target = GER
+        transfer_troops = yes
+    }
+    </pre>
+    </td>
+    <td>Annex the specified country for the current scope.
+    </td>
+    <td>Without transfering troops, the annexed country's divisions' equipment is lost.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_to_war">
+    <td>add_to_war
+    </td>
+    <td><code>targeted_alliance = &lt;scope&gt;</code><br>The country to assist.
+    <p><code>enemy = &lt;scope&gt;</code><br>The country attacking the ally.<br><code>hostility_reason = &lt;string&gt;</code><br>Localization for the reason for joining. Optional.
+    </p>
+    </td>
+    <td><pre>add_to_war = {
+        targeted_alliance = PREV
+        enemy = HUN
+        hostility_reason = asked_to_join
+    }
+    </pre>
+    </td>
+    <td>Forces the current scope to join the war of the specified ally against the specified enemy.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="declare_war_on">
+    <td>declare_war_on
+    </td>
+    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The country to attack.
+    <p><code>type = &lt;wargoal&gt;</code><br>The wargoal to declare with.<br><code>generator = { &lt;state id&gt; }</code><br>The states to supply the wargoal (i.e. take_state_focus).
+    </p>
+    </td>
+    <td><pre>declare_war_on = {
+        target = GER
+        type = annex_everything
+    }
+    </pre>
+    </td>
+    <td>Makes the current scope declare war on the specified country with the specified wargoal.
+    </td>
+    <td>Wargoals are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/wargoals/*.txt</span>. See also <a href="#add_civil_war_target">add_civil_war_target</a> in order to assign a war between different countries to be a civil war.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="white_peace">
+    <td>white_peace
+    </td>
+    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The scope to white peace.<br>
+    <p><b>OR</b><br>
+    <code>tag = &lt;scope&gt; / &lt;variable&gt;</code><br>The scope to white peace.<br>
+    <code>message = &lt;localisation key&gt;</code><br>The reason for peace showing up in the pop-up.
+    </p>
+    </td>
+    <td><pre>white_peace = GER
+    </pre>
+    <pre>white_peace = {
+        tag = GER
+        message = my_peace_tt
+    }
+    </pre>
+    </td>
+    <td>Makes the current scope white peace the specified scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="start_peace_conference">
+    <td>start_peace_conference
+    </td>
+    <td><code>tag = &lt;scope&gt; / &lt;variable&gt;</code><br>The scope to peace with.<br>
+    <p><code>score_factor = &lt;decimal&gt; / &lt;variable&gt;</code><br>The fraction of the total score awarded to the winners compared to regular victory.<br>
+    <code>message = &lt;localisation key&gt;</code><br>The reason for peace showing up in the pop-up.
+    </p>
+    </td>
+    <td><pre>start_peace_conference = {
+        tag = GER
+        score_factor = 0.4
+        message = my_peace_tt
+    }
+    </pre>
+    </td>
+    <td>Makes the current scope start a peace conference with the specified scope on the other side.
+    </td>
+    <td>Current scope is the winner, target and its subjects are the losers. Can only be used if at war with the target.
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="set_truce">
+    <td>set_truce
+    </td>
+    <td><code>target = &lt;scope&gt;</code><br>The scope to truce with.
+    <p><code>days = &lt;int&gt;</code><br>The duration of the truce.
+    </p>
+    </td>
+    <td><pre>set_truce = {
+        target = GER
+        days = 90
+    }
+    </pre>
+    </td>
+    <td>Makes the current scope truce with the specified scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="create_wargoal">
+    <td>create_wargoal
+    </td>
+    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The country to target.
+    <p><code>type = &lt;wargoal&gt;</code><br>The wargoal to generate.<br><code>generator = { &lt;state id&gt; }</code><br>The states to supply the wargoal (i.e. take_state_focus).
+    </p>
+    </td>
+    <td><pre>create_wargoal = {
+        type = puppet_wargoal_focus
+        target = ROOT
+    }
+    </pre>
+    </td>
+    <td>Grants the current scope a wargoal against the specified country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_wargoal">
+    <td>remove_wargoal
+    </td>
+    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The country to target.
+    <p><code>type = &lt;wargoal&gt;</code><br>The wargoal to remove. "all" will remove all wargoals.<br>
+    </p>
+    </td>
+    <td><pre>remove_wargoal = {
+        type = all
+        target = ROOT
+    }
+    </pre>
+    </td>
+    <td>Removes wargoals from the current scope to the specified country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.10.2
+    </td></tr>
+    <tr id="start_civil_war">
+    <td>start_civil_war
+    </td>
+    <td><code>ideology = &lt;ideology&gt;</code><br>The ideology of the breakaway country.
+    <p><code>ruling_party = &lt;ideology&gt;</code><br>The ruling party of the <b>original, player-led</b> country. Optional.<br>
+    <code>size = &lt;float&gt;</code><br>The size of the breakaway country and the fraction of the original stockpile and military units it will receive by default. Optional, defaults to 0.5.<br>
+    <code>army_ratio = &lt;float&gt;</code><br>The size of the land army that the breakaway country gets. Optional, defaults to being the same as size.<br>
+    <code>navy_ratio = &lt;float&gt;</code><br>The size of the naval forces that the breakaway country gets. Optional, defaults to being the same as size.<br>
+    <code>air_ratio = &lt;float&gt;</code><br>The size of the airforce that the breakaway country gets. Optional, defaults to being the same as size.<br>
+    <code>capital = &lt;state&gt;</code><br>The capital state of the breakaway country. Optional.<br>
+    <code>states = { &lt;state&gt; }</code><br>The states included in the breakway country. Optional, defaults to random states based off size. <code>all</code> will result in all states that meet the filter going to the breakaway.<br>
+    <code>states_filter = { &lt;triggers&gt; }</code><br>A trigger block checked for the state that must be met to be transferred to the breakaway. Optional.<br>
+    <code>keep_unit_leaders = { &lt;unit leader id&gt; }</code><br>List of unit leaders to be kept by their legacy_id. Optional.<br>
+    <code>keep_unit_leaders_trigger = { &lt;triggers&gt; }</code><br>Trigger block checked for every unit leader that forces them to be kept if they meet the triggers. The default scope is the unit leader, ROOT is the country receiving the unit leader, while FROM is the original owner of the unit leader. Optional.<br>
+    <code>keep_political_leader = &lt;bool&gt;</code><br>Controls if the promoted party leader (i.e. the one that'd take power if the country were to be switched to that ideology group) of the revolting ideology group will be kept by the country or join the revolt, yes resulting in the former. Optional, defaults to false.<br>
+    <code>keep_political_party_members = &lt;bool&gt;</code><br>Controls if non-promoted party leaders of the revolting ideology group will be kept by the country or join the revolt, yes resulting in the former. Optional, defaults to false.<br>
+    <code>keep_all_characters = yes</code><br>If true, the revolter will have no characters from the original country transferred to them. Optional, defaults to false.<br>
+    <code>&lt;effects&gt;</code><br>An effect block executed for the breakaway country.
+    </p>
+    </td>
+    <td><pre>start_civil_war = {
+        ruling_party = communism
+        # Original country's ideology changes to communism
+        ideology = ROOT
+        # Breakaway gets old ideology of ROOT
+        size = 0.8
+        capital = 282
+        states = {
+            282 533 536 555 529 530 528
+        }
+        keep_unit_leaders = {
+            750 751 752
+        }
+        keep_political_leader = yes
+        keep_political_party_members = yes
+    }
+    </pre>
+    <pre>start_civil_war = {
+        ideology = democratic
+        size = 0.1
+        states = all
+        states_filter = {
+            is_on_continent = europe
+            is_capital = no
+        }
+        set_country_flag = TAG_my_country_tag_alias_trigger
+        # Sets a country flag that gets used in a country tag alias.
+    }</pre>
+    <p>(<a href="/Country_tag_aliases" class="mw-redirect" title="Country tag aliases">See country tag aliases</a>)
+    </p>
+    <pre>start_civil_war = {
+        ideology = neutrality
+        size = 0.1
+        army_ratio = 0.5
+        navy_ratio = 0
+        air_ratio = 1
+        keep_unit_leaders_trigger = {
+            has_trait = my_trait_name
+        }
+        keep_all_characters = yes
+        PREV = {  # Original country
+            TAG_airforce_leader = { # Character
+                set_nationality = PREV.PREV
+                # Transfers to breakaway
+            }
+        }
+        promote_character = TAG_airforce_leader
+    }</pre>
+    <p>(<a href="/Scopes#PREV_usage" title="Scopes">See usage for PREV and PREV.PREV</a>)
+    </p>
+    </td>
+    <td>Starts a civil war for the current scope with the specified parameters.
+    </td>
+    <td><code>states = all</code> would include every single state controlled by the country. <b>If the country's current capital state is set as one of the states that the revolt can gain, it won't fire</b>. <a href="#set_capital">set_capital</a> can be used to change the capital beforehand, with <a href="/On_actions#on_civil_war_end" title="On actions">On_actions#on_civil_war_end</a> being used to set it back to the default after the civil war ends.
+    <p>A civil war started via this effect cannot have more than two sides. For adding more sides, this can be simulated by setting an existing war (typically originating from a dynamic country created via <a href="#create_dynamic_country">create_dynamic_country</a>) as a civil war via <a href="#add_civil_war_target">add_civil_war_target</a>.
+    </p>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_civil_war_target">
+    <td>add_civil_war_target
+    </td>
+    <td><code>&lt;country&gt;</code> - The country to set as the target.
+    </td>
+    <td><pre>add_civil_war_target = TAG</pre>
+    </td>
+    <td>Sets that the war between ROOT and TAG is a civil war, resulting in the victory being the annexation of the other side and setting world tension limits on intervention.
+    </td>
+    <td>ROOT and TAG must already be at war with each other for the effect to take place.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="transfer_units_fraction">
+    <td>transfer_units_fraction
+    </td>
+    <td><code>target = &lt;country&gt;</code><br>The country which should receive the units from the current scope.
+    <p><code>size = &lt;float&gt;</code><br>The size of the breakaway country and the fraction of the original stockpile and military units it will receive by default. Optional, defaults to 0.5.<br>
+    <code>army_ratio = &lt;float&gt;</code><br>The size of the land army that the breakaway country gets. Optional, defaults to being the same as size.<br>
+    <code>navy_ratio = &lt;float&gt;</code><br>The size of the naval forces that the breakaway country gets. Optional, defaults to being the same as size.<br>
+    <code>air_ratio = &lt;float&gt;</code><br>The size of the airforce that the breakaway country gets. Optional, defaults to being the same as size.<br>
+    <code>keep_unit_leaders = { &lt;unit leader id&gt; }</code><br>List of unit leaders to be kept by their legacy_id. Optional.<br>
+    <code>keep_unit_leaders_trigger = { &lt;triggers&gt; }</code><br>Trigger block checked for every unit leader that forces them to be kept if they meet the triggers. The default scope is the unit leader, ROOT is the country receiving the unit leader, while FROM is the original owner of the unit leader. Optional.<br>
+    </p>
+    </td>
+    <td><pre>transfer_units_fraction= {
+        target = SPD
+        size = 0.5
+        stockpile_ratio = 0.8
+        army_ratio = 0.8
+        navy_ratio = 0.5
+        air_ratio = 0.5
+        keep_unit_leaders_trigger = {
+            has_trait = trait_SPA_nationalist_sympathies
+        }
+    }</pre>
+    </td>
+    <td>Transfers a fraction of the military to a target, including units (either type: land, navy, or air), equipment, and unit leaders.
+    </td>
+    <td>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_nuclear_bombs">
+    <td>add_nuclear_bombs
+    </td>
+    <td>Adds nuclear bomb to TAG's stockpile.
+    </td>
+    <td><pre>add_nuclear_bombs = 100</pre>
+    </td>
+    <td>Adds specified number of nukes to the country's stockpile
+    </td>
+    <td>Needs the Nuke tech to use.
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="launch_nuke">
+    <td>launch_nuke
+    </td>
+    <td><code>province = &lt;ID&gt;</code><br>The specific province to nuke.<br>
+    <p><code>state = &lt;ID&gt;</code><br>The state to nuke.<br>
+    <code>controller = &lt;TAG&gt;</code><br>Prioritises provinces controlled by this country.<br>
+    <code>use_nuke = &lt;boolean&gt;</code><br>Whether a nuke should be deducted from the country's stockpile. Defaults to false.
+    </p>
+    </td>
+    <td><pre>launch_nuke = {
+        province = 1234
+    }</pre>
+    <pre>launch_nuke = {
+        state = 42
+        controller = GER
+        use_nuke = yes
+    }</pre>
+    </td>
+    <td>Nukes the specified province or a province in the needed state. If a state is set rather than the specific province, first prioritises the country set in <code>controller</code>, then prioritises the countries at war with the current scope, and then countries that are neutral.
+    </td>
+    <td>If set to use a nuke, then requires at least one nuclear bomb in the stockpile.
+    </td>
+    <td>1.6
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+        </div>
+        <div class="block">
+            <h2>Ресурсы</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+    
+                </thead>
+        <tbody>
+    <tr id="country_add_resource">
+    <td>add_resource
+    </td>
+    <td><code>type = &lt;resource&gt;</code><br>The resource to add.
+    <p><code>amount = &lt;int&gt;</code><br>The amount of resource to add.<br>
+    <code>state = &lt;id&gt;</code>Which state to add the resource to. Variables can be used.
+    </p>
+    </td>
+    <td><pre>add_resource = {
+        type = oil
+        amount = 50
+        state = 88
+    }
+    </pre>
+    </td>
+    <td>Adds the specified resource in the specified amount to the specified state.
+    </td>
+    <td><a href="#add_resource">Can also be used in state scope.</a>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="create_import">
+    <td>create_import
+    </td>
+    <td><code>resource = &lt;resource&gt;</code><br>The resource to import.
+    <p><code>amount = &lt;int&gt;</code><br>The amount of resource to import.<br><code>exporter = &lt;id&gt;</code>Which country exports the resource.
+    </p>
+    </td>
+    <td><pre>create_import = {
+        resource = steel
+        amount = 100
+        exporter = GER
+    }
+    </pre>
+    </td>
+    <td>Creates an import for the current scope with the specified resource and from the specified exporter.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="give_resource_rights">
+    <td>give_resource_rights
+    </td>
+    <td><code>receiver = &lt;tag&gt;</code><br>The country that would get the resource rights.<br>
+    <p><code>state = &lt;state&gt;</code><br>The state where the resource rights are located.<br>
+    <code>resources = { &lt;resource&gt; &lt;...&gt; &lt;resource&gt; }</code><br>The resources to which give resource rights to. Optional, defaults to all.
+    </p>
+    </td>
+    <td><pre>give_resource_rights = { receiver = ENG state = 291 }</pre>
+    <pre>give_resource_rights = {
+        receiver = POL
+        state = 321
+        resources = { oil }
+    }</pre>
+    </td>
+    <td>Gives all the resources of a state to the target country
+    </td>
+    <td>The resource rights will only be provided as long as the current country controls the state with resource rights.
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="remove_resource_rights">
+    <td>remove_resource_rights
+    </td>
+    <td><code>&lt;state&gt;</code><br>The state to remove current country's resource rights from.
+    </td>
+    <td><pre>ENG = { remove_resource_rights = 477 }</pre>
+    </td>
+    <td>Removes given resource rights
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="add_fuel">
+    <td>add_fuel
+    </td>
+    <td><code>&lt;int&gt;</code><br>The fuel amount
+    </td>
+    <td><pre>add_fuel = 400</pre>
+    </td>
+    <td>Adds fuel to the current country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="set_fuel">
+    <td>set_fuel
+    </td>
+    <td><code>&lt;int&gt;</code><br>Fuel amount.
+    </td>
+    <td><pre>set_fuel = 400</pre>
+    </td>
+    <td>Sets country's current fuel amount.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="set_fuel_ratio">
+    <td>set_fuel_ratio
+    </td>
+    <td><code>&lt;decimal&gt;</code><br>The needed ratio of fuel.
+    </td>
+    <td><pre>set_fuel_ratio = 0.5</pre>
+    </td>
+    <td>Set country's current fuel ratio relative to its capacity.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+        </div>
+        <div class="block">
+            <h2>Постройки</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+    
+                </thead>
+        <tbody>
+<tr id="add_offsite_building">
+<td>add_offsite_building
+</td>
+<td><code>type = &lt;building&gt;</code><br>The building to add.
+<p><code>level = &lt;level&gt; / &lt;variable&gt;</code><br>The maximum level to add.
+</p>
+</td>
+<td><pre>add_offsite_building = { type = arms_factory level = 1 }
+</pre>
+</td>
+<td>Adds an off-map (offmap) building for the current scope that produces its effects without being present in a state.
+</td>
+<td>&nbsp;
+</td>
+<td>1.5
+</td></tr>
+<tr id="modify_building_resources">
+<td>modify_building_resources
+</td>
+<td><code>building = &lt;building&gt;</code><br>The building to modify.
+<p><code>resource = &lt;resource&gt;</code><br>The resource to add.<br><code>amount = &lt;amount&gt;</code><br>The amount of resource to add.
+</p>
+</td>
+<td><pre>modify_building_resources = {
+    building = synthetic_refinery
+    resource = oil
+    amount = 1
+}
+</pre>
+</td>
+<td>Modifies the resource output of the specified building for the current scope.
+</td>
+<td>&nbsp;
+</td>
+<td>1.5
+</td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+        </div>
+        <div class="block">
+            <h2>Национальные фокусы</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+    
+                </thead>
+        <tbody>
+    <tr id="load_focus_tree">
+    <td>load_focus_tree
+    </td>
+    <td><code>&lt;string&gt;</code><br>The focus tree to load.<br>Alternatively, as an effect block:<br><code>tree = &lt;string&gt;</code><br><code>keep_completed = yes/no</code>
+    </td>
+    <td><pre>load_focus_tree = china_communist_focus</pre>
+    <pre>load_focus_tree = { tree = british_focus keep_completed = yes }</pre>
+    </td>
+    <td>Loads a new focus tree for the current scope, retaining any shared focuses.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="unlock_national_focus">
+    <td>unlock_national_focus
+    </td>
+    <td><code>&lt;focus&gt;</code><br>The focus to unlock.
+    </td>
+    <td><pre>unlock_national_focus = my_focus</pre>
+    </td>
+    <td>Bypasses the specified focus for the current scope (marks as complete without firing <code>complete_effect</code> of the focus).
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="complete_national_focus">
+    <td>complete_national_focus
+    </td>
+    <td><code>&lt;focus&gt;</code><br>The focus to complete.
+    </td>
+    <td><pre>complete_national_focus = my_focus</pre>
+    </td>
+    <td>Completes the specified focus for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="uncomplete_national_focus">
+    <td>uncomplete_national_focus
+    </td>
+    <td><code>focus = &lt;focus&gt;</code><br><code>uncomplete_children = &lt;bool&gt;</code><br>Defaults "no". Optional.<br><code>refund_political_power = &lt;bool&gt;</code><br>Defaults "no". Optional.
+    </td>
+    <td><pre>uncomplete_national_focus = {
+      focus = GER_oppose_hitler
+      uncomplete_children = yes
+      refund_political_power = no
+    }</pre>
+    </td>
+    <td>Removes a focus from list of completed focus, and potentially all focuses requiring it as a prerequisite.<br>If the focus has one, the 'on_uncomplete' effect will be executed on each uncompleted focus.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="mark_focus_tree_layout_dirty">
+    <td>mark_focus_tree_layout_dirty
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>mark_focus_tree_layout_dirty = yes</pre>
+    </td>
+    <td>Refreshes the focus tree for the specified country, restarting the checks in <code>allow_branch</code> and position offsets for focuses.
+    </td>
+    <td>If put within a focus' completion reward, the focus will not be marked as complete at the time the effect is executed, leading to <code>has_completed_focus</code> checks specifying that focus in particular to be marked as false.<br>
+    <p>This can be bypassed by putting an effect within a hidden event fired immediately within the focus or by reloading the same focus tree with <code>load_focus_tree</code> set to keep completed focuses, marking the focus as complete, before using the effect.
+    </p>
+    </td>
+    <td>1.9
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+        </div>
+        <div class="block">
+            <h2>Решения</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+    
+                </thead>
+        <tbody>
+    <tr id="activate_decision">
+    <td>activate_decision
+    </td>
+    <td>
+    <p><code>&lt;decision&gt;</code><br>The decision to activate.
+    </p>
+    </td>
+    <td><pre>activate_decision = my_decision</pre>
+    </td>
+    <td>Activates the specified decision for the current scope, ignoring triggers for the decision.
+    </td>
+    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="activate_targeted_decision">
+    <td>activate_targeted_decision
+    </td>
+    <td><code>target = &lt;scope&gt;</code><br>The country to target.
+    <p><code>decision = &lt;decision&gt;</code><br>The decision to activate.
+    </p>
+    </td>
+    <td><pre>activate_targeted_decision = {
+        target = GER
+        decision = my_decision
+    }
+    </pre>
+    </td>
+    <td>Activates the specified targeted decision for the specified target for the current scope.
+    </td>
+    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="remove_targeted_decision">
+    <td>remove_targeted_decision
+    </td>
+    <td><code>&lt;decision&gt;</code><br>The decision to remove.
+    </td>
+    <td><pre>remove_targeted_decision = {
+        target = FROM
+        decision = my_decision
+    }
+    </pre>
+    </td>
+    <td>Removes the specified targeted decision for the current scope.
+    </td>
+    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="unlock_decision_tooltip">
+    <td>unlock_decision_tooltip
+    </td>
+    <td><code>&lt;decision&gt;</code><br>The decision to display.
+    </td>
+    <td><pre>unlock_decision_tooltip = my_decision</pre>
+    </td>
+    <td>Displays a special tooltip for the specified decision in the effect tooltip.
+    </td>
+    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="unlock_decision_category_tooltip">
+    <td>unlock_decision_category_tooltip
+    </td>
+    <td><code>&lt;category&gt;</code><br>The decision category to display.
+    </td>
+    <td><pre>unlock_decision_category_tooltip = my_category</pre>
+    </td>
+    <td>Displays a special tooltip for the specified decision category in the effect tooltip.
+    </td>
+    <td>Decision categories are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/catergories/*.txt</span>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_days_remove">
+    <td>add_days_remove
+    </td>
+    <td><code> decision = &lt;decision&gt; </code><br>The decision to remove days from.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to remove from the mission.
+    </p>
+    </td>
+    <td>
+    <pre>add_days_remove  = {
+        decision = decision_here
+        days = 30
+    }</pre>
+    </td>
+    <td>Adds the number of days to a decision's days_remove.
+    </td>
+    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="remove_decision">
+    <td>remove_decision
+    </td>
+    <td>Allows to remove specified decision without running remove_effect.
+    </td>
+    <td><pre>remove_decision = GER_MEPO</pre>
+    </td>
+    <td>Removes a decision.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="remove_decision_on_cooldown">
+    <td>remove_decision_on_cooldown
+    </td>
+    <td><code>&lt;decision&gt;</code><br>The decision that is to be removed.
+    </td>
+    <td><pre>remove_decision_on_cooldown = TAG_my_decision</pre>
+    </td>
+    <td>If the decision is on cooldown, it gets removed, in order to reactivate or remove completely.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+        </div>
+        <div class="block">
+            <h2>Миссии</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+                    
+                </thead>
+        <tbody>
+    <tr id="activate_mission">
+    <td>activate_mission
+    </td>
+    <td><code>&lt;mission&gt;</code><br>The mission to activate.
+    </td>
+    <td><pre>activate_mission = my_mission</pre>
+    </td>
+    <td>Activates the specified mission for the current scope, ignoring any triggers for the decision.
+    </td>
+    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="activate_mission_tooltip">
+    <td>activate_mission_tooltip
+    </td>
+    <td><code>&lt;mission&gt;</code><br>The mission to display.
+    </td>
+    <td><pre>activate_mission_tooltip = my_mission</pre>
+    </td>
+    <td>Displays a special tooltip for the specified mission in the effect tooltip.
+    </td>
+    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="remove_mission">
+    <td>remove_mission
+    </td>
+    <td><code>&lt;mission&gt;</code><br>The mission to remove.
+    </td>
+    <td><pre>remove_mission = my_mission</pre>
+    </td>
+    <td>Removes the specified mission for the current scope.
+    </td>
+    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_days_mission_timeout">
+    <td>add_days_mission_timeout
+    </td>
+    <td><code> mission = &lt;mission&gt; </code><br>The mission to add days to.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to add to the mission.
+    </p>
+    </td>
+    <td><pre>add_days_mission_timeout = {
+        mission = my_mission
+        days = 20
+    }</pre>
+    </td>
+    <td>Adds the number of days to the specified mission.
+    </td>
+    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    </td>
+    <td>1.9
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+        </div>
+
+                <div class="block">
+            <h2>Технологии и доктрины</h2>
+            <table>
+    
+                <thead>
+    
+                    <tr>
+                        <th>Название</th>
+                        <th>Параметры</th>
+                        <th>Примеры</th>
+                        <th>Описание</th>
+                        <th>Версия</th>
+                    </tr>
+                    
+                </thead>
+        <tbody>
+    <tr id="add_research_slot">
+    <td>add_research_slot
+    </td>
+    <td><code>&lt;int&gt;</code><br>The number of slots to add or remove.
+    </td>
+    <td><pre>add_research_slot = 1</pre>
+    </td>
+    <td>Adjusts the number of research slots the current scope has. Can remove slots with negatives.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_research_slots">
+    <td>set_research_slots
+    </td>
+    <td><code>&lt;int&gt;</code><br>The number of slots to set.
+    </td>
+    <td><pre>set_research_slots = 4</pre>
+    </td>
+    <td>Sets the number of research slots the current scope has.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_tech_bonus">
+    <td>add_tech_bonus
+    </td>
+    <td><code>bonus = &lt;float&gt;</code><br>The bonus to technology given, default 0.
+    <p><code>uses = &lt;int&gt;</code><br>The amount of times the bonus can be used, default 1.<br><code>ahead_reduction = &lt;float&gt;</code><br>The cost reduction if ahead of time, default 0.<br><code>category = &lt;string&gt;</code><br>Which technology category the bonus applies to. Multiple can be defined.<br><code>technology = &lt;string&gt;</code><br>Which technology the bonus applies to. Multiple can be defined.
+    </p><p><code>name = &lt;string&gt;</code>
+    </p><p>Tooltip shown in research tabs, optional.
+    </p>
+    </td>
+    <td><pre>add_tech_bonus = {
+        bonus = 0.5
+        uses = 1
+        category = radar_tech
+    }
+    </pre>
+    </td>
+    <td>Grants a research bonus to the current scope with the specified parameters.
+    </td>
+    <td>Research bonus categories are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technology_tags/*.txt</span> files, while technologies are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technologies/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_technology">
+    <td>set_technology
+    </td>
+    <td><code>&lt;technology&gt; = &lt;int&gt;</code><br>The technology to add.<br><code>popup = no</code><br>To not show the popup after adding technology
+    </td>
+    <td>
+    <pre>set_technology = {
+        suicide_craft = 1
+    }
+    </pre>
+    </td>
+    <td>Grants the specified technology to the current scope.
+    </td>
+    <td>A value of 1 sets the technology. A value of 0 removes the technology, but if it is a researchable technology, the duration it takes to research isn't reset, meaning it can be researched in 1 day. Technologies that are mutually exclusive with other technologies can not be removed by this effect. Technologies are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technologies/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_to_tech_sharing_group">
+    <td>add_to_tech_sharing_group
+    </td>
+    <td><code>&lt;string&gt;</code><br>The group to add the current scope to.
+    </td>
+    <td><pre>add_to_tech_sharing_group = us_research</pre>
+    </td>
+    <td>Adds the current scope to the specified technology sharing group.
+    </td>
+    <td>&nbsp;Technology sharing groups are found in <code>Hearts of Iron IV\common\technology_sharing\*.txt</code>
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="remove_from_tech_sharing_group">
+    <td>remove_from_tech_sharing_group
+    </td>
+    <td><code>&lt;string&gt;</code><br>The group to remove the current scope from.
+    </td>
+    <td><pre>remove_from_tech_sharing_group = us_research</pre>
+    </td>
+    <td>Removes the current scope from the specified technology sharing group.
+    </td>
+    <td>&nbsp;Technology sharing groups are found in <code>Hearts of Iron IV\common\technology_sharing\*.txt</code>
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="modify_tech_sharing_bonus">
+    <td>modify_tech_sharing_bonus
+    </td>
+    <td><code>id = &lt;string&gt;</code><br>The group to modify.
+    <p><code>bonus = &lt;float&gt;</code><br>The new bonus.
+    </p>
+    </td>
+    <td><pre>modify_tech_sharing_bonus = {
+        id = us_research
+        bonus = 0.5
+    }
+    </pre>
+    </td>
+    <td>Modifies the specified technology sharing group.
+    </td>
+    <td>&nbsp;Technology sharing groups are found in <code>Hearts of Iron IV\common\technology_sharing\*.txt</code>
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="inherit_technology">
+    <td>inherit_technology
+    </td>
+    <td><code>&lt;tag&gt;</code> The country to inherit technology from.
+    </td>
+    <td><pre>inherit_technology = CAN</pre>
+    </td>
+    <td>Makes the current country's researched technologies be copied from the specified country.
+    </td>
+    <td>Useful when making a country independent.
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="add_doctrine_cost_reduction">
+    <td>add_doctrine_cost_reduction
+    </td>
+    <td><code>name = &lt;name&gt;</code><br>Tooltip showing why the doctrine has reduced cost in the doctrine menu. Optional.<br>
+    <p><code>cost_reduction = &lt;fraction&gt;</code><br>Percentage of cost reduced.<br>
+    <code>uses = &lt;integer&gt;</code><br>Number of times the cost reduction can be used.<br>
+    <code>category = &lt;doctrine category&gt;</code><br>Which doctrine category the cost reduction will apply to. (Ex: <code>cat_mobile_warfare</code>,<code>land_doctrine</code> ,<code>air_doctrine</code>.)
+    </p>
+    </td>
+    <td><pre>add_doctrine_cost_reduction = {
+        cost_reduction = 0.5
+        uses = 2
+        category = land_doctrine
+    }</pre>
+    </td>
+    <td>Gives bonuses of reducing land doctrine cost to current scope.
+    </td>
+    <td>Doctrines are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technologies/*.txt</span> files.<br>
+    <p>For a general doctrine cost reduction, see "&lt;land/air/naval&gt;_doctrine_cost_factor" in <a href="/Modifiers" title="Modifiers">Modifiers</a>.
+    </p>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+            </table>
+                </div>
+                <div class="block">
+                    <h2>Идеи</h2>
+                    <table>
+            
+                        <thead>
+            
+                            <tr>
+                                <th>Название</th>
+                                <th>Параметры</th>
+                                <th>Примеры</th>
+                                <th>Описание</th>
+                                <th>Версия</th>
+                            </tr>
+                            
+                        </thead>
+                <tbody>
+    <tr id="add_ideas">
+    <td>add_ideas
+    </td>
+    <td><code>&lt;idea&gt;</code><br>The idea to add.
+    </td>
+    <td><pre>add_ideas = my_idea</pre>
+    <pre>add_ideas = {
+        my_idea_1
+        my_idea_2
+    }
+    </pre>
+    </td>
+    <td>Adds the specified ideas to the current scope.
+    </td>
+    <td>Can be used as a scope to add multiple at once.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_timed_idea">
+    <td>add_timed_idea
+    </td>
+    <td><code>idea = &lt;idea&gt;</code><br>The idea to add.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to add the idea for.
+    </p>
+    </td>
+    <td><pre>add_timed_idea = {
+        idea = my_idea
+        days = 180
+    }
+    </pre>
+    </td>
+    <td>Adds the specified ideas to the current scope for the specified number of days.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="modify_timed_idea">
+    <td>modify_timed_idea
+    </td>
+    <td><code>idea = &lt;idea&gt;</code><br>The idea to modify.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to add to the idea.
+    </p>
+    </td>
+    <td><pre>modify_timed_idea = {
+        idea = my_idea
+        days = 60
+    }
+    </pre>
+    </td>
+    <td>Extends the duration of the timed idea by the specified amount.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="swap_ideas">
+    <td>swap_ideas
+    </td>
+    <td><code>add_idea = &lt;idea&gt;</code><br>The idea to add.
+    <p><code>remove_idea = &lt;idea&gt;</code><br>The idea to remove.
+    </p>
+    </td>
+    <td><pre>swap_ideas = {
+        remove_idea = my_idea_1
+        add_idea = my_idea_2
+    }
+    </pre>
+    </td>
+    <td>Switches two ideas with a tooltip displaying any modifier differences between them.
+    </td>
+    <td>If the ideas have the same name in the localisation, it will show up as modifying the idea rather than swapping them.
+    <p>The add will occur before the removal of the old idea.
+    </p>
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="remove_ideas">
+    <td>remove_ideas
+    </td>
+    <td><code>&lt;idea&gt;</code><br>The idea to remove.
+    </td>
+    <td><pre>remove_ideas = my_idea</pre>
+    <pre>remove_ideas = {
+        my_idea_1
+        my_idea_2
+    }
+    </pre>
+    </td>
+    <td>Removes the specified idea from the current scope.
+    </td>
+    <td>Can be used as a scope to remove multiple at once.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_ideas_with_trait">
+    <td>remove_ideas_with_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to target.
+    </td>
+    <td><pre>remove_ideas_with_trait = motorized_equipment_manufacturer
+    </pre>
+    </td>
+    <td>Removes all ideas for the current scope that use the specified trait.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="show_ideas_tooltip">
+    <td>show_ideas_tooltip
+    </td>
+    <td><code>&lt;idea&gt;</code><br>The idea to display.
+    </td>
+    <td><pre>show_ideas_tooltip = my_idea</pre>
+    </td>
+    <td>Displays the specified idea in the tooltip for the current effect scope. Does not add the idea.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr></tbody><tfoot></tfoot>
+                </tbody>
+                    </table>
+                </div>    
+                <div class="block">
+                    <h2>Юниты</h2>
+                    <table>
+            
+                        <thead>
+            
+                            <tr>
+                                <th>Название</th>
+                                <th>Параметры</th>
+                                <th>Примеры</th>
+                                <th>Описание</th>
+                                <th>Версия</th>
+                            </tr>
+                            
+                        </thead>
+                <tbody>            
+    <tr id="load_oob">
+    <td>load_oob
+    </td>
+    <td><code>&lt;oob&gt;</code><br>The filename of the order of battle to load, without the .txt extension.
+    </td>
+    <td><pre>load_oob = "GER_default"</pre>
+    </td>
+    <td>Loads the specified order of battle for the current scope, applying the effects within. The filename with the <code>.txt</code> extension omitted is used as the effect's target.
+    </td>
+    <td>Orders of battle are stored within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/history/units/*.txt</span>. Primarily used to spawn divisions at specified locations.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="division_template">
+    <td>division_template
+    </td>
+    <td><code>name</code><br>The name of the division.
+    <pre>regiments = {
+        &lt;unit&gt; = { x = 0 y = 0 }
+    }
+    support = {
+        &lt;unit&gt; = { x = 0 y = 0 }
+    }
+    </pre>
+    <p>The composition of the division. Sub-units are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/*.txt</span> files.<br>
+    <code>division_names_group = &lt;group&gt;</code><br>
+    The division names group that the template will use, deciding on the automatically-generated names of any new divisions built using that template. Optional, assigns one automatically if omitted. These are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/names_divisions/*.txt</span> files.<br>
+    <code>is_locked = &lt;bool&gt;</code><br>Whether the division is locked to modification and deletion. Optional.<br>
+    <code>force_allow_recruiting = &lt;bool&gt;</code><br>Whether the locked template can have units deployed using it without allowing editing. Optional, only has an effect in locked templates.<br>
+    <code>division_cap = &lt;int&gt;</code><br>The maximum amount of divisions that this template may have; requires the template to be locked. Optional.<br>
+    <code>priority = &lt;int&gt;</code><br>The priority the template receives in receiving supplies. Goes from 0 to 2. Optional, 1 by default.<br>
+    <code>template_counter = &lt;int&gt;</code><br>The icon used by the division as an integer. Optional, defaults to the icon of the most common sub-unit within. The icons are defined as sprites within any <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span> file (By default <code>subuniticons.gfx</code>) with the pattern of <code>GFX_div_templ_&lt;int&gt;_large</code> and <code>GFX_div_templ_&lt;int&gt;_small</code>.<br>
+    <code>override_model = &lt;entity&gt;</code><br><a href="/Entity_modding" title="Entity modding">Enforces the entity used by the units using this template to be the specified one</a>. Optional.
+    </p>
+    </td>
+    <td><pre>division_template = {
+        name = "Test"
+        is_locked = yes
+        division_cap = 3 
+        division_names_group = USA_INF_01
+        priority = 0
+        template_counter = 0
+        regiments = {
+            infantry = { x = 0 y = 0 }
+            infantry = { x = 0 y = 1 }
+            infantry = { x = 0 y = 2 }
+            infantry = { x = 0 y = 3 }
+        }
+        support = {
+            military_police = { x = 0 y = 0 }
+        }
+    }
+    </pre>
+    </td>
+    <td>Creates and adds the specified division template to the current scope.
+    </td>
+    <td>The <i>x</i> and <i>y</i> attributes represent the rows and columns in the division designer and start from 0. No tooltip is shown.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_units_to_division_template">
+    <td>add_units_to_division_template
+    </td>
+    <td><code>template_name = &lt;string&gt;</code><br>The template to change. Optional if used in division scope.<br>
+    <pre>regiments = {
+        &lt;unit&gt; = &lt;column&gt;
+    }
+    support = {
+        &lt;unit&gt; = &lt;column&gt;
+    }</pre>
+    <p>The units to add to the template. Sub-units are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/*.txt</span> files.
+    </p>
+    </td>
+    <td><pre>add_units_to_division_template = {
+        template_name = "Test"
+        regiments = {
+            infantry = 2
+            infantry = 2
+        }
+        support = {
+            military_police = 0
+        }
+    }
+    </pre>
+    </td>
+    <td>Adds the specified brigades to first available slots of specified columns to the template (if possible).
+    </td>
+    <td>Columns go left-to-right starting with 0. Can also be used in division scope.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_division_template_lock">
+    <td>set_division_template_lock
+    </td>
+    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.
+    <p><code>is_locked = &lt;bool&gt;</code><br>Whether the division is locked or not.
+    </p>
+    </td>
+    <td><pre>set_division_template_lock = {
+        division_template = "Infantry Division"
+        is_locked = yes
+    }
+    </pre>
+    </td>
+    <td>Toggles the locked status on a division template for the current scope, which prevents editing or deletion.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="country_lock_all_division_template">
+    <td>country_lock_all_division_template
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>country_lock_all_division_template = yes</pre>
+    </td>
+    <td>Locks all division templates for the current scope.
+    </td>
+    <td>Used to prevent training, disbanding, and editing units.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="set_division_force_allow_recruiting">
+    <td>set_division_force_allow_recruiting
+    </td>
+    <td><code>division_template = &lt;string&gt;</code><br>Template to modify.<br>
+    <p><code>force_allow_recruiting = &lt;bool&gt;</code><br>Whether to allow or disallow recruiting. Defaults to true if unset.
+    </p>
+    </td>
+    <td><pre>set_division_force_allow_recruiting = {
+        division_template = "My locked template"
+    }</pre>
+    </td>
+    <td>Changes whether it's possible to recruit divisions of a locked template without unlocking the template.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="set_division_template_cap">
+    <td>set_division_template_cap
+    </td>
+    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.<br>
+    <p><code>division_cap = &lt;int&gt;</code><br>The division cap.
+    </p>
+    </td>
+    <td><pre>set_division_template_cap = { 
+        division_template = "Swiss Citizen Militia" 
+        division_cap = SWI_militia_division_cap
+    }
+    </pre>
+    </td>
+    <td>Sets the cap of a division template. The template has to be locked first.
+    </td>
+    <td>
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="clear_division_template_cap">
+    <td>clear_division_template_cap
+    </td>
+    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.
+    </td>
+    <td><pre>clear_division_template_cap = { 
+        division_template = "Swiss Citizen Militia"
+    }
+    </pre>
+    </td>
+    <td>Clears the cap on the template, allowing it to have an unlimited amount of divisions.
+    </td>
+    <td>
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="delete_unit_template_and_units">
+    <td>delete_unit_template_and_units
+    </td>
+    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.
+    </td>
+    <td><pre>delete_unit_template_and_units = {
+        division_template = "Infantry Division"
+        disband = yes #will refund equipment and manpower
+    }
+    </pre>
+    </td>
+    <td>Deletes the specified division template and all units using it for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="delete_unit">
+    <td>delete_unit
+    </td>
+    <td><code>state = &lt;number id&gt;</code><br>The id number of the state the unit must be in.<br>
+    <p><code>template = &lt;string&gt;</code><br>The template the units must use to be deleted.<br>
+    <code>id = &lt;int&gt;</code><br>The id given to the unit if created via the <code>create_unit</code> effect.
+    <code>disband = &lt;bool&gt;</code><br>If true, will refund equipment and manpower.
+    </p>
+    </td>
+    <td><pre>delete_unit = {
+        state = 787
+        disband = yes #will refund equipment and manpower
+    }</pre>
+    <pre>delete_unit = {
+        template = "Infantry Division"
+    }</pre>
+    </td>
+    <td>Deletes all units that meet the filters.
+    </td>
+    <td>No tooltip is generated. delete_units can be used if deleting all units of a specific template.
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="delete_units">
+    <td>delete_units
+    </td>
+    <td><code>division_template = &lt;string&gt;</code><br>The template the units must use to be deleted.<br>
+    <p><code>disband = &lt;bool&gt;</code><br>If true, will refund equipment and manpower.
+    </p>
+    </td>
+    <td><pre>delete_units = {
+        division_template = "Infantry Division"
+        disband = yes
+    }</pre>
+    </td>
+    <td>Deletes all units with a certain template.
+    </td>
+    <td>Generates a tooltip, unlike delete_unit. Mandatory to specify a division_template.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="create_railway_gun">
+    <td>create_railway_gun
+    </td>
+    <td><code>equipment = &lt;type&gt;</code><br>Equipment type used by the railway gun.<br>
+    <p><code>name = &lt;string&gt;</code><br>The name used by the railway gun. Optional.<br>
+    <code>location = &lt;province&gt;</code><br>Location where the railway gun is created. Assumes the capital by default.
+    </p>
+    </td>
+    <td><pre>create_railway_gun = {
+        equipment = railway_gun_equipment_1
+        name = TAG_new_railway_gun
+        location = 12406
+    }</pre>
+    </td>
+    <td>Creates a railway gun.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="teleport_railway_guns_to_deploy_province">
+    <td>teleport_railway_guns_to_deploy_province
+    </td>
+    <td><code>&lt;boolean&gt;</code><br>
+    </td>
+    <td><pre>teleport_railway_guns_to_deploy_province = yes</pre>
+    </td>
+    <td>Teleports all railway guns to the province where they get deployed.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+                </tbody>
+                    </table>
+                </div>
+
+                              <div class="block">
+                    <h2>Оборудование</h2>
+                    <table>
+            
+                        <thead>
+            
+                            <tr>
+                                <th>Название</th>
+                                <th>Параметры</th>
+                                <th>Примеры</th>
+                                <th>Описание</th>
+                                <th>Версия</th>
+                            </tr>
+                            
+                        </thead>
+                <tbody>   
+    <tr id="set_equipment_fraction">
+    <td>set_equipment_fraction
+    </td>
+    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>The fraction of equipment to remove.
+    </td>
+    <td><pre>set_equipment_fraction = 0.5</pre>
+    </td>
+    <td>Reduces the overall equipment stockpile by the specified fraction.
+    </td>
+    <td>This should <b>not</b> be used in civil wars to simulate stockpile splitting. <code>start_civil_war</code> automatically divides stockpiles according to the respective size.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_equipment_to_stockpile">
+    <td>add_equipment_to_stockpile
+    </td>
+    <td><code>type = &lt;equipment&gt;</code><br>The equipment to add. Either types and archetypes are accepted.<br>
+    <p><code>amount = &lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.<br>
+    <code>producer = &lt;scope&gt; / &lt;variable&gt;</code><br>Defines who produced the equipment. Optional, defaults to the current scope.<br>
+    <code>variant_name = &lt;string&gt;</code><br>The equipment variant to add. Mandatory if a variant needs to be created to produce the equipment, optional otherwise.<br>
+    </p>
+    </td>
+    <td><pre>add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = -100
+        producer = GER
+    }</pre>
+    <pre>add_equipment_to_stockpile = {
+        type = medium_tank_chassis_1
+        amount = 100
+        variant_name = "Panzer III"
+    }</pre>
+    </td>
+    <td>Edits the equipment stockpile of the current scope, adds or removes equipment of a specified type or archetype.
+    </td>
+    <td>With negative numbers, optionally specifying a producer will ensure only equipment with that producer gets removed. The equipment must be unlocked by the producer for the effect to succeed.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="send_equipment">
+    <td>send_equipment
+    </td>
+    <td><code>type = &lt;equipment&gt;</code><br>The equipment to add. Can be archetype.
+    <p><code>amount = &lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.<br><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Which country receives the equipment.
+    </p>
+    </td>
+    <td><pre>send_equipment = {
+        equipment = infantry_equipment
+        amount = 100
+        target = GER
+    }
+    </pre>
+    </td>
+    <td>Sends the specified amount of equipment to the specified target, removing said equipment from the current scope.
+    </td>
+    <td>Cannot remove equipment into negatives, in which case equipment will not be received by the target in entirety.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="send_equipment_fraction">
+    <td>send_equipment_fraction
+    </td>
+    <td><code>value = &lt;0-1&gt;</code><br>How much equipment to send.
+    <p><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Which country receives the equipment.
+    </p>
+    </td>
+    <td><pre>send_equipment_fraction = {
+        value = 0.3
+        target = GER
+    }
+    </pre>
+    </td>
+    <td>Sends the specified fraction of equipment to the specified target, removing said equipment from the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="create_production_license">
+    <td>create_production_license
+    </td>
+    <td><code>target = &lt;scope&gt;</code><br>Which country receives the license.
+    <p><code>cost_factor = &lt;float&gt;</code><br>Modifies the production cost.<br>
+    <b>Equipment scope</b><br><code>type = &lt;equipment&gt;</code><br>The equipment the country is licensed to produce. Must be an non-archetype equipment.<br>
+    <code>version = &lt;int&gt;</code><br>The version indicates which variant should be licensed. The default is 0, meaning the base variant.<br>
+    <code>new_prioritised = &lt;boolean&gt;</code><br>Whether new equipment is prioritised or not. Yes by default.
+    </p>
+    </td>
+    <td><pre>create_production_license = {
+        target = HUN
+        equipment = {
+            type = fighter_equipment_1
+            version = 0
+            new_prioritised = no
+        }
+        cost_factor = 0
+    }
+    </pre>
+    </td>
+    <td>Grants the specified country a license to produce the specified equipment from the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.4
+    </td></tr>
+    <tr id="create_equipment_variant">
+    <td>create_equipment_variant
+    </td>
+    <td><code>name = &lt;string&gt;</code><br>The name of the variant.<br>
+    <p><code>type = &lt;equipment&gt;</code><br>The equipment type the variant is of.<br>
+    <code>parent_version = &lt;int&gt;</code><br>Ordering for multiple variants of the same equipment. 0 is the oldest, 1 is the second-oldest, etc. Optional, 0 by default.<br>
+    <code>obsolete = &lt;bool&gt;</code><br>Whether the equipment variant is flagged as obsolete within the GUI and for AI. Optional, no by default.<br>
+    <code>name_group = &lt;name group&gt;</code><br>The name group used for equipment. Stored in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/names_ships</span>. Optional, can only be defined for ships.<br>
+    <code>role_icon_index = &lt;int&gt;/auto</code><br>Index of the role icon that will be used, as an integer. If set to "auto", will pick automatically. If set to 0, will be unset. Optional, only can be defined for ships.<br>
+    <code>model = &lt;model name&gt;</code><br>Model that will be used by the equipment on the world map. Optional.<br>
+    <code>icon = &lt;sprite&gt;</code><br>The icon that will be used by equipment. Stored as a spriteType within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span>. Optional.<br>
+    <b>Upgrade scope</b><br><code>&lt;upgrade&gt; = &lt;amount&gt;</code><br>The upgrades configuration for the variant.<br>
+    <b>Module scope</b><br><code>&lt;slot&gt; = &lt;module&gt;</code><br>The modules configuration for the variant.
+    </p>
+    </td>
+    <td><pre>create_equipment_variant = {
+        name = "Vetehinen Class"								
+        type = ship_hull_submarine_1
+        name_group = FIN_SS_HISTORICAL
+        role_icon_index = 1
+        modules = {
+            fixed_ship_torpedo_slot = ship_torpedo_sub_1
+            fixed_ship_engine_slot = sub_ship_engine_1
+            rear_1_custom_slot = ship_mine_layer_sub
+        }
+    }</pre>
+    <pre>create_equipment_variant = {
+        name = "He 112"
+        type = fighter_equipment_0
+        obsolete = yes
+        upgrades = {
+            plane_gun_upgrade = 1
+            plane_range_upgrade = 1
+        }
+    }</pre>
+    <pre>create_equipment_variant = {
+        name = "Light Tank Mk. IV"
+        type = light_tank_chassis_1
+        parent_version = 1
+        modules = {
+            main_armament_slot = tank_heavy_machine_gun
+        }
+        upgrades = {
+            tank_nsb_engine_upgrade = 2
+        }
+        icon = "GFX_ENG_basic_light_tank_medium"
+        model = ENG_MKIV_light_tank_entity
+    }</pre>
+    </td>
+    <td>Creates the specified equipment variant for the current scope.
+    </td>
+    <td>Role icons for ships are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/gfx/army_icons/army_icons.txt</span>.<br>
+    <p>Upgrades are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/upgrades/*.txt</span>.<br>
+    Equipment types, including module slots for them, are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/*.txt</span>.<br>
+    Equipment modules are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/modules/*.txt</span>.<br>
+    </p>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_equipment_production">
+    <td>add_equipment_production
+    </td>
+    <td><code>amount = &lt;int&gt;</code><br>The amount to produce. Optional.
+    <p><code>requested_factories = &lt;int&gt;</code><br>The number of factories to assigned initially. Optional.<br><code>progress = &lt;float&gt;</code><br>The initial production progress. Optional.<br><code>efficiency = &lt;float&gt;</code><br>The initial production efficiency. Optional.<br><b>Equipment scope</b><br><code>type = &lt;equipment&gt;</code><br>The name of the equipment to produce.<br><code>creator = &lt;scope&gt;</code><br>The country which is producing the equipment. Used if root scope isn't producer. Optional.<br><code>version_name = &lt;string&gt;</code>The name of the variant to produce. Optional.
+    </p>
+    </td>
+    <td><pre>add_equipment_production = {
+        equipment = {
+            type = light_cruiser_2
+        }
+        requested_factories = 1
+        progress = 0.95
+        amount = 1
+    }
+    </pre>
+    </td>
+    <td>Starts a production line for the specified equipment for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr></tbody><tfoot></tfoot>
+                </tbody>
+                    </table>
+                              </div>
+                              <div class="block">
+                                <h2>Военное дело</h2>
+                                <table>
+                        
+                                    <thead>
+                        
+                                        <tr>
+                                            <th>Название</th>
+                                            <th>Параметры</th>
+                                            <th>Примеры</th>
+                                            <th>Описание</th>
+                                            <th>Версия</th>
+                                        </tr>
+                                        
+                                    </thead>
+                            <tbody>                   
+    <tr id="destroy_ships">
+    <td>destroy_ships
+    </td>
+    <td><code>type = &lt;ship&gt;</code><br>The type of ship to destroy.
+    <p><code>count = &lt;int&gt; or all</code><br>The amount to destroy.
+    </p>
+    </td>
+    <td><pre>destroy_ships = {
+        type = destroyer
+        count = all
+    }
+    </pre>
+    </td>
+    <td>Destroys the specified type and amount of ships controlled by the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="transfer_navy">
+    <td>transfer_navy
+    </td>
+    <td>
+    <p><code>target = &lt;scope&gt;</code><br>The target country.
+    </p>
+    </td>
+    <td><pre>transfer_navy = {
+        target = GER
+    }</pre>
+    </td>
+    <td>Transfers the current scope navy to the specified country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="transfer_ship">
+    <td>transfer_ship
+    </td>
+    <td><code>type = &lt;ship&gt;</code><br>The type of ship to transfer.
+    <p><code>target = &lt;scope&gt;<br>The target country.</code>
+    <code><code>prefer_name = &lt;string&gt;</code><br>Name of ship in origin navy that will preferably be transferred to target navy. Optional.
+    <code>exclude_refitting = &lt;yes/no&gt;&lt;/clode&gt;<br>Determines whether ships that are being refitted will be transferred. Optional.
+    </code></code></p><code><code>
+    </code></code></td>
+    <td><pre>transfer_ship = {
+        prefer_name = "HMS Achilles"
+        type = light_cruiser
+        target = NZL
+        exclude_refitting = no
+    }
+    </pre>
+    </td>
+    <td>Transfers the specified type of ship from the current scope to the specified country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.4
+    </td></tr>
+    <tr id="create_ship">
+    <td>create_ship
+    </td>
+    <td><code>type = &lt;ship&gt;</code><br>The type of ship to create. <code>equipment_variant = &lt;string&gt;</code><br>The equipment variant to use.
+    <p><code>creator = &lt;scope&gt;</code><br>The country that created this ship. Optional. <code>name = &lt;string&gt;</code><br>Name of the ship. Optional.
+    </p>
+    </td>
+    <td><pre>FRA = {
+        create_ship = {
+            type = ship_hull_submarine_1
+            equipment_variant = "S Class"
+            creator = ENG
+            name = "My ship name"
+        }
+    }
+    </pre>
+    </td>
+    <td>Create a ship from another country and assign it to the reserve fleet. If not set, it will be the scoped country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_mines">
+    <td>add_mines
+    </td>
+    <td>Add mines to a strategic region for the current country.
+    </td>
+    <td><pre>add_mines = { region = 42 amount = 100 }</pre>
+    </td>
+    <td>Add mines to a strategic region.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="add_ace">
+    <td>add_ace
+    </td>
+    <td><code>name = &lt;string&gt;</code><br>The name of the ace.
+    <p><code>surname = &lt;string&gt;</code><br>The surname of the ace.<br><code>callsign = &lt;string&gt;</code><br>The callsign of the ace.<br><code>type = &lt;type&gt;</code><br>The ace type.<br><code>is_female = &lt;bool&gt;</code><br>The gender of the ace.
+    </p>
+    </td>
+    <td><pre>add_ace = {
+        name = "Amelia"
+        surname = "Earhart"
+        callsign = "Revenant"
+        type = fighter_genius
+        is_female = yes
+    }
+    </pre>
+    </td>
+    <td>Adds an ace for the current scope.
+    </td>
+    <td>Ace types found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/aces/*.txt</span>.
+    </td>
+    <td>1.0
+    </td></tr></tbody><tfoot></tfoot>
+
+                            </tbody>
+                                </table>
+                              </div>
+                              <div class="block">
+                                <h2>Разведка</h2>
+                                <table>
+                        
+                                    <thead>
+                        
+                                        <tr>
+                                            <th>Название</th>
+                                            <th>Параметры</th>
+                                            <th>Примеры</th>
+                                            <th>Описание</th>
+                                            <th>Версия</th>
+                                        </tr>
+                                        
+                                    </thead>
+                            <tbody> 
+    <tr id="create_intelligence_agency">
+    <td>create_intelligence_agency
+    </td>
+    <td>Allows to create automatically an intelligence agency
+    </td>
+    <td><pre>create_intelligence_agency = {
+        name = "A.G.E.N.C.Y"
+        icon = GFX_intelligence_agency_logo_agency
+    }</pre>
+    </td>
+    <td>Creates an Intelligence Agency.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="upgrade_intelligence_agency">
+    <td>upgrade_intelligence_agency
+    </td>
+    <td>Allows to unlock automatically an intelligence agency uprgrade
+    </td>
+    <td><pre>upgrade_intelligence_agency = upgrade_form_department</pre>
+    <pre>upgrade_intelligence_agency = &lt;upgrade&gt;</pre>
+    </td>
+    <td>Unlocks an Intelligence Agency Upgrade.
+    </td>
+    <td>Upgrades can be found in common/intelligence_agency_upgrades
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_decryption">
+    <td>add_decryption
+    </td>
+    <td><code>target = &lt;tag&gt;</code><br>Towards which country to add decryption.<br>
+    <p><code>amount = &lt;int&gt;</code><br>How much decryption to add in flat numbers.<br>
+    <code>ratio = &lt;0-1&gt;</code><br>How much decryption ratio to add.
+    </p>
+    </td>
+    <td><pre>add_decryption = {
+        target = GER
+        amount = 300
+    }</pre>
+    <pre>add_decryption = {
+        target = GER
+        ratio = 0.5
+    }</pre>
+    </td>
+    <td>Adds decryption towards the target country
+    </td>
+    <td><code>target</code> and <code>ratio</code> arguments are mutually exclusive.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_intel">
+    <td>add_intel
+    </td>
+    <td><code>target = &lt;tag&gt;</code><br>Towards which country to add intelligence.<br>
+    <p><code>civilian_intel = &lt;int&gt;</code><br>How much civilian intel to add.<br>
+    <code>army_intel = &lt;int&gt;</code><br>How much army intel to add.<br>
+    <code>navy_intel = &lt;int&gt;</code><br>How much navy intel to add.<br>
+    <code>airforce_intel = &lt;int&gt;</code><br>How much airforce intel to add.<br>
+    </p>
+    </td>
+    <td><pre>add_intel = {
+        target = GER
+        civilian_intel = 3
+        army_intel = 2
+        navy_intel = 1
+        airforce_intel = 2
+    }</pre>
+    </td>
+    <td>Adds the specified amount of intel towards the specified country.
+    </td>
+    <td>If an intel argument is left out, 0 is assumed.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_operation_token">
+    <td>add_operation_token
+    </td>
+    <td><code>tag = &lt;tag&gt;</code><br>Towards which country to add a token on.<br>
+    <p><code>token = &lt;id&gt;</code><br>Which token to add.<br>
+    </p>
+    </td>
+    <td><pre>add_operation_token = {
+        tag = GER
+        token = token_test
+    }</pre>
+    </td>
+    <td>Adds an operation token towards the country, allowing access to more intel or applying a targeted modifier.
+    </td>
+    <td>Operation tokens are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/operation_tokens/*</span>.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="remove_operation_token">
+    <td>remove_operation_token
+    </td>
+    <td><code>tag = &lt;tag&gt;</code><br>Towards which country to remove a token from.<br>
+    <p><code>token = &lt;id&gt;</code><br>Which token to remove.<br>
+    </p>
+    </td>
+    <td><pre>remove_operation_token = {
+        tag = GER
+        token = token_test
+    }</pre>
+    </td>
+    <td>Removes an operation token from the country.
+    </td>
+    <td>Operation tokens are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/operation_tokens/*</span>.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="capture_operative">
+    <td>capture_operative
+    </td>
+    <td><code>operative = &lt;tag&gt;</code><br>Which operative to capture.<br>
+    <p><code>ignore_death_chance = &lt;bool&gt;</code><br>Whether to ignore the death chance on capture (no by default).<br>
+    </p>
+    </td>
+    <td><pre>capture_operative = {
+        operative = PREV
+        ignore_death_chance = yes
+    }</pre>
+    <pre>capture_operative = PREV</pre>
+    </td>
+    <td>Captures the specified operative.
+    </td>
+    <td>Operatives can be referred to by using <a href="/Scopes#Moving_Between_Scopes" title="Scopes">tags that refer to scopes</a>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="create_operative_leader">
+    <td>create_operative_leader
+    </td>
+    <td><code>bypass_recruitment = &lt;bool&gt;</code><br>Whether the operative is directly added to the list of available operatives or needs to be recruited.
+    <p><code>available_to_spy_master = &lt;bool&gt;</code><br>Whether the operative can be recruited by the spy master. bypass_recruitment should be set to no.
+    <code>portrait_tag_override = &lt;bool&gt;</code><br>If selecting a random portrait, create one that is from the specified country rather than the current country.
+    <code>name = &lt;string&gt;</code><br>The name of the operative.<br>
+    <code>GFX = &lt;string&gt;</code><br>The graphical reference of the picture of the leader, defined as a sprite within any <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span> file.<br>
+    <code>nationalities = { &lt;tag&gt; }</code><br>The nationalities of the operative.<br>
+    <code>traits = { &lt;trait&gt; }</code><br>The traits the leader spawns with.
+    </p>
+    </td>
+    <td><pre>create_operative_leader = {
+        name = "Jacques Duclos"
+        GFX = GFX_portrait_jacques_duclos
+        traits = { operative_infiltrator operative_natural_orator }
+        bypass_recruitment = no
+        available_to_spy_master = yes
+        nationalities = { FRA POL }
+    }
+    </pre>
+    </td>
+    <td>Creates an operative for the current scope with the specified attributes.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span>. All arguments aside from bypass_recruitment are optional. <b>Must use a spriteType for the portrait</b>, a direct link as in "gfx/leaders/TAG/filename.dds" will not work.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="free_operative">
+    <td>free_operative
+    </td>
+    <td><code>&lt;tag&gt;</code><br>The operative to be freed.
+    </td>
+    <td><pre>free_operative = PREV</pre>
+    </td>
+    <td>Frees the specifies operative.
+    </td>
+    <td>Operatives can be referred to by using <a href="/Scopes#Moving_Between_Scopes" title="Scopes">tags that refer to scopes</a>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="free_random_operative">
+    <td>free_random_operative
+    </td>
+    <td><code>captured_by = &lt;tag&gt;</code><br>The country that captured the operative.
+    <p><code>all = &lt;bool&gt;</code><br>Whether to free all operatives or not (Defaults to no).
+    </p>
+    </td>
+    <td><pre>free_random_operative = {
+        captured_by = POL
+        all = yes
+    }</pre>
+    </td>
+    <td>Frees one random captured operative or all of them.
+    </td>
+    <td>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="kill_operative">
+    <td>kill_operative
+    </td>
+    <td><code>operative = &lt;tag&gt;</code><br>The operative that is killed.
+    </td>
+    <td><pre>kill_operative = {
+        operative = PREV
+    }</pre>
+    <pre>kill_operative = PREV</pre>
+    </td>
+    <td>Kills the targeted operative.
+    </td>
+    <td>Operatives can be referred to by using <a href="/Scopes#Moving_Between_Scopes" title="Scopes">tags that refer to scopes</a>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="turn_operative">
+    <td>turn_operative
+    </td>
+    <td><code>operative = &lt;tag&gt;</code><br>The operative that is turned.
+    </td>
+    <td><pre>turn_operative = {
+        operative = PREV
+    }</pre>
+    <pre>turn_operative = PREV</pre>
+    </td>
+    <td>Turns the targeted operative against their own country, transferring them to the current country.
+    </td>
+    <td>Operatives can be referred to by using <a href="/Scopes#Moving_Between_Scopes" title="Scopes">tags that refer to scopes</a>. This counts as the operative dying and will trigger the corresponding <a href="/On_action" class="mw-redirect" title="On action">On action</a>. Logs an error if used against your own operative.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="steal_random_tech_bonus">
+    <td>steal_random_tech_bonus
+    </td>
+    <td><code>category = &lt;category name&gt;</code><br>The category to steal from. See <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technology_tags/*</span> for list.
+    <p><code>folder = naval_folder</code><br>The folder to steal from. See <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technology_tags/*</span> for list.
+    <code>ahead_reduction = &lt;float&gt;</code><br>The reduction to the ahead of time penalty.
+    <code>bonus = &lt;float&gt;</code><br>The bonus to research speed.
+    <code>base_bonus = &lt;float&gt;</code><br>The backup bonus if no tech is available.
+    <code>instant = &lt;bool&gt;</code><br>Whether to instantly give a tech instead of a bonus or not. No by default.
+    <code>dynamic = &lt;bool&gt;</code><br>Changes between instant and non-instant based on type. No by default.
+    <code>name = &lt;localisation key&gt;</code><br>The name of the bonus.
+    <code>target = &lt;tag&gt;</code><br>The country to steal from.
+    <code>uses = &lt;int&gt;</code><br>How many times the bonus can be used.
+    </p>
+    </td>
+    <td><pre>steal_random_tech_bonus = {
+        category = air_equipment
+        folder = naval_folder
+        ahead_reduction = 0.8
+        bonus = 1.2
+        base_bonus = 1.1
+        dynamic = yes
+        name = LOC_KEY
+        target = POL
+        uses = 2
+    }</pre>
+    </td>
+    <td>Steals a random tech bonus from the specified country.
+    </td>
+    <td>If a country does not have a tech to be stolen, a random bonus will be applied by using base_bonus as a base.
+    </td>
+    <td>1.9
+    </td></tr></tbody><tfoot></tfoot>
+                            </tbody>
+                                </table>
+                              </div>
+                              <div class="block">
+                                <h2>Персонажи</h2>
+                                <table>
+                        
+                                    <thead>
+                        
+                                        <tr>
+                                            <th>Название</th>
+                                            <th>Параметры</th>
+                                            <th>Примеры</th>
+                                            <th>Описание</th>
+                                            <th>Версия</th>
+                                        </tr>
+                                        
+                                    </thead>
+                            <tbody> 
+    <tr id="set_nationality">
+    <td>set_nationality
+    </td>
+    <td><code>target_country = &lt;scope&gt; / &lt;variable&gt;</code><br>The target country.<br>
+    <p><code>character = &lt;character&gt;</code> The character to transfer.
+    </p>
+    </td>
+    <td><pre>set_nationality = {
+        target_country = TZN
+        character = OMA_sultan
+    }</pre>
+    </td>
+    <td>Switches the specified character to the specified country.
+    </td>
+    <td>If you wish to change the nationality of a specific character, and the country getting the effect doesn't have the character recruited already, use the
+    <pre>every_possible_country = {
+        limit = { has_character = ID }
+        random_character = {
+            limit = { is_character = ID }
+            set_nationality = TAG
+        }
+    }</pre>
+    <p>command to call them up. Only necessary in 1.11 and beyond.
+    </p>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="retire_character">
+    <td>retire_character
+    </td>
+    <td><code>&lt;character&gt;</code>
+    </td>
+    <td><pre>retire_character = GER_Character_Token</pre>
+    </td>
+    <td>Retires the character, removing every role they hold and making them disappear from the game.
+    </td>
+    <td>Country scope only. The character cannot be re-recruited after retiring.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_character_name">
+    <td>set_character_name
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>name = &lt;localisation key&gt;</code><br>The new name of the character.
+    </p>
+    </td>
+    <td><pre>set_character_name = {
+        character = my_character
+        name = my_name
+    }</pre>
+    </td>
+    <td>Sets the new name for the target character.
+    </td>
+    <td><a href="#c_set_character_name">Can also be used in character scope.</a>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="character_list_tooltip">
+    <td>character_list_tooltip
+    </td>
+    <td><code>limit = { &lt;triggers&gt; }</code><br>Triggers that must be fulfilled to show up in the list.
+    </td>
+    <td><pre>character_list_tooltip = {
+        limit = {
+            has_character_flag = SOV_targeted_for_purge_flag
+        }
+    }</pre>
+    </td>
+    <td>Displays a list of every character meeting the specified limitation and recruited by the current country.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="add_trait">
+    <td>add_trait
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>slot = &lt;slot&gt;</code> Slot of the character. Necessary for advisors.<br>
+    <code>ideology = &lt;sub-ideology&gt;</code> Ideology type of the character. Necessary for country leaders.<br>
+    <code>trait = &lt;trait&gt;</code><br>The trait to add.
+    </p>
+    </td>
+    <td><pre>add_trait = {
+         character = TAG_jane_smith
+         slot = political_advisor
+         trait = really_good_boss
+    }</pre>
+    <pre>add_trait = {
+         character = TAG_my_leader
+         ideology = liberalism
+         trait = field_of_gar
+    }</pre>
+    </td>
+    <td>Adds the specified country leader trait to the character.
+    </td>
+    <td><a href="#c_add_trait">Can also be used in character scope</a>. Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon. The character slot can be the character's name or id. Using name is recommended because 1.11 made id obsolete.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="remove_trait">
+    <td>remove_trait
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>slot = &lt;slot&gt;</code> Slot of the character. Necessary for advisors.<br>
+    <code>ideology = &lt;sub-ideology&gt;</code> Ideology type of the character. Necessary for country leaders.<br>
+    <code>trait = &lt;trait&gt;</code><br>The trait to remove.
+    </p>
+    </td>
+    <td><pre>remove_trait = {
+        character = TAG_jane_smith
+        slot = political_advisor
+        trait = really_good_boss
+    }</pre>
+    <pre>remove_trait = {
+         character = TAG_my_leader
+         ideology = liberalism
+         trait = field_of_gar
+    }</pre>
+    </td>
+    <td>Removes the specified trait from the character.
+    </td>
+    <td><a href="#c_remove_trait">Can also be used in character scope</a>. Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon. The character slot can be the character's name or id. Using name is recommended because 1.11 made id obsolete.
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+                            </tbody>
+                                </table>
+                              </div>
+                              <div class="block">
+                                <h2>Руководители отрядов</h2>
+                                <table>
+                        
+                                    <thead>
+                        
+                                        <tr>
+                                            <th>Название</th>
+                                            <th>Параметры</th>
+                                            <th>Примеры</th>
+                                            <th>Описание</th>
+                                            <th>Версия</th>
+                                        </tr>
+                                        
+                                    </thead>
+                            <tbody> 
+    <tr id="create_corps_commander">
+    <td>create_corps_commander
+    </td>
+    <td><code>name = &lt;string&gt;</code><br>The name of the leader.
+    <p><code>picture = &lt;string&gt;</code><br>The graphical reference of the picture of the leader.<br><code>skill = &lt;int&gt;</code><br>The skill of the leader.<br><code>attack_skill = &lt;int&gt;</code><br>The attack skill of the leader.<br><code>defense_skill = &lt;int&gt;</code><br>The defense skill of the leader.<br><code>planning_skill = &lt;int&gt;</code><br>The planning skill of the leader.<br>
+    <code>logistics_skill = &lt;int&gt;</code><br>The logistics skill of the leader.<br>
+    <code>traits = { &lt;trait&gt; }</code><br>The traits the leader spawns with.<br>
+    <code>female = &lt;bool&gt;</code><br>The gender of the leader.<br>
+    <code>legacy_id = &lt;int&gt;</code><br>The legacy ID used for the unit leader. Optional.
+    </p>
+    </td>
+    <td><pre>create_corps_commander = {
+        name = "Jean de Lattre de Tassigny"
+        picture = "Portrait_France_Jean_de_Lattre_de_Tassigny.dds"
+        traits = { trickster brilliant_strategist }
+        skill = 4
+        attack_skill = 4
+        defense_skill = 2
+        planning_skill = 4
+        logistics_skill = 3
+    }
+    </pre>
+    </td>
+    <td>Creates a commander for the current scope with the specified attributes.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span>. <b>Deprecated</b>, recommended to use <a href="#add_corps_commander_role">add_corps_commander_role</a> instead when possible. <b>The created corps commander will not be able to have a portrait if assigned to be a minister via officer corps, causing errors.</b>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="create_field_marshal">
+    <td>create_field_marshal
+    </td>
+    <td><code>name = &lt;string&gt;</code><br>The name of the leader.
+    <p><code>picture = &lt;string&gt;</code><br>The graphical reference of the picture of the leader.<br>
+    <code>skill = &lt;int&gt;</code><br>The skill of the leader.<br>
+    <code>attack_skill = &lt;int&gt;</code><br>The attack skill of the leader.<br>
+    <code>defense_skill = &lt;int&gt;</code><br>
+    The defense skill of the leader.<br>
+    <code>planning_skill = &lt;int&gt;</code><br>The planning skill of the leader.<br>
+    <code>logistics_skill = &lt;int&gt;</code><br>The logistics skill of the leader.<br>
+    <code>traits = { &lt;trait&gt; }</code><br>The traits the leader spawns with.<br>
+    <code>female = &lt;bool&gt;</code><br>The gender of the leader.<br>
+    <code>legacy_id = &lt;int&gt;</code><br>The legacy ID used for the unit leader. Optional.
+    </p>
+    </td>
+    <td><pre>create_field_marshal = {
+        name = "Maurice Gamelin"
+        picture = "Portrait_France_Maurice_Gamelin.dds"
+        traits = { defensive_doctrine }
+        skill = 2
+        attack_skill = 1
+        defense_skill = 3
+        planning_skill = 2
+        logistics_skill = 1
+    }
+    </pre>
+    </td>
+    <td>Creates a field marshal for the current scope with the specified attributes.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span>. Deprecated, recommended to use <a href="#add_field_marshal_role">add_field_marshal_role</a> instead when possible. <b>The created field marshal will not be able to have a portrait if assigned to be a minister via officer corps, causing errors.</b>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="create_navy_leader">
+    <td>create_navy_leader
+    </td>
+    <td><code>name = &lt;string&gt;</code><br>The name of the leader.
+    <p><code>picture = &lt;string&gt;</code><br>The graphical reference of the picture of the leader.<br>
+    <code>skill = &lt;int&gt;</code><br>The skill of the leader.<br><code>traits = { &lt;trait&gt; }</code><br>The traits the leader spawns with.<br>
+    <code>female = &lt;bool&gt;</code><br>The gender of the leader.<br>
+    <code>legacy_id = &lt;int&gt;</code><br>The legacy ID used for the unit leader. Optional.
+    </p>
+    </td>
+    <td>
+    <pre>create_navy_leader = {
+        name = "François Darlan"
+        picture = "Portrait_France_Francois_Darlan.dds"
+        traits = { superior_tactician }
+        skill = 3
+    }
+    </pre>
+    </td>
+    <td>Creates a naval leader for the current scope with the specified attributes.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span>. Deprecated, recommended to use <a href="#add_naval_commander_role">add_naval_commander_role</a> instead when possible.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_unit_leader">
+    <td>remove_unit_leader
+    </td>
+    <td><code>&lt;id&gt;</code><br>The id of the unit leader.
+    </td>
+    <td><pre>remove_unit_leader = 70</pre>
+    </td>
+    <td>Removes the specified unit leader by their legacy ID.
+    </td>
+    <td>Does not work with the character ID. Instead, <a href="#remove_unit_leader_role">remove_unit_leader_role</a> within the scope of the character is recommended when possible.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_corps_commander_role">
+    <td>add_corps_commander_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>&lt;...&gt;</code><br><a href="/Character_modding#Unit_leaders" title="Character modding">Army leader role definition</a><br>
+    </p>
+    </td>
+    <td><pre>add_corps_commander_role = {
+        Character = GER_Character_token
+        skill = 4
+        attack_skill = 2
+        defense_skill = 3
+        planning_skill = 3
+        logistics_skill = 5
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as a corps commander.
+    </td>
+    <td><a href="#c_add_corps_commander_role">Can also be used in character scope.</a>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="add_field_marshal_role">
+    <td>add_field_marshal_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>&lt;...&gt;</code><br><a href="/Character_modding#Unit_leaders" title="Character modding">Army leader role definition</a><br>
+    </p>
+    </td>
+    <td><pre>add_field_marshal_role = {
+      character = GER_Character_token
+      skill = 4
+      attack_skill = 2
+      defense_skill = 3
+      planning_skill = 3
+      logistics_skill = 5
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as a field marshal.
+    </td>
+    <td><a href="#c_add_field_marshal_role">Can also be used in character scope.</a>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="add_naval_commander_role">
+    <td>add_naval_commander_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>&lt;...&gt;</code><br><a href="/Character_modding#Unit_leaders" title="Character modding">Navy leader role definition</a><br>
+    </p>
+    </td>
+    <td><pre>add_naval_commander_role = {
+      Character = GER_Character_token
+      skill = 4
+      attack_skill = 2
+      defense_skill = 3
+      planning_skill = 3
+      logistics_skill = 5
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as an admiral.
+    </td>
+    <td><a href="#c_add_naval_commander_role">Can also be used in character scope.</a>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="show_unit_leaders_tooltip">
+    <td>show_unit_leaders_tooltip
+    </td>
+    <td><code>&lt;character&gt;</code><br>The character whose name is to be shown.
+    </td>
+    <td><pre>show_unit_leaders_tooltip = TAG_my_leader</pre>
+    </td>
+    <td>Shows the name of the specified character as a tooltip.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+                            </tbody>
+                                </table>
+                              </div>
+                              <div class="block">
+                                <h2>Лидеры страны</h2>
+                                <table>
+                        
+                                    <thead>
+                        
+                                        <tr>
+                                            <th>Название</th>
+                                            <th>Параметры</th>
+                                            <th>Примеры</th>
+                                            <th>Описание</th>
+                                            <th>Версия</th>
+                                        </tr>
+                                        
+                                    </thead>
+                            <tbody> 
+    <tr id="create_country_leader">
+    <td>create_country_leader
+    </td>
+    <td><code>name = &lt;string&gt;</code><br>The name of the leader.
+    <p><code>desc = &lt;string&gt;</code><br>The description of the leader.<br><code>picture = &lt;spriteType&gt;</code><br>The graphical reference to the leader portrait.<br><code>expire = &lt;string&gt;</code><br>When the leader dies in history.<br><code>ideology = &lt;string&gt;</code><br>The sub-ideology of the country leader. Does not accept regular ideologies.<br>
+    <code>female = &lt;bool&gt;</code><br>The gender of the leader.<br><b>Traits scope</b><br><code>&lt;trait&gt;</code><br>The trait to add. Can add multiple.
+    </p>
+    </td>
+    <td><pre>create_country_leader = {
+        name = AFG_mohammed_zahir_shah
+        desc = "POLITICS_MOHAMMED_ZAHIR_SHAH_DESC"
+        picture = GFX_AFG_mohammed_zahir_shah
+        expire = "1965.1.1"
+        ideology = despotism
+        traits = {
+        }
+    }
+    </pre>
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>The portrait uses a spriteType, defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span>.<br>
+    <p>Sub-ideologies are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/ideologies</span>.<br>
+    Deprecated. Recommended to use <a href="#add_country_leader_role">add_country_leader_role</a> instead when possible.
+    </p>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_country_leader_role">
+    <td>add_country_leader_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>country_leader = { ... }</code><br><a href="/Character_modding#Country_leaders" title="Character modding">Country leader role definition</a><br>
+    <code>promote_leader = &lt;bool&gt;</code><br>Will promote the leader to be the leader of the assigned party. Optional, defaults to false.
+    </p>
+    </td>
+    <td><pre>add_country_leader_role = {
+        character = GER_character_token
+        promote_leader = yes
+        country_leader = {
+            ideology = fascism_type
+            expire = "1965.1.1.1"
+            traits = { war_industrialist }
+        }
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as a country leader, promoting to the party leader if specified.
+    </td>
+    <td><a href="#c_add_country_leader_role">Can also be used in character scope.</a>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="promote_character">
+    <td>promote_character
+    </td>
+    <td><code>&lt;character&gt;</code><br>The character to promote.<br>
+    <p><b>OR</b><br>
+    <code>character = &lt;character&gt;</code><br>The character to promote.<br>
+    <code>ideology = &lt;ideology type&gt;</code><br>The ideology type used by the country leader role.
+    </p>
+    </td>
+    <td><pre>promote_character = GER_erwin_rommel</pre>
+    <pre>promote_character = {
+        character = GER_erwin_rommel
+        ideology = nazism
+    }</pre>
+    </td>
+    <td>Promotes a character to the leader of their political party.
+    </td>
+    <td><a href="#c_promote_character">Can also be used in character scope.</a> If the character has multiple country leader roles, specifying the ideology type is mandatory. Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="remove_country_leader_role">
+    <td>remove_country_leader_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>ideology = &lt;string&gt;</code><br>The ideology type of the character.
+    </p>
+    </td>
+    <td><pre>remove_country_leader_role = {
+        character = GER_Character_Token
+        ideology = socialism
+    }</pre>
+    </td>
+    <td>Removes a country leader role from a character.
+    </td>
+    <td><a href="#c_remove_country_leader_role">Can also be used in character scope.</a> Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="kill_ideology_leader">
+    <td>kill_ideology_leader
+    </td>
+    <td><code>&lt;ideology&gt;</code><br>Ideology.
+    </td>
+    <td><pre>kill_ideology_leader = communism</pre>
+    </td>
+    <td>Kills the country leader of the designated ideology for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="retire_ideology_leader">
+    <td>retire_ideology_leader
+    </td>
+    <td><code>&lt;ideology&gt;</code><br>Ideology.
+    </td>
+    <td><pre>retire_ideology_leader = fascism</pre>
+    </td>
+    <td>Retires and removes the country leader of the ideology party for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="kill_country_leader">
+    <td>kill_country_leader
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>kill_country_leader = yes</pre>
+    </td>
+    <td>Kills the country leader for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="retire_country_leader">
+    <td>retire_country_leader
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>retire_country_leader = yes</pre>
+    </td>
+    <td>Retires and removes the country leader as head of their party for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_country_leader_ideology">
+    <td>set_country_leader_ideology
+    </td>
+    <td><code>&lt;government&gt;</code><br>The government to set.
+    </td>
+    <td><pre>set_country_leader_ideology = socialism</pre>
+    </td>
+    <td>Changes the country leader's government type for the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_country_leader_description">
+    <td>set_country_leader_description
+    </td>
+    <td><code>ideology = &lt;ideology&gt;</code><br>The ideology of the country leader, optional.
+    <p><code>desc = &lt;localisation key&gt;</code><br>The new description.
+    </p>
+    </td>
+    <td><pre>set_country_leader_description = {
+        ideology = neutrality
+        desc = LOC_KEY
+    }</pre>
+    </td>
+    <td>Changes the country leader's description.
+    </td>
+    <td>Must use a localisation key from any <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/localisation/*.yml</span> file, putting the description in quotes will not work. <a href="/Localisation" title="Localisation">Localisation</a> for more info
+    </td>
+    <td>1.9.1
+    </td></tr>
+    <tr id="set_country_leader_name">
+    <td>set_country_leader_name
+    </td>
+    <td><code>ideology = &lt;ideology&gt;</code><br>The ideology of the country leader, optional.
+    <p><code>name = &lt;localisation key&gt;</code><br>The new name.
+    </p>
+    </td>
+    <td><pre>set_country_leader_name = {
+        ideology = neutrality
+        name = LOC_KEY
+    }</pre>
+    </td>
+    <td>Changes the country leader's name.
+    </td>
+    <td>
+    </td>
+    <td>1.9.1
+    </td></tr>
+    <tr id="set_country_leader_portrait">
+    <td>set_country_leader_portrait
+    </td>
+    <td><code>ideology = &lt;ideology&gt;</code><br>The ideology of the country leader, optional.
+    <p><code>portrait = &lt;sprite name&gt;</code><br>The new portrait.
+    </p>
+    </td>
+    <td><pre>set_country_leader_portrait = {
+        ideology = neutrality
+        portrait = GFX_IMAGE_NAME
+    }</pre>
+    </td>
+    <td>Changes the country leader's portrait.
+    </td>
+    <td>The portrait must be defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span>
+    </td>
+    <td>1.9.1
+    </td></tr>
+    <tr id="add_country_leader_trait">
+    <td>add_country_leader_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to add.
+    </td>
+    <td><pre>add_country_leader_trait = nationalist_symbol</pre>
+    </td>
+    <td>Adds the specified trait to the current country's country leader.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/country_leader/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_country_leader_trait">
+    <td>remove_country_leader_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to remove.
+    </td>
+    <td><pre>remove_country_leader_trait = nationalist_symbol</pre>
+    </td>
+    <td>Removes the specified trait from the current scope's country leader.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/country_leader/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="swap_ruler_traits">
+    <td>swap_ruler_traits
+    </td>
+    <td>Similar to swap_ideas. Removes one trait and adds another.
+    </td>
+    <td><pre>swap_ruler_traits = { remove = &lt;trait&gt; add = &lt;trait&gt; }</pre>
+    </td>
+    <td>Swaps traits.
+    </td>
+    <td>Use <a href="#swap_country_leader_traits">swap_country_leader_traits</a> in character scope.
+    </td>
+    <td>1.6
+    </td></tr></tbody><tfoot></tfoot>
+                            </tbody>
+                                </table>
+                              </div>
+                              <div class="block">
+                                <h2>Советники</h2>
+                                <table>
+                        
+                                    <thead>
+                        
+                                        <tr>
+                                            <th>Название</th>
+                                            <th>Параметры</th>
+                                            <th>Примеры</th>
+                                            <th>Описание</th>
+                                            <th>Версия</th>
+                                        </tr>
+                                        
+                                    </thead>
+                            <tbody> 
+    <tr id="activate_advisor">
+    <td>activate_advisor
+    </td>
+    <td><code>&lt;character&gt;</code><br>The character to activate.
+    </td>
+    <td><pre>activate_advisor = GER_character_token_air_chief</pre>
+    </td>
+    <td>Hires an advisor, placing them into their respective slot.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="deactivate_advisor">
+    <td>deactivate_advisor
+    </td>
+    <td><code>&lt;character&gt;</code><br>The character to deactivate.
+    </td>
+    <td><pre>deactivate_advisor = GER_character_token_air_chief</pre>
+    </td>
+    <td>Dismisses an advisor from their respective slot, leaving it empty.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="add_advisor_role">
+    <td>add_advisor_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>advisor = { ... }</code><br><a href="/Character_modding#Advisors" title="Character modding">Advisor role definition</a><br>
+    <code>activate = &lt;bool&gt;</code><br>Will activate the advisor (add them directly when the command is run to the countries government). Optional, defaults to false.
+    </p>
+    </td>
+    <td><pre>add_advisor_role = {
+        character = GER_Character_token
+        activate = yes
+        advisor = {
+            slot = air_chief
+            cost = 50
+            idea_token = GER_character_token_air_chief
+            traits = {
+                air_chief_ground_support_2
+            }
+        }
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as an advisor, activating if specified.
+    </td>
+    <td><a href="#c_add_advisor_role">Can also be used in character scope.</a> Trigger and effect blocks (such as <code>allowed</code> and <code>on_add</code>) cannot be added within advisor definitions created this way.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="remove_advisor_role">
+    <td>remove_advisor_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>Specifies the character if the effect is executed in country scope.<br>
+    <p><code>slot = &lt;int&gt;</code><br>The slot where to remove the advisor slot from.
+    </p>
+    </td>
+    <td><pre>remove_advisor_role = {
+      character = "SOV_genrikh_yagoda"
+      slot = political_advisor
+    }</pre>
+    </td>
+    <td>Removes the specified advisor role from the character.
+    </td>
+    <td><a href="#c_remove_advisor_role">Can also be used in character scope.</a>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+                            </tbody>
+                                </table>
+                              </div>
+                              <div class="block">
+                                <h2>История</h2>
+                                <table>
+                        
+                                    <thead>
+                        
+                                        <tr>
+                                            <th>Название</th>
+                                            <th>Параметры</th>
+                                            <th>Примеры</th>
+                                            <th>Описание</th>
+                                            <th>Версия</th>
+                                        </tr>
+                                        
+                                    </thead>
+                            <tbody>          
+    <tr id="recruit_character">
+    <td>recruit_character
+    </td>
+    <td><code>&lt;character&gt;</code>
+    </td>
+    <td><pre>recruit_character = GER_Character_token</pre>
+    </td>
+    <td>Initially assigns the specified character to the current country.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="generate_character">
+    <td>generate_character
+    </td>
+    <td><code>token_base = &lt;string&gt;</code><br>Mandatory, acts as the character token.<br>
+    <p><code>name = &lt;localisation key&gt;</code><br>The name used for the character. Generates a random name if not set.
+    </p>
+    </td>
+    <td><pre>generate_character = {
+        token_base = army_chief_defensive_1
+        name = funny_name
+        advisor = {
+            slot = air_chief
+            cost = 50
+            idea_token = GER_character_token_air_chief
+            traits = {
+                air_chief_ground_support_2
+            }
+            allowed = {
+                always = yes
+            }
+        }
+    }</pre>
+    </td>
+    <td>Generates a character for current country.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_oob">
+    <td>set_oob
+    </td>
+    <td><code>&lt;order of battle&gt;</code><br>The name of the file used for the order of battle without the <code>.txt</code> extension.
+    </td>
+    <td><pre>set_oob = BHR_1936</pre>
+    </td>
+    <td>Sets the order of battle to be used for the current country's divisions, overriding every other non-naval and non-air order of battle.
+    </td>
+    <td>Orders of battle are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/history/units/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_naval_oob">
+    <td>set_naval_oob
+    </td>
+    <td><code>&lt;order of battle&gt;</code><br>The name of the file used for the order of battle without the <code>.txt</code> extension.
+    </td>
+    <td><pre>set_naval_oob = BHR_1936_naval_legacy</pre>
+    </td>
+    <td>Sets the order of battle to be used for the current country's divisions, overriding every other naval order of battle.
+    </td>
+    <td>Orders of battle are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/history/units/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_air_oob">
+    <td>set_air_oob
+    </td>
+    <td><code>&lt;order of battle&gt;</code><br>The name of the file used for the order of battle without the <code>.txt</code> extension.
+    </td>
+    <td><pre>set_air_oob = ITA_1936_air_bba</pre>
+    </td>
+    <td>Sets the order of battle to be used for the current country's divisions, overriding every other air order of battle.
+    </td>
+    <td>Orders of battle are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/history/units/*.txt</span> files.
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="set_keyed_oob">
+    <td>set_keyed_oob
+    </td>
+    <td><code>key = &lt;string&gt;</code><br>The key used for the file.<br>
+    <p><code>name = &lt;order of battle&gt;</code><br>The name of the file used for the order of battle without the <code>.txt</code> extension.
+    </p>
+    </td>
+    <td><pre>set_keyed_oob = {
+        key = naval
+        name = BHR_1936_mtg
+    }</pre>
+    </td>
+    <td>Sets the order of battle to be used for the current country's divisions, overriding every other keyed order of battle that uses the same key.
+    </td>
+    <td>Orders of battle are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/history/units/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr></tbody><tfoot></tfoot>
+                            </tbody>
+                                </table>
+                              </div>       
+
+        
 
     <button onclick="topFunction()" id="scroll-to-top" title="Наверх">&#8593;</button>
     <script src="script.js"></script>
