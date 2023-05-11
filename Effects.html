@@ -6284,12 +6284,2243 @@ create_dynamic_country = {
     </td></tr></tbody><tfoot></tfoot>
                             </tbody>
                                 </table>
-                              </div>       
+                              </div>      
+    <div class="block">
+        <h2>State scope</h2>
+    </tbody>
+</table>
+</div>
+<div class="block">
+<h2>Основное</h2>
+<table>
 
+    <thead>
+
+        <tr>
+            <th>Название</th>
+            <th>Параметры</th>
+            <th>Примеры</th>
+            <th>Описание</th>
+            <th>Версия</th>
+        </tr>
         
+    </thead>
+<tbody>          
+    <tr id="state_event">
+    <td>state_event
+    </td>
+    <td><code>id = &lt;event&gt;</code><br>The event to fire.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of days. Optional.<br><code>hours = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of hours. Optional.<br><code>random = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random</i>, inclusive) of <b>hours</b> to the scheduled fire time. Optional.<br><code>random_days = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random_days</i>, inclusive) of days to the scheduled fire time. Optional.
+    </p>
+    </td>
+    <td>
+    <pre>state_event = {
+        id = my_event.1
+        days = 10
+        random = 50
+        random_days = 10
+        trigger_for = controller
+    }
+    </pre>
+    </td>
+    <td>Fires the specified event for the current state.
+    </td>
+    <td>Where triggers do not need to be repeatedly checked <code>random</code> can be a performance light alternative to <code>mean_time_to_happen</code> for scheduling events.
+    <p>Using days = &lt;event&gt; / &lt;variable&gt; or hours may still be bugged and will not fire the event.
+    </p>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_state_flag">
+    <td>set_state_flag
+    </td>
+    <td><code>&lt;flag&gt;</code><br>An unique string to identify the state flag with.<br>
+    <p><b>OR</b><br>
+    <code>flag = &lt;flag&gt;</code><br>The flag to set.<br>
+    <code>days = &lt;int&gt;</code><br>Sets the flag to last for the specified amount of days. Optional.<br>
+    <code>value = &lt;int&gt;</code><br>The new value of the flag on the scale from -2 147 483 648 to 2 147 483 647.
+    </p>
+    </td>
+    <td><pre>set_state_flag = my_flag</pre>
+    <pre>set_state_flag = {
+        flag = my_flag
+        days = 123
+        value = 1
+    }</pre>
+    </td>
+    <td>Defines a state flag.
+    </td>
+    <td>No tooltip is shown. <a href="/Data_structures#Flags" title="Data structures">The flag in this effect is used in the meaning of 'boolean flag', used to store information.</a>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="clr_state_flag">
+    <td>clr_state_flag
+    </td>
+    <td><code>&lt;flag&gt;</code><br>The unique string of a state flag to clear.
+    </td>
+    <td><pre>clr_state_flag = my_flag</pre>
+    </td>
+    <td>Clears a defined state flag.
+    </td>
+    <td>No tooltip is shown.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="modify_state_flag">
+    <td>modify_state_flag
+    </td>
+    <td><code>flag = &lt;flag&gt;</code><br>The state flag to modify.
+    <p><code>value = &lt;value&gt;</code><br>The value to set it to: 0 or 1
+    </p>
+    </td>
+    <td><pre>modify_state_flag = {
+        flag = my_flag
+        value = 1
+    }
+    </pre>
+    </td>
+    <td>Modifies a state flag.
+    </td>
+    <td>Use <a href="/Variables" class="mw-redirect" title="Variables">variables</a> instead.
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="set_state_name">
+    <td>set_state_name
+    </td>
+    <td><code>&lt;string&gt;</code><br>Defines the new name.
+    </td>
+    <td><pre>set_state_name = "Funland"
+    </pre>
+    </td>
+    <td>Changes the current state's name to the specified name.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="reset_state_name">
+    <td>reset_state_name
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>reset_state_name = yes</pre>
+    </td>
+    <td>Resets any changes to the current state's name.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="add_claim_by">
+    <td>add_claim_by
+    </td>
+    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The country to add the claim for.
+    </td>
+    <td><pre>add_claim_by = SOV</pre>
+    </td>
+    <td>Adds a claim for the specified country on the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_claim_by">
+    <td>remove_claim_by
+    </td>
+    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The country to remove the claim for.
+    </td>
+    <td><pre>remove_claim_by = SOV</pre>
+    </td>
+    <td>Removes a claim by the specified country on the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_core_of">
+    <td>add_core_of
+    </td>
+    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The country to add the core for.
+    </td>
+    <td><pre>add_core_of = SOV</pre>
+    </td>
+    <td>Adds a core for the specified country on the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_core_of">
+    <td>remove_core_of
+    </td>
+    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The country to remove the core for.
+    </td>
+    <td><pre>remove_core_of = SOV</pre>
+    </td>
+    <td>Removes a core for the specified country on the current scope.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_demilitarized_zone">
+    <td>set_demilitarized_zone
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>set_demilitarized_zone = yes
+    </pre>
+    </td>
+    <td>Makes the current scope a demilitarized zone.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_state_category">
+    <td>set_state_category
+    </td>
+    <td><code>&lt;category&gt;</code><br>The category to change to.
+    </td>
+    <td><pre>set_state_category = rural
+    </pre>
+    </td>
+    <td>Changes the current state category to the specified category.
+    </td>
+    <td>Categories are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/state_category/*.txt</span>
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="add_state_modifier">
+    <td>add_state_modifier
+    </td>
+    <td><b>Modifier scope</b>
+    <p><code>&lt;modifier&gt; = &lt;float&gt;</code><br>Adds a modifier to the state.
+    </p>
+    </td>
+    <td><pre>add_state_modifier = {
+        modifier = {
+            local_resources = 2.0
+        }
+    }
+    </pre>
+    </td>
+    <td>Adds a <a href="/Modifiers" title="Modifiers">modifier</a> to the current state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="add_manpower">
+    <td>add_manpower
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    </td>
+    <td><pre>add_manpower = 10000</pre>
+    </td>
+    <td>Adds the specified amount of manpower to the current state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_resource">
+    <td>add_resource
+    </td>
+    <td><code>type = &lt;resource&gt;</code><br>The resource to add.
+    <p><code>amount = &lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    </p>
+    </td>
+    <td><pre>add_resource = {
+        type = oil
+        amount = 100
+    }
+    </pre>
+    </td>
+    <td>Adds the specified resource in the specified amount to the current state.
+    </td>
+    <td><a href="#country_add_resource">Can also be used in country scope.</a>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_border_war">
+    <td>set_border_war
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>set_border_war = yes</pre>
+    </td>
+    <td>Enables Border War status for the current state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="create_unit">
+    <td>create_unit
+    </td>
+    <td><code>division = &lt;division string&gt;</code><br>The division string.<br>
+    <p><code>owner = &lt;scope&gt;</code><br>The owner of the division.<br>
+    <code>prioritize_location = &lt;province&gt;</code><br>If possible, this province within the state gets used. Optional.<br>
+    <code>allow_spawning_on_enemy_provs = yes</code><br>Allows the units to be created on provinces owned by the enemy. Defaults to false.<br>
+    The following arguments go within <code>division = ""</code>:<br>
+    </p>
+    <dl><dd><code>name = \"&lt;string&gt;\"</code><br>The name of the division.<br></dd>
+    <dd><code>division_template = \"&lt;string&gt;\"</code><br>The template to be used by the division.<br></dd>
+    <dd><code>start_experience_factor = &lt;double&gt;</code><br>Experience of the division, with 0 being none and 1 being full training. Defaults to 1.<br></dd>
+    <dd><code>start_equipment_factor = &lt;double&gt;</code><br>Equipment stockpile of the division. Defaults to 1.<br></dd>
+    <dd><code>start_manpower_factor = &lt;double&gt;</code><br>Manpower stockpile of the division. Defaults to 1.<br></dd></dl>
+    </td>
+    <td><pre>create_unit = {
+        division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.5"
+        owner = GER
+    }
+    </pre>
+    </td>
+    <td>Adds the specified division to the current state.
+    </td>
+    <td>The division string <b>must be on one line</b>. A linebreak in the middle of <code>division = "..."</code> will break the effect and result in no units being spawned.
+    <p><b>Can only be used within a state scope</b>, such as <a href="/Scopes#capital_scope" title="Scopes">capital_scope</a>. The effect will do nothing when put into a country's scope. 
+    </p>
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="teleport_armies">
+    <td>teleport_armies
+    </td>
+    <td><code>limit = { &lt;triggers&gt; }</code><br>The condition that must be true for the owner of the armies for them to teleport.
+    <p><code>to_state_array = &lt;array&gt;</code><br>The state array the armies will get teleported to.<br><code>to_province = &lt;ID&gt;</code><br>The province the armies will get teleported to.<br><code>to_state = &lt;ID&gt;</code><br>The state the armies will get teleported to.<br>
+    </p>
+    </td>
+    <td><pre>teleport_armies = {
+        limit = {
+            has_war_together_with = ROOT
+        }
+        to_state_array = owned_controlled_states
+    }
+    </pre>
+    </td>
+    <td>Teleports all armies in the specified state if the owner of the armies meets the condition.
+    </td>
+    <td>Only define one of to_state_array, to_state, or to_province. If none is specified, it defaults to the capital.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_province_modifier">
+    <td>add_province_modifier
+    </td>
+    <td><code>static_modifiers = { &lt;modifiers&gt; }</code><br>The list of modifiers.<br><code>province = &lt;id&gt;</code>The province to apply the modifiers to.<code>provinces = {}</code>Scope for selecting multiple provinces. The following arguments have to go inside it:<br><code>id = &lt;id&gt;</code>The ID of the province. Multiple can be specified.<br><code>all_provinces = yes</code>Selects all provinces to which the limitations apply. The following arguments require it: <code>limit_to_coastal = yes</code> Limits the selection of provinces to only coastal ones.<br><code>limit_to_border = yes</code> Limits the selection of provinces to only ones bordering a different country.<br><code>limit_to_naval_base = yes</code> Limits the selection of provinces to only ones that have a naval base.<br><code>limit_to_victory_point = yes</code> Limits the selection of provinces to only ones that have a victory point, or a city, in them.<br>
+    </td>
+    <td><pre>add_province_modifier = {
+        static_modifiers = { mod_modifier_1 mod_modifier_2 }
+        province = 1234
+    }</pre><pre>add_province_modifier = {
+    <p>	static_modifiers = { mod_modifier_1 mod_modifier_2 }
+        province = {
+            id = 1234
+            id = 4321
+        }
+    </p>
+    }</pre><pre>add_province_modifier = {
+    <p>	static_modifiers = { mod_modifier_1 mod_modifier_2 }
+        province = {
+            all_provinces = yes
+            limit_to_coastal = yes
+            limit_to_border = yes
+            limit_to_naval_base = yes
+            limit_to_victory_point = yes
+        }
+    </p>
+    }</pre>
+    </td>
+    <td>Adds a province modifier to the specified provinces in this state.
+    </td>
+    <td>Province modifiers are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span>
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="remove_province_modifier">
+    <td>remove_province_modifier
+    </td>
+    <td><code>static_modifiers = { &lt;modifiers&gt; }</code><br>The list of modifiers.<br><code>province = &lt;id&gt;</code>The province to apply the modifiers to.<code>provinces = {}</code>Scope for selecting multiple provinces. The following arguments have to go inside it:<br><code>id = &lt;id&gt;</code>The ID of the province. Multiple can be specified.<br><code>all_provinces = yes</code>Selects all provinces to which the limitations apply. The following arguments require it: <code>limit_to_coastal = yes</code> Limits the selection of provinces to only coastal ones.<br><code>limit_to_border = yes</code> Limits the selection of provinces to only ones bordering a different country.<br><code>limit_to_naval_base = yes</code> Limits the selection of provinces to only ones that have a naval base.<br><code>limit_to_victory_point = yes</code> Limits the selection of provinces to only ones that have a victory point, or a city, in them.<br>
+    </td>
+    <td><pre>remove_province_modifier = {
+        static_modifiers = { mod_modifier_1 mod_modifier_2 }
+        province = 1234
+    }</pre><pre>remove_province_modifier = {
+    <p>	static_modifiers = { mod_modifier_1 mod_modifier_2 }
+        province = {
+            id = 1234
+            id = 4321
+        }
+    </p>
+    }</pre><pre>remove_province_modifier = {
+    <p>	static_modifiers = { mod_modifier_1 mod_modifier_2 }
+        province = {
+            all_provinces = yes
+            limit_to_coastal = yes
+            limit_to_border = yes
+            limit_to_naval_base = yes
+            limit_to_victory_point = yes
+        }
+    </p>
+    }</pre>
+    </td>
+    <td>Removes a province modifier to the specified provinces in this state.
+    </td>
+    <td>Province modifiers are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span>
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="add_victory_points">
+    <td>add_victory_points
+    </td>
+    <td>Add victory points to a province
+    </td>
+    <td><pre>add_victory_points = {
+        province = 1234
+        value = 10
+    }</pre>
+    </td>
+    <td>Adds victory points to a province.
+    </td>
+    <td>Accepts negative values
+    </td>
+    <td>1.10
+    </td></tr>
+    <tr id="set_victory_points">
+    <td>set_victory_points
+    </td>
+    <td>Set the victory points of a province
+    </td>
+    <td><pre>set_victory_points = {
+        province = 1234
+        value = 10
+    }</pre>
+    </td>
+    <td>Sets the number of victory point in a province.
+    </td>
+    <td>Accepts negative values
+    </td>
+    <td>1.10
+    </td></tr>
+    <tr id="set_state_province_controller">
+    <td>set_state_province_controller
+    </td>
+    <td><code>controller = &lt;tag&gt;</code><br>The new controller of the province.
+    <p><code>limit = { &lt;triggers&gt; }<br>The triggers that must be fulfilled by the province's current controller to be transferred to the new controller.
+    </code></p><code>
+    </code></td>
+    <td><pre>set_state_province_controller = {
+        controller = POL
+        limit = {
+            OR = {
+                tag = GER
+                is_in_faction_with = GER
+            }
+        }
+    }</pre>
+    </td>
+    <td>Changes the controller of all provinces within that state controlled by countries that meet triggers to the specified country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="transfer_state_to">
+    <td>transfer_state_to
+    </td>
+    <td><code>&lt;country&gt;</code><br>Country to transfer the state to.
+    </td>
+    <td><pre>transfer_state_to = JAM</pre>
+    </td>
+    <td>Sets owner and controller of the state to the given country
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_state_owner_to">
+    <td>set_state_owner_to
+    </td>
+    <td><code>&lt;country&gt;</code><br>Country to set the owner <b>(but not the controller)</b> of the state to.
+    </td>
+    <td><pre>set_state_owner_to = JAM</pre>
+    </td>
+    <td>Sets the owner of the state to the given country
+    </td>
+    <td>Use <a href="#transfer_state_to">transfer_state_to</a> unless the control specifically shouldn't be given.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="set_state_controller_to">
+    <td>set_state_controller_to
+    </td>
+    <td><code>&lt;country&gt;</code><br>Country to set the controller <b>(but not the owner)</b> of the state to.
+    </td>
+    <td><pre>set_state_controller_to = ITA</pre>
+    </td>
+    <td>Sets the controller of the state to the given country
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+</table>
+    </div> 
+    
+    <div class="block">
+        <h2>Постройки</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody>     
+    <tr id="add_extra_state_shared_building_slots">
+    <td>add_extra_state_shared_building_slots
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount of slots to add or remove.
+    </td>
+    <td><pre>add_extra_state_shared_building_slots = 2</pre>
+    </td>
+    <td>Changes the number of shared building slots for the current state.
+    </td>
+    <td>Shared buildings slots being the ones used for multiple building types, such as military or civilian factories. This is in contrast to non-shared slots, such as those used by radio stations or air bases, which only can be changed globally with technologies.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_building_construction">
+    <td>add_building_construction
+    </td>
+    <td><code>type = &lt;string&gt;</code><br>The building to add.
+    <p><code>level = &lt;int&gt; / &lt;variable&gt;</code><br>The level to set the building to.<br><code>instant_build = &lt;bool&gt;</code><br>Defines whether the buildings are instantly built.<br><code>province = &lt;id&gt;</code><br>Defines the exact province to add provincal buildings in. Can be used as a scope.<br><b>Province scope</b><br>
+    <code>all_provinces = &lt;bool&gt;</code><br>Affect all provinces within the state that meet each limit. Used in the province scope.<br>
+    <code>id = &lt;id&gt;</code><br>Affect the specified province ID. Used in the province scope, will apply for each building if inserted multiple times.
+    <code>limit_to_coastal = &lt;bool&gt;</code><br>Affect only coastal provinces within the selection. Used in the province scope.<br>
+    <code>limit_to_naval_base = &lt;bool&gt;</code><br>Affect only provinces that have naval bases built. Used in the province scope.<br>
+    <code>limit_to_border = &lt;bool&gt;</code><br>Affect only provinces that lie on a border between countries. Used in the province scope.<br>
+    <code>limit_to_victory_point = &lt;int&gt;/&lt;bool&gt;</code><br>Affect only provinces that meet the victory point amount prerequisite. If <code>yes</code> is used in place of a number, any amount of victory points works. Used in the province scope.<br>
+    <code>level = &lt;int&gt;</code><br>Affect only provinces with buildings level below, at or above the specified level. Used in the province scope.<br>
+    </p>
+    </td>
+    <td><pre>add_building_construction = {
+        type = arms_factory
+        level = 5
+        instant_build = yes
+    }
+    </pre>
+    <pre>add_building_construction = {
+        type = bunker
+        level = 10
+        instant_build = yes
+        province = {
+            all_provinces = yes
+            limit_to_border = yes
+            limit_to_victory_point &gt; 1
+        }
+    }
+    </pre>
+    <pre>add_building_construction = {
+        type = bunker
+        level = 1
+        instant_build = yes
+        province = 2999
+    }
+    </pre>
+    </td>
+    <td>Starts construction in the current state for the specified building.
+    </td>
+    <td>For provincial buildings, <b>must be done within the scope of the state that contains the province</b> even if done on a specific province. <b>If the controller country doesn't have an <a href="/Country_creation#Order_of_battle" title="Country creation">order of battle assigned within the history file</a>, the buildings will not show up within the production menu</b> until a recalculation of buildings, such as by changing consumer goods or reloading a savefile.
+    <p><b>Can only be used within a state scope</b>, such as <a href="/Scopes#random_owned_controlled_state" title="Scopes">random_owned_controlled_state</a>. The effect will do nothing when put into a country's scope. 
+    </p>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="set_building_level">
+    <td>set_building_level
+    </td>
+    <td><code>type = &lt;string&gt;</code><br>The building to add.
+    <p><code>level = &lt;int&gt; / &lt;variable&gt;</code><br>The level to set the building to.<br><code>instant_build = &lt;bool&gt;</code><br>Defines whether the buildings are instantly built.<br><code>province = &lt;id&gt;</code><br>Defines the exact province to add provincal buildings in. Can be used as a scope.<br><b>Province scope</b><br><code>all_provinces = &lt;bool&gt;</code><br>Affect all provinces. Used in the province scope.<br><code>limit_to_coastal = &lt;bool&gt;</code><br>Affect coastal provinces. Used in the province scope.<br><code>limit_to_naval_base = &lt;bool&gt;</code><br>Affect naval base provinces. Used in the province scope.<br><code>limit_to_border = &lt;bool&gt;</code><br>Affect border provinces. Used in the province scope.<br><code>level = &lt;int&gt;</code><br>Affect only provinces with buildings level below, at or above the specified level. Used in the province scope.<br><code>id = &lt;id&gt;</code><br>Affect the specified province. Used in the province scope.
+    </p>
+    </td>
+    <td><pre>set_building_level = {
+        type = infrastructure
+        level = 10
+        instant_build = yes
+    }
+    </pre>
+    <pre>set_building_level = {
+        type = bunker
+        level = 3
+        province = {
+            all_provinces = yes
+            limit_to_border = yes
+            level &lt; 3
+        }
+    }
+    </pre>
+    </td>
+    <td>Sets the specified building to the current state (or provinces within the state).
+    </td>
+    <td>The province scope is used for provincal level buildings.  You can limit the construction to victory points using&nbsp;: <code>limit_to_victory_point &gt; 5</code> (only build province buildings on province with VP over 5 ) <code>limit_to_victory_point = yes</code> (only build province buildings on province with VP) For provincial buildings, <b>must be done within the scope of the state that contains the province</b> even if done on a specific province.
+    </td>
+    <td>1.4
+    </td></tr>
+    <tr id="damage_building">
+    <td>damage_building
+    </td>
+    <td><code>type = &lt;building&gt;</code><br>The building to damage.
+    <p><code>damage = &lt;float&gt;</code><br>The amount of damage to inflict.<br><code>province = &lt;id&gt;</code><br>The province to target for provincal buildings.
+    </p>
+    </td>
+    <td><pre>damage_building = {
+        type = infrastructure
+        damage = 1
+    }
+    </pre>
+    </td>
+    <td>Damages the specified building in the current state.
+    </td>
+    <td>The health of buildings is determined by the <b>value</b> attribute in a building's definition. This is multiplied by their level to get their total health.
+    </td>
+    <td>1.3
+    </td></tr>
+    <tr id="remove_building">
+    <td>remove_building
+    </td>
+    <td><code>type = &lt;building&gt;</code><br>The building to remove.
+    <p><code>level = &lt;int&gt; / &lt;variable&gt;</code><br>The levels to remove.
+    </p>
+    </td>
+    <td><pre>remove_building = {
+        type = arms_factory
+        level = 5
+    }
+    </pre>
+    </td>
+    <td>Removes the specified building in the current state. For shared buildings level determines the amount, whereas for the others it is the actual level.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.0
+    </td></tr></tbody><tfoot></tfoot>
+        </table>
+    </div>
+    <div class="block">
+        <h2>Сопротивление и подчинение</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody>   
+    <tr id="add_compliance">
+    <td>add_compliance
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    </td>
+    <td><pre>add_compliance = 30</pre>
+    </td>
+    <td>Adds compliance to the specified state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_resistance">
+    <td>add_resistance
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    </td>
+    <td><pre>add_resistance = 30</pre>
+    </td>
+    <td>Adds resistance to the specified state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_resistance_target">
+    <td>add_resistance_target
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    </td>
+    <td><pre>add_resistance_target = 30</pre>
+    </td>
+    <td>Increases resistance target in the specified state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="add_resistance_target">
+    <td>add_resistance_target
+    </td>
+    <td><code>id = &lt;int&gt;</code><br>The ID of the target increase.<br><code>amount = &lt;int&gt;/&lt;variable&gt;</code><br>The amount to increase the resistance target by.<br><code>occupied = &lt;scope&gt;</code><br>Will only apply the increase if the the occupied country is the specified scope.<br><code>occupier = &lt;scope&gt;</code><br>Will only apply the increase if the the occupier is the specified scope.<br><code>days = &lt;int&gt;/&lt;variable&gt;</code><br>If set, the resistance target will only be increased for the specified amount of days.<br><code>tooltip = &lt;string&gt;</code><br>The tooltip to show in the resistance target tooltip.
+    </td>
+    <td><pre>add_resistance_target = {
+        id = 123
+        amount = 30
+        occupied = ENG
+        occupier = GER
+        days = 365
+        tooltip = my_localisation_key
+    }
+    </pre>
+    </td>
+    <td>Increases resistance target in the specified state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="cancel_resistance">
+    <td>cancel_resistance
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>cancel_resistance = yes</pre>
+    </td>
+    <td>Cancels resistance activity for the current state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="force_disable_resistance">
+    <td>force_disable_resistance
+    </td>
+    <td><code>&lt;scope&gt;</code><br>The target country.
+    </td>
+    <td><pre>force_disable_resistance = GER</pre>
+    </td>
+    <td>Disables resistance for the scoped state when the occupier is the specified country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="force_disable_resistance">
+    <td>force_disable_resistance
+    </td>
+    <td><code>clear = &lt;bool&gt;</code><br>If set to yes, will clear resistance.<br><code>occupier = &lt;scope&gt;</code><br>Resistance will be disabled if the occupier is the specified scope.<br><code>occupied = &lt;scope&gt;</code><br>Resistance will be disabled if the occupied country is the specified scope.
+    </td>
+    <td><pre>force_disable_resistance = {
+        clear = yes
+        occupier = GER
+        occupied = ENG
+    }
+    </pre>
+    </td>
+    <td>Disables resistance for the scoped state when the occupier is the specified country.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="force_enable_resistance">
+    <td>force_enable_resistance
+    </td>
+    <td><code>&lt;scope&gt;</code><br>The target country.
+    </td>
+    <td><pre>force_enable_resistance = GER</pre>
+    </td>
+    <td>Enables resistance for the scoped state when the occupier is the specified country.
+    </td>
+    <td>Does not start resistance by itself, only removes the checks forcefully disabling it. Use with <a href="#start_resistance">start_resistance</a> in order to immediately start resistance.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="detailed_force_enable_resistance">
+    <td>force_enable_resistance
+    </td>
+    <td><code>clear = &lt;bool&gt;</code><br>If set to yes, will clear resistance.<br><code>occupier = &lt;scope&gt;</code><br>Resistance will be enabled if the occupier is the specified scope.<br><code>occupied = &lt;scope&gt;</code><br>Resistance will be enabled if the occupied country is the specified scope.
+    </td>
+    <td><pre>force_enable_resistance = {
+        clear = yes
+        occupier = GER
+        occupied = ENG
+    }
+    </pre>
+    </td>
+    <td>Enables resistance for the scoped state when the occupier is the specified country.
+    </td>
+    <td>Does not start resistance by itself, only removes the checks forcefully disabling it. Use with <a href="#start_resistance">start_resistance</a> in order to immediately start resistance.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="remove_resistance_target">
+    <td>remove_resistance_target
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The id of the resistance target to remove. (Must be set with add_resistance_target)
+    </td>
+    <td><pre>remove_resistance_target = 30</pre>
+    </td>
+    <td>Removes a set resistance target increase in the specified state.
+    </td>
+    <td>Has no tooltip.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="set_compliance">
+    <td>set_compliance
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to set the compliance to.
+    </td>
+    <td><pre>set_compliance = 30</pre>
+    </td>
+    <td>Sets compliance in the specified state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="set_resistance">
+    <td>set_resistance
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to set the resistance to.
+    </td>
+    <td><pre>set_resistance = 30</pre>
+    </td>
+    <td>Sets resistance in the specified state.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="start_resistance">
+    <td>start_resistance
+    </td>
+    <td><code>&lt;bool&gt;/&lt;scope&gt;</code><br>Whether to start resistance or not. If set to a scope, starts resistance for the specified scope.
+    </td>
+    <td><pre>start_resistance = POL</pre>
+    <pre>start_resistance = yes</pre>
+    </td>
+    <td>Starts resistance in the specified state.
+    </td>
+    <td>If used on a state that normally can't start resistance, use alongside with <a href="#force_enable_resistance">force_enable_resistance</a>.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="set_garrison_strength">
+    <td>set_garrison_strength
+    </td>
+    <td><code>&lt;0-1&gt;</code><br>The new garrison strength.
+    </td>
+    <td><pre>set_garrison_strength = 0.5</pre>
+    </td>
+    <td>Sets the strength of the garrison in the specified state.
+    </td>
+    <td>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="set_occupation_law">
+    <td>set_occupation_law
+    </td>
+    <td><code>&lt;law ID&gt;</code><br>The new occupation law enacted by the previous scope or <code>default_law</code>.
+    </td>
+    <td><pre>GER = { every_controlled_state = { set_occupation_law = military_governor_occupation } } # Changes GER's occupation law for every controlled state.</pre>
+    </td>
+    <td>Sets the occupation law of the state.
+    </td>
+    <td><a href="/Scopes#PREV_usage" title="Scopes">PREV</a> will be the country for whom the occupation law will be changed. If PREV is not a country, nothing changes. If PREV doesn't occupy the state, nothing happens until it does. If using <code>default_law</code>, resets to the law set by the country's occupation.
+    </td>
+    <td>1.12
+    </td></tr></tbody><tfoot></tfoot>
+        </table>
+    </div>
+    <div class="block">
+        <h2>Character scope</h2>
+        <h2>Основное</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody>    
+    <tr id="set_character_flag">
+    <td>set_character_flag
+    </td>
+    <td><code>&lt;flag&gt;</code><br>An unique string to identify the character flag with.<br>
+    <p><b>OR</b><br>
+    <code>flag = &lt;flag&gt;</code><br>The flag to set.<br>
+    <code>days = &lt;int&gt;</code><br>Sets the flag to last for the specified amount of days. Optional.<br>
+    <code>value = &lt;int&gt;</code><br>The new value of the flag on the scale from -2 147 483 648 to 2 147 483 647.
+    </p>
+    </td>
+    <td><pre>set_character_flag = my_flag</pre>
+    <pre>set_character_flag = {
+        flag = my_flag
+        days = 123
+        value = 1
+    }</pre>
+    </td>
+    <td>Defines a character flag.
+    </td>
+    <td>No tooltip is shown. <a href="/Data_structures#Flags" title="Data structures">The flag in this effect is used in the meaning of 'boolean flag', used to store information.</a>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_set_character_name">
+    <td>set_character_name
+    </td>
+    <td><code>&lt;localisation key&gt;</code><br>The name to use.
+    </td>
+    <td><pre>set_character_name = GER_my_cool_flag</pre>
+    </td>
+    <td>Changes the character's name to the specified localisation key's value.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="modify_character_flag">
+    <td>modify_character_flag
+    </td>
+    <td><code>flag = &lt;flag&gt;</code><br>The country flag to modify.
+    <p><code>value = &lt;value&gt;</code><br>The value to set it to: 0 or 1
+    </p>
+    </td>
+    <td><pre>modify_character_flag = {
+      flag = GER_my_cool_flag
+      value = 5
+    }</pre>
+    </td>
+    <td>Modifies an existing character flag
+    </td>
+    <td>Use <a href="/Variables" class="mw-redirect" title="Variables">variables</a> instead.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="clr_character_flag">
+    <td>clr_character_flag
+    </td>
+    <td>
+    </td>
+    <td><pre>clr_character_flag = &lt;bool&gt;</pre>
+    </td>
+    <td>Clears a character flag
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="retire">
+    <td>retire
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean&gt;
+    </td>
+    <td><pre>retire = yes</pre>
+    </td>
+    <td>Retires the current character (removing them).
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="set_nationality">
+    <td>set_nationality
+    </td>
+    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The target country.
+    </td>
+    <td><pre>set_nationality = GER</pre>
+    </td>
+    <td>Switches the current character to the specified country, giving them the character.
+    </td>
+    <td>If you wish to change the nationality of a specific character, and the country getting the effect doesn't have the character recruited already, use the
+    <pre>every_possible_country = {
+        limit = { has_character = ID }
+        random_character = {
+            limit = { is_character = ID }
+            set_nationality = TAG
+        }
+    }</pre>
+    <p>command to call them up. Only necessary in 1.11 and beyond.
+    </p>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="set_portraits">
+    <td>set_portraits
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character name. Optional if in character scope.<br>
+    <p><b>Army scope</b>: <code>small = &lt;sprite&gt;</code><br>The sprite used as an advisor. <code>large = &lt;sprite&gt;</code><br>The sprite used as a general.<br>
+    <b>Character scope</b>:<code>large = &lt;sprite&gt;</code><br>The sprite used as a country leader.<br>
+    </p>
+    </td>
+    <td><pre>set_portraits = {
+        character = my_character
+        army = { small ="MySmallCharacterGFX" }
+        civilian = { large ="MyLargeCharacterGFX" }
+    }</pre>
+    </td>
+    <td>Changes the specified portraits of a character.
+    </td>
+    <td>Sprites are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span> files.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_add_trait">
+    <td>add_trait
+    </td>
+    <td><code>slot = &lt;slot&gt;</code> Slot of the character. Necessary for advisors.<br>
+    <p><code>ideology = &lt;sub-ideology&gt;</code> Ideology type of the character. Necessary for country leaders.<br>
+    <code>trait = &lt;trait&gt;</code><br>The trait to add.
+    </p>
+    </td>
+    <td><pre>add_trait = {
+        slot = political_advisor
+        trait = really_good_boss
+    }</pre>
+    <pre>add_trait = {
+        ideology = liberalism
+        trait = field_of_gar
+    }</pre>
+    </td>
+    <td>Adds the specified country leader trait to the character.
+    </td>
+    <td>Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon. The character slot can be the character's name or id. Using name is recommended because 1.11 made id obsolete.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_remove_trait">
+    <td>remove_trait
+    </td>
+    <td><code>slot = &lt;slot&gt;</code> Slot of the character. Necessary for advisors.<br>
+    <p><code>ideology = &lt;sub-ideology&gt;</code> Ideology type of the character. Necessary for country leaders.<br>
+    <code>trait = &lt;trait&gt;</code><br>The trait to remove.
+    </p>
+    </td>
+    <td><pre>remove_trait = {
+        slot = political_advisor
+        trait = really_good_boss
+    }</pre>
+    <pre>remove_trait = {
+        ideology = liberalism
+        trait = field_of_gar
+    }</pre>
+    </td>
+    <td>Removes the specified trait from the character.
+    </td>
+    <td>Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon. The character slot can be the character's name or id. Using name is recommended because 1.11 made id obsolete.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_add_corps_commander_role">
+    <td>add_corps_commander_role
+    </td>
+    <td><code>&lt;...&gt;</code><br><a href="/Character_modding#Unit_leaders" title="Character modding">Army leader role definition</a><br>
+    </td>
+    <td><pre>add_corps_commander_role = {
+        skill = 4
+        attack_skill = 2
+        defense_skill = 3
+        planning_skill = 3
+        logistics_skill = 5
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as a corps commander.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_add_field_marshal_role">
+    <td>add_field_marshal_role
+    </td>
+    <td><code>&lt;...&gt;</code><br><a href="/Character_modding#Unit_leaders" title="Character modding">Army leader role definition</a><br>
+    </td>
+    <td><pre>add_field_marshal_role = {
+      skill = 4
+      attack_skill = 2
+      defense_skill = 3
+      planning_skill = 3
+      logistics_skill = 5
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as a field marshal.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_add_naval_commander_role">
+    <td>add_naval_commander_role
+    </td>
+    <td><code>&lt;...&gt;</code><br><a href="/Character_modding#Unit_leaders" title="Character modding">Navy leader role definition</a><br>
+    </td>
+    <td><pre>add_naval_commander_role = {
+      skill = 4
+      attack_skill = 2
+      defense_skill = 3
+      planning_skill = 3
+      logistics_skill = 5
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as an admiral.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_add_country_leader_role">
+    <td>add_country_leader_role
+    </td>
+    <td><code>character = &lt;character&gt;</code><br>The character to modify.<br>
+    <p><code>country_leader = { ... }</code><br><a href="/Character_modding#Country_leaders" title="Character modding">Country leader role definition</a><br>
+    <code>promote_leader = &lt;bool&gt;</code><br>Will promote the leader to be the leader of the assigned party. Optional, defaults to false.
+    </p>
+    </td>
+    <td><pre>add_country_leader_role = {
+        character = GER_character_token
+        promote_leader = yes
+        country_leader = {
+            ideology = fascism_type
+            expire = "1965.1.1.1"
+            traits = { war_industrialist }
+        }
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as a country leader, promoting to the party leader if specified.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_promote_character">
+    <td>promote_character
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.<br>
+    <p><b>OR</b><br>
+    <code>&lt;ideology type&gt;</code><br>The ideology type used by the country leader role.
+    </p>
+    </td>
+    <td><pre>promote_character = yes</pre>
+    <pre>promote_character = liberalism</pre>
+    </td>
+    <td>Promotes a character to the leader of their political party.
+    </td>
+    <td>If the character has multiple country leader roles, specifying the ideology type is mandatory. Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_remove_country_leader_role">
+    <td>remove_country_leader_role
+    </td>
+    <td><code>ideology = &lt;string&gt;</code><br>The ideology type of the character.
+    </td>
+    <td><pre>remove_country_leader_role = {
+        ideology = socialism
+    }</pre>
+    </td>
+    <td>Removes a country leader role from a character.
+    </td>
+    <td>Ideology type refers to a sub-type of an ideology group assigned to characters, commonly referred to as sub-ideologies in community jargon.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_add_advisor_role">
+    <td>add_advisor_role
+    </td>
+    <td><code>advisor = { ... }</code><br><a href="/Character_modding#Advisors" title="Character modding">Advisor role definition</a><br>
+    <p><code>activate = &lt;bool&gt;</code><br>Will activate the advisor (add them directly when the command is run to the countries government). Optional, defaults to false.
+    </p>
+    </td>
+    <td><pre>add_advisor_role = {
+        activate = yes
+        advisor = {
+            slot = air_chief
+            cost = 50
+            idea_token = GER_character_token_air_chief
+            traits = {
+                air_chief_ground_support_2
+            }
+        }
+    }</pre>
+    </td>
+    <td>Sets the specified character to also act as an advisor, activating if specified.
+    </td>
+    <td>Trigger and effect blocks (such as <code>allowed</code> and <code>on_add</code>) cannot be added within advisor definitions created this way.
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="c_remove_advisor_role">
+    <td>remove_advisor_role
+    </td>
+    <td><code>slot = &lt;int&gt;</code><br>The slot where to remove the advisor slot from.
+    </td>
+    <td><pre>remove_advisor_role = {
+      slot = political_advisor
+    }</pre>
+    </td>
+    <td>Removes the specified advisor role from the character.
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+        </table>
+    </div>
+    <div class="block">
+        <h2>Руководители подразделений</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody>  
+    <tr id="unit_leader_event">
+    <td>unit_leader_event
+    </td>
+    <td><code>id = &lt;event&gt;</code><br>The event to fire.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of days. Optional.<br><code>hours = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of hours. Optional.<br><code>random = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random</i>, inclusive) of <b>hours</b> to the scheduled fire time. Optional.<br><code>random_days = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random_days</i>, inclusive) of days to the scheduled fire time. Optional.
+    </p>
+    </td>
+    <td><pre>unit_leader_event = {
+        id = my_event.1
+        days = 10
+        random = 50
+        random_days = 10
+    }
+    </pre>
+    </td>
+    <td>Fires the specified event for the owner of the current unit leader.
+    </td>
+    <td>Uses a special interface displaying the current unit leader portrait.
+    <p>Where triggers do not need to be repeatedly checked <code>random</code> can be a performance light alternative to <code>mean_time_to_happen</code> for scheduling events.
+    </p>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="set_unit_leader_flag">
+    <td>set_unit_leader_flag
+    </td>
+    <td><code>&lt;flag&gt;</code><br>An unique string to identify the unit leader flag with.
+    </td>
+    <td><pre>set_unit_leader_flag = my_flag</pre>
+    </td>
+    <td>Defines a unit leader flag.
+    </td>
+    <td>Deprecated. Use set_character_flag instead. No tooltip is shown.
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="clr_unit_leader_flag">
+    <td>clr_unit_leader_flag
+    </td>
+    <td><code>&lt;flag&gt;</code><br>The unique string of a unit leader flag to clear.
+    </td>
+    <td><pre>clr_unit_leader_flag = my_flag</pre>
+    </td>
+    <td>Clears a defined unit leader flag.
+    </td>
+    <td>Deprecated. Use clr_character_flag instead. No tooltip is shown.
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="modify_unit_leader_flag">
+    <td>modify_unit_leader_flag
+    </td>
+    <td><code>flag = &lt;flag&gt;</code><br>The unit leader flag to modify.
+    <p><code>value = &lt;value&gt;</code><br>The value to set it to: 0 or 1
+    </p>
+    </td>
+    <td><pre>modify_unit_leader_flag = {
+        flag = my_flag
+        value = 1
+    }
+    </pre>
+    </td>
+    <td>Modifies a unit leader flag.
+    </td>
+    <td>Deprecated. Use modify_character_flag instead.
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="promote_leader">
+    <td>promote_leader
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean
+    </td>
+    <td><pre>promote_leader = yes</pre>
+    </td>
+    <td>Promotes the current unit leader to Field Marshal (if Commander).
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="demote_leader">
+    <td>demote_leader
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean
+    </td>
+    <td><pre>demote_leader = yes</pre>
+    </td>
+    <td>Demotes the current unit leader to Commander (if Field Marshal).
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_unit_leader_trait">
+    <td>add_unit_leader_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to add.
+    </td>
+    <td><pre>add_unit_leader_trait = old_guard</pre>
+    </td>
+    <td>Adds the specified trait to the current unit leader.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_unit_leader_trait">
+    <td>remove_unit_leader_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to remove.
+    </td>
+    <td><pre>remove_unit_leader_trait = old_guard</pre>
+    </td>
+    <td>Removes the specified trait from the current unit leader.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span> files.
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="add_random_trait">
+    <td>add_random_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to add.
+    </td>
+    <td><pre>add_random_trait = { old_guard brilliant_strategist inflexible_strategist }</pre>
+    </td>
+    <td>Adds a random trait from the list to the character.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span> files.
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_timed_unit_leader_trait">
+    <td>add_timed_unit_leader_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to add.
+    <p><code>days = &lt;int&gt;</code><br>The duration of the trait.
+    </p>
+    </td>
+    <td><pre>add_timed_unit_leader_trait = {
+        trait = wounded
+        days = 90
+    }
+    </pre>
+    </td>
+    <td>Adds the specified trait to the current unit leader for the specified duration.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span> files.
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="replace_unit_leader_trait">
+    <td>replace_unit_leader_trait
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span> files.
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="remove_exile_tag">
+    <td>remove_exile_tag
+    </td>
+    <td>Remove the exile tag on an army leader, making them no longer be considered exile leaders.
+    </td>
+    <td><pre>remove_exile_tag = yes</pre>
+    </td>
+    <td>Removes a leaders exile tag.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.6
+    </td></tr>
+    <tr id="gain_xp">
+    <td>gain_xp
+    </td>
+    <td><code>&lt;int&gt;</code>
+    </td>
+    <td><pre>gain_xp = 5</pre>
+    </td>
+    <td>Adds experience to the current unit leader, promoting to the next skill level if applicable.
+    </td>
+    <td>Cannot be used with negatives.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="remove_unit_leader">
+    <td>remove_unit_leader
+    </td>
+    <td><code>&lt;bool&gt;</code>
+    </td>
+    <td><pre>remove_unit_leader = yes</pre>
+    </td>
+    <td>Removes the current unit leader.
+    </td>
+    <td>
+    </td>
+    <td>1.0
+    </td></tr>
+    <tr id="remove_unit_leader_role">
+    <td>remove_unit_leader_role
+    </td>
+    <td><code>&lt;bool&gt;</code><br>Boolean.
+    </td>
+    <td><pre>remove_unit_leader_role = yes</pre>
+    </td>
+    <td>Removes every unit leader role from the character
+    </td>
+    <td>
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot> 
+        </table>
+    </div>
+    <div class="block">
+        <h2>Лидеры стран</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody>  
+    <tr id="add_country_leader_trait">
+    <td>add_country_leader_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to add.<br>
+    <p><b>OR</b>:<br>
+    <code>ideology = &lt;sub-ideology&gt;</code><br>The sub-ideology of the country leader role to which the trait is added.<br>
+    <code>trait = &lt;trait&gt;</code><br>The trait to add.
+    </p>
+    </td>
+    <td><pre>add_country_leader_trait = nationalist_symbol</pre>
+    <pre>add_country_leader_trait = {
+        ideology = marxism
+        trait = anti_communist
+    }</pre>
+    </td>
+    <td>Adds the specified trait to the current character.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/country_leader/*.txt</span> files. <i>The former only if the character has one country leader role.</i>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="remove_country_leader_trait">
+    <td>remove_country_leader_trait
+    </td>
+    <td><code>&lt;trait&gt;</code><br>The trait to remove.<br>
+    <p><b>OR</b>:<br>
+    <code>ideology = &lt;sub-ideology&gt;</code><br>The sub-ideology of the country leader role to which the trait is added.<br>
+    <code>trait = &lt;trait&gt;</code><br>The trait to remove.
+    </p>
+    </td>
+    <td><pre>remove_country_leader_trait = nationalist_symbol</pre>
+    <pre>remove_country_leader_trait = {
+        ideology = marxism
+        trait = anti_communist
+    }</pre>
+    </td>
+    <td>Removes the specified trait from the current character.
+    </td>
+    <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/country_leader/*.txt</span> files. <i>The former only if the character has one country leader role.</i>
+    </td>
+    <td>1.11
+    </td></tr>
+    <tr id="swap_country_leader_traits">
+    <td>swap_country_leader_traits
+    </td>
+    <td><code>remove = &lt;trait&gt;</code><br>Trait to remove<br>
+    <p><code>add = &lt;trait&gt;</code><br>Trait to add<br>
+    <code>ideology = &lt;sub-ideology&gt;</code><br>Sub-ideology of the leader where to swap traits.<br>
+    </p>
+    </td>
+    <td><pre>swap_country_leader_traits = {
+        remove = nationalist_symbol
+        add = anti_communist
+        ideology = marxism
+    }</pre>
+    </td>
+    <td>Swaps traits of the current character.
+    </td>
+    <td>Use <a href="#swap_ruler_traits">swap_ruler_traits</a> in country scope.
+    </td>
+    <td>1.11
+    </td></tr></tbody><tfoot></tfoot>
+        </table>
+    </div>
+    <div class="block">
+        <h2>Бой</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody> 
+    <tr id="supply_units">
+    <td>supply_units
+    </td>
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount of hours of supply.
+    </td>
+    <td><pre>supply_units = 24</pre>
+    </td>
+    <td>Adds the specified amount of hours of supply to troops led by the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_max_trait">
+    <td>add_max_trait
+    </td>
+    <td><code>&lt;int&gt;</code><br>The amount to add.
+    </td>
+    <td><pre>add_max_trait = 1</pre>
+    </td>
+    <td>Adds the specified amount of assignable trait slots to the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_skill_level">
+    <td>add_skill_level
+    </td>
+    <td><code>&lt;int&gt;</code><br>The skill to add.
+    </td>
+    <td><pre>add_skill_level = 1</pre>
+    </td>
+    <td>Adds skill to the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_logistics">
+    <td>add_logistics
+    </td>
+    <td><code>&lt;int&gt;</code><br>How many skill levels to add.
+    </td>
+    <td><pre>add_logistics = 1</pre>
+    </td>
+    <td>Adds logistics skill to the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_planning">
+    <td>add_planning
+    </td>
+    <td><code>&lt;int&gt;</code><br>How many skill levels to add.
+    </td>
+    <td><pre>add_planning = 1</pre>
+    </td>
+    <td>Adds planning skill to the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_defense">
+    <td>add_defense
+    </td>
+    <td><code>&lt;int&gt;</code><br>How many skill levels to add.
+    </td>
+    <td><pre>add_defense = 1</pre>
+    </td>
+    <td>Adds defense skill to the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_attack">
+    <td>add_attack
+    </td>
+    <td><code>&lt;int&gt;</code><br>How many skill levels to add.
+    </td>
+    <td><pre>add_attack = 1</pre>
+    </td>
+    <td>Adds attack skill to the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_coordination">
+    <td>add_coordination
+    </td>
+    <td><code>&lt;int&gt;</code><br>How many skill levels to add.
+    </td>
+    <td><pre>add_coordination = 1</pre>
+    </td>
+    <td>Adds coordination skill to the current navy leader.
+    </td>
+    <td>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_maneuver">
+    <td>add_maneuver
+    </td>
+    <td><code>&lt;int&gt;</code><br>How many skill levels to add.
+    </td>
+    <td><pre>add_maneuver = 1</pre>
+    </td>
+    <td>Adds maneuver skill to the current navy leader.
+    </td>
+    <td>
+    </td>
+    <td>1.5
+    </td></tr>
+    <tr id="add_temporary_buff_to_units">
+    <td>add_temporary_buff_to_units
+    </td>
+    <td><code>combat_offense = &lt;float&gt;</code><br>The bonus to grant. Optional.
+    <p><code>combat_breakthrough = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>combat_defense = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>combat_entrenchment = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>org_damage_multiplier = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>str_damage_multiplier = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>war_support_reduction_on_damage = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>cannot_retreat_while_attacking = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>cannot_retreat_while_defending = &lt;float&gt;</code><br>The bonus to grant. Optional.<br><code>days = &lt;int&gt;</code><br>The duration of the buff. Optional.<br><code>tooltip = &lt;string&gt;</code><br>The tooltip to display for the buff.
+    </p>
+    </td>
+    <td><pre>add_temporary_buff_to_units = {
+        combat_offense = 0.25
+        combat_breakthrough = 0.25
+        org_damage_multiplier = -1.0
+        str_damage_multiplier = 0.25
+        war_support_reduction_on_damage = 0.2
+        cannot_retreat_while_attacking = 1.0
+                    
+        days = 7
+        tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+    }
+    </pre>
+    </td>
+    <td>Adds the specified combat buff to the current unit leader.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.5
+    </td></tr></tbody><tfoot></tfoot>
+        </table>
+    </div>
+    <div class="block">
+        <h2>Операции</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody> 
+    <tr id="add_nationality">
+    <td>add_nationality
+    </td>
+    <td><code>&lt;tag&gt;</code><br>The country to set the nationality to.
+    </td>
+    <td><pre>add_nationality = GER</pre>
+    </td>
+    <td>Adds the nationality to the current operative.
+    </td>
+    <td>&nbsp;
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="capture_operative">
+    <td>capture_operative
+    </td>
+    <td><code>captured_by = &lt;tag&gt;</code><br>By which country to get captured.<br>
+    <p><code>ignore_death_chance = &lt;bool&gt;</code><br>Whether to ignore the death chance on capture (no by default).<br>
+    </p>
+    </td>
+    <td><pre>capture_operative = {
+        captured_by = POL
+        ignore_death_chance = yes
+    }</pre>
+    </td>
+    <td>Makes the current operative be captured by a specific country.
+    </td>
+    <td>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="force_operative_leader_into_hiding">
+    <td>force_operative_leader_into_hiding
+    </td>
+    <td><code>&lt;bool&gt;</code><br>
+    </td>
+    <td><pre>force_operative_leader_into_hiding = yes</pre>
+    </td>
+    <td>Forces the current operative into hiding.
+    </td>
+    <td>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="free_operative">
+    <td>free_operative
+    </td>
+    <td><code>captured_by = &lt;tag&gt;</code><br>The country that captured the operative.
+    </td>
+    <td><pre>free_operative = { captured_by = POL }</pre>
+    </td>
+    <td>Frees the current operative.
+    </td>
+    <td>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="harm_operative_leader">
+    <td>harm_operative_leader
+    </td>
+    <td><code>&lt;int&gt;</code><br>How much to harm the operative.
+    </td>
+    <td><pre>harm_operative_leader = 12</pre>
+    </td>
+    <td>Harms the current operative.
+    </td>
+    <td>The value is subject to modifiers.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="kill_operative">
+    <td>kill_operative
+    </td>
+    <td><code>killed_by = &lt;tag&gt;</code><br>The country that'll kill the operative.
+    </td>
+    <td><pre>kill_operative = { killed_by = POL }</pre>
+    </td>
+    <td>Kills the current operative.
+    </td>
+    <td>
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="turn_operative">
+    <td>turn_operative
+    </td>
+    <td><code>turned_by = &lt;tag&gt;</code><br>The country to which the operative defects.
+    </td>
+    <td><pre>turn_operative = {
+        turned_by = PREV
+    }</pre>
+    </td>
+    <td>Turns the current operative against their own country, transferring them to the specified country.
+    </td>
+    <td>This counts as the operative dying and will trigger the corresponding <a href="/On_action" class="mw-redirect" title="On action">On action</a>. Logs an error if used against your own operative.
+    </td>
+    <td>1.9
+    </td></tr>
+    <tr id="operative_leader_event">
+    <td>operative_leader_event
+    </td>
+    <td><code>id = &lt;event&gt;</code><br>The event to fire.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of days. Optional.<br><code>hours = &lt;int&gt; / &lt;variable&gt;</code><br>Fires the event in the specified number of hours. Optional.<br><code>random = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random</i>, inclusive) of <b>hours</b> to the scheduled fire time. Optional.<br><code>random_days = &lt;int&gt; / &lt;variable&gt;</code><br>Adds a random number (between <i>0</i> and <i>random_days</i>, inclusive) of days to the scheduled fire time. Optional.<br><code>originator = &lt;tag&gt;</code><br>The originator of the event. Optional, defaults to owner of operative.<br><code>recipient = &lt;tag&gt;</code><br>The recipient of the event. Optional, defaults to owner of operative.<br><code>set_from = &lt;tag&gt;</code><br>Sets the scope of FROM in scripted localization. Optional.<br><code>set_from_from = &lt;tag&gt;</code><br>Sets the scope of FROM.FROM in scripted localization. Optional.<br><code>set_root = &lt;tag&gt;</code><br>Sets the scope of ROOT in scripted localization. Optional.
+    </p>
+    </td>
+    <td><pre>operative_leader_event = {
+        id = my_event.1
+        originator = POL
+        recipient = GER
+        days = 10
+        random = 50
+        random_days = 10
+        set_from = ENG
+        set_root = SOV
+        set_from_from = FRA
+    }
+    </pre>
+    </td>
+    <td>Fires the specified event for the operative.
+    </td>
+    <td>Uses a special interface displaying the current operative portrait.
+    <p>Where triggers do not need to be repeatedly checked <code>random</code> can be a performance light alternative to <code>mean_time_to_happen</code> for scheduling events.
+    </p>
+    </td>
+    <td>1.9
+    </td></tr></tbody><tfoot></tfoot>   
+        </table>
+    </div>
+    <div class="block">
+        <h2>Division scope</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody> 
+    <tr id="destroy_unit">
+    <td>destroy_unit
+    </td>
+    <td><code>&lt;bool&gt;<br></code>Boolean.
+    </td>
+    <td><pre>destroy_unit = yes</pre>
+    </td>
+    <td>Destroys the currently-scoped division.
+    </td>
+    <td>
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="add_history_entry">
+    <td>add_history_entry
+    </td>
+    <td><code>key = &lt;localisation key&gt;</code><br>The name of the entry.<br>
+    <p><code>subject = "&lt;string&gt;"</code><br>Logged entry. Never shown to the player.<br>
+    <code>allow = &lt;bool&gt;</code><br>Whether a medal can be awarded to the division over the history entry.
+    </p>
+    </td>
+    <td><pre>add_history_entry = {
+        key = my_history_entry
+        subject = "Test entry"
+        allow = no
+    }</pre>
+    </td>
+    <td>Creates an entry within the command history of a decision.
+    </td>
+    <td>
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="change_division_template">
+    <td>change_division_template
+    </td>
+    <td><code>&lt;string&gt;</code><br>The name of the division.
+    </td>
+    <td><pre>change_division_template = "New template"</pre>
+    </td>
+    <td>Changes the template of the division to the specified one.
+    </td>
+    <td>
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="add_random_valid_trait_from_unit">
+    <td>add_random_valid_trait_from_unit
+    </td>
+    <td><code>&lt;character&gt;</code><br>Character to grant the trait to.
+    </td>
+    <td><pre>add_random_valid_trait_from_unit = FROM</pre>
+    </td>
+    <td>Adds a random valid unit trait to a unit leader.
+    </td>
+    <td>Only possible to use if the division scope is the same as the ROOT scope.
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="add_unit_medal_to_latest_entry">
+    <td>add_unit_medal_to_latest_entry
+    </td>
+    <td><code>unit_medals = &lt;medal ID&gt;</code><br>The medal to add.
+    </td>
+    <td><pre>add_unit_medal_to_latest_entry = {
+        unit_medals = my_medal
+    }</pre>
+    </td>
+    <td>Adds the specified medal to the latest entry within the unit's history.
+    </td>
+    <td>
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="add_divisional_commander_xp">
+    <td>add_divisional_commander_xp
+    </td>
+    <td><code>&lt;decimal&gt;</code><br>Experience to add.
+    </td>
+    <td><pre>add_divisional_commander_xp = 10</pre>
+    </td>
+    <td>Adds the specified amount of experience to the divisional commander.
+    </td>
+    <td>
+    </td>
+    <td>1.12
+    </td></tr>
+    <tr id="reseed_division_commander">
+    <td>reseed_division_commander
+    </td>
+    <td><code>&lt;int&gt;</code><br>The seed to use.
+    </td>
+    <td><pre>reseed_division_commander = 760</pre>
+    </td>
+    <td>Re-randomises the division commander using the given seed.
+    </td>
+    <td>Does not have a tooltip.
+    </td>
+    <td>1.12
+    </td></tr></tbody><tfoot></tfoot>
+        </tbody>
+        </table>
+    </div>         
+    <div class="block">
+        <h2>Other scope</h2>
+        <table>
+        
+            <thead>
+        
+                <tr>
+                    <th>Название</th>
+                    <th>Параметры</th>
+                    <th>Примеры</th>
+                    <th>Описание</th>
+                    <th>Версия</th>
+                </tr>
+                
+            </thead>
+        <tbody> 
+    <tr id="execute_operation_coordinated_strike">
+    <td>execute_operation_coordinated_strike
+    </td>
+    <td><code>amount = &lt;int&gt;</code><br>How many times the operation will get executed within the days set in the operation.
+    </td>
+    <td><pre>execute_operation_coordinated_strike = {
+        amount = 12
+    }</pre>
+    </td>
+    <td>All prepared Port Strike and Strategic Bombing in the target region will execute multiple times without air defence being able to intercept them.
+    </td>
+    <td>Can only be used within operations.
+    </td>
+    <td>1.9
+    </td></tr></tbody><tfoot></tfoot>
+        </table>
+    </div>
+    <div class="block">
+        <h1>Управление потоком</h1>
+        <p>
+            Эти диапазоны используются в диапазонах эффектов для управления выполнением эффектов.
+        </p>
+        <h2>
+            Если утверждения
+        </h2>
+        <p>
+        Оператор if позволяет выполнять эффекты только в том случае, если выполняются определенные триггеры. 
+        Это делается с помощью блока if = { ... } блок. Он служит блоком эффектов с дополнительным аргументом limit = { ... }, который представляет собой блок триггеров, где каждый триггер должен быть выполнен для проверяемой области действия.
+
+        Например, следующее действие добавит 10% StabilityStability к стране, 
+        для которой оно выполняется, если она имеет положительное значение Political PowerPolitical Power и стабильность ниже 90%:
+        </p>
+        <pre>
+if = {
+    limit = {
+        has_political_power > 0
+        stability < 0.9
+    }
+    add_stability = 0.1
+}            
+        </pre>
+        <P>
+            Если лимит не соблюден, то ни один из эффектов внутри не будет выполнен. Если же оно соблюдено, то будет выполнен каждый из них. Если ограничение опущено, то по умолчанию оно всегда будет истинным.
+
+Опционально else_if = { ... } (при этом limit = { ... } действует аналогичным образом) и else = { ... } могут быть добавлены. Если начальное ограничение в пределах if = { ... } ложно, он переходит к следующему else_if = { ... }, проверяя предел там. Если предел там ложен, то он переходит к следующему, пока не достигнет конца или else = { ... }. }.
+Существует два варианта: вложенный и не вложенный. В первом случае else_if или else помещается непосредственно внутри предыдущего if или else_if, а во втором - сразу после него. В случае дублирования предпочтительнее использовать невложенные операторы if. Вот пример, в котором используются не вложенные операторы if:
+        </P>
+        <pre>
+if = {
+    limit = {
+        stability < 0.3 
+    }
+    add_stability = 0.3
+}
+else_if = {
+    limit = {
+        stability < 0.6
+    }
+    add_stability = 0.2
+}
+else = {
+    add_stability = 0.1 
+}            
+        </pre>
+        <p>
+            Во всплывающей подсказке отображаются только те эффекты, которые будут выполнены. Эффекты внутри невыполненного оператора if (или else/else_if, который не читается из-за выполнения оператора if) будут скрыты от игрока, как и триггер. Чтобы игрок не запутался, можно использовать пользовательские всплывающие подсказки эффектов, чтобы сообщить игроку, что будет делать данный блок эффектов, например, если его использовать внутри else.
+        </p>
+        <h1>Случайные эффекты</h1>
+            <p>
+                Если вы хотите, чтобы эффект имел случайный шанс быть выполненным или чтобы в противном случае ничего не произошло, блок random = { ... } - это самый простой способ добиться этого:
+            </p>
+            <pre>
+random = {
+    chance = 80
+    add_stability = 0.4
+    add_war_support = 0.3
+}                
+            </pre>
+            <p>
+                Это, в частности, будет иметь 80% шанс добавить 40% стабильности и 30% поддержки войны и, соответственно, 20% шанс ничего не сделать. Шанс здесь находится на шкале от 0 до 100.
+
+Если вы хотите, чтобы игра выбирала между блоками эффектов, вместо этого можно использовать random_list. Например, если вы хотите, чтобы эффект случайным образом давал игроку один из четырех бонусов, вы сделаете следующее:
+            </p>
+            <pre>
+random_list = {
+    10 = {
+        add_stability = 0.5
+    }
+    10 = {
+        add_manpower = 10000
+    }
+    10 = {
+        add_war_support = 0.5
+    }
+    10 = {
+        army_experience = 100
+    }
+}                
+            </pre>
+            <P>
+                Число - это не шанс, а вес для каждого варианта, поскольку они не обязательно должны складываться в 100 или любое другое число. Вариант с весом 20 имеет в два раза больше шансов быть выбранным, чем вариант с шансом 10, например. В целом, вероятность того, что вариант будет выбран, равна весу варианта, деленному на сумму всех весов.
+
+Также можно использовать модификаторы для влияния на вес каждого возможного случайного эффекта или использовать переменные в качестве шансов.
+            </P>
+            <pre>
+random_list = {
+    30 = {
+        modifier = {
+            factor = 1.3
+            has_country_flag = inward_perfect_flag
+        }
+        add_stability = 0.5
+    }
+    25 = {
+        add_manpower = 10000
+    }
+    20 = {
+        add_war_support = 0.5
+    }
+    my_variable = { 
+        army_experience = 100
+    }
+}                
+            </pre>
+            <p>
+Если установлен флаг страны inward_perfect_flag, то он умножит вышеуказанный шанс 30 на 1.3, чтобы получить 39. Между тем, my_variable возьмет значение соответствующей переменной temp или переменной текущего диапазона в качестве веса варианта.
+<br><br>
+Обратите внимание, что если вы хотите создать повторяющееся решение, включающее случайный список, то по умолчанию это решение будет выбирать один и тот же случайный результат каждый раз, когда оно срабатывает в игре. Вы можете изменить это поведение, включив в блок решения следующую строку:
+<br><br>
+fixed_random_seed = no
+<br><br>
+Это относится только к решениям. В других местах случайное семя по умолчанию не фиксировано, поэтому этот аргумент не нужно устанавливать в значение "нет".
+            </p>
+            <h2>Работа с всплывающими подсказками</h2>
+            <p>
+                Под "подсказкой" в данном случае подразумевается текст, показываемый игроку в игре, который объясняет, что блок эффектов меняет в игре, например, "+50 Political PowerPolitical Power".
+
+Существует 3 способа редактирования всплывающей подсказки в блоке эффектов:
+
+    hidden_effect = { ... } используется для того, чтобы скрыть эффекты внутри блока, в результате чего их выполнение не будет показано игроку.
+    effect_tooltip = { ... } используется для того, чтобы поместить эффекты во всплывающую подсказку, не выполняя их на самом деле.
+    custom_effect_tooltip = my_localisation_key используется для того, чтобы поместить произвольный абзац текста в качестве эффекта, который будет выполнен.
+
+Например, в этом примере награды за завершение фокуса используются все три эффекта:
+            </p>
+            <Pre>
+completion_reward = { 
+    hidden_effect = {
+        every_subject_country = { country_event = my_event.1 }
+    }
+    custom_effect_tooltip = send_event_to_subjects_tt
+    effect_tooltip = {
+        add_political_power = 100
+    }
+    custom_effect_tooltip = reject_war_tt
+}                
+            </Pre>
+            <p>
+                В данном случае send_event_to_subjects_tt и reject_war_tt являются ключами локализации, определенными в любом файле /Hearts of Iron IV/localisation/english/*_l_english.yml в кодировке UTF-8-BOM, предполагающей английский язык.
+
+ send_event_to_subjects_tt: "Посылает требование каждому субъекту.\nЕсли они согласны, мы получаем следующее для каждого субъекта:"
+ reject_war_tt: "Если они отвергают требование, мы получаем цель войны против них."
+
+В игре это будет выглядеть следующим образом:
+            </p>
+            <h1>
+                Метаэффекты
+            </h1>
+            <p>
+                Метаэффекты позволяют вам использовать нединамические эффекты (те, которые не принимают модификаторы и могут использовать только статические маркеры или постоянные значения) так, как если бы они принимали переменные.
+            </p>
+            <pre>
+add_equipment_to_stockpile = {
+    type = infantry_equipment_2
+    amount = eq_amount
+}                
+            </pre>
+            <p>
+                В приведенном выше эффекте количество добавляемого оборудования является динамическим и может быть задано с помощью переменной "eq_amount". Однако этот эффект не позволяет использовать переменную в качестве типа снаряжения. Вы не можете сохранить "infantry_equipment_2" в переменной и использовать ее здесь.
+
+Однако метаэффекты позволят вам использовать переменные и скриптовую локализацию внутри них, чтобы создавать эффекты как тексты и запускать их. Давайте заставим предыдущий эффект принимать тип снаряжения и уровень снаряжения как переменные, хранящиеся в "eq_type" и "eq_level".
+            </p>
+            <pre>
+set_variable = { eq_type = 1 } 
+set_variable = { eq_amount = 10 } 
+set_variable = { eq_level = 2 }
+
+meta_effect = { 
+    text = {
+        add_equipment_to_stockpile = {
+            type = [EQ_TYPE]_[EQ_LEVEL]
+            amount = eq_amount
+        }
+    }
+    EQ_LEVEL = "[?eq_level|.0]" 
+    EQ_TYPE = "[This.GetEquipmentName]" 
+}                
+            </pre>
+            <pre>
+defined_text = {
+    name = GetEquipmentName
+    text = {
+        trigger = {
+            check_variable = { eq_type = 0 }
+        }
+        localization_key = "infantry_equipment"
+    }
+    text = {
+        trigger = {
+            check_variable = { eq_type = 1 }
+        }
+        localization_key = "artillery_equipment"
+    }
+}
+            </pre>
+            <p>
+                Как вы видите, мы создали метаэффект, который принимает два аргумента. Эти аргументы будут использоваться вместо параметров [EQ_TYPE] и [EQ_LEVEL] внутри метаэффекта. EQ_LEVEL будет заменен на [?eq_level|.0], который является целым значением eq_level (в данном случае 2.000 становится 2). EQ_TYPE немного сложнее, он заменяется скриптовой локализацией. Эта скриптовая локализация будет проверять переменную eq_type и в зависимости от ее значения будет возвращать токен ключа для оборудования. Если значение равно 0, то будет возвращено "infantry_equipment". Если значение равно 1, то будет возвращено "artillery_equipment".
+
+В итоге [EQ_TYPE] заменяется на "artillery_equipment", а [EQ_LEVEL] заменяется на "2", и в итоге наш эффект будет выглядеть следующим образом:
+            </p>
+            <pre>
+add_equipment_to_stockpile = {
+    type = artillery_equipment_2
+    amount = eq_amount
+}
+            </pre>
+            <P>
+                что даст вам 10 артиллерийского_оборудования_2.
+
+debug = yes может быть добавлен к метаэффектам. Это позволит вывести конечный эффект в game.log при выполнении эффекта и облегчит отладку.
+            </P>
+            <h1>
+                Скриптовые эффекты
+            </h1>
+            <P>
+                Сценарные эффекты служат аналогично функциям, поскольку их можно определить в файле /Hearts of Iron IV/common/scripted_effects/*.txt, а затем использовать в других местах в качестве сокращенной версии. Наряду с этим, игра позволяет создавать пользовательские консольные команды, которые являются скриптовыми эффектами.
+
+Заскриптованный эффект определяется просто как
+            </P>
+            <pre>
+scripted_effect_name = {
+	< effects >
+}                
+            </pre>
+            <P>
+                Этот пример можно использовать в качестве эффекта в обычном коде как scripted_effect_name = yes.
+
+К заскриптованным эффектам можно обратиться в консоли, набрав e scripted_effect_name для их запуска.
+
+Чтобы создать пользовательскую консольную команду, имя скриптового эффекта должно начинаться с d_. Сама консольная команда не включает d_, поэтому команда d_test_command будет запущена в консоли как test_command.
+В пользовательских консольных командах страна, выполняющая команду, является FROM, а ROOT - это выбранная страна, штат или символ. Все, что вводится после консольной команды, разделенное пробелами, например test_command 123 321 GER, добавляется в временный массив 'args'. Пример сценарного эффекта, который передаст каждое государство, введенное в качестве аргумента, в страну, выполняющую консольную команду, следующий
+            </P>
+            <pre>
+d_transfer_states = {
+	for_each_scope_loop = {
+		array = args
+		FROM = {
+			transfer_state = PREV
+		}
+	}
+}                
+            </pre>
+            <p>
+                используется как transfer_states 123 321
+            </p>
+    </div>
+
+
+
 
     <button onclick="topFunction()" id="scroll-to-top" title="Наверх">&#8593;</button>
     <script src="script.js"></script>
+    <footer>
+        <div class="footer-content">
+            <p>Сайт создан conteynerrrr#0944 при поддержке<span class="footer-highlight"> East Showdown Team</span></p>
+        </div>
+    </footer>
 
 </body>
 
