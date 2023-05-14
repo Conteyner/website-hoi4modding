@@ -1614,7 +1614,6 @@ set_country_flag = {
                         Определяет флаг страны.
                     </td>
                     <td>
-                        Подсказка не отображается.Флаг в этом эффекте используется в значении 'булев флаг', используемый для хранения информации. Для того чтобы изменить флаг, представляющий страну, см. косметические теги.</a>
                     </td>
                     <td>
                         1.0
@@ -1697,8 +1696,7 @@ country_event = {
                         Вызывает указанное событие для текущей страны.
                     </td>
                     <td>
-                        Где триггеры не нуждаются в многократной проверке 
-                        <code>random</code> может быть легкой альтернативой производительности <code>mean_time_to_happen</code> для планирования событий. Сокращенный вариант существует, если вместо аргументов используется идентификатор события.
+                    
                     </td>
                     <td>
                         1.0
@@ -1737,10 +1735,6 @@ news_event = {
                         Вызывает указанное новостное событие для текущей страны.
                     </td>
                     <td>
-                        Событие новости использует интерфейс, отличный от интерфейса события страны.<br>
-                        <p>
-                            Где триггеры не нуждаются в многократной проверке <code>random</code> может быть легкой альтернативой производительности <code>mean_time_to_happen</code> для планирования событий. Сокращенный вариант существует, если вместо аргументов используется идентификатор события.
-                        </p>
                     </td>
                     <td>
                         1.0
@@ -1754,7 +1748,8 @@ news_event = {
                         <code>&lt;string&gt;</code><br>Косметический тег для перехода на.
                     </td>
                     <td>
-                        <pre>set_cosmetic_tag = SAF_SOV_communism</pre>
+                        <pre>set_cosmetic_tag 
+= SAF_SOV_communism</pre>
                     </td>
                     <td>
                         Заставляет текущую область видимости использовать указанный косметический тег, изменяя имя и флаг.
@@ -1808,28 +1803,6 @@ can_create_factions = yes
                         Переключает специальные правила игры для текущей области видимости.
                     </td>
                     <td>
-                        Возможные правила:
-                        <ul>
-                            <li>can_boost_other_ideologies</li>
-                            <li>can_create_factions</li>
-                            <li>can_declare_war_on_same_ideology</li>
-                            <li>can_declare_war_without_wargoal_when_in_war</li>
-                            <li>can_decline_call_to_war</li>
-                            <li>can_force_government</li>
-                            <li>can_generate_female_aces</li>
-                            <li>can_guarantee_other_ideologies</li>
-                            <li>can_join_factions</li>
-                            <li>can_join_factions_not_allowed_diplomacy</li>
-                            <li>can_join_opposite_factions</li>
-                            <li>can_lower_tension</li>
-                            <li>can_not_declare_war</li>
-                            <li>can_occupy_non_war</li>
-                            <li>can_only_justify_war_on_threat_country</li>
-                            <li>can_puppet</li>
-                            <li>can_send_volunteers</li>
-                            <li>can_use_kamikaze_pilots</li>
-                            <li>units_deployed_to_overlord (только субъекты)</li>
-                        </ul>
                     </td>
                     <td>
                         1.0
@@ -1901,7 +1874,9 @@ set_relation_rule = {
                         <code>&lt;string&gt;</code><br>Ссылка на звук из файла .asset.
                     </td>
                     <td>
-                        <pre>scoped_sound_effect = "boom"</pre>
+                        <pre>
+scoped_sound_effect 
+= "boom"</pre>
                     </td>
                     <td>
                         Воспроизводит указанный звук один раз только для текущей страны.
@@ -1927,8 +1902,7 @@ set_relation_rule = {
                         Воспроизводит аудиодорожку только для указанной страны.
                     </td>
                     <td>
-                        Чтобы песня работала, она должна быть определена на музыкальной станции. 
-                        Более подробную информацию можно найти на странице Музыкальный моддинг. Если вы хотите просто воспроизвести звук, вместо этого следует использовать эффект scoped_sound_effect.
+                    
                     </td>
                     <td>
                         1.9.3
@@ -1991,7 +1965,6 @@ set_relation_rule = {
                         Переключает игрока в текущую область видимости из целевой области видимости.
                     </td>
                     <td>
-                        Страна, в которую попадает игрок, должна быть той, в которой используется команда.
                     </td>
                     <td>
                         1.0
@@ -2041,7 +2014,7 @@ force_update_map_mode = {
                         Принудительно обновляет указанный режим карты для игрока, вместо того чтобы ждать ежедневного обновления.
                     </td>
                     <td>
-                        Режимы карты определены в /Hearts of Iron IV/common/map_modes/*.txt</span>
+                        Режимы карты определены <Br> в /Hearts of Iron IV/common/map_modes/*.txt</span>
                     </td>
                     <td>
                         1.11
@@ -2135,11 +2108,11 @@ create_dynamic_country = {
     <tr id="add_state_core">
     <td>add_state_core
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to add core to.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт, к которому нужно добавить корку.
     </td>
     <td><pre>add_state_core = 345</pre>
     </td>
-    <td>Adds a core for the current scope to the specified state.
+    <td>Добавляет корку для текущей области видимости в указанное состояние.
     </td>
     <td>&nbsp;
     </td>
@@ -2148,11 +2121,11 @@ create_dynamic_country = {
     <tr id="remove_state_core">
     <td>remove_state_core
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to remove core from.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт для удаления корки из.
     </td>
     <td><pre>remove_state_core = 345</pre>
     </td>
-    <td>Removes the core of the current scope from the specified state.
+    <td>Удаляет корку текущей области видимости из указанного состояния.
     </td>
     <td>&nbsp;
     </td>
@@ -2161,7 +2134,7 @@ create_dynamic_country = {
     <tr id="set_capital">
     <td>set_capital
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to make capital.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт который станет столицей.
     </td>
     <td><pre>set_capital = {state = 345}
     
@@ -2171,12 +2144,12 @@ create_dynamic_country = {
       remember_old_capital = no
     }</pre>
     </td>
-    <td>Makes the specified state the current scope's capital state.
+    <td>Делает указанное состояние основным состоянием текущей области видимости.
     </td>
-    <td>Syntax has been changed in 1.11.
-    <p>It was "set_capital = 345"
+    <td>Синтаксис был изменен в версии 1.11.
+    <p>Это был "set_capital = 345"
     </p><p><br>
-    Old capital is remembered, if not specified otherwise.
+    Старая столица сохраняется, если не указано иное.
     </p>
     </td>
     <td>1.0
@@ -2184,11 +2157,11 @@ create_dynamic_country = {
     <tr id="add_state_claim">
     <td>add_state_claim
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to add a claim to.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт для добавления претензии к.
     </td>
     <td><pre>add_state_claim = 345</pre>
     </td>
-    <td>Adds a claim for the current scope on the specified state.
+    <td>Добавляет претензии для текущей области видимости на указанный стейт.
     </td>
     <td>&nbsp;
     </td>
@@ -2197,11 +2170,11 @@ create_dynamic_country = {
     <tr id="remove_state_claim">
     <td>remove_state_claim
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to remove the claim from.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт для удаления претензии.
     </td>
     <td><pre>remove_state_claim = 345</pre>
     </td>
-    <td>Removes a claim of the current scope from the specified state.
+    <td>Удаляет претензию текущей области видимости из указанного стейта.
     </td>
     <td>&nbsp;
     </td>
@@ -2210,24 +2183,22 @@ create_dynamic_country = {
     <tr id="set_state_owner">
     <td>set_state_owner
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to change ownership of.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт для смены владельца.
     </td>
     <td><pre>set_state_owner = 345</pre>
     </td>
-    <td>Makes the current scope the owner of the specified state.
-    </td>
-    <td>This can fail to carry over the control, so it's recommended to instead use <a href="#transfer_state">transfer_state</a> unless transferring the ownership without transferring over the control.
+    <td>Делает текущую страну владельцем указанного стейта.
     </td>
     <td>1.0
     </td></tr>
     <tr id="set_state_controller">
     <td>set_state_controller
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to change controller of.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт для изменения владельца.
     </td>
     <td><pre>set_state_controller = 345</pre>
     </td>
-    <td>Makes the current scope the controller of the specified state.
+    <td>Делает текущую страну владельцем указанного стейта.
     </td>
     <td>&nbsp;
     </td>
@@ -2236,24 +2207,22 @@ create_dynamic_country = {
     <tr id="transfer_state">
     <td>transfer_state
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The state to change owner and controller of.
+    <td><code>&lt;scope&gt; / &lt;переменная&gt;</code><br>Стейт для смены владельца.
     </td>
     <td><pre>transfer_state = 345</pre>
     </td>
-    <td>Makes the current scope the owner and controller of the specified state.
-    </td>
-    <td><a href="#transfer_state_to">transfer_state_to</a> exists as a state-scoped variant.
+    <td>Делает страну владельцем и контроллером указанного стейта.
     </td>
     <td>1.0
     </td></tr>
     <tr id="set_province_controller">
     <td>set_province_controller
     </td>
-    <td><code>&lt;id&gt;</code><br>The province to change controller of.
+    <td><code>&lt;id&gt;</code><br>Провинция для смены владельца.
     </td>
     <td><pre>set_province_controller = 2999</pre>
     </td>
-    <td>Changes the controller of the specified province to the current scope.
+    <td>Изменяет владельца указанной провинции.
     </td>
     <td>&nbsp;
     </td>
