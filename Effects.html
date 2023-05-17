@@ -2427,11 +2427,11 @@ create_dynamic_country = {
     <tr id="hold_election">
     <td>hold_election
     </td>
-    <td><code>&lt;scope&gt;</code><br>The country to hold an election for.
+    <td><code>&lt;scope&gt;</code><br>Страна, в которой пройдут выборы.
     </td>
     <td><pre>hold_election = ROOT</pre>
     </td>
-    <td>Executes the events in the <b>on_new_term_election</b> on action for the current scope.
+    <td>Выполняет события в <b>on_new_term_election</b> на действие для текущей области.
     </td>
     <td>&nbsp;
     </td>
@@ -2440,8 +2440,8 @@ create_dynamic_country = {
     <tr id="add_popularity">
     <td>add_popularity
     </td>
-    <td><code>ideology = &lt;ideology&gt;</code><br>The party to change.
-    <p><code>popularity = &lt;int&gt; / &lt;variable&gt;</code><br>The amount of popularity to change.
+    <td><code>ideology = &lt;ideology&gt;</code><br>Изменяемая партия.
+    <p><code>popularity = &lt;int&gt; / &lt;переменная&gt;</code><br>Количество популярности для изменения.
     </p>
     </td>
     <td><pre>add_popularity = {
@@ -2450,21 +2450,21 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Adjusts the popularity for the specified party in the current scope.
+    <td>Настраивает популярность для указанной партии в текущей области видимости.
     </td>
-    <td>Values used are 0 to 1.
+    <td>Используются значения от 0 до 1.
     </td>
     <td>1.0
     </td></tr>
     <tr id="set_politics">
     <td>set_politics
     </td>
-    <td><code>ruling_party = &lt;ideology&gt;</code><br>The party to set.
-    <p><code>elections_allowed = &lt;bool&gt;</code><br>Whether elections are allowed. Optional.<br>
-    <code>last_election = &lt;date&gt;</code><br>When the last election was. Optional.<br>
-    <code>election_frequency = &lt;int&gt;</code><br>How often in months an election occurs. Optional.<br>
-    <code>long_name = &lt;string&gt;</code><br>The long name of the country's new ruling party, appearing when hovering over it. Optional.<br>
-    <code>name = &lt;string&gt;</code><br>The name of the country's new ruling party. Optional.<br>
+    <td><code>ruling_party = &lt;ideology&gt;</code><br>Партия, которую необходимо установить.
+    <p><code>elections_allowed = &lt;bool&gt;</code><br>Разрешены ли выборы. Необязательно.<br>
+    <code>last_election = &lt;date&gt;</code><br>Когда были последние выборы. Необязательно.<br>
+    <code>election_frequency = &lt;int&gt;</code><br>Как часто происходят выборы в месяцах. Необязательно.<br>
+    <code>long_name = &lt;string&gt;</code><br>Полное название новой правящей партии страны, отображаемое при наведении на нее. Необязательно.<br>
+    <code>name = &lt;string&gt;</code><br>Название новой правящей партии страны. Необязательно.<br>
     </p>
     </td>
     <td><pre>set_politics = {
@@ -2477,18 +2477,18 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Sets the political party setup for the current scope.
+    <td>Устанавливает настройку политической партии для текущей области видимости.
     </td>
     <td>&nbsp;
-    <p>Previously included the "parties" parameter, which has been deprecated by the "set_popularities" command. The "parties" parameter no longer works as of version 1.7
+    <p>Ранее включал параметр "parties", который был упразднен командой "set_popopularities". Параметр "parties" больше не работает, начиная с версии 1.7
     </p>
     </td>
-    <td>1.0 (Updated 1.7)
+    <td>1.0 (обновлено 1.7)
     </td></tr>
     <tr id="set_popularities">
     <td>set_popularities
     </td>
-    <td><code>&lt;ideology&gt; = &lt;int&gt;/&lt;variable&gt;</code><br>The popularity to set.
+    <td><code>&lt;ideology&gt; = &lt;int&gt;/&lt;переменная&gt;</code><br>Популярность для установки.
     </td>
     <td><pre>set_popularities = {
         democratic = 50
@@ -2498,10 +2498,10 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Sets the political party popularities for the current scope.
+    <td>Устанавливает популярность политических партий для текущего диапазона.
     </td>
     <td>&nbsp;
-    <p>The popularities must add up to 100, otherwise the command will have no effect.
+    <p>Популярность должна быть равна 100, иначе команда не будет иметь эффекта.
     </p>
     </td>
     <td>1.7
@@ -2509,8 +2509,8 @@ create_dynamic_country = {
     <tr id="set_political_party">
     <td>set_political_party
     </td>
-    <td><code>ideology = &lt;ideology&gt;</code><br>The party to change.
-    <p><code>popularity = &lt;int&gt;</code><br>The amount of popularity to set.
+    <td><code>ideology = &lt;ideology&gt;</code><br>Изменяемая партия.
+    <p><code>popularity = &lt;int&gt;</code><br>число популярности для изменения.
     </p>
     </td>
     <td><pre>set_political_party = {
@@ -2519,7 +2519,7 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Sets the popularity for the specified political party in the current scope.
+    <td>Устанавливает популярность для указанной политической партии в текущей области видимости.
     </td>
     <td>&nbsp;
     </td>
@@ -2528,18 +2528,18 @@ create_dynamic_country = {
     <tr id="set_party_name">
     <td>set_party_name
     </td>
-    <td><code>ideology = &lt;ideology&gt;</code><br>The party to change.
-    <p><code>long_name = &lt;string&gt;</code><br>The new full name for the party.<br><code>name = &lt;string&gt;</code><br>The new short name for the party.
+    <td><code>ideology = &lt;ideology&gt;</code><br>Изменяемая партия.
+    <p><code>long_name = &lt;string&gt;</code><br>Новое полное название партии.<br><code>name = &lt;string&gt;</code><br>Новое краткое название партии.
     </p>
     </td>
     <td><pre>set_party_name = {
         ideology = neutrality
-        long_name = GER_neutrality_party_kaiserreich_long
-        name = GER_neutrality_party_kaiserreich
+        long_name = GER_<br>neutrality_party_kaiserreich_long
+        name = GER_neutrality<br>_party_kaiserreich
     }
     </pre>
     </td>
-    <td>Changes the name of the specified political party for the current scope.
+    <td>Изменяет название указанной политической партии для текущей области видимости.
     </td>
     <td>&nbsp;
     </td>
@@ -2569,65 +2569,67 @@ create_dynamic_country = {
     <tr id="set_power_balance">
     <td>set_power_balance
     </td>
-    <td><code>id = &lt;BoP ID&gt;</code><br>Balance of power to set/modify.<br>
-    <p><code>left_side = &lt;BoP side ID&gt;</code><br>The left side of the BoP.<br>
-    <code>right_side = &lt;BoP side ID&gt;</code><br>The right side of the BoP.<br>
-    <code>set_default = &lt;bool&gt;</code><br>Whether the BoP is considered default. Defaults to false.<br>
-    <code>set_value = &lt;decimal&gt;</code><br>The new value of the BoP. Optional, defaults to not changing the value.
-    </p>
-    </td>
-    <td><pre>set_power_balance = {
-        id = my_bop
-        left_side = my_bop_left_side
-        right_side = my_bop_right_side
-    }</pre>
-    </td>
-    <td>Sets a new balance of power or edits the existing one.
-    </td>
-    <td>Necessary for a balance of power to appear.
-    </td>
-    <td>1.12
-    </td></tr>
-    <tr id="remove_power_balance">
-    <td>remove_power_balance
-    </td>
-    <td><code>id = &lt;BoP ID&gt;</code><br>Balance of power to modify.
-    </td>
-    <td><pre>remove_power_balance = {
-        id = my_bop
-    }</pre>
-    </td>
-    <td>Removes the balance of power in entirety.
-    </td>
-    <td>
-    </td>
-    <td>1.12
-    </td></tr>
-    <tr id="add_power_balance_value">
-    <td>add_power_balance_value
-    </td>
-    <td><code>id = &lt;BoP ID&gt;</code><br>Balance of power to modify.<br>
-    <p><code>value = &lt;decimal&gt;</code><br>The value to add.<br>
-    <code>tooltip_side = &lt;BoP side ID&gt;</code><br>The side to show in the tooltip. Optional.<br>
-    </p>
-    </td>
-    <td><pre>add_power_balance_value = {
-        id = my_bop
-        value = -0.1
-        tooltip_side = my_bop_side
-    }</pre>
-    </td>
-    <td>Pushes the balance of power towards one side.
-    </td>
-    <td>
+    <td><code>id = &lt;BoP ID&gt;</code><br>Баланс сил, который необходимо установить/изменить.<br>
+        <p><code>left_side = &lt;BoP side ID&gt;</code><br>Левая сторона баланса сил.<br>
+        <code>right_side = &lt;BoP side ID&gt;</code><br>Правая сторона баланса сил.<br>
+        <code>set_default = &lt;bool&gt;</code><br>Определяет, является ли баланс сил значением по умолчанию. По умолчанию false.<br>
+        <code>set_value = &lt;decimal&gt;</code><br>Новое значение баланса сил. Необязательно, по умолчанию значение не изменяется.
+        </p>
+        </td>
+        <td><pre>
+set_power_balance = {
+    id = my_bop
+    left_side = my_bop_left_side
+    right_side = my_bop_right_side
+        }</pre>
+        </td>
+        <td>Устанавливает новый баланс сил или изменяет существующий.
+        </td>
+        <td>Необходимо для <Br>отображения баланса сил.
+        </td>
+        <td>1.12
+        </td></tr>
+        <tr id="remove_power_balance">
+        <td>remove_power_balance
+        </td>
+        <td><code>id = &lt;BoP ID&gt;</code><br>Баланс сил для изменения.
+        </td>
+        <td><pre>
+remove_power_balance = {
+    id = my_bop
+}</pre>
+        </td>
+        <td>Удаляет баланс сил полностью.
+        </td>
+        <td>
+        </td>
+        <td>1.12
+        </td></tr>
+        <tr id="add_power_balance_value">
+        <td>add_power_balance_value
+        </td>
+        <td><code>id = &lt;BoP ID&gt;</code><br>Баланс сил для изменения.<br>
+        <p><code>value = &lt;decimal&gt;</code><br>Значение для добавления.<br>
+        <code>tooltip_side = &lt;BoP side ID&gt;</code><br>Сторона, отображаемая во всплывающей подсказке. Необязательно.<br>
+        </p>
+        </td>
+        <td><pre>
+add_power_balance_value = {
+    id = my_bop
+    value = -0.1
+    tooltip_side = my_bop_side
+}</pre>
+        </td>
+        <td>Перемещает баланс сил в сторону одной из сторон.
+        </td>
     </td>
     <td>1.12
     </td></tr>
     <tr id="add_power_balance_modifier">
     <td>add_power_balance_modifier
     </td>
-    <td><code>id = &lt;BoP ID&gt;</code><br>Balance of power to modify.<br>
-    <p><code>modifier = &lt;static modifier&gt;</code><br>The <a href="/Static_modifiers" class="mw-redirect" title="Static modifiers">static modifier</a> to apply.
+<td><code>id = &lt;BoP ID&gt;</code><br>Баланс сил для изменения.<br>
+    <p><code>modifier = &lt;static modifier&gt;</code><br>Статический модификатор, который необходимо применить.
     </p>
     </td>
     <td><pre>add_power_balance_modifier = {
@@ -2635,7 +2637,7 @@ create_dynamic_country = {
         modifier = my_static_modifier
     }</pre>
     </td>
-    <td>Applies a balance of power modifier.
+    <td>Применяет модификатор баланса сил.
     </td>
     <td>
     </td>
@@ -2644,8 +2646,8 @@ create_dynamic_country = {
     <tr id="remove_power_balance_modifier">
     <td>remove_power_balance_modifier
     </td>
-    <td><code>id = &lt;BoP ID&gt;</code><br>Balance of power to modify.<br>
-    <p><code>modifier = &lt;static modifier&gt;</code><br>The <a href="/Static_modifiers" class="mw-redirect" title="Static modifiers">static modifier</a> to apply.
+    <td><code>id = &lt;BoP ID&gt;</code><br>Баланс сил для изменения.<br>
+    <p><code>modifier = &lt;static modifier&gt;</code><br>Статический модификатор, который необходимо применить.
     </p>
     </td>
     <td><pre>remove_power_balance_modifier = {
@@ -2653,7 +2655,7 @@ create_dynamic_country = {
         modifier = my_static_modifier
     }</pre>
     </td>
-    <td>Cancels a balance of power modifier.
+    <td>Отменяет модификатор баланса сил.
     </td>
     <td>
     </td>
@@ -2662,13 +2664,13 @@ create_dynamic_country = {
     <tr id="remove_all_power_balance_modifiers">
     <td>remove_all_power_balance_modifiers
     </td>
-    <td><code>id = &lt;BoP ID&gt;</code><br>Balance of power to modify.
+    <td><code>id = &lt;BoP ID&gt;</code><br>Баланс сил для изменения.
     </td>
     <td><pre>remove_all_power_balance_modifiers = {
         id = my_bop
     }</pre>
     </td>
-    <td>Cancels all balance of power modifiers.
+    <td>Отменяет все модификаторы баланса сил.
     </td>
     <td>
     </td>
@@ -2677,9 +2679,9 @@ create_dynamic_country = {
     <tr id="set_power_balance_gfx">
     <td>set_power_balance_gfx
     </td>
-    <td><code>id = &lt;BoP ID&gt;</code><br>Balance of power to modify.<br>
-    <p><code>side = &lt;BoP side ID&gt;</code><br>The side whose GFX to change.<br>
-    <code>gfx = &lt;sprite&gt;</code><br>The sprite to change the GFX to.
+    <td><code>id = &lt;BoP ID&gt;</code><br>Баланс сил для изменения.<br>
+    <p><code>side = &lt;BoP side ID&gt;</code><br>Сторона, у которой нужно изменить графику.<br>
+    <code>gfx = &lt;sprite&gt;</code><br>Спрайт, на который нужно изменить графику.
     </p>
     </td>
     <td><pre>set_power_balance_gfx = {
@@ -2688,9 +2690,9 @@ create_dynamic_country = {
         gfx = GFX_my_bop_side_new
     }</pre>
     </td>
-    <td>Changes the appearance of one of the sides within the balance of power.
+    <td>Изменяет внешний вид одной из сторон в балансе сил.
     </td>
-    <td>Sprites are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span> files.
+    <td>Спрайты определяются внутри <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV<br>/interface/*.gfx</span> файлах.
     </td>
     <td>1.12
     </td></tr></tbody><tfoot></tfoot>
@@ -2720,7 +2722,7 @@ create_dynamic_country = {
     </td>
     <td><pre>set_major = yes</pre>
     </td>
-    <td>Makes the current scope a major country.
+    <td>Делает текущий скоуп основной страной.
     </td>
     <td>&nbsp;
     </td>
@@ -2729,11 +2731,11 @@ create_dynamic_country = {
     <tr id="create_faction">
     <td>create_faction
     </td>
-    <td><code>&lt;string&gt;</code><br>The name of the faction.
+    <td><code>&lt;string&gt;</code><br>Название фракции.
     </td>
     <td><pre>create_faction = MY_FACTION_NAME</pre>
     </td>
-    <td>Creates a faction with the specified name for the current scope. The current scope and any subjects automatically join the faction.
+    <td>Создает фракцию с указанным названием для текущего скоупа. Текущий скоуп и все его субъекты автоматически присоединяются к фракции.
     </td>
     <td>&nbsp;
     </td>
@@ -2742,11 +2744,11 @@ create_dynamic_country = {
     <tr id="add_to_faction">
     <td>add_to_faction
     </td>
-    <td><code>&lt;TAG&gt;</code><br>The TAG of the nation to add to the faction of the current scope.
+    <td><code>&lt;TAG&gt;</code><br>TAG нации, которую нужно добавить в фракцию текущего скоупа.
     </td>
     <td><pre>FACTION_LEADER_TAG = { add_to_faction = TAG_TO_ADD }</pre>
     </td>
-    <td>Adds the TAG_TO_ADD to the faction of the FACTION_LEADER_TAG.
+    <td>Добавляет TAG_TO_ADD в фракцию, возглавляемую FACTION_LEADER_TAG.
     </td>
     <td>&nbsp;
     </td>
@@ -2755,11 +2757,11 @@ create_dynamic_country = {
     <tr id="leave_faction">
     <td>leave_faction
     </td>
-    <td><code>&lt;bool&gt;</code><br>Boolean.
+    <td><code>&lt;bool&gt;</code><br>Логическое значение.
     </td>
     <td><pre>leave_faction = yes</pre>
     </td>
-    <td>Removes the current scope from the faction they are part of.
+    <td>Удаляет текущий скоуп из фракции, к которой он принадлежит.
     </td>
     <td>&nbsp;
     </td>
@@ -2768,11 +2770,11 @@ create_dynamic_country = {
     <tr id="remove_from_faction">
     <td>remove_from_faction
     </td>
-    <td><code>&lt;TAG&gt;</code><br>The target country.
+    <td><code>&lt;TAG&gt;</code><br>Целевая страна.
     </td>
     <td><pre>remove_from_faction = TAG_TO_REMOVE</pre>
     </td>
-    <td>Removes the specified scope from the faction led by the current scope.
+    <td>Удаляет указанный скоуп из фракции, которую возглавляет текущий скоуп.
     </td>
     <td>&nbsp;
     </td>
@@ -2781,11 +2783,11 @@ create_dynamic_country = {
     <tr id="dismantle_faction">
     <td>dismantle_faction
     </td>
-    <td><code>&lt;bool&gt;</code><br>Boolean.
+    <td><code>&lt;bool&gt;</code><br>Логическое значение.
     </td>
     <td><pre>dismantle_faction = yes</pre>
     </td>
-    <td>Dismantles the faction of the current scope.
+    <td>Распускает фракцию текущего скоупа.
     </td>
     <td>&nbsp;
     </td>
@@ -2794,11 +2796,11 @@ create_dynamic_country = {
     <tr id="set_faction_name">
     <td>set_faction_name
     </td>
-    <td>Sets a faction name as the loc name.
+    <td>Устанавливает название фракции как локализованную строку.
     </td>
     <td><pre>set_faction_name = SOME_LOC_KEY</pre>
     </td>
-    <td>Changes faction names.
+    <td>Изменяет названия фракций.
     </td>
     <td>&nbsp;
     </td>
@@ -2811,7 +2813,7 @@ create_dynamic_country = {
     </td>
     <td><pre>set_faction_leader = yes</pre>
     </td>
-    <td>Sets the current country as the faction leader.
+    <td>Устанавливает текущую страну в качестве лидера фракции.
     </td>
     <td>
     </td>
@@ -2824,7 +2826,7 @@ create_dynamic_country = {
     </td>
     <td><pre>set_faction_spymaster = yes</pre>
     </td>
-    <td>Sets the current country as the faction spymaster.
+    <td>Устанавливает текущую страну в качестве разведчика фракции.
     </td>
     <td>
     </td>
@@ -2833,60 +2835,60 @@ create_dynamic_country = {
     <tr id="release">
     <td>release
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>release = GER</pre>
     </td>
-    <td>Releases the specified non-existent country as a free nation within the current country's owned states.
+    <td>Выпускает указанную несуществующую страну как свободное государство во владении текущей страны.
     </td>
-    <td>The effect does nothing if the country exists. All states that are cored by the specified country will be given to it. If the current country has a core on a state transferred to the released country, the core will be lost. If looking to make a subject into an independent nation, use set_autonomy. States that are owned but not controlled will be transferred to the released country, but won't be controlled by it.
+    <td>
     </td>
     <td>1.0
     </td></tr>
     <tr id="release_on_controlled">
     <td>release_on_controlled
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>release_on_controlled = GER</pre>
     </td>
-    <td>Releases the specified non-existent country as a free nation within the current country's controlled states.
+    <td><code>&lt;scope&gt;</code><br>.
     </td>
-    <td>The effect does nothing if the country exists. All states that are cored by the specified country will be given to it. If the current country has a core on a state transferred to the released country, the core will be lost.
+    <td><pre>release_on_controlled = GER</pre>
     </td>
     <td>1.9.1
     </td></tr>
     <tr id="release_puppet">
     <td>release_puppet
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>release_puppet = GER</pre>
     </td>
-    <td>Releases the specified non-existent country as a puppet of the current scope within the current country's owned states.
+    <td>Выпускает указанную несуществующую страну как подчиненное государство текущей области владения текущей страны.
     </td>
-    <td>The effect does nothing if the country exists. All states that are cored by the specified country will be given to it. If the current country has a core on a state transferred to the released country, the core will be lost. States that are owned but not controlled will be transferred to the released country, but won't be controlled by it.
+    <td>Действие не имеет эффекта, если страна уже существует. Все провинции, имеющие ядро у указанной страны, будут переданы ей. Если текущая страна имеет ядро на провинции, переданной выпущенной стране, ядро будет потеряно. Провинции, находящиеся во владении, но не контролируемые текущей страной, будут переданы выпущенной стране, но не будут контролироваться ею.
     </td>
     <td>1.0
     </td></tr>
     <tr id="release_puppet_on_controlled">
     <td>release_puppet_on_controlled
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>release_puppet_on_controlled = GER</pre>
     </td>
-    <td>Releases the specified non-existent country as a puppet of the current scope within the current country's controlled states.
+    <td>Выпускает указанную несуществующую страну как подчиненное государство текущей области владения текущей страны.
     </td>
-    <td>The effect does nothing if the country exists. All states that are cored by the specified country will be given to it. If the current country has a core on a state transferred to the released country, the core will be lost.
+    <td>Действие не имеет эффекта, если страна уже существует. Все провинции, имеющие ядро у указанной страны, будут переданы ей. Если текущая страна имеет ядро на провинции, переданной выпущенной стране, ядро будет потеряно.
     </td>
     <td>1.9.1
     </td></tr>
     <tr id="release_autonomy">
     <td>release_autonomy
     </td>
-    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The subject country.
-    <p><code>autonomy_state = &lt;type&gt;</code><br>The type of autonomy state to set.<br><code>freedom_level = &lt;float&gt;</code><br>The new freedom level value. Optional.
+<td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Целевая страна.
+    <p><code>autonomy_state = &lt;type&gt;</code><br>Тип состояния автономии для установки.<br><code>freedom_level = &lt;float&gt;</code><br>Новое значение уровня свободы. Опционально.
     </p>
     </td>
     <td><pre>release_autonomy = {
@@ -2896,46 +2898,46 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Releases the specified non-existent country as a subject of the specified autonomy of the current scope within the current country's owned states.
+    <td>Выпускает указанную несуществующую страну как субъект указанной автономии текущей области владения текущей страны.
     </td>
-    <td>The effect does nothing if the country exists. All states that are cored by the specified country will be given to it. If the current country has a core on a state transferred to the released country, the core will be lost. States that are owned but not controlled will be transferred to the released country, but won't be controlled by it. The autonomy states are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/*.txt</span>.
+    <td>Действие не имеет эффекта, если страна уже существует. Все провинции, имеющие ядро у указанной страны, будут переданы ей. Если текущая страна имеет ядро на провинции, переданной выпущенной стране, ядро будет потеряно. Провинции, находящиеся во владении, но не контролируемые текущей страной, будут переданы выпущенной стране, но не будут контролироваться ею. Состояния автономии находятся в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/*.txt</span>.
     </td>
     <td>1.3
     </td></tr>
     <tr id="give_guarantee">
     <td>give_guarantee
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>give_guarantee = GER</pre>
     </td>
-    <td>The current scope guarantees the target country.
+    <td>Текущая область гарантирует целевую страну.
     </td>
-    <td><a href="#diplomatic_relation">diplomatic_relation</a> effect can be used to remove it.
+    <td>Для удаления гарантии может использоваться эффект <a href="#diplomatic_relation">diplomatic_relation</a>.
     </td>
     <td>1.0
     </td></tr>
     <tr id="give_military_access">
     <td>give_military_access
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>give_military_access = GER</pre>
     </td>
-    <td>The current scope grants military access to the target country.
+    <td>Текущая область предоставляет военный доступ целевой стране.
     </td>
-    <td><a href="#diplomatic_relation">diplomatic_relation</a> effect can be used to remove it.
+    <td>Для отмены предоставления доступа может использоваться эффект <a href="#diplomatic_relation">diplomatic_relation</a>.
     </td>
     <td>1.0
     </td></tr>
     <tr id="recall_attache">
     <td>recall_attache
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country with an attache.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна с атташе.
     </td>
     <td><pre>recall_attache = GER</pre>
     </td>
-    <td>Recalls the current scope's attaché from the specified country.
+    <td>Отзывает атташе текущей области из указанной страны.
     </td>
     <td>&nbsp;
     </td>
@@ -2944,8 +2946,8 @@ create_dynamic_country = {
     <tr id="diplomatic_relation">
     <td>diplomatic_relation
     </td>
-    <td><code>country = &lt;scope&gt;</code><br>The target country to alter the relationship with ROOT.
-    <p><code>relation = &lt;type&gt;</code><br>The relation to change.<br><code>active = &lt;bool&gt;</code><br>Whether the relation is started or broken.
+    <td><code>country = &lt;scope&gt;</code><br>Целевая страна, с которой изменяется отношение к КОРНЕВОЙ стране.
+    <p><code>relation = &lt;type&gt;</code><br>Отношение, которое изменяется.<br><code>active = &lt;bool&gt;</code><br>Определяет, активно ли отношение или разорвано.
     </p>
     </td>
     <td><pre>diplomatic_relation = {
@@ -2955,9 +2957,9 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Used to define a diplomatic relation between the current scope and target scope country.
+    <td>Используется для определения дипломатического отношения между текущей областью и целевой областью страны.
     </td>
-    <td>Possible relations:
+    <td>Возможные отношения:
     <ul><li>non_aggression_pact</li>
     <li>guarantee</li>
     <li>puppet</li>
@@ -2969,8 +2971,8 @@ create_dynamic_country = {
     <tr id="add_opinion_modifier">
     <td>add_opinion_modifier
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The target country.
-    <p><code>modifier = &lt;modifier&gt;</code><br>The opinion modifier to add.
+    <td><code>target = &lt;scope&gt;</code><br>Целевая страна.
+    <p><code>modifier = &lt;modifier&gt;</code><br>Модификатор мнения, который добавляется.
     </p>
     </td>
     <td><pre>add_opinion_modifier = {
@@ -2979,17 +2981,17 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>The current scope gains the specified opinion modifier <b>towards the target scope</b>. Can also be used to modify trade relations by adding 'trade = yes' in the opinion &lt;modifier&gt; in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>. If used with a trade opinion_modifier the behaviour is reversed, meaning that the target gains the trade opinion towards the <b>current scope</b>.
+    <td>Текущая область получает указанный модификатор мнения <b>в отношении целевой области</b>. Может также использоваться для изменения торговых отношений путем добавления 'trade = yes' в модификатор мнения &lt;modifier&gt; в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>. При использовании с модификатором торгового мнения поведение меняется на противоположное, то есть цель получает торговое мнение в отношении <b>текущего диапазона</b>.
     </td>
-    <td>Opinion modifiers are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.
+    <td>Модификаторы мнения находятся в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.
     </td>
     <td>1.0
     </td></tr>
     <tr id="remove_opinion_modifier">
     <td>remove_opinion_modifier
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The target country.
-    <p><code>modifier = &lt;modifier&gt;</code><br>The opinion modifier to remove.
+    <td><code>target = &lt;scope&gt;</code><br>Целевая страна.
+    <p><code>modifier = &lt;modifier&gt;</code><br>Модификатор мнения, который удаляется.
     </p>
     </td>
     <td><pre>remove_opinion_modifier = {
@@ -2998,17 +3000,17 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>The current scope loses the specified opinion modifier <b>towards the target scope</b>.
+    <td>Текущая область видимости теряет указанный модификатор мнения <b>в сторону целевой области видимости.</b>
     </td>
-    <td>Opinion modifiers are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.
+    <td>Модификаторы мнения находятся в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.
     </td>
     <td>1.0
     </td></tr>
     <tr id="reverse_add_opinion_modifier">
     <td>reverse_add_opinion_modifier
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The target country.
-    <p><code>modifier = &lt;modifier&gt;</code><br>The opinion modifier to add.
+<td><code>target = &lt;scope&gt;</code><br>Целевая страна.
+    <p><code>modifier = &lt;modifier&gt;</code><br>Модификатор мнения, который добавляется.
     </p>
     </td>
     <td>
@@ -3018,17 +3020,17 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>The target scope gains the specified opinion modifier <b>towards the current scope</b>.
+    <td>Целевая область получает указанный модификатор мнения <b>относительно текущей области</b>.
     </td>
-    <td>Opinion modifiers are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.<br>Useful for when you don't know what the current scope will be.
+    <td>Модификаторы мнения находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.<br>Полезно, когда неизвестна текущая область.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_relation_modifier">
     <td>add_relation_modifier
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The target country.
-    <p><code>modifier = &lt;modifier&gt;</code><br>The relation modifier to add.
+    <td><code>target = &lt;scope&gt;</code><br>Целевая страна.
+    <p><code>modifier = &lt;modifier&gt;</code><br>Модификатор отношений, который добавляется.
     </p>
     </td>
     <td><pre>add_relation_modifier = {
@@ -3037,17 +3039,17 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>The current scope gains the specified relation modifier <b>towards the target scope</b>.
+    <td>Текущая область получает указанный модификатор отношений <b>относительно целевой области</b>.
     </td>
-    <td>Relation modifiers are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span> files, used to apply a <a href="/Modifiers#Targeted_modifiers" title="Modifiers">targeted modifier</a> with a non-static target. To change the diplomatic opinion of a country, see <a href="#add_opinion_modifier">add_opinion_modifier</a>.
+    <td>Модификаторы отношений находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span> и используются для применения <a href="/Modifiers#Targeted_modifiers" title="Modifiers">целевого модификатора</a> с нестатической целью. Чтобы изменить дипломатическое мнение страны, см. <a href="#add_opinion_modifier">add_opinion_modifier</a>.
     </td>
     <td>1.4
     </td></tr>
     <tr id="remove_relation_modifier">
     <td>remove_relation_modifier
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The target country.
-    <p><code>modifier = &lt;modifier&gt;</code><br>The relation modifier to remove.
+    <td><code>target = &lt;scope&gt;</code><br>Целевая страна.
+    <p><code>modifier = &lt;modifier&gt;</code><br>Модификатор отношений, который удаляется.
     </p>
     </td>
     <td><pre>remove_relation_modifier = {
@@ -3056,17 +3058,17 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>The current scope loses the specified relation modifier for <b>towards the target scope</b>.
+    <td>Текущая область теряет указанный модификатор отношений <b>по отношению к целевой области</b>.
     </td>
-    <td>Relation modifiers are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span>, used to apply a <a href="/Modifiers#Targeted_modifiers" title="Modifiers">targeted modifier</a> with a non-static target. To change the diplomatic opinion of a country, see <a href="#remove_opinion_modifier">remove_opinion_modifier</a>.
+    <td>Модификаторы отношений находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span> и используются для применения <a href="/Modifiers#Targeted_modifiers" title="Modifiers">целевого модификатора</a> с нестатической целью. Чтобы изменить дипломатическое мнение страны, см. <a href="#remove_opinion_modifier">remove_opinion_modifier</a>.
     </td>
     <td>1.4
     </td></tr>
     <tr id="add_collaboration">
     <td>add_collaboration
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The target country.
-    <p><code>value = &lt;0-1&gt;</code><br>How much collaboration to add.
+    <td><code>target = &lt;scope&gt;</code><br>Целевая страна.
+    <p><code>value = &lt;0-1&gt;</code><br>Количество добавляемого сотрудничества.
     </p>
     </td>
     <td><pre>add_collaboration = {
@@ -3074,7 +3076,7 @@ create_dynamic_country = {
         value = 0.3
     }</pre>
     </td>
-    <td>Adds collaboration in TAG with the scoped country.
+    <td>Добавляет сотрудничество с областью TAG в текущую область.
     </td>
     <td>
     </td>
@@ -3083,8 +3085,8 @@ create_dynamic_country = {
     <tr id="set_collaboration">
     <td>set_collaboration
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The target country.
-    <p><code>value = &lt;0-1&gt;</code><br>How much collaboration will be set.
+    <td><code>target = &lt;scope&gt;</code><br>Целевая страна.
+    <p><code>value = &lt;0-1&gt;</code><br>Устанавливаемое количество сотрудничества.
     </p>
     </td>
     <td><pre>set_collaboration = {
@@ -3092,7 +3094,7 @@ create_dynamic_country = {
         value = 0.3
     }</pre>
     </td>
-    <td>Sets the collaboration in TAG with the scoped country.
+    <td>Устанавливает сотрудничество с областью TAG в текущей области.
     </td>
     <td>
     </td>
@@ -3101,11 +3103,11 @@ create_dynamic_country = {
     <tr id="recall_volunteers_from">
     <td>recall_volunteers_from
     </td>
-    <td><code>&lt;tag&gt;</code><br>The target country.
+    <td><code>&lt;tag&gt;</code><br>Целевая страна.
     </td>
     <td><pre>recall_volunteers_from = SPR</pre>
     </td>
-    <td>Recalls volunteers sent to the specified country back to the current country.
+    <td>Возвращает добровольцев, отправленных в указанную страну, обратно в текущую страну.
     </td>
     <td>
     </td>
@@ -3114,39 +3116,62 @@ create_dynamic_country = {
     <tr id="set_occupation_law">
     <td>set_occupation_law
     </td>
-    <td><code>&lt;law ID&gt;</code><br>The new occupation law enacted by the previous scope or <code>default_law</code>.
+    <td><code>&lt;law ID&gt;</code><br>Новый закон об оккупации, принятый предыдущей областью или <code>default_law</code>.
     </td>
-    <td><pre>USA = { GER = { set_occupation_law = foreign_civilian_oversight } } # Changes USA's occupation law for GER.</pre>
-    <pre>USA = { USA = { set_occupation_law = default_law } } # Changes the USA's default occupation law to the default.</pre> 
+    <td><pre>
+USA = { 
+ GER = { 
+  set_occupation_law = foreign_civilian_oversight 
+          } 
+       }
+</pre>
+    <pre>
+USA = { 
+ USA = { 
+  set_occupation_law = default_law 
+    } 
+}
+
+    </pre> 
     </td>
-    <td>Sets the occupation law of the country.
+    <td>Устанавливает закон об оккупации для страны.
     </td>
-    <td><a href="/Scopes#PREV_usage" title="Scopes">PREV</a> will be the country for whom the occupation law will be changed. If PREV is not a country, nothing changes. If PREV is the same country, changes the default occupation law. If PREV is different, default_law resets the country-specific law to the global default, otherwise it resets the default law to the occupation law with <code>starting_law = yes</code> in definition.
+    <td>PREV будет страной, для которой будет изменен закон об оккупации. Если PREV не является страной, ничего не изменяется. Если PREV - это та же страна, изменяется закон об оккупации по умолчанию. Если PREV отличается, default_law сбрасывает специфический для страны закон на глобальный по умолчанию, иначе сбрасывается закон по умолчанию на закон об оккупации с <code>starting_law = yes</code> в определении.
     </td>
     <td>1.12
     </td></tr>
     <tr id="set_occupation_law_where_available">
     <td>set_occupation_law_where_available
     </td>
-    <td><code>&lt;law ID&gt;</code><br>The new occupation law enacted by the previous scope or <code>default_law</code>.
+    <td><code>&lt;law ID&gt;</code><br>Новый закон об оккупации, принятый предыдущей областью или <code>default_law</code>.
     </td>
-    <td><pre>USA = { GER = { set_occupation_law_where_available = foreign_civilian_oversight } } # Changes USA's occupation law for GER where possible.</pre>
-    <pre>USA = { USA = { set_occupation_law_where_available = default_law } } # Changes the USA's default occupation law to the default where possible.</pre> 
+    <td><pre>
+USA = { 
+ GER = { 
+  set_occupation_law_where_available = foreign_civilian_oversight 
+    } 
+} </pre>
+    <pre>
+USA = { 
+ USA = { 
+  set_occupation_law_where_available = default_law 
+    } 
+}</pre> 
     </td>
-    <td>Sets the occupation law of the country.
+    <td>Устанавливает закон об оккупации для страны.
     </td>
-    <td>Identical to <a href="#set_occupation_law">set_occupation_law</a>, except if the law is impossible to set, tries again at every smaller sub-set: if default is impossible, tries every single individual occupied country; if the country's law is impossible to change, tries every single state within the country.
+    <td>Идентично , за исключением того, что если невозможно установить закон, пытается сделать это в каждом меньшем подмножестве: если невозможно установить закон по умолчанию, пробует каждую отдельную оккупированную страну; если закон страны невозможно изменить, пробует каждый отдельный штат внутри страны.
     </td>
     <td>1.12
     </td></tr>
     <tr>
     <td>send_embargo
     </td>
-    <td><code>&lt;tag&gt;</code><br>The target country.
+    <td><code>&lt;tag&gt;</code><br>Целевая страна.
     </td>
     <td><pre>send_embargo = ITA</pre>
     </td>
-    <td>Embargos the target country.
+    <td>Вводит эмбарго на целевую страну.
     </td>
     <td>
     </td>
@@ -3155,11 +3180,11 @@ create_dynamic_country = {
     <tr>
     <td>break_embargo
     </td>
-    <td><code>&lt;tag&gt;</code><br>The target country.
+    <td><code>&lt;tag&gt;</code><br>Целевая страна.
     </td>
     <td><pre>break_embargo = ITA</pre>
     </td>
-    <td>Stops embargoing the target country.
+    <td>Прекращает эмбарго на целевую страну.
     </td>
     <td>
     </td>
@@ -3186,11 +3211,11 @@ create_dynamic_country = {
     <tr id="puppet">
     <td>puppet
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.<br>
-    <p><b>OR</b><br>
-    <code>target = &lt;scope&gt;</code><br>The target country.<br>
-    <code>end_wars = &lt;bool&gt;</code><br>Whether the target country will peace out in all of its non-civil wars it's participating in. Defaults to true.<br>
-    <code>end_civil_wars = &lt;bool&gt;</code><br>Whether the target country will peace out in all of its civil wars it's participating in. Defaults to true.<br>
+  <td><code>&lt;scope&gt;</code><br>Целевая страна.<br>
+    <p><b>ИЛИ</b><br>
+    <code>target = &lt;scope&gt;</code><br>Целевая страна.<br>
+    <code>end_wars = &lt;bool&gt;</code><br>Определяет, будет ли целевая страна заключать мир во всех своих негражданских войнах, в которых она участвует. По умолчанию - true.<br>
+    <code>end_civil_wars = &lt;bool&gt;</code><br>Определяет, будет ли целевая страна заключать мир во всех своих гражданских войнах, в которых она участвует. По умолчанию - true.<br>
     </p>
     </td>
     <td><pre>puppet = GER</pre>
@@ -3199,30 +3224,30 @@ create_dynamic_country = {
         end_wars = no
     }</pre>
     </td>
-    <td>Makes the specified country a subject of the current scope.
+    <td>Делает указанную страну подчиненной текущему субъекту.
     </td>
-    <td>The autonomous state picked is one which contains <code>default = yes</code> and where <code>allowed = { ... }</code> is fulfilled within the <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/commmon/autonomous_states/</span> definition, rather than necessarily being autonomy_puppet. <b>Results in a crash-to-desktop if the game is unable to find any such autonomous states.</b>
+    <td>Выбранный автономный государство является таким, в котором содержится <code>default = yes</code> и где выполнено условие <code>allowed = { ... }</code> в определении в папке <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/</span>, а не обязательно autonomy_puppet. <b>В случае, если игра не может найти такие автономные государства, может возникнуть сбой и вылет из игры.</b>
     </td>
     <td>1.0
     </td></tr>
     <tr id="end_puppet">
     <td>end_puppet
     </td>
-    <td><code>&lt;scope&gt;</code><br>The target country.
+    <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>end_puppet = GER</pre>
     </td>
-    <td>Removes the subject status between the target and the current scope.
+    <td>Удаляет статус субъекта между целью и текущим субъектом.
     </td>
-    <td>Must be used within the overlord's scope.
+    <td>Должно использоваться в пределах области господина.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_autonomy_ratio">
     <td>add_autonomy_ratio
     </td>
-    <td><code>value = &lt;float&gt;</code><br>The freedom score to add.
-    <p><code>localization = &lt;string&gt;</code><br>The localization key for the modifier.
+    <td><code>value = &lt;float&gt;</code><br>Коэффициент свободы для добавления.
+    <p><code>localization = &lt;string&gt;</code><br>Ключ локализации для модификатора.
     </p>
     </td>
     <td><pre>add_autonomy_ratio = {
@@ -3231,17 +3256,17 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Adds a freedom score ratio modifier to the current scope.
+    <td>Добавляет модификатор коэффициента свободы текущему субъекту.
     </td>
-    <td>Used in the subject's scope.
+    <td>Используется в пределах области субъекта.
     </td>
     <td>1.3
     </td></tr>
     <tr id="add_autonomy_score">
     <td>add_autonomy_score
     </td>
-    <td><code>value = &lt;float&gt;</code><br>The freedom score to add.
-    <p><code>localization = &lt;string&gt;</code><br>The localization key for the modifier.
+    <td><code>value = &lt;float&gt;</code><br>Коэффициент свободы для добавления.
+    <p><code>localization = &lt;string&gt;</code><br>Ключ локализации для модификатора.
     </p>
     </td>
     <td><pre>add_autonomy_score = {
@@ -3250,20 +3275,20 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Adds an exact freedom score modifier to the current scope.
+    <td>Добавляет точный модификатор коэффициента свободы текущему субъекту.
     </td>
-    <td>Used in the subject's scope.
+    <td>Используется в пределах области субъекта.
     </td>
     <td>1.3
     </td></tr>
     <tr id="set_autonomy">
     <td>set_autonomy
     </td>
-    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The subject country.
-    <p><code>autonomy_state = &lt;type&gt;</code><br>The type of autonomy state to set.<br>
-    <code>freedom_level = &lt;float&gt;</code><br>The new freedom level value. Optional.<br>
-    <code>end_wars = &lt;yes/no&gt;</code><br>Will end any wars the subject is involved in.<br>
-    <code>end_civil_wars = &lt;yes/no&gt;</code><br>Will end any civil wars the subject is subject to<br>
+ <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Целевая страна.
+    <p><code>autonomy_state = &lt;type&gt;</code><br>Тип состояния автономии для установки.<br>
+    <code>freedom_level = &lt;float&gt;</code><br>Новое значение уровня свободы. Необязательно.<br>
+    <code>end_wars = &lt;yes/no&gt;</code><br>Завершит все войны, в которых участвует субъект.<br>
+    <code>end_civil_wars = &lt;yes/no&gt;</code><br>Завершит все гражданские войны, в которых участвует субъект.<br>
     </p>
     </td>
     <td><pre>set_autonomy = {
@@ -3274,9 +3299,9 @@ create_dynamic_country = {
     }
     </pre>
     </td>
-    <td>Sets the autonomy level for the specified country, <b>including independence</b>.
+    <td>Устанавливает уровень автономии для указанной страны, <b>включая независимость</b>.
     </td>
-    <td>The autonomy_free state will free the subject, <b>however this effect has to be executed within the scope of the target country's current overlord</b> for this to have effect. The autonomy states are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/*.txt</span> files.
+    <td>Состояние автономии autonomy_free освободит субъект, <b>однако этот эффект должен быть выполнен в пределах области текущего господина целевой страны</b>, чтобы он имел эффект. Состояния автономии находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/*.txt</span>.
     </td>
     <td>1.3
     </td></tr></tbody><tfoot></tfoot>
@@ -3302,13 +3327,13 @@ create_dynamic_country = {
                 </thead>
         <tbody>
     <tr id="add_legitimacy">
-    <td>add_legitimacy
+<td>add_legitimacy
     </td>
-    <td>Adds legitimacy to a government in exile.
+    <td>Добавляет легитимность правительству в изгнании.
     </td>
     <td><pre>add_legitimacy = 10</pre>
     </td>
-    <td>Adds legitimacy.
+    <td>Добавляет легитимность.
     </td>
     <td>&nbsp;
     </td>
@@ -3317,11 +3342,11 @@ create_dynamic_country = {
     <tr id="set_legitimacy">
     <td>set_legitimacy
     </td>
-    <td>Sets the legitimacy of governments in exile.
+    <td>Устанавливает легитимность правительств в изгнании.
     </td>
     <td><pre>set_legitimacy = 10</pre>
     </td>
-    <td>Sets legitimacy.
+    <td>Устанавливает легитимность.
     </td>
     <td>&nbsp;
     </td>
@@ -3330,24 +3355,25 @@ create_dynamic_country = {
     <tr id="become_exiled_in">
     <td>become_exiled_in
     </td>
-    <td>Makes a country a government in exile in a set country, with a set starting legitimacy.
+    <td>Делает страну правительством в изгнании в заданной стране с заданной начальной легитимностью.
     </td>
-    <td><pre>become_exiled_in = { target = &lt;Host tag&gt; legitimacy = &lt;0-100&gt; (starting legitimacy, optional) }</pre>
+    <td><pre>become_exiled_in = { target = &lt;Тег страны&gt;
+legitimacy = &lt;0-100&gt; }</pre>
     </td>
-    <td>Creates a government in exile.
+    <td>Создает правительство в изгнании.
     </td>
-    <td>Must be fired from ROOT, the country that should be exiled, or a TAG specification must be used.
+    <td>Должно быть запущено из ROOT, страны, которая должна быть в изгнании, или должна быть использована спецификация TAG.
     </td>
     <td>1.6
     </td></tr>
     <tr id="end_exile">
     <td>end_exile
     </td>
-    <td>Ends a government in exile.
+    <td>Завершает правительство в изгнании.
     </td>
     <td><pre>end_exile = yes</pre>
     </td>
-    <td>Ends a government in exile.
+    <td>Завершает правительство в изгнании.
     </td>
     <td>&nbsp;
     </td>

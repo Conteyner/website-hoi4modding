@@ -139,6 +139,7 @@ button:hover::before {
   padding: 10;
   width: 70%;
   margin: auto;
+  overflow: auto; 
 }
 
 
@@ -151,6 +152,11 @@ button:hover::before {
   max-width: 98%;
   word-wrap: break-word;
 }
+.table-container {
+  overflow: auto; 
+  max-width: 100%;
+}
+
 
 i {
 }
