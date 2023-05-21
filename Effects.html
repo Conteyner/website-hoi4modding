@@ -3402,11 +3402,11 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="add_threat">
     <td>add_threat
     </td>
-    <td><code>&lt;int&gt;</code><br>The amount to change by.
+    <td><code>&lt;int&gt;</code><br>Количество изменения.
     </td>
     <td><pre>add_threat = 10</pre>
     </td>
-    <td>Adjusts the level of World Tension.
+    <td>Регулирует уровень мирового напряжения.
     </td>
     <td>&nbsp;
     </td>
@@ -3415,8 +3415,8 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="add_named_threat">
     <td>add_named_threat
     </td>
-    <td><code>threat = &lt;int&gt;</code><br>The amount to change by.
-    <p><code>name = &lt;string&gt;</code><br>The localization string.
+    <td><code>threat = &lt;int&gt;</code><br>Количество изменения.
+    <p><code>name = &lt;string&gt;</code><br>Строка локализации.
     </p>
     </td>
     <td><pre>add_named_threat = {
@@ -3425,7 +3425,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Adjusts the level of World Tension and adds an entry in the World Tension tooltip.
+    <td>Регулирует уровень мирового напряжения и добавляет запись во всплывающую подсказку мирового напряжения.
     </td>
     <td>&nbsp;
     </td>
@@ -3434,8 +3434,8 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="annex_country">
     <td>annex_country
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>Which country to annex.
-    <p><code>transfer_troops = yes</code><br>Whether to transfer the troops of the annexed country.
+    <td><code>target = &lt;scope&gt;</code><br>Страна, которую следует аннексировать.
+    <p><code>transfer_troops = yes</code><br>Определяет, нужно ли передавать войска аннексированной страны.
     </p>
     </td>
     <td><pre>annex_country = {
@@ -3444,17 +3444,15 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Annex the specified country for the current scope.
-    </td>
-    <td>Without transfering troops, the annexed country's divisions' equipment is lost.
+    <td>Аннексирует указанную страну для текущего контекста.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_to_war">
     <td>add_to_war
     </td>
-    <td><code>targeted_alliance = &lt;scope&gt;</code><br>The country to assist.
-    <p><code>enemy = &lt;scope&gt;</code><br>The country attacking the ally.<br><code>hostility_reason = &lt;string&gt;</code><br>Localization for the reason for joining. Optional.
+    <td><code>targeted_alliance = &lt;scope&gt;</code><br>Страна, которую следует поддержать.
+    <p><code>enemy = &lt;scope&gt;</code><br>Страна, нападающая на союзника.<br><code>hostility_reason = &lt;string&gt;</code><br>Локализация причины вступления. Опционально.
     </p>
     </td>
     <td><pre>add_to_war = {
@@ -3464,7 +3462,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Forces the current scope to join the war of the specified ally against the specified enemy.
+    <td>Заставляет текущий контекст присоединиться к войне указанного союзника против указанного врага.
     </td>
     <td>&nbsp;
     </td>
@@ -3473,8 +3471,8 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="declare_war_on">
     <td>declare_war_on
     </td>
-    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The country to attack.
-    <p><code>type = &lt;wargoal&gt;</code><br>The wargoal to declare with.<br><code>generator = { &lt;state id&gt; }</code><br>The states to supply the wargoal (i.e. take_state_focus).
+    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Страна, которую следует атаковать.
+    <p><code>type = &lt;wargoal&gt;</code><br>Цель войны, которую следует объявить.<br><code>generator = { &lt;state id&gt; }</code><br>Штаты, которые передаются в цель войны (например, take_state_focus).
     </p>
     </td>
     <td><pre>declare_war_on = {
@@ -3483,271 +3481,225 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Makes the current scope declare war on the specified country with the specified wargoal.
-    </td>
-    <td>Wargoals are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/wargoals/*.txt</span>. See also <a href="#add_civil_war_target">add_civil_war_target</a> in order to assign a war between different countries to be a civil war.
+    <td>Заставляет текущий контекст объявить войну указанной стране с указанной целью войны.
     </td>
     <td>1.0
     </td></tr>
     <tr id="white_peace">
     <td>white_peace
     </td>
-    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>The scope to white peace.<br>
-    <p><b>OR</b><br>
-    <code>tag = &lt;scope&gt; / &lt;variable&gt;</code><br>The scope to white peace.<br>
-    <code>message = &lt;localisation key&gt;</code><br>The reason for peace showing up in the pop-up.
-    </p>
-    </td>
-    <td><pre>white_peace = GER
-    </pre>
-    <pre>white_peace = {
-        tag = GER
-        message = my_peace_tt
-    }
-    </pre>
-    </td>
-    <td>Makes the current scope white peace the specified scope.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.0
-    </td></tr>
-    <tr id="start_peace_conference">
-    <td>start_peace_conference
-    </td>
-    <td><code>tag = &lt;scope&gt; / &lt;variable&gt;</code><br>The scope to peace with.<br>
-    <p><code>score_factor = &lt;decimal&gt; / &lt;variable&gt;</code><br>The fraction of the total score awarded to the winners compared to regular victory.<br>
-    <code>message = &lt;localisation key&gt;</code><br>The reason for peace showing up in the pop-up.
-    </p>
-    </td>
-    <td><pre>start_peace_conference = {
-        tag = GER
-        score_factor = 0.4
-        message = my_peace_tt
-    }
-    </pre>
-    </td>
-    <td>Makes the current scope start a peace conference with the specified scope on the other side.
-    </td>
-    <td>Current scope is the winner, target and its subjects are the losers. Can only be used if at war with the target.
-    </td>
-    <td>1.12
-    </td></tr>
-    <tr id="set_truce">
-    <td>set_truce
-    </td>
-    <td><code>target = &lt;scope&gt;</code><br>The scope to truce with.
-    <p><code>days = &lt;int&gt;</code><br>The duration of the truce.
-    </p>
-    </td>
-    <td><pre>set_truce = {
-        target = GER
-        days = 90
-    }
-    </pre>
-    </td>
-    <td>Makes the current scope truce with the specified scope.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.0
-    </td></tr>
-    <tr id="create_wargoal">
-    <td>create_wargoal
-    </td>
-    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The country to target.
-    <p><code>type = &lt;wargoal&gt;</code><br>The wargoal to generate.<br><code>generator = { &lt;state id&gt; }</code><br>The states to supply the wargoal (i.e. take_state_focus).
-    </p>
-    </td>
-    <td><pre>create_wargoal = {
-        type = puppet_wargoal_focus
-        target = ROOT
-    }
-    </pre>
-    </td>
-    <td>Grants the current scope a wargoal against the specified country.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.0
-    </td></tr>
-    <tr id="remove_wargoal">
-    <td>remove_wargoal
-    </td>
-    <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>The country to target.
-    <p><code>type = &lt;wargoal&gt;</code><br>The wargoal to remove. "all" will remove all wargoals.<br>
-    </p>
-    </td>
-    <td><pre>remove_wargoal = {
-        type = all
-        target = ROOT
-    }
-    </pre>
-    </td>
-    <td>Removes wargoals from the current scope to the specified country.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.10.2
-    </td></tr>
-    <tr id="start_civil_war">
-    <td>start_civil_war
-    </td>
-    <td><code>ideology = &lt;ideology&gt;</code><br>The ideology of the breakaway country.
-    <p><code>ruling_party = &lt;ideology&gt;</code><br>The ruling party of the <b>original, player-led</b> country. Optional.<br>
-    <code>size = &lt;float&gt;</code><br>The size of the breakaway country and the fraction of the original stockpile and military units it will receive by default. Optional, defaults to 0.5.<br>
-    <code>army_ratio = &lt;float&gt;</code><br>The size of the land army that the breakaway country gets. Optional, defaults to being the same as size.<br>
-    <code>navy_ratio = &lt;float&gt;</code><br>The size of the naval forces that the breakaway country gets. Optional, defaults to being the same as size.<br>
-    <code>air_ratio = &lt;float&gt;</code><br>The size of the airforce that the breakaway country gets. Optional, defaults to being the same as size.<br>
-    <code>capital = &lt;state&gt;</code><br>The capital state of the breakaway country. Optional.<br>
-    <code>states = { &lt;state&gt; }</code><br>The states included in the breakway country. Optional, defaults to random states based off size. <code>all</code> will result in all states that meet the filter going to the breakaway.<br>
-    <code>states_filter = { &lt;triggers&gt; }</code><br>A trigger block checked for the state that must be met to be transferred to the breakaway. Optional.<br>
-    <code>keep_unit_leaders = { &lt;unit leader id&gt; }</code><br>List of unit leaders to be kept by their legacy_id. Optional.<br>
-    <code>keep_unit_leaders_trigger = { &lt;triggers&gt; }</code><br>Trigger block checked for every unit leader that forces them to be kept if they meet the triggers. The default scope is the unit leader, ROOT is the country receiving the unit leader, while FROM is the original owner of the unit leader. Optional.<br>
-    <code>keep_political_leader = &lt;bool&gt;</code><br>Controls if the promoted party leader (i.e. the one that'd take power if the country were to be switched to that ideology group) of the revolting ideology group will be kept by the country or join the revolt, yes resulting in the former. Optional, defaults to false.<br>
-    <code>keep_political_party_members = &lt;bool&gt;</code><br>Controls if non-promoted party leaders of the revolting ideology group will be kept by the country or join the revolt, yes resulting in the former. Optional, defaults to false.<br>
-    <code>keep_all_characters = yes</code><br>If true, the revolter will have no characters from the original country transferred to them. Optional, defaults to false.<br>
-    <code>&lt;effects&gt;</code><br>An effect block executed for the breakaway country.
-    </p>
-    </td>
-    <td><pre>start_civil_war = {
-        ruling_party = communism
-        # Original country's ideology changes to communism
-        ideology = ROOT
-        # Breakaway gets old ideology of ROOT
-        size = 0.8
-        capital = 282
-        states = {
-            282 533 536 555 529 530 528
+    <td><code>&lt;scope&gt; / &lt;variable&gt;</code><br>Область для заключения белого мира.<br>
+        <p><b>ИЛИ</b><br>
+        <code>tag = &lt;scope&gt; / &lt;variable&gt;</code><br>Область для заключения белого мира.<br>
+        <code>message = &lt;локализация ключа&gt;</code><br>Причина появления мира во всплывающем окне.
+        </p>
+        </td>
+        <td><pre>white_peace = GER
+        </pre>
+        <pre>white_peace = {
+            tag = GER
+            message = my_peace_tt
         }
-        keep_unit_leaders = {
-            750 751 752
+        </pre>
+        </td>
+        <td>Заставляет текущую область заключить белый мир со указанной областью.
+        </td>
+        <td>&nbsp;
+        </td>
+        <td>1.0
+        </td></tr>
+        <tr id="start_peace_conference">
+        <td>start_peace_conference
+        </td>
+        <td><code>tag = &lt;scope&gt; / &lt;variable&gt;</code><br>Область для мирных переговоров.<br>
+        <p><code>score_factor = &lt;decimal&gt; / &lt;variable&gt;</code><br>Доля общего счета, присуждаемая победителям по сравнению с обычной победой.<br>
+        <code>message = &lt;локализация ключа&gt;</code><br>Причина появления мира во всплывающем окне.
+        </p>
+        </td>
+        <td><pre>start_peace_conference = {
+            tag = GER
+            score_factor = 0.4
+            message = my_peace_tt
         }
-        keep_political_leader = yes
-        keep_political_party_members = yes
-    }
-    </pre>
-    <pre>start_civil_war = {
-        ideology = democratic
-        size = 0.1
-        states = all
-        states_filter = {
-            is_on_continent = europe
-            is_capital = no
+        </pre>
+        </td>
+        <td>Заставляет текущую область начать мирные переговоры со указанной областью по другую сторону.
+        </td>
+        <td>1.12
+        </td></tr>
+        <tr id="set_truce">
+        <td>set_truce
+        </td>
+        <td><code>target = &lt;scope&gt;</code><br>Область для заключения перемирия.
+        <p><code>days = &lt;int&gt;</code><br>Продолжительность перемирия.
+        </p>
+        </td>
+        <td><pre>set_truce = {
+            target = GER
+            days = 90
         }
-        set_country_flag = TAG_my_country_tag_alias_trigger
-        # Sets a country flag that gets used in a country tag alias.
-    }</pre>
-    <p>(<a href="/Country_tag_aliases" class="mw-redirect" title="Country tag aliases">See country tag aliases</a>)
+        </pre>
+        </td>
+        <td>Заставляет текущую область заключить перемирие с указанной областью.
+        </td>
+        <td>&nbsp;
+        </td>
+        <td>1.0
+        </td></tr>
+        <tr id="create_wargoal">
+        <td>create_wargoal
+        </td>
+        <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Страна, на которую нацеливаются.
+        <p><code>type = &lt;wargoal&gt;</code><br>Цель войны для генерации.<br><code>generator = { &lt;state id&gt; }</code><br>Штаты, передаваемые в цель войны (например, take_state_focus).
+        </p>
+        </td>
+        <td><pre>create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ROOT
+        }
+        </pre>
+        </td>
+        <td>Предоставляет текущей области цель войны против указанной страны.
+        </td>
+        <td>&nbsp;
+        </td>
+        <td>1.0
+        </td></tr>
+        <tr id="remove_wargoal">
+        <td>remove_wargoal
+        </td>
+        <td><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Страна, на которую нацеливаются.
+        <p><code>type = &lt;wargoal&gt;</code><br>Цель войны для удаления. "all" удалит все цели войны.<br>
+        </p>
+        </td>
+        <td><pre>remove_wargoal = {
+            type = all
+            target = ROOT
+        }
+        </pre>
+        </td>
+        <td>Удаляет цели войны из текущей области в указанную страну.
+        </td>
+        <td>&nbsp;
+        </td>
+        <td>1.10.2
+        </td></tr>
+        <tr id="start_civil_war">
+        <td>start_civil_war
+        </td>
+        <td><code>ideology = &lt;идеология&gt;</code><br>Идеология отделившейся страны.
+        <p><code>ruling_party = &lt;идеология&gt;</code><br>Правящая партия в <b>оригинальной стране, которой управляет игрок</b>. По желанию.<br>
+        <code>size = &lt;float&gt;</code><br>Размер отделившейся страны и доля запасов и военных единиц, которые она получит по умолчанию. По желанию, значение по умолчанию - 0.5.<br>
+        <code>army_ratio = &lt;float&gt;</code><br>Размер сухопутных сил, которые получит отделившаяся страна. По желанию, значение по умолчанию - то же, что и size.<br>
+        <code>navy_ratio = &lt;float&gt;</code><br>Размер морских сил, которые получит отделившаяся страна. По желанию, значение по умолчанию - то же, что и size.<br>
+        <code>air_ratio = &lt;float&gt;</code><br>Размер воздушных сил, которые получит отделившаяся страна. По желанию, значение по умолчанию - то же, что и size.<br>
+        <code>capital = &lt;штат&gt;</code><br>Столица отделившейся страны. По желанию.<br>
+        <code>states = { &lt;штат&gt; }</code><br>Штаты, включенные в отделившуюся страну. По желанию, значения по умолчанию - случайные штаты на основе размера. <code>all</code> приведет к передаче всех штатов, удовлетворяющих фильтру, в отделившуюся страну.<br>
+        <code>states_filter = { &lt;триггеры&gt; }</code><br>Блок условий, проверяемый для штата, который должен быть передан в отделившуюся страну. По желанию.<br>
+        <code>keep_unit_leaders = { &lt;идентификатор лидера отряда&gt; }</code><br>Список лидеров отрядов, которые должны быть сохранены по их идентификатору legacy_id. По желанию.<br>
+        <code>keep_unit_leaders_trigger = { &lt;триггеры&gt; }</code><br>Блок условий, проверяемый для каждого лидера отряда, который заставляет их быть сохраненными, если они удовлетворяют условиям. Область действия по умолчанию - лидер отряда, ROOT - страна, получающая лидера отряда, FROM - первоначальный владелец лидера отряда. По желанию.<br>
+        <code>keep_political_leader = &lt;bool&gt;</code><br>Определяет, будет ли сохранен политический лидер группы идеологии, отколовшейся от страны (т.е. тот, кто пришел бы к власти, если бы страна перешла к этой группе идеологий), или присоединится к мятежу. Да - сохранить, значение по умолчанию - false.<br>
+        <code>keep_political_party_members = &lt;bool&gt;</code><br>Определяет, будут ли сохранены непромоутированные лидеры партий группы идеологии, отколовшейся от страны, или присоединятся к мятежу. Да - сохранить, значение по умолчанию - false.<br>
+        <code>keep_all_characters = yes</code><br>Если true, открывает все возможные способы сохранения отделившейся группы лидеров, которые могли быть связаны с лидером отряда или политическим лидером.<br>
+        <code>randomize_leaders = yes</code><br>Если true, то генерирует новых лидеров для лидеров отрядов и политических лидеров в отделившейся стране, устанавливая legacy_id идентификаторы, соответствующие их старым идентификаторам. Если false, сохраняет старых лидеров с их текущими идентификаторами.<br>
+        <code>army_leaders = { &lt;идентификатор лидера отряда&gt; }</code><br>Список лидеров отрядов, которые будут установлены в отделившейся стране. По желанию.<br>
+        <code>political_leader = { &lt;идентификатор лидера партии&gt; }</code><br>Лидер партии, который будет установлен в отделившейся стране. По желанию.<br>
+        <code>random_army_leader = yes</code><br>Если true, назначает случайного лидера отряда отделившейся стране. Если false, лидер отряда будет взят из указанного army_leaders списка или сохраненного лидера отряда с таким же legacy_id, если указан keep_unit_leaders.<br>
+        <code>random_political_leader = yes</code><br>Если true, случайный лидер партии будет назначен отделившейся стране. Если false, лидер партии будет взят из указанного political_leader списка или сохраненного лидера партии с таким же legacy_id, если указан keep_political_leader.<br>
     </p>
-    <pre>start_civil_war = {
-        ideology = neutrality
-        size = 0.1
-        army_ratio = 0.5
-        navy_ratio = 0
-        air_ratio = 1
-        keep_unit_leaders_trigger = {
-            has_trait = my_trait_name
-        }
-        keep_all_characters = yes
-        PREV = {  # Original country
-            TAG_airforce_leader = { # Character
-                set_nationality = PREV.PREV
-                # Transfers to breakaway
-            }
-        }
-        promote_character = TAG_airforce_leader
-    }</pre>
-    <p>(<a href="/Scopes#PREV_usage" title="Scopes">See usage for PREV and PREV.PREV</a>)
-    </p>
     </td>
-    <td>Starts a civil war for the current scope with the specified parameters.
-    </td>
-    <td><code>states = all</code> would include every single state controlled by the country. <b>If the country's current capital state is set as one of the states that the revolt can gain, it won't fire</b>. <a href="#set_capital">set_capital</a> can be used to change the capital beforehand, with <a href="/On_actions#on_civil_war_end" title="On actions">On_actions#on_civil_war_end</a> being used to set it back to the default after the civil war ends.
-    <p>A civil war started via this effect cannot have more than two sides. For adding more sides, this can be simulated by setting an existing war (typically originating from a dynamic country created via <a href="#create_dynamic_country">create_dynamic_country</a>) as a civil war via <a href="#add_civil_war_target">add_civil_war_target</a>.
-    </p>
-    </td>
-    <td>1.0
-    </td></tr>
-    <tr id="add_civil_war_target">
-    <td>add_civil_war_target
-    </td>
-    <td><code>&lt;country&gt;</code> - The country to set as the target.
-    </td>
-    <td><pre>add_civil_war_target = TAG</pre>
-    </td>
-    <td>Sets that the war between ROOT and TAG is a civil war, resulting in the victory being the annexation of the other side and setting world tension limits on intervention.
-    </td>
-    <td>ROOT and TAG must already be at war with each other for the effect to take place.
-    </td>
-    <td>1.9
-    </td></tr>
+ 
+        </pre>
+        <p>
+        </p>
+        </td>
+        <td>Начинает гражданскую войну для текущей области с указанными параметрами.
+        </td>
+        <td><code>states = all</code> включает каждый штат, контролируемый страной. <b>Если текущий штат столицы страны установлен как один из штатов, которые могут получить восставшие, гражданская война не начнется</b>. set_capital может быть использовано для изменения столицы заранее, с использованием On_actions#on_civil_war_end для возвращения к стандартному значению после окончания гражданской войны.
+        <p>Гражданская война, начатая с помощью этого эффекта, не может иметь более двух сторон. Для добавления большего числа сторон это можно имитировать, установив существующую войну (обычно происходящую из динамической страны, созданной с помощью create_dynamic_country) как гражданскую войну через add_civil_war_target.
+        </p>
+        </td>
+        <td>1.0
+        </td></tr>
+        <tr id="add_civil_war_target">
+        <td>add_civil_war_target
+        </td>
+        <td><code><country></code> - Страна, которую нужно установить в качестве цели.
+        </td>
+        <td><pre>add_civil_war_target = TAG</pre>
+        </td>
+        <td>Устанавливает, что война между ROOT и TAG является гражданской войной, приводящей к победе в аннексировании другой стороны и установке ограничений на мировое напряжение для вмешательства.
+        </td>
+        <td>ROOT и TAG должны уже находиться в состоянии войны друг с другом, чтобы эффект сработал.
+        </td>
+        <td>1.9
+        </td></tr>
     <tr id="transfer_units_fraction">
     <td>transfer_units_fraction
     </td>
-    <td><code>target = &lt;country&gt;</code><br>The country which should receive the units from the current scope.
-    <p><code>size = &lt;float&gt;</code><br>The size of the breakaway country and the fraction of the original stockpile and military units it will receive by default. Optional, defaults to 0.5.<br>
-    <code>army_ratio = &lt;float&gt;</code><br>The size of the land army that the breakaway country gets. Optional, defaults to being the same as size.<br>
-    <code>navy_ratio = &lt;float&gt;</code><br>The size of the naval forces that the breakaway country gets. Optional, defaults to being the same as size.<br>
-    <code>air_ratio = &lt;float&gt;</code><br>The size of the airforce that the breakaway country gets. Optional, defaults to being the same as size.<br>
-    <code>keep_unit_leaders = { &lt;unit leader id&gt; }</code><br>List of unit leaders to be kept by their legacy_id. Optional.<br>
-    <code>keep_unit_leaders_trigger = { &lt;triggers&gt; }</code><br>Trigger block checked for every unit leader that forces them to be kept if they meet the triggers. The default scope is the unit leader, ROOT is the country receiving the unit leader, while FROM is the original owner of the unit leader. Optional.<br>
-    </p>
-    </td>
-    <td><pre>transfer_units_fraction= {
-        target = SPD
-        size = 0.5
-        stockpile_ratio = 0.8
-        army_ratio = 0.8
-        navy_ratio = 0.5
-        air_ratio = 0.5
-        keep_unit_leaders_trigger = {
-            has_trait = trait_SPA_nationalist_sympathies
-        }
-    }</pre>
-    </td>
-    <td>Transfers a fraction of the military to a target, including units (either type: land, navy, or air), equipment, and unit leaders.
-    </td>
-    <td>
-    </td>
-    <td>1.9
-    </td></tr>
-    <tr id="add_nuclear_bombs">
-    <td>add_nuclear_bombs
-    </td>
-    <td>Adds nuclear bomb to TAG's stockpile.
-    </td>
-    <td><pre>add_nuclear_bombs = 100</pre>
-    </td>
-    <td>Adds specified number of nukes to the country's stockpile
-    </td>
-    <td>Needs the Nuke tech to use.
-    </td>
-    <td>1.6
-    </td></tr>
-    <tr id="launch_nuke">
-    <td>launch_nuke
-    </td>
-    <td><code>province = &lt;ID&gt;</code><br>The specific province to nuke.<br>
-    <p><code>state = &lt;ID&gt;</code><br>The state to nuke.<br>
-    <code>controller = &lt;TAG&gt;</code><br>Prioritises provinces controlled by this country.<br>
-    <code>use_nuke = &lt;boolean&gt;</code><br>Whether a nuke should be deducted from the country's stockpile. Defaults to false.
-    </p>
-    </td>
-    <td><pre>launch_nuke = {
-        province = 1234
-    }</pre>
-    <pre>launch_nuke = {
-        state = 42
-        controller = GER
-        use_nuke = yes
-    }</pre>
-    </td>
-    <td>Nukes the specified province or a province in the needed state. If a state is set rather than the specific province, first prioritises the country set in <code>controller</code>, then prioritises the countries at war with the current scope, and then countries that are neutral.
-    </td>
-    <td>If set to use a nuke, then requires at least one nuclear bomb in the stockpile.
-    </td>
-    <td>1.6
+    <td><code>target = &lt;страна&gt;</code><br>Страна, которая должна получить войска из текущей области видимости.
+        <p><code>size = &lt;число с плавающей запятой&gt;</code><br>Размер отделяющейся страны и доля изначального запаса и военных войск, которую она будет получать по умолчанию. Необязательно, по умолчанию 0.5.<br>
+        <code>army_ratio = &lt;число с плавающей запятой&gt;</code><br>Размер сухопутных войск, которые получает отделяющаяся страна. Необязательно, по умолчанию равно значению size.<br>
+        <code>navy_ratio = &lt;число с плавающей запятой&gt;</code><br>Размер морских сил, которые получает отделяющаяся страна. Необязательно, по умолчанию равно значению size.<br>
+        <code>air_ratio = &lt;число с плавающей запятой&gt;</code><br>Размер воздушных сил, которые получает отделяющаяся страна. Необязательно, по умолчанию равно значению size.<br>
+        <code>keep_unit_leaders = { &lt;идентификатор лидера войск&gt; }</code><br>Список лидеров войск, которых нужно сохранить по их legacy_id. Необязательно.<br>
+        <code>keep_unit_leaders_trigger = { &lt;условия&gt; }</code><br>Блок условий, проверяемых для каждого лидера войск, который заставляет сохранить их, если они соответствуют условиям. Область действия по умолчанию - лидер войск, ROOT - страна, которая получает лидера войск, а FROM - исходный владелец лидера войск. Необязательно.<br>
+        </p>
+        </td>
+        <td><pre>transfer_units_fraction= {
+            target = SPD
+            size = 0.5
+            stockpile_ratio = 0.8
+            army_ratio = 0.8
+            navy_ratio = 0.5
+            air_ratio = 0.5
+            keep_unit_leaders_trigger = {
+                has_trait = trait_SPA_nationalist_sympathies
+            }
+        }</pre>
+        </td>
+        <td>Передает долю военных войск целевой стране, включая войска (типы: сухопутные, морские или воздушные), оборудование и лидеров войск.
+        </td>
+        <td>
+        </td>
+        <td>1.9
+        </td></tr>
+        <tr id="add_nuclear_bombs">
+        <td>add_nuclear_bombs
+        </td>
+        <td>Добавляет ядерные бомбы в запасы ТЕГа.
+        </td>
+        <td><pre>add_nuclear_bombs = 100</pre>
+        </td>
+        <td>Добавляет указанное количество ядерных бомб в запасы страны.
+        </td>
+        <td>Требуется наличие технологии Ядерная бомба для использования.
+        </td>
+        <td>1.6
+        </td></tr>
+        <tr id="launch_nuke">
+        <td>launch_nuke
+        </td>
+        <td><code>province = &lt;ID&gt;</code><br>Конкретная провинция для атаки ядерным оружием.<br>
+        <p><code>state = &lt;ID&gt;</code><br>Государство, которое должно быть атаковано ядерным оружием.<br>
+        <code>controller = &lt;TAG&gt;</code><br>Приоритет нанесения удара ядерным оружием провинциям, контролируемым этой страной.<br>
+        <code>use_nuke = &lt;boolean&gt;</code><br>Определяет, должна ли ядерная бомба быть израсходована из запасов страны. По умолчанию false.
+        </p>
+        </td>
+        <td><pre>launch_nuke = {
+            province = 1234
+        }</pre>
+        <pre>launch_nuke = {
+            state = 42
+            controller = GER
+            use_nuke = yes
+        }</pre>
+        </td>
+        <td>Наносит удар ядерным оружием по указанной провинции или провинции в необходимом государстве. Если задано государство вместо конкретной провинции, в первую очередь наносится удар по стране, указанной в <code>controller</code>, затем странам, находящимся в состоянии войны с текущей областью видимости, а затем странам, которые нейтральны.
+        </td>
+        <td>Если установлено использование ядерного оружия, требуется наличие хотя бы одной ядерной бомбы в запасах.
+        </td>
+        <td>1.6
     </td></tr></tbody><tfoot></tfoot>
         </tbody>
             </table>
@@ -3771,113 +3723,107 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="country_add_resource">
     <td>add_resource
     </td>
-    <td><code>type = &lt;resource&gt;</code><br>The resource to add.
-    <p><code>amount = &lt;int&gt;</code><br>The amount of resource to add.<br>
-    <code>state = &lt;id&gt;</code>Which state to add the resource to. Variables can be used.
-    </p>
-    </td>
-    <td><pre>add_resource = {
-        type = oil
-        amount = 50
-        state = 88
-    }
-    </pre>
-    </td>
-    <td>Adds the specified resource in the specified amount to the specified state.
-    </td>
-    <td><a href="#add_resource">Can also be used in state scope.</a>
-    </td>
-    <td>1.0
-    </td></tr>
-    <tr id="create_import">
-    <td>create_import
-    </td>
-    <td><code>resource = &lt;resource&gt;</code><br>The resource to import.
-    <p><code>amount = &lt;int&gt;</code><br>The amount of resource to import.<br><code>exporter = &lt;id&gt;</code>Which country exports the resource.
-    </p>
-    </td>
-    <td><pre>create_import = {
-        resource = steel
-        amount = 100
-        exporter = GER
-    }
-    </pre>
-    </td>
-    <td>Creates an import for the current scope with the specified resource and from the specified exporter.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.0
-    </td></tr>
-    <tr id="give_resource_rights">
-    <td>give_resource_rights
-    </td>
-    <td><code>receiver = &lt;tag&gt;</code><br>The country that would get the resource rights.<br>
-    <p><code>state = &lt;state&gt;</code><br>The state where the resource rights are located.<br>
-    <code>resources = { &lt;resource&gt; &lt;...&gt; &lt;resource&gt; }</code><br>The resources to which give resource rights to. Optional, defaults to all.
-    </p>
-    </td>
-    <td><pre>give_resource_rights = { receiver = ENG state = 291 }</pre>
-    <pre>give_resource_rights = {
-        receiver = POL
-        state = 321
-        resources = { oil }
-    }</pre>
-    </td>
-    <td>Gives all the resources of a state to the target country
-    </td>
-    <td>The resource rights will only be provided as long as the current country controls the state with resource rights.
-    </td>
-    <td>1.6
-    </td></tr>
-    <tr id="remove_resource_rights">
-    <td>remove_resource_rights
-    </td>
-    <td><code>&lt;state&gt;</code><br>The state to remove current country's resource rights from.
-    </td>
-    <td><pre>ENG = { remove_resource_rights = 477 }</pre>
-    </td>
-    <td>Removes given resource rights
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.6
-    </td></tr>
-    <tr id="add_fuel">
-    <td>add_fuel
-    </td>
-    <td><code>&lt;int&gt;</code><br>The fuel amount
-    </td>
-    <td><pre>add_fuel = 400</pre>
-    </td>
-    <td>Adds fuel to the current country.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.6
-    </td></tr>
-    <tr id="set_fuel">
-    <td>set_fuel
-    </td>
-    <td><code>&lt;int&gt;</code><br>Fuel amount.
-    </td>
-    <td><pre>set_fuel = 400</pre>
-    </td>
-    <td>Sets country's current fuel amount.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.6
-    </td></tr>
-    <tr id="set_fuel_ratio">
-    <td>set_fuel_ratio
-    </td>
-    <td><code>&lt;decimal&gt;</code><br>The needed ratio of fuel.
-    </td>
-    <td><pre>set_fuel_ratio = 0.5</pre>
-    </td>
-    <td>Set country's current fuel ratio relative to its capacity.
-    </td>
+    <td><code>type = &lt;ресурс&gt;</code><br>Ресурс для добавления.
+        <p><code>amount = &lt;целое число&gt;</code><br>Количество добавляемого ресурса.<br>
+        <code>state = &lt;идентификатор&gt;</code>В какое государство добавить ресурс. Можно использовать переменные.
+        </p>
+        </td>
+        <td><pre>add_resource = {
+            type = oil
+            amount = 50
+            state = 88
+        }
+        </pre>
+        </td>
+        <td>Добавляет указанный ресурс в указанном количестве в указанное государство.
+        </td>
+        <td>1.0
+        </td></tr>
+        <tr id="create_import">
+        <td>create_import
+        </td>
+        <td><code>resource = &lt;ресурс&gt;</code><br>Ресурс для импорта.
+        <p><code>amount = &lt;целое число&gt;</code><br>Количество импортируемого ресурса.<br><code>exporter = &lt;идентификатор&gt;</code>Какая страна экспортирует ресурс.
+        </p>
+        </td>
+        <td><pre>create_import = {
+            resource = steel
+            amount = 100
+            exporter = GER
+        }
+        </pre>
+        </td>
+        <td>Создает импорт для текущего контекста с указанным ресурсом и указанным экспортером.
+        </td>
+        <td>1.0
+        </td></tr>
+        <tr id="give_resource_rights">
+        <td>give_resource_rights
+        </td>
+        <td><code>receiver = &lt;тег&gt;</code><br>Страна, которая получит права на ресурс.<br>
+        <p><code>state = &lt;государство&gt;</code><br>Государство, где находятся права на ресурс.<br>
+        <code>resources = { &lt;ресурс&gt; &lt;...&gt; &lt;ресурс&gt; }</code><br>Ресурсы, на которые передаются права на ресурс. Необязательно, по умолчанию все.
+        </p>
+        </td>
+        <td><pre>give_resource_rights = { receiver = ENG state = 291 }</pre>
+        <pre>give_resource_rights = {
+            receiver = POL
+            state = 321
+            resources = { oil }
+        }</pre>
+        </td>
+        <td>Передает все ресурсы государства целевой стране
+        </td>
+        <td>1.6
+        </td></tr>
+        <tr id="remove_resource_rights">
+        <td>remove_resource_rights
+        </td>
+        <td><code>&lt;государство&gt;</code><br>Государство, из которого удаляются права текущей страны на ресурсы.
+        </td>
+        <td><pre>ENG = { remove_resource_rights = 477 }</pre>
+        </td>
+        <td>Удаляет указанные права на ресурсы
+        </td>
+        <td>&nbsp;
+        </td>
+        <td>1.6
+        </td></tr>
+        <tr id="add_fuel">
+        <td>add_fuel
+        </td>
+        <td><code>&lt;целое число&gt;</code><br>Количество топлива
+        </td>
+        <td><pre>add_fuel = 400</pre>
+        </td>
+        <td>Добавляет топливо текущей стране.
+        </td>
+        <td>&nbsp;
+        </td>
+        <td>1.6
+        </td></tr>
+        <tr id="set_fuel">
+        <td>set_fuel
+        </td>
+        <td><code>&lt;целое число&gt;</code><br>Количество топлива.
+        </td>
+        <td><pre>set_fuel = 400</pre>
+        </td>
+        <td>Устанавливает текущее количество топлива страны.
+        </td>
+        <td>&nbsp;
+        </td>
+        <td>1.6
+        </td></tr>
+        <tr id="set_fuel_ratio">
+        <td>set_fuel_ratio
+        </td>
+        <td><code>&lt;десятичное число&gt;</code><br>Необходимое соотношение топлива.
+        </td>
+        <td><pre>set_fuel_ratio = 0.5</pre>
+        </td>
+        <td>Устанавливает текущее соотношение топлива страны относительно ее емкости.
+        </td>
     <td>&nbsp;
     </td>
     <td>1.6
@@ -3904,14 +3850,14 @@ legitimacy = &lt;0-100&gt; }</pre>
 <tr id="add_offsite_building">
 <td>add_offsite_building
 </td>
-<td><code>type = &lt;building&gt;</code><br>The building to add.
-<p><code>level = &lt;level&gt; / &lt;variable&gt;</code><br>The maximum level to add.
+<td><code>type = &lt;здание&gt;</code><br>Здание для добавления.
+<p><code>level = &lt;уровень&gt; / &lt;переменная&gt;</code><br>Максимальный уровень для добавления.
 </p>
 </td>
 <td><pre>add_offsite_building = { type = arms_factory level = 1 }
 </pre>
 </td>
-<td>Adds an off-map (offmap) building for the current scope that produces its effects without being present in a state.
+<td>Добавляет внешнее здание (offmap building) для текущего контекста, которое производит свои эффекты, не находясь в государстве.
 </td>
 <td>&nbsp;
 </td>
@@ -3920,8 +3866,8 @@ legitimacy = &lt;0-100&gt; }</pre>
 <tr id="modify_building_resources">
 <td>modify_building_resources
 </td>
-<td><code>building = &lt;building&gt;</code><br>The building to modify.
-<p><code>resource = &lt;resource&gt;</code><br>The resource to add.<br><code>amount = &lt;amount&gt;</code><br>The amount of resource to add.
+<td><code>building = &lt;здание&gt;</code><br>Здание для изменения.
+<p><code>resource = &lt;ресурс&gt;</code><br>Ресурс для добавления.<br><code>amount = &lt;количество&gt;</code><br>Количество добавляемого ресурса.
 </p>
 </td>
 <td><pre>modify_building_resources = {
@@ -3931,7 +3877,7 @@ legitimacy = &lt;0-100&gt; }</pre>
 }
 </pre>
 </td>
-<td>Modifies the resource output of the specified building for the current scope.
+<td>Изменяет выход указанного здания по ресурсу для текущего контекста.
 </td>
 <td>&nbsp;
 </td>
@@ -4013,20 +3959,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>1.11
     </td></tr>
-    <tr id="mark_focus_tree_layout_dirty">
-    <td>mark_focus_tree_layout_dirty
-    </td>
-    <td><code>&lt;bool&gt;</code><br>Boolean.
-    </td>
-    <td><pre>mark_focus_tree_layout_dirty = yes</pre>
-    </td>
-    <td>Refreshes the focus tree for the specified country, restarting the checks in <code>allow_branch</code> and position offsets for focuses.
-    </td>
-    <td>If put within a focus' completion reward, the focus will not be marked as complete at the time the effect is executed, leading to <code>has_completed_focus</code> checks specifying that focus in particular to be marked as false.<br>
-    <p>This can be bypassed by putting an effect within a hidden event fired immediately within the focus or by reloading the same focus tree with <code>load_focus_tree</code> set to keep completed focuses, marking the focus as complete, before using the effect.
-    </p>
-    </td>
-    <td>1.9
     </td></tr></tbody><tfoot></tfoot>
         </tbody>
             </table>
