@@ -1578,7 +1578,7 @@ finalize_border_war = {
                         Описание
                     </th>
                     <th>
-                        Notes
+                        Заметка
                     </th>
                     <th>
                         Версия
@@ -2114,7 +2114,7 @@ create_dynamic_country = {
     </td>
     <td>Добавляет корку для текущей области видимости в указанное состояние.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2127,7 +2127,7 @@ create_dynamic_country = {
     </td>
     <td>Удаляет корку текущей области видимости из указанного состояния.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2146,12 +2146,6 @@ create_dynamic_country = {
     </td>
     <td>Делает указанное состояние основным состоянием текущей области видимости.
     </td>
-    <td>Синтаксис был изменен в версии 1.11.
-    <p>Это был "set_capital = 345"
-    </p><p><br>
-    Старая столица сохраняется, если не указано иное.
-    </p>
-    </td>
     <td>1.0
     </td></tr>
     <tr id="add_state_claim">
@@ -2163,7 +2157,7 @@ create_dynamic_country = {
     </td>
     <td>Добавляет претензии для текущей области видимости на указанный стейт.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2176,7 +2170,7 @@ create_dynamic_country = {
     </td>
     <td>Удаляет претензию текущей области видимости из указанного стейта.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2200,7 +2194,7 @@ create_dynamic_country = {
     </td>
     <td>Делает текущую страну владельцем указанного стейта.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2224,7 +2218,7 @@ create_dynamic_country = {
     </td>
     <td>Изменяет владельца указанной провинции.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr></tbody>
@@ -2261,145 +2255,139 @@ create_dynamic_country = {
     <tr id="add_political_power">
     <td>add_political_power
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>add_political_power = 100</pre>
     <pre>add_political_power = var:my_var</pre>
     </td>
-    <td>Adds the specified amount of political power to the current scope.
+    <td>Добавляет указанное количество политической силы в текущий контекст.
     </td>
-    <td>&nbsp;
+    
     </td>
     <td>1.0
     </td></tr>
     <tr id="set_political_power">
     <td>set_political_power
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для установки.
     </td>
     <td><pre>set_political_power = 100</pre>
     </td>
-    <td>Sets the specified amount of political power for the current scope.
+    <td>Устанавливает указанное количество политической силы в текущий контекст.
     </td>
-    <td>&nbsp;
+    
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_stability">
     <td>add_stability
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>add_stability = 0.1</pre>
     </td>
-    <td>Adds to the current stability value for the current scope.
-    </td>
-    <td>Stability values are between 0 and 1.
+    <td>Добавляет текущее значение стабильности для текущего контекста.
     </td>
     <td>1.5
     </td></tr>
     <tr id="set_stability">
     <td>set_stability
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для установки.
     </td>
     <td><pre>set_stability = 0.5</pre>
     </td>
-    <td>Sets the current stability value for the current scope.
-    </td>
-    <td>Stability values are between 0 and 1.
+    <td>Устанавливает текущее значение стабильности для текущего контекста.
     </td>
     <td>1.5
     </td></tr>
     <tr id="add_war_support">
     <td>add_war_support
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>add_war_support = 0.1</pre>
     </td>
-    <td>Adds to the current war support value for the current scope.
+    <td>Добавляет текущее значение поддержки войны для текущего контекста.
     </td>
-    <td>War Support values are between 0 and 1.
-    </td>
+
     <td>1.5
     </td></tr>
     <tr id="set_war_support">
     <td>set_war_support
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to set.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для установки.
     </td>
     <td><pre>set_war_support = 0.5</pre>
     </td>
-    <td>Sets the current war support value for the current scope.
-    </td>
-    <td>War Support values are between 0 and 1.
+    <td>Устанавливает текущее значение поддержки войны для текущего контекста.
     </td>
     <td>1.5
     </td></tr>
     <tr id="add_command_power">
     <td>add_command_power
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>add_command_power = 100</pre>
     </td>
-    <td>Adds the specified amount of command power to the current scope.
+    <td>Добавляет указанное количество очков командного влияния в текущий контекст.
     </td>
-    <td>&nbsp;
+    
     </td>
     <td>1.5
     </td></tr>
     <tr id="add_manpower">
     <td>add_manpower
     </td>
-    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;int&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>add_manpower = 100000</pre>
     <pre>add_manpower = var:my_var</pre>
     </td>
-    <td>Adds the specified amount of manpower to the current scope.
+    <td>Добавляет указанное количество людских ресурсов в текущий контекст.
     </td>
-    <td>&nbsp;
+    
     </td>
     <td>1.0
     </td></tr>
     <tr id="army_experience">
     <td>army_experience
     </td>
-    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>army_experience = 10</pre>
     </td>
-    <td>Adds the specified amount of army experience to the current scope.
+    <td>Добавляет указанное количество опыта армии в текущий контекст.
     </td>
-    <td>&nbsp;
+    
     </td>
     <td>1.0
     </td></tr>
     <tr id="navy_experience">
     <td>navy_experience
     </td>
-    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>navy_experience = 10</pre>
     </td>
-    <td>Adds the specified amount of navy experience to the current scope.
+    <td>Добавляет указанное количество опыта флота в текущий контекст.
     </td>
-    <td>&nbsp;
+    
     </td>
     <td>1.0
     </td></tr>
     <tr id="air_experience">
     <td>air_experience
     </td>
-    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>The amount to add.
+    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>Количество для добавления.
     </td>
     <td><pre>air_experience = 10</pre>
     </td>
-    <td>Adds the specified amount of air experience to the current scope.
+    <td>Добавляет указанное количество опыта авиации в текущий контекст.
     </td>
-    <td>&nbsp;
+    
+
     </td>
     <td>1.0
     </td></tr></tbody><tfoot></tfoot>
@@ -2433,7 +2421,7 @@ create_dynamic_country = {
     </td>
     <td>Выполняет события в <b>on_new_term_election</b> на действие для текущей области.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2451,8 +2439,6 @@ create_dynamic_country = {
     </pre>
     </td>
     <td>Настраивает популярность для указанной партии в текущей области видимости.
-    </td>
-    <td>Используются значения от 0 до 1.
     </td>
     <td>1.0
     </td></tr>
@@ -2479,7 +2465,7 @@ create_dynamic_country = {
     </td>
     <td>Устанавливает настройку политической партии для текущей области видимости.
     </td>
-    <td>&nbsp;
+
     <p>Ранее включал параметр "parties", который был упразднен командой "set_popopularities". Параметр "parties" больше не работает, начиная с версии 1.7
     </p>
     </td>
@@ -2500,7 +2486,7 @@ create_dynamic_country = {
     </td>
     <td>Устанавливает популярность политических партий для текущего диапазона.
     </td>
-    <td>&nbsp;
+
     <p>Популярность должна быть равна 100, иначе команда не будет иметь эффекта.
     </p>
     </td>
@@ -2521,7 +2507,7 @@ create_dynamic_country = {
     </td>
     <td>Устанавливает популярность для указанной политической партии в текущей области видимости.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2541,7 +2527,7 @@ create_dynamic_country = {
     </td>
     <td>Изменяет название указанной политической партии для текущей области видимости.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr></tbody><tfoot></tfoot>
@@ -2585,8 +2571,6 @@ set_power_balance = {
         </td>
         <td>Устанавливает новый баланс сил или изменяет существующий.
         </td>
-        <td>Необходимо для <Br>отображения баланса сил.
-        </td>
         <td>1.12
         </td></tr>
         <tr id="remove_power_balance">
@@ -2600,8 +2584,6 @@ remove_power_balance = {
 }</pre>
         </td>
         <td>Удаляет баланс сил полностью.
-        </td>
-        <td>
         </td>
         <td>1.12
         </td></tr>
@@ -2639,8 +2621,6 @@ add_power_balance_value = {
     </td>
     <td>Применяет модификатор баланса сил.
     </td>
-    <td>
-    </td>
     <td>1.12
     </td></tr>
     <tr id="remove_power_balance_modifier">
@@ -2657,8 +2637,6 @@ add_power_balance_value = {
     </td>
     <td>Отменяет модификатор баланса сил.
     </td>
-    <td>
-    </td>
     <td>1.12
     </td></tr>
     <tr id="remove_all_power_balance_modifiers">
@@ -2671,8 +2649,6 @@ add_power_balance_value = {
     }</pre>
     </td>
     <td>Отменяет все модификаторы баланса сил.
-    </td>
-    <td>
     </td>
     <td>1.12
     </td></tr>
@@ -2691,8 +2667,6 @@ add_power_balance_value = {
     }</pre>
     </td>
     <td>Изменяет внешний вид одной из сторон в балансе сил.
-    </td>
-    <td>Спрайты определяются внутри <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV<br>/interface/*.gfx</span> файлах.
     </td>
     <td>1.12
     </td></tr></tbody><tfoot></tfoot>
@@ -2724,7 +2698,7 @@ add_power_balance_value = {
     </td>
     <td>Делает текущий скоуп основной страной.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2737,7 +2711,7 @@ add_power_balance_value = {
     </td>
     <td>Создает фракцию с указанным названием для текущего скоупа. Текущий скоуп и все его субъекты автоматически присоединяются к фракции.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2750,7 +2724,7 @@ add_power_balance_value = {
     </td>
     <td>Добавляет TAG_TO_ADD в фракцию, возглавляемую FACTION_LEADER_TAG.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2763,7 +2737,7 @@ add_power_balance_value = {
     </td>
     <td>Удаляет текущий скоуп из фракции, к которой он принадлежит.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -2776,7 +2750,7 @@ add_power_balance_value = {
     </td>
     <td>Удаляет указанный скоуп из фракции, которую возглавляет текущий скоуп.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2789,7 +2763,7 @@ add_power_balance_value = {
     </td>
     <td>Распускает фракцию текущего скоупа.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -2802,7 +2776,7 @@ add_power_balance_value = {
     </td>
     <td>Изменяет названия фракций.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.6
     </td></tr>
@@ -2815,8 +2789,6 @@ add_power_balance_value = {
     </td>
     <td>Устанавливает текущую страну в качестве лидера фракции.
     </td>
-    <td>
-    </td>
     <td>1.0
     </td></tr>
     <tr id="set_faction_spymaster">
@@ -2827,8 +2799,6 @@ add_power_balance_value = {
     <td><pre>set_faction_spymaster = yes</pre>
     </td>
     <td>Устанавливает текущую страну в качестве разведчика фракции.
-    </td>
-    <td>
     </td>
     <td>1.9
     </td></tr>
@@ -2841,13 +2811,9 @@ add_power_balance_value = {
     </td>
     <td>Выпускает указанную несуществующую страну как свободное государство во владении текущей страны.
     </td>
-    <td>
-    </td>
     <td>1.0
     </td></tr>
     <tr id="release_on_controlled">
-    <td>release_on_controlled
-    </td>
     <td><code>&lt;scope&gt;</code><br>Целевая страна.
     </td>
     <td><pre>release_on_controlled = GER</pre>
@@ -2867,8 +2833,6 @@ add_power_balance_value = {
     </td>
     <td>Выпускает указанную несуществующую страну как подчиненное государство текущей области владения текущей страны.
     </td>
-    <td>Действие не имеет эффекта, если страна уже существует. Все провинции, имеющие ядро у указанной страны, будут переданы ей. Если текущая страна имеет ядро на провинции, переданной выпущенной стране, ядро будет потеряно. Провинции, находящиеся во владении, но не контролируемые текущей страной, будут переданы выпущенной стране, но не будут контролироваться ею.
-    </td>
     <td>1.0
     </td></tr>
     <tr id="release_puppet_on_controlled">
@@ -2879,8 +2843,6 @@ add_power_balance_value = {
     <td><pre>release_puppet_on_controlled = GER</pre>
     </td>
     <td>Выпускает указанную несуществующую страну как подчиненное государство текущей области владения текущей страны.
-    </td>
-    <td>Действие не имеет эффекта, если страна уже существует. Все провинции, имеющие ядро у указанной страны, будут переданы ей. Если текущая страна имеет ядро на провинции, переданной выпущенной стране, ядро будет потеряно.
     </td>
     <td>1.9.1
     </td></tr>
@@ -2900,8 +2862,6 @@ add_power_balance_value = {
     </td>
     <td>Выпускает указанную несуществующую страну как субъект указанной автономии текущей области владения текущей страны.
     </td>
-    <td>Действие не имеет эффекта, если страна уже существует. Все провинции, имеющие ядро у указанной страны, будут переданы ей. Если текущая страна имеет ядро на провинции, переданной выпущенной стране, ядро будет потеряно. Провинции, находящиеся во владении, но не контролируемые текущей страной, будут переданы выпущенной стране, но не будут контролироваться ею. Состояния автономии находятся в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/*.txt</span>.
-    </td>
     <td>1.3
     </td></tr>
     <tr id="give_guarantee">
@@ -2912,8 +2872,6 @@ add_power_balance_value = {
     <td><pre>give_guarantee = GER</pre>
     </td>
     <td>Текущая область гарантирует целевую страну.
-    </td>
-    <td>Для удаления гарантии может использоваться эффект <a href="#diplomatic_relation">diplomatic_relation</a>.
     </td>
     <td>1.0
     </td></tr>
@@ -2926,8 +2884,6 @@ add_power_balance_value = {
     </td>
     <td>Текущая область предоставляет военный доступ целевой стране.
     </td>
-    <td>Для отмены предоставления доступа может использоваться эффект <a href="#diplomatic_relation">diplomatic_relation</a>.
-    </td>
     <td>1.0
     </td></tr>
     <tr id="recall_attache">
@@ -2939,7 +2895,7 @@ add_power_balance_value = {
     </td>
     <td>Отзывает атташе текущей области из указанной страны.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -2959,13 +2915,6 @@ add_power_balance_value = {
     </td>
     <td>Используется для определения дипломатического отношения между текущей областью и целевой областью страны.
     </td>
-    <td>Возможные отношения:
-    <ul><li>non_aggression_pact</li>
-    <li>guarantee</li>
-    <li>puppet</li>
-    <li>military_access</li>
-    <li>docking_rights</li></ul>
-    </td>
     <td>1.0
     </td></tr>
     <tr id="add_opinion_modifier">
@@ -2983,8 +2932,7 @@ add_power_balance_value = {
     </td>
     <td>Текущая область получает указанный модификатор мнения <b>в отношении целевой области</b>. Может также использоваться для изменения торговых отношений путем добавления 'trade = yes' в модификатор мнения &lt;modifier&gt; в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>. При использовании с модификатором торгового мнения поведение меняется на противоположное, то есть цель получает торговое мнение в отношении <b>текущего диапазона</b>.
     </td>
-    <td>Модификаторы мнения находятся в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.
-    </td>
+
     <td>1.0
     </td></tr>
     <tr id="remove_opinion_modifier">
@@ -3001,8 +2949,6 @@ add_power_balance_value = {
     </pre>
     </td>
     <td>Текущая область видимости теряет указанный модификатор мнения <b>в сторону целевой области видимости.</b>
-    </td>
-    <td>Модификаторы мнения находятся в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.
     </td>
     <td>1.0
     </td></tr>
@@ -3022,8 +2968,6 @@ add_power_balance_value = {
     </td>
     <td>Целевая область получает указанный модификатор мнения <b>относительно текущей области</b>.
     </td>
-    <td>Модификаторы мнения находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/opinion_modifiers/*.txt</span>.<br>Полезно, когда неизвестна текущая область.
-    </td>
     <td>1.0
     </td></tr>
     <tr id="add_relation_modifier">
@@ -3040,8 +2984,6 @@ add_power_balance_value = {
     </pre>
     </td>
     <td>Текущая область получает указанный модификатор отношений <b>относительно целевой области</b>.
-    </td>
-    <td>Модификаторы отношений находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span> и используются для применения <a href="/Modifiers#Targeted_modifiers" title="Modifiers">целевого модификатора</a> с нестатической целью. Чтобы изменить дипломатическое мнение страны, см. <a href="#add_opinion_modifier">add_opinion_modifier</a>.
     </td>
     <td>1.4
     </td></tr>
@@ -3060,8 +3002,6 @@ add_power_balance_value = {
     </td>
     <td>Текущая область теряет указанный модификатор отношений <b>по отношению к целевой области</b>.
     </td>
-    <td>Модификаторы отношений находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/modifiers/*.txt</span> и используются для применения <a href="/Modifiers#Targeted_modifiers" title="Modifiers">целевого модификатора</a> с нестатической целью. Чтобы изменить дипломатическое мнение страны, см. <a href="#remove_opinion_modifier">remove_opinion_modifier</a>.
-    </td>
     <td>1.4
     </td></tr>
     <tr id="add_collaboration">
@@ -3077,8 +3017,6 @@ add_power_balance_value = {
     }</pre>
     </td>
     <td>Добавляет сотрудничество с областью TAG в текущую область.
-    </td>
-    <td>
     </td>
     <td>1.9
     </td></tr>
@@ -3096,8 +3034,6 @@ add_power_balance_value = {
     </td>
     <td>Устанавливает сотрудничество с областью TAG в текущей области.
     </td>
-    <td>
-    </td>
     <td>1.9
     </td></tr>
     <tr id="recall_volunteers_from">
@@ -3108,8 +3044,6 @@ add_power_balance_value = {
     <td><pre>recall_volunteers_from = SPR</pre>
     </td>
     <td>Возвращает добровольцев, отправленных в указанную страну, обратно в текущую страну.
-    </td>
-    <td>
     </td>
     <td>1.9
     </td></tr>
@@ -3136,8 +3070,6 @@ USA = {
     </td>
     <td>Устанавливает закон об оккупации для страны.
     </td>
-    <td>PREV будет страной, для которой будет изменен закон об оккупации. Если PREV не является страной, ничего не изменяется. Если PREV - это та же страна, изменяется закон об оккупации по умолчанию. Если PREV отличается, default_law сбрасывает специфический для страны закон на глобальный по умолчанию, иначе сбрасывается закон по умолчанию на закон об оккупации с <code>starting_law = yes</code> в определении.
-    </td>
     <td>1.12
     </td></tr>
     <tr id="set_occupation_law_where_available">
@@ -3160,8 +3092,6 @@ USA = {
     </td>
     <td>Устанавливает закон об оккупации для страны.
     </td>
-    <td>Идентично , за исключением того, что если невозможно установить закон, пытается сделать это в каждом меньшем подмножестве: если невозможно установить закон по умолчанию, пробует каждую отдельную оккупированную страну; если закон страны невозможно изменить, пробует каждый отдельный штат внутри страны.
-    </td>
     <td>1.12
     </td></tr>
     <tr>
@@ -3173,8 +3103,6 @@ USA = {
     </td>
     <td>Вводит эмбарго на целевую страну.
     </td>
-    <td>
-    </td>
     <td>1.12
     </td></tr>
     <tr>
@@ -3185,8 +3113,6 @@ USA = {
     <td><pre>break_embargo = ITA</pre>
     </td>
     <td>Прекращает эмбарго на целевую страну.
-    </td>
-    <td>
     </td>
     <td>1.12
     </td></tr></tbody><tfoot></tfoot>
@@ -3226,8 +3152,6 @@ USA = {
     </td>
     <td>Делает указанную страну подчиненной текущему субъекту.
     </td>
-    <td>Выбранный автономный государство является таким, в котором содержится <code>default = yes</code> и где выполнено условие <code>allowed = { ... }</code> в определении в папке <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/</span>, а не обязательно autonomy_puppet. <b>В случае, если игра не может найти такие автономные государства, может возникнуть сбой и вылет из игры.</b>
-    </td>
     <td>1.0
     </td></tr>
     <tr id="end_puppet">
@@ -3238,8 +3162,6 @@ USA = {
     <td><pre>end_puppet = GER</pre>
     </td>
     <td>Удаляет статус субъекта между целью и текущим субъектом.
-    </td>
-    <td>Должно использоваться в пределах области господина.
     </td>
     <td>1.0
     </td></tr>
@@ -3258,8 +3180,6 @@ USA = {
     </td>
     <td>Добавляет модификатор коэффициента свободы текущему субъекту.
     </td>
-    <td>Используется в пределах области субъекта.
-    </td>
     <td>1.3
     </td></tr>
     <tr id="add_autonomy_score">
@@ -3276,8 +3196,6 @@ USA = {
     </pre>
     </td>
     <td>Добавляет точный модификатор коэффициента свободы текущему субъекту.
-    </td>
-    <td>Используется в пределах области субъекта.
     </td>
     <td>1.3
     </td></tr>
@@ -3300,8 +3218,6 @@ USA = {
     </pre>
     </td>
     <td>Устанавливает уровень автономии для указанной страны, <b>включая независимость</b>.
-    </td>
-    <td>Состояние автономии autonomy_free освободит субъект, <b>однако этот эффект должен быть выполнен в пределах области текущего господина целевой страны</b>, чтобы он имел эффект. Состояния автономии находятся в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/autonomous_states/*.txt</span>.
     </td>
     <td>1.3
     </td></tr></tbody><tfoot></tfoot>
@@ -3335,7 +3251,7 @@ USA = {
     </td>
     <td>Добавляет легитимность.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.6
     </td></tr>
@@ -3348,7 +3264,7 @@ USA = {
     </td>
     <td>Устанавливает легитимность.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.6
     </td></tr>
@@ -3362,8 +3278,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Создает правительство в изгнании.
     </td>
-    <td>Должно быть запущено из ROOT, страны, которая должна быть в изгнании, или должна быть использована спецификация TAG.
-    </td>
     <td>1.6
     </td></tr>
     <tr id="end_exile">
@@ -3375,7 +3289,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Завершает правительство в изгнании.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.6
     </td></tr></tbody><tfoot></tfoot>
@@ -3408,7 +3322,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Регулирует уровень мирового напряжения.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -3427,7 +3341,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Регулирует уровень мирового напряжения и добавляет запись во всплывающую подсказку мирового напряжения.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -3464,7 +3378,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Заставляет текущий контекст присоединиться к войне указанного союзника против указанного врага.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -3504,7 +3418,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Заставляет текущую область заключить белый мир со указанной областью.
         </td>
-        <td>&nbsp;
+    
         </td>
         <td>1.0
         </td></tr>
@@ -3542,7 +3456,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Заставляет текущую область заключить перемирие с указанной областью.
         </td>
-        <td>&nbsp;
+    
         </td>
         <td>1.0
         </td></tr>
@@ -3561,7 +3475,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Предоставляет текущей области цель войны против указанной страны.
         </td>
-        <td>&nbsp;
+    
         </td>
         <td>1.0
         </td></tr>
@@ -3580,7 +3494,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Удаляет цели войны из текущей области в указанную страну.
         </td>
-        <td>&nbsp;
+    
         </td>
         <td>1.10.2
         </td></tr>
@@ -3630,8 +3544,6 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Устанавливает, что война между ROOT и TAG является гражданской войной, приводящей к победе в аннексировании другой стороны и установке ограничений на мировое напряжение для вмешательства.
         </td>
-        <td>ROOT и TAG должны уже находиться в состоянии войны друг с другом, чтобы эффект сработал.
-        </td>
         <td>1.9
         </td></tr>
     <tr id="transfer_units_fraction">
@@ -3660,8 +3572,6 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Передает долю военных войск целевой стране, включая войска (типы: сухопутные, морские или воздушные), оборудование и лидеров войск.
         </td>
-        <td>
-        </td>
         <td>1.9
         </td></tr>
         <tr id="add_nuclear_bombs">
@@ -3672,8 +3582,6 @@ legitimacy = &lt;0-100&gt; }</pre>
         <td><pre>add_nuclear_bombs = 100</pre>
         </td>
         <td>Добавляет указанное количество ядерных бомб в запасы страны.
-        </td>
-        <td>Требуется наличие технологии Ядерная бомба для использования.
         </td>
         <td>1.6
         </td></tr>
@@ -3697,8 +3605,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Наносит удар ядерным оружием по указанной провинции или провинции в необходимом государстве. Если задано государство вместо конкретной провинции, в первую очередь наносится удар по стране, указанной в <code>controller</code>, затем странам, находящимся в состоянии войны с текущей областью видимости, а затем странам, которые нейтральны.
         </td>
-        <td>Если установлено использование ядерного оружия, требуется наличие хотя бы одной ядерной бомбы в запасах.
-        </td>
+
         <td>1.6
     </td></tr></tbody><tfoot></tfoot>
         </tbody>
@@ -3785,7 +3692,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Удаляет указанные права на ресурсы
         </td>
-        <td>&nbsp;
+    
         </td>
         <td>1.6
         </td></tr>
@@ -3798,7 +3705,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Добавляет топливо текущей стране.
         </td>
-        <td>&nbsp;
+    
         </td>
         <td>1.6
         </td></tr>
@@ -3811,7 +3718,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Устанавливает текущее количество топлива страны.
         </td>
-        <td>&nbsp;
+    
         </td>
         <td>1.6
         </td></tr>
@@ -3824,7 +3731,7 @@ legitimacy = &lt;0-100&gt; }</pre>
         </td>
         <td>Устанавливает текущее соотношение топлива страны относительно ее емкости.
         </td>
-    <td>&nbsp;
+
     </td>
     <td>1.6
     </td></tr></tbody><tfoot></tfoot>
@@ -3905,47 +3812,41 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="load_focus_tree">
     <td>load_focus_tree
     </td>
-    <td><code>&lt;string&gt;</code><br>The focus tree to load.<br>Alternatively, as an effect block:<br><code>tree = &lt;string&gt;</code><br><code>keep_completed = yes/no</code>
+    <td><code>&lt;string&gt;</code><br>Дерево фокусов для загрузки.<br>В качестве блока эффектов:<br><code>tree = &lt;string&gt;</code><br><code>keep_completed = yes/no</code>
     </td>
     <td><pre>load_focus_tree = china_communist_focus</pre>
     <pre>load_focus_tree = { tree = british_focus keep_completed = yes }</pre>
     </td>
-    <td>Loads a new focus tree for the current scope, retaining any shared focuses.
-    </td>
-    <td>&nbsp;
+    <td>Загружает новое дерево фокусов для текущего контекста, сохраняя общие фокусы.
     </td>
     <td>1.5
     </td></tr>
     <tr id="unlock_national_focus">
     <td>unlock_national_focus
     </td>
-    <td><code>&lt;focus&gt;</code><br>The focus to unlock.
+    <td><code>&lt;focus&gt;</code><br>Фокус, который нужно разблокировать.
     </td>
     <td><pre>unlock_national_focus = my_focus</pre>
     </td>
-    <td>Bypasses the specified focus for the current scope (marks as complete without firing <code>complete_effect</code> of the focus).
-    </td>
-    <td>&nbsp;
+    <td>Обходит указанный фокус для текущего контекста (отмечает как завершенный без выполнения <code>complete_effect</code> фокуса).
     </td>
     <td>1.0
     </td></tr>
     <tr id="complete_national_focus">
     <td>complete_national_focus
     </td>
-    <td><code>&lt;focus&gt;</code><br>The focus to complete.
+    <td><code>&lt;focus&gt;</code><br>Фокус, который нужно завершить.
     </td>
     <td><pre>complete_national_focus = my_focus</pre>
     </td>
-    <td>Completes the specified focus for the current scope.
-    </td>
-    <td>&nbsp;
+    <td>Завершает указанный фокус для текущего контекста.
     </td>
     <td>1.0
     </td></tr>
     <tr id="uncomplete_national_focus">
     <td>uncomplete_national_focus
     </td>
-    <td><code>focus = &lt;focus&gt;</code><br><code>uncomplete_children = &lt;bool&gt;</code><br>Defaults "no". Optional.<br><code>refund_political_power = &lt;bool&gt;</code><br>Defaults "no". Optional.
+    <td><code>focus = &lt;focus&gt;</code><br><code>uncomplete_children = &lt;bool&gt;</code><br>По умолчанию "no". Опционально.<br><code>refund_political_power = &lt;bool&gt;</code><br>По умолчанию "no". Опционально.
     </td>
     <td><pre>uncomplete_national_focus = {
       focus = GER_oppose_hitler
@@ -3953,9 +3854,7 @@ legitimacy = &lt;0-100&gt; }</pre>
       refund_political_power = no
     }</pre>
     </td>
-    <td>Removes a focus from list of completed focus, and potentially all focuses requiring it as a prerequisite.<br>If the focus has one, the 'on_uncomplete' effect will be executed on each uncompleted focus.
-    </td>
-    <td>
+    <td>Удаляет фокус из списка завершенных фокусов, и, возможно, все фокусы, требующие его в качестве предпосылки.<br>Если у фокуса есть, то будет выполнен эффект 'on_uncomplete' для каждого незавершенного фокуса.
     </td>
     <td>1.11
     </td></tr>
@@ -3983,22 +3882,21 @@ legitimacy = &lt;0-100&gt; }</pre>
     <td>activate_decision
     </td>
     <td>
-    <p><code>&lt;decision&gt;</code><br>The decision to activate.
+    <p><code>&lt;decision&gt;</code><br>.
     </p>
     </td>
     <td><pre>activate_decision = my_decision</pre>
     </td>
-    <td>Activates the specified decision for the current scope, ignoring triggers for the decision.
+    <td>Активирует указанное решение для текущего контекста, игнорируя триггеры решения.
     </td>
-    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
-    </td>
+
     <td>1.0
     </td></tr>
     <tr id="activate_targeted_decision">
     <td>activate_targeted_decision
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>The country to target.
-    <p><code>decision = &lt;decision&gt;</code><br>The decision to activate.
+    <td><code>target = &lt;scope&gt;</code><br>Страна, для которой предназначено решение.
+    <p><code>decision = &lt;decision&gt;</code><br>Решение для активации.
     </p>
     </td>
     <td><pre>activate_targeted_decision = {
@@ -4007,16 +3905,15 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Activates the specified targeted decision for the specified target for the current scope.
+    <td>Активирует указанное целевое решение для указанной страны в текущем контексте.
     </td>
-    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
-    </td>
+
     <td>1.5
     </td></tr>
     <tr id="remove_targeted_decision">
     <td>remove_targeted_decision
     </td>
-    <td><code>&lt;decision&gt;</code><br>The decision to remove.
+    <td><code>&lt;decision&gt;</code><br>Решение, которое нужно удалить.
     </td>
     <td><pre>remove_targeted_decision = {
         target = FROM
@@ -4024,43 +3921,39 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Removes the specified targeted decision for the current scope.
-    </td>
-    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    <td>Удаляет указанное целевое решение для текущего контекста.
     </td>
     <td>1.5
     </td></tr>
     <tr id="unlock_decision_tooltip">
     <td>unlock_decision_tooltip
     </td>
-    <td><code>&lt;decision&gt;</code><br>The decision to display.
+    <td><code>&lt;decision&gt;</code><br>Решение, для которого нужно отобразить всплывающую подсказку.
     </td>
     <td><pre>unlock_decision_tooltip = my_decision</pre>
     </td>
-    <td>Displays a special tooltip for the specified decision in the effect tooltip.
+    <td>Отображает специальную всплывающую подсказку для указанного решения во всплывающей подсказке с эффектами.
     </td>
-    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
-    </td>
+
     <td>1.5
     </td></tr>
     <tr id="unlock_decision_category_tooltip">
     <td>unlock_decision_category_tooltip
     </td>
-    <td><code>&lt;category&gt;</code><br>The decision category to display.
+    <td><code>&lt;category&gt;</code><br>Категория решений, для которой нужно отобразить всплывающую подсказку.
     </td>
     <td><pre>unlock_decision_category_tooltip = my_category</pre>
     </td>
-    <td>Displays a special tooltip for the specified decision category in the effect tooltip.
+    <td>Отображает специальную всплывающую подсказку для указанной категории решений во всплывающей подсказке с эффектами.
     </td>
-    <td>Decision categories are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/catergories/*.txt</span>
-    </td>
+
     <td>1.5
     </td></tr>
     <tr id="add_days_remove">
     <td>add_days_remove
     </td>
-    <td><code> decision = &lt;decision&gt; </code><br>The decision to remove days from.
-    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to remove from the mission.
+    <td><code> decision = &lt;decision&gt; </code><br>Решение, для которого нужно уменьшить количество дней.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Количество дней, которые нужно удалить из миссии.
     </p>
     </td>
     <td>
@@ -4069,35 +3962,30 @@ legitimacy = &lt;0-100&gt; }</pre>
         days = 30
     }</pre>
     </td>
-    <td>Adds the number of days to a decision's days_remove.
+    <td>Добавляет указанное количество дней к полю "days_remove" решения.
     </td>
-    <td>Decisions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
-    </td>
+
     <td>1.9
     </td></tr>
     <tr id="remove_decision">
     <td>remove_decision
     </td>
-    <td>Allows to remove specified decision without running remove_effect.
+    <td>Позволяет удалить указанное решение без выполнения эффекта 'remove_effect'.
     </td>
     <td><pre>remove_decision = GER_MEPO</pre>
     </td>
-    <td>Removes a decision.
-    </td>
-    <td>&nbsp;
+    <td>Удаляет решение.
     </td>
     <td>1.6
     </td></tr>
     <tr id="remove_decision_on_cooldown">
     <td>remove_decision_on_cooldown
     </td>
-    <td><code>&lt;decision&gt;</code><br>The decision that is to be removed.
+    <td><code>&lt;decision&gt;</code><br>Решение, которое нужно удалить.
     </td>
     <td><pre>remove_decision_on_cooldown = TAG_my_decision</pre>
     </td>
-    <td>If the decision is on cooldown, it gets removed, in order to reactivate or remove completely.
-    </td>
-    <td>
+    <td>Если решение находится на перезарядке, оно будет удалено для возможности повторной активации или полного удаления.
     </td>
     <td>1.11
     </td></tr></tbody><tfoot></tfoot>
@@ -4123,47 +4011,41 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="activate_mission">
     <td>activate_mission
     </td>
-    <td><code>&lt;mission&gt;</code><br>The mission to activate.
+    <td><code>&lt;mission&gt;</code><br>Миссия, которую нужно активировать.
     </td>
     <td><pre>activate_mission = my_mission</pre>
     </td>
-    <td>Activates the specified mission for the current scope, ignoring any triggers for the decision.
-    </td>
-    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    <td>Активирует указанную миссию для текущего контекста, игнорируя любые триггеры решения.
     </td>
     <td>1.5
     </td></tr>
     <tr id="activate_mission_tooltip">
     <td>activate_mission_tooltip
     </td>
-    <td><code>&lt;mission&gt;</code><br>The mission to display.
+    <td><code>&lt;mission&gt;</code><br>Миссия, которую нужно отобразить.
     </td>
     <td><pre>activate_mission_tooltip = my_mission</pre>
     </td>
-    <td>Displays a special tooltip for the specified mission in the effect tooltip.
-    </td>
-    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    <td>Отображает специальную всплывающую подсказку для указанной миссии во всплывающей подсказке с эффектами.
     </td>
     <td>1.5
     </td></tr>
     <tr id="remove_mission">
     <td>remove_mission
     </td>
-    <td><code>&lt;mission&gt;</code><br>The mission to remove.
+    <td><code>&lt;mission&gt;</code><br>Миссия, которую нужно удалить.
     </td>
     <td><pre>remove_mission = my_mission</pre>
     </td>
-    <td>Removes the specified mission for the current scope.
-    </td>
-    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    <td>Удаляет указанную миссию для текущего контекста.
     </td>
     <td>1.5
     </td></tr>
     <tr id="add_days_mission_timeout">
     <td>add_days_mission_timeout
     </td>
-    <td><code> mission = &lt;mission&gt; </code><br>The mission to add days to.
-    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to add to the mission.
+    <td><code> mission = &lt;mission&gt; </code><br>Миссия, к которой нужно добавить дни.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Количество дней, которые нужно добавить к миссии.
     </p>
     </td>
     <td><pre>add_days_mission_timeout = {
@@ -4171,11 +4053,10 @@ legitimacy = &lt;0-100&gt; }</pre>
         days = 20
     }</pre>
     </td>
-    <td>Adds the number of days to the specified mission.
-    </td>
-    <td>Missions are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/decisions/*.txt</span>
+    <td>Добавляет указанное количество дней к указанной миссии.
     </td>
     <td>1.9
+    </td></tr>    
     </td></tr></tbody><tfoot></tfoot>
         </tbody>
             </table>
@@ -4200,36 +4081,32 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="add_research_slot">
     <td>add_research_slot
     </td>
-    <td><code>&lt;int&gt;</code><br>The number of slots to add or remove.
+    <td><code>&lt;int&gt;</code><br>Количество слотов для добавления или удаления.
     </td>
     <td><pre>add_research_slot = 1</pre>
     </td>
-    <td>Adjusts the number of research slots the current scope has. Can remove slots with negatives.
-    </td>
-    <td>&nbsp;
+    <td>Регулирует количество слотов исследования для текущего контекста. Может удалять слоты с помощью отрицательных чисел.
     </td>
     <td>1.0
     </td></tr>
     <tr id="set_research_slots">
     <td>set_research_slots
     </td>
-    <td><code>&lt;int&gt;</code><br>The number of slots to set.
+    <td><code>&lt;int&gt;</code><br>Количество слотов для установки.
     </td>
     <td><pre>set_research_slots = 4</pre>
     </td>
-    <td>Sets the number of research slots the current scope has.
-    </td>
-    <td>&nbsp;
+    <td>Устанавливает количество слотов исследования для текущего контекста.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_tech_bonus">
     <td>add_tech_bonus
     </td>
-    <td><code>bonus = &lt;float&gt;</code><br>The bonus to technology given, default 0.
-    <p><code>uses = &lt;int&gt;</code><br>The amount of times the bonus can be used, default 1.<br><code>ahead_reduction = &lt;float&gt;</code><br>The cost reduction if ahead of time, default 0.<br><code>category = &lt;string&gt;</code><br>Which technology category the bonus applies to. Multiple can be defined.<br><code>technology = &lt;string&gt;</code><br>Which technology the bonus applies to. Multiple can be defined.
+    <td><code>bonus = &lt;float&gt;</code><br>Бонус к технологиям, заданный в процентах, по умолчанию 0.
+    <p><code>uses = &lt;int&gt;</code><br>Количество использований бонуса, по умолчанию 1.<br><code>ahead_reduction = &lt;float&gt;</code><br>Снижение стоимости, если опережает время, по умолчанию 0.<br><code>category = &lt;string&gt;</code><br>Категория технологии, к которой применяется бонус. Можно указать несколько.<br><code>technology = &lt;string&gt;</code><br>Конкретная технология, к которой применяется бонус. Можно указать несколько.
     </p><p><code>name = &lt;string&gt;</code>
-    </p><p>Tooltip shown in research tabs, optional.
+    </p><p>Подсказка, отображаемая на вкладках исследования, необязательно.
     </p>
     </td>
     <td><pre>add_tech_bonus = {
@@ -4239,16 +4116,14 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Grants a research bonus to the current scope with the specified parameters.
-    </td>
-    <td>Research bonus categories are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technology_tags/*.txt</span> files, while technologies are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technologies/*.txt</span> files.
+    <td>Предоставляет бонус к исследованию для текущего контекста с указанными параметрами.
     </td>
     <td>1.0
     </td></tr>
     <tr id="set_technology">
     <td>set_technology
     </td>
-    <td><code>&lt;technology&gt; = &lt;int&gt;</code><br>The technology to add.<br><code>popup = no</code><br>To not show the popup after adding technology
+    <td><code>&lt;technology&gt; = &lt;int&gt;</code><br>Технология, которую нужно добавить.<br><code>popup = no</code><br>Не отображать всплывающее окно после добавления технологии.
     </td>
     <td>
     <pre>set_technology = {
@@ -4256,43 +4131,37 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Grants the specified technology to the current scope.
-    </td>
-    <td>A value of 1 sets the technology. A value of 0 removes the technology, but if it is a researchable technology, the duration it takes to research isn't reset, meaning it can be researched in 1 day. Technologies that are mutually exclusive with other technologies can not be removed by this effect. Technologies are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technologies/*.txt</span> files.
+    <td>Предоставляет указанную технологию текущему контексту.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_to_tech_sharing_group">
     <td>add_to_tech_sharing_group
     </td>
-    <td><code>&lt;string&gt;</code><br>The group to add the current scope to.
+    <td><code>&lt;string&gt;</code><br>Группа, к которой нужно добавить текущий контекст.
     </td>
     <td><pre>add_to_tech_sharing_group = us_research</pre>
     </td>
-    <td>Adds the current scope to the specified technology sharing group.
-    </td>
-    <td>&nbsp;Technology sharing groups are found in <code>Hearts of Iron IV\common\technology_sharing\*.txt</code>
+    <td>Добавляет текущий контекст в указанную группу для совместного использования технологий.
     </td>
     <td>1.3
     </td></tr>
     <tr id="remove_from_tech_sharing_group">
     <td>remove_from_tech_sharing_group
     </td>
-    <td><code>&lt;string&gt;</code><br>The group to remove the current scope from.
+    <td><code>&lt;string&gt;</code><br>Группа, из которой нужно удалить текущий контекст.
     </td>
     <td><pre>remove_from_tech_sharing_group = us_research</pre>
     </td>
-    <td>Removes the current scope from the specified technology sharing group.
-    </td>
-    <td>&nbsp;Technology sharing groups are found in <code>Hearts of Iron IV\common\technology_sharing\*.txt</code>
+    <td>Удаляет текущий контекст из указанной группы для совместного использования технологий.
     </td>
     <td>1.3
     </td></tr>
     <tr id="modify_tech_sharing_bonus">
     <td>modify_tech_sharing_bonus
     </td>
-    <td><code>id = &lt;string&gt;</code><br>The group to modify.
-    <p><code>bonus = &lt;float&gt;</code><br>The new bonus.
+    <td><code>id = &lt;string&gt;</code><br>Группа, которую нужно изменить.
+    <p><code>bonus = &lt;float&gt;</code><br>Новый бонус.
     </p>
     </td>
     <td><pre>modify_tech_sharing_bonus = {
@@ -4301,32 +4170,28 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Modifies the specified technology sharing group.
-    </td>
-    <td>&nbsp;Technology sharing groups are found in <code>Hearts of Iron IV\common\technology_sharing\*.txt</code>
+    <td>Изменяет указанную группу совместного использования технологий.
     </td>
     <td>1.3
     </td></tr>
     <tr id="inherit_technology">
     <td>inherit_technology
     </td>
-    <td><code>&lt;tag&gt;</code> The country to inherit technology from.
+    <td><code>&lt;tag&gt;</code> Страна, от которой наследуются технологии.
     </td>
     <td><pre>inherit_technology = CAN</pre>
     </td>
-    <td>Makes the current country's researched technologies be copied from the specified country.
-    </td>
-    <td>Useful when making a country independent.
+    <td>Копирует технологии указанной страны для текущей страны.
     </td>
     <td>1.6
     </td></tr>
     <tr id="add_doctrine_cost_reduction">
     <td>add_doctrine_cost_reduction
     </td>
-    <td><code>name = &lt;name&gt;</code><br>Tooltip showing why the doctrine has reduced cost in the doctrine menu. Optional.<br>
-    <p><code>cost_reduction = &lt;fraction&gt;</code><br>Percentage of cost reduced.<br>
-    <code>uses = &lt;integer&gt;</code><br>Number of times the cost reduction can be used.<br>
-    <code>category = &lt;doctrine category&gt;</code><br>Which doctrine category the cost reduction will apply to. (Ex: <code>cat_mobile_warfare</code>,<code>land_doctrine</code> ,<code>air_doctrine</code>.)
+    <td><code>name = &lt;name&gt;</code><br>Подсказка, почему стоимость уменьшается в меню доктрин. Необязательно.<br>
+    <p><code>cost_reduction = &lt;fraction&gt;</code><br>Процент снижения стоимости.<br>
+    <code>uses = &lt;integer&gt;</code><br>Количество использований снижения стоимости.<br>
+    <code>category = &lt;doctrine category&gt;</code><br>Категория доктрины, к которой применяется снижение стоимости. (Например: <code>cat_mobile_warfare</code>, <code>land_doctrine</code>, <code>air_doctrine</code>.)
     </p>
     </td>
     <td><pre>add_doctrine_cost_reduction = {
@@ -4335,11 +4200,8 @@ legitimacy = &lt;0-100&gt; }</pre>
         category = land_doctrine
     }</pre>
     </td>
-    <td>Gives bonuses of reducing land doctrine cost to current scope.
+    <td>Предоставляет бонусы, снижающие стоимость доктрин для текущего контекста.    
     </td>
-    <td>Doctrines are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/technologies/*.txt</span> files.<br>
-    <p>For a general doctrine cost reduction, see "&lt;land/air/naval&gt;_doctrine_cost_factor" in <a href="/Modifiers" title="Modifiers">Modifiers</a>.
-    </p>
     </td>
     <td>1.11
     </td></tr></tbody><tfoot></tfoot>
@@ -4365,7 +4227,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="add_ideas">
     <td>add_ideas
     </td>
-    <td><code>&lt;idea&gt;</code><br>The idea to add.
+    <td><code>&lt;idea&gt;</code><br>Идея для добавления.
     </td>
     <td><pre>add_ideas = my_idea</pre>
     <pre>add_ideas = {
@@ -4374,17 +4236,15 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Adds the specified ideas to the current scope.
-    </td>
-    <td>Can be used as a scope to add multiple at once.
+    <td>Добавляет указанные идеи в текущий контекст.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_timed_idea">
     <td>add_timed_idea
     </td>
-    <td><code>idea = &lt;idea&gt;</code><br>The idea to add.
-    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to add the idea for.
+    <td><code>idea = &lt;idea&gt;</code><br>Идея для добавления.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Количество дней, на которое добавляется идея.
     </p>
     </td>
     <td><pre>add_timed_idea = {
@@ -4393,17 +4253,15 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Adds the specified ideas to the current scope for the specified number of days.
-    </td>
-    <td>&nbsp;
+    <td>Добавляет указанную идею в текущий контекст на указанное количество дней.
     </td>
     <td>1.0
     </td></tr>
     <tr id="modify_timed_idea">
     <td>modify_timed_idea
     </td>
-    <td><code>idea = &lt;idea&gt;</code><br>The idea to modify.
-    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>The number of days to add to the idea.
+    <td><code>idea = &lt;idea&gt;</code><br>Идея для модификации.
+    <p><code>days = &lt;int&gt; / &lt;variable&gt;</code><br>Количество дней, которое добавляется к идее.
     </p>
     </td>
     <td><pre>modify_timed_idea = {
@@ -4412,17 +4270,15 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Extends the duration of the timed idea by the specified amount.
-    </td>
-    <td>&nbsp;
+    <td>Увеличивает продолжительность временной идеи на указанное количество дней.
     </td>
     <td>1.0
     </td></tr>
     <tr id="swap_ideas">
     <td>swap_ideas
     </td>
-    <td><code>add_idea = &lt;idea&gt;</code><br>The idea to add.
-    <p><code>remove_idea = &lt;idea&gt;</code><br>The idea to remove.
+    <td><code>add_idea = &lt;idea&gt;</code><br>Идея для добавления.
+    <p><code>remove_idea = &lt;idea&gt;</code><br>Идея для удаления.
     </p>
     </td>
     <td><pre>swap_ideas = {
@@ -4431,18 +4287,15 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Switches two ideas with a tooltip displaying any modifier differences between them.
+    <td>Меняет две идеи местами с подсказкой, отображающей различия между ними.
     </td>
-    <td>If the ideas have the same name in the localisation, it will show up as modifying the idea rather than swapping them.
-    <p>The add will occur before the removal of the old idea.
-    </p>
     </td>
     <td>1.3
     </td></tr>
     <tr id="remove_ideas">
     <td>remove_ideas
     </td>
-    <td><code>&lt;idea&gt;</code><br>The idea to remove.
+    <td><code>&lt;idea&gt;</code><br>Идея для удаления.
     </td>
     <td><pre>remove_ideas = my_idea</pre>
     <pre>remove_ideas = {
@@ -4451,37 +4304,32 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Removes the specified idea from the current scope.
-    </td>
-    <td>Can be used as a scope to remove multiple at once.
+    <td>Удаляет указанную идею из текущего контекста.
     </td>
     <td>1.0
     </td></tr>
     <tr id="remove_ideas_with_trait">
     <td>remove_ideas_with_trait
     </td>
-    <td><code>&lt;trait&gt;</code><br>The trait to target.
+    <td><code>&lt;trait&gt;</code><br>Трейт для целевого объекта.
     </td>
     <td><pre>remove_ideas_with_trait = motorized_equipment_manufacturer
     </pre>
     </td>
-    <td>Removes all ideas for the current scope that use the specified trait.
-    </td>
-    <td>&nbsp;
-    </td>
-    <td>1.0
-    </td></tr>
-    <tr id="show_ideas_tooltip">
-    <td>show_ideas_tooltip
-    </td>
-    <td><code>&lt;idea&gt;</code><br>The idea to display.
-    </td>
-    <td><pre>show_ideas_tooltip = my_idea</pre>
-    </td>
-    <td>Displays the specified idea in the tooltip for the current effect scope. Does not add the idea.
-    </td>
-    <td>&nbsp;
-    </td>
+    <td>
+</td>
+<td>1.0
+</td></tr>
+<tr id="show_ideas_tooltip">
+<td>show_ideas_tooltip
+</td>
+<td><code>&lt;idea&gt;</code><br>Идея для отображения.
+</td>
+<td><pre>show_ideas_tooltip = my_idea</pre>
+</td>
+<td>Отображает указанную идею во всплывающей подсказке для текущего контекста. Не добавляет идею.
+</td>
+
     <td>1.0
     </td></tr></tbody><tfoot></tfoot>
                 </tbody>
@@ -4511,8 +4359,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     <td><pre>load_oob = "GER_default"</pre>
     </td>
     <td>Loads the specified order of battle for the current scope, applying the effects within. The filename with the <code>.txt</code> extension omitted is used as the effect's target.
-    </td>
-    <td>Orders of battle are stored within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/history/units/*.txt</span>. Primarily used to spawn divisions at specified locations.
     </td>
     <td>1.0
     </td></tr>
@@ -4559,8 +4405,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Creates and adds the specified division template to the current scope.
     </td>
-    <td>The <i>x</i> and <i>y</i> attributes represent the rows and columns in the division designer and start from 0. No tooltip is shown.
-    </td>
     <td>1.0
     </td></tr>
     <tr id="add_units_to_division_template">
@@ -4590,8 +4434,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds the specified brigades to first available slots of specified columns to the template (if possible).
     </td>
-    <td>Columns go left-to-right starting with 0. Can also be used in division scope.
-    </td>
     <td>1.0
     </td></tr>
     <tr id="set_division_template_lock">
@@ -4609,7 +4451,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Toggles the locked status on a division template for the current scope, which prevents editing or deletion.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -4621,8 +4463,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     <td><pre>country_lock_all_division_template = yes</pre>
     </td>
     <td>Locks all division templates for the current scope.
-    </td>
-    <td>Used to prevent training, disbanding, and editing units.
     </td>
     <td>1.9
     </td></tr>
@@ -4639,7 +4479,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Changes whether it's possible to recruit divisions of a locked template without unlocking the template.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.12
     </td></tr>
@@ -4658,8 +4498,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Sets the cap of a division template. The template has to be locked first.
     </td>
-    <td>
-    </td>
     <td>1.12
     </td></tr>
     <tr id="clear_division_template_cap">
@@ -4673,8 +4511,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </pre>
     </td>
     <td>Clears the cap on the template, allowing it to have an unlimited amount of divisions.
-    </td>
-    <td>
     </td>
     <td>1.12
     </td></tr>
@@ -4691,7 +4527,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Deletes the specified division template and all units using it for the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -4714,8 +4550,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Deletes all units that meet the filters.
     </td>
-    <td>No tooltip is generated. delete_units can be used if deleting all units of a specific template.
-    </td>
     <td>1.5
     </td></tr>
     <tr id="delete_units">
@@ -4731,8 +4565,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     }</pre>
     </td>
     <td>Deletes all units with a certain template.
-    </td>
-    <td>Generates a tooltip, unlike delete_unit. Mandatory to specify a division_template.
     </td>
     <td>1.9
     </td></tr>
@@ -4752,8 +4584,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Creates a railway gun.
     </td>
-    <td>
-    </td>
     <td>1.11
     </td></tr>
     <tr id="teleport_railway_guns_to_deploy_province">
@@ -4764,8 +4594,6 @@ legitimacy = &lt;0-100&gt; }</pre>
     <td><pre>teleport_railway_guns_to_deploy_province = yes</pre>
     </td>
     <td>Teleports all railway guns to the province where they get deployed.
-    </td>
-    <td>
     </td>
     <td>1.11
     </td></tr></tbody><tfoot></tfoot>
@@ -4863,7 +4691,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Sends the specified fraction of equipment to the specified target, removing said equipment from the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -4890,7 +4718,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Grants the specified country a license to produce the specified equipment from the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.4
     </td></tr>
@@ -4972,7 +4800,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Starts a production line for the specified equipment for the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr></tbody><tfoot></tfoot>
@@ -5010,7 +4838,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Destroys the specified type and amount of ships controlled by the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -5027,7 +4855,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Transfers the current scope navy to the specified country.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -5050,7 +4878,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Transfers the specified type of ship from the current scope to the specified country.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.4
     </td></tr>
@@ -5073,7 +4901,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Create a ship from another country and assign it to the reserve fleet. If not set, it will be the scoped country.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -5086,7 +4914,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Add mines to a strategic region.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.6
     </td></tr>
@@ -5144,7 +4972,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Creates an Intelligence Agency.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -5771,7 +5599,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>&nbsp;
+
     </td>
     <td>The portrait uses a spriteType, defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span>.<br>
     <p>Sub-ideologies are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/ideologies</span>.<br>
@@ -5852,7 +5680,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Kills the country leader of the designated ideology for the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -5865,7 +5693,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Retires and removes the country leader of the ideology party for the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -5878,7 +5706,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Kills the country leader for the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -5891,7 +5719,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Retires and removes the country leader as head of their party for the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -5904,7 +5732,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Changes the country leader's government type for the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6323,7 +6151,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Changes the current state's name to the specified name.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.3
     </td></tr>
@@ -6336,7 +6164,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Resets any changes to the current state's name.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.3
     </td></tr>
@@ -6349,7 +6177,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds a claim for the specified country on the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6362,7 +6190,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Removes a claim by the specified country on the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6375,7 +6203,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds a core for the specified country on the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6388,7 +6216,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Removes a core for the specified country on the current scope.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6402,7 +6230,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Makes the current scope a demilitarized zone.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6436,7 +6264,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds a <a href="/Modifiers" title="Modifiers">modifier</a> to the current state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.3
     </td></tr>
@@ -6449,7 +6277,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds the specified amount of manpower to the current state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6481,7 +6309,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Enables Border War status for the current state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr>
@@ -6652,7 +6480,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Changes the controller of all provinces within that state controlled by countries that meet triggers to the specified country.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -6838,7 +6666,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Removes the specified building in the current state. For shared buildings level determines the amount, whereas for the others it is the actual level.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.0
     </td></tr></tbody><tfoot></tfoot>
@@ -6869,7 +6697,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds compliance to the specified state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -6882,7 +6710,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds resistance to the specified state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -6895,7 +6723,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Increases resistance target in the specified state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -6916,7 +6744,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Increases resistance target in the specified state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -6929,7 +6757,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Cancels resistance activity for the current state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -6942,7 +6770,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Disables resistance for the scoped state when the occupier is the specified country.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -6960,7 +6788,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Disables resistance for the scoped state when the occupier is the specified country.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -7017,7 +6845,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Sets compliance in the specified state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -7030,7 +6858,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Sets resistance in the specified state.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
@@ -7169,7 +6997,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Retires the current character (removing them).
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7509,7 +7337,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Promotes the current unit leader to Field Marshal (if Commander).
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7522,7 +7350,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Demotes the current unit leader to Commander (if Field Marshal).
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7587,11 +7415,11 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="replace_unit_leader_trait">
     <td>replace_unit_leader_trait
     </td>
-    <td>&nbsp;
+
     </td>
-    <td>&nbsp;
+
     </td>
-    <td>&nbsp;
+
     </td>
     <td>Traits are found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/unit_leader/*.txt</span> files.
     </td>
@@ -7606,7 +7434,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Removes a leaders exile tag.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.6
     </td></tr>
@@ -7756,7 +7584,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds the specified amount of hours of supply to troops led by the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7769,7 +7597,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds the specified amount of assignable trait slots to the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7782,7 +7610,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds skill to the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7795,7 +7623,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds logistics skill to the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7808,7 +7636,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds planning skill to the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7821,7 +7649,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds defense skill to the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7834,7 +7662,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds attack skill to the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr>
@@ -7886,7 +7714,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds the specified combat buff to the current unit leader.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.5
     </td></tr></tbody><tfoot></tfoot>
@@ -7917,7 +7745,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     </td>
     <td>Adds the nationality to the current operative.
     </td>
-    <td>&nbsp;
+
     </td>
     <td>1.9
     </td></tr>
