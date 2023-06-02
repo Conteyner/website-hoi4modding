@@ -4354,18 +4354,18 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="load_oob">
     <td>load_oob
     </td>
-    <td><code>&lt;oob&gt;</code><br>The filename of the order of battle to load, without the .txt extension.
+    <td><code>&lt;oob&gt;</code><br>Имя файла для загрузки порядка боя без расширения .txt.
     </td>
     <td><pre>load_oob = "GER_default"</pre>
     </td>
-    <td>Loads the specified order of battle for the current scope, applying the effects within. The filename with the <code>.txt</code> extension omitted is used as the effect's target.
+    <td>Загружает указанный порядок боя для текущей области видимости, применяя его эффекты. В качестве цели эффекта используется имя файла без расширения <code>.txt</code>.
     </td>
     <td>1.0
     </td></tr>
     <tr id="division_template">
     <td>division_template
     </td>
-    <td><code>name</code><br>The name of the division.
+    <td><code>name</code><br>Название дивизии.
     <pre>regiments = {
         &lt;unit&gt; = { x = 0 y = 0 }
     }
@@ -4373,16 +4373,16 @@ legitimacy = &lt;0-100&gt; }</pre>
         &lt;unit&gt; = { x = 0 y = 0 }
     }
     </pre>
-    <p>The composition of the division. Sub-units are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/*.txt</span> files.<br>
+    <p>Состав дивизии. Подразделения определяются в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/*.txt</span>.<br>
     <code>division_names_group = &lt;group&gt;</code><br>
-    The division names group that the template will use, deciding on the automatically-generated names of any new divisions built using that template. Optional, assigns one automatically if omitted. These are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/names_divisions/*.txt</span> files.<br>
-    <code>is_locked = &lt;bool&gt;</code><br>Whether the division is locked to modification and deletion. Optional.<br>
-    <code>force_allow_recruiting = &lt;bool&gt;</code><br>Whether the locked template can have units deployed using it without allowing editing. Optional, only has an effect in locked templates.<br>
-    <code>division_cap = &lt;int&gt;</code><br>The maximum amount of divisions that this template may have; requires the template to be locked. Optional.<br>
-    <code>priority = &lt;int&gt;</code><br>The priority the template receives in receiving supplies. Goes from 0 to 2. Optional, 1 by default.<br>
-    <code>template_counter = &lt;int&gt;</code><br>The icon used by the division as an integer. Optional, defaults to the icon of the most common sub-unit within. The icons are defined as sprites within any <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span> file (By default <code>subuniticons.gfx</code>) with the pattern of <code>GFX_div_templ_&lt;int&gt;_large</code> and <code>GFX_div_templ_&lt;int&gt;_small</code>.<br>
-    <code>override_model = &lt;entity&gt;</code><br><a href="/Entity_modding" title="Entity modding">Enforces the entity used by the units using this template to be the specified one</a>. Optional.
-    </p>
+    Группа названий дивизий, которую будет использовать шаблон, определяющий автоматически генерируемые названия новых дивизий, построенных на основе этого шаблона. Необязательно, автоматическое присвоение в случае опускания данного параметра. Они определены в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/names_divisions/*.txt</span>.<br>
+    <code>is_locked = &lt;bool&gt;</code><br>Заблокирована ли дивизия для изменения и удаления. Необязательно.<br>
+    <code>force_allow_recruiting = &lt;bool&gt;</code><br>Может ли заблокированный шаблон иметь развернутые подразделения без возможности редактирования. Необязательно, имеет эффект только на заблокированные шаблоны.<br>
+    <code>division_cap = &lt;int&gt;</code><br>Максимальное количество дивизий, которое может иметь данный шаблон; требует блокировки шаблона. Необязательно.<br>
+    <code>priority = &lt;int&gt;</code><br>Приоритет, с которым шаблон получает поставки. Значение от 0 до 2. Необязательно, по умолчанию 1.<br>
+    <code>template_counter = &lt;int&gt;</code><br>Используемая дивизией иконка в виде целого числа. Необязательно, по умолчанию используется иконка наиболее распространенного подразделения. Иконки определены в виде спрайтов в любом файле <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span> (по умолчанию <code>subuniticons.gfx</code>) с шаблонами <code>GFX_div_templ_&lt;int&gt;_large</code> и <code>GFX_div_templ_&lt;int&gt;_small</code>.<br>
+    <code>override_model = &lt;entity&gt;</code><br><a href="/Entity_modding" title="Entity modding">Принудительно назначает указанную сущность</a> для подразделений, использующих данный шаблон. Необязательно.
+    </p>    
     </td>
     <td><pre>division_template = {
         name = "Test"
@@ -4403,21 +4403,21 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Creates and adds the specified division template to the current scope.
+    <td>Создает и добавляет указанный шаблон дивизии в текущую область видимости.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_units_to_division_template">
     <td>add_units_to_division_template
     </td>
-    <td><code>template_name = &lt;string&gt;</code><br>The template to change. Optional if used in division scope.<br>
+    <td><code>template_name = &lt;string&gt;</code><br>Шаблон для изменения. Необязательно, если используется в области дивизии.<br>
     <pre>regiments = {
         &lt;unit&gt; = &lt;column&gt;
     }
     support = {
         &lt;unit&gt; = &lt;column&gt;
     }</pre>
-    <p>The units to add to the template. Sub-units are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/*.txt</span> files.
+    <p>Подразделения, которые нужно добавить в шаблон. Подразделения определяются в файлах <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/*.txt</span>.
     </p>
     </td>
     <td><pre>add_units_to_division_template = {
@@ -4432,170 +4432,135 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Adds the specified brigades to first available slots of specified columns to the template (if possible).
-    </td>
-    <td>1.0
-    </td></tr>
+    <td>Добавляет указанные бригады в первые доступные слоты указанных столбцов в шаблоне (если возможно).</td>
+    <td>1.0</td></tr>
     <tr id="set_division_template_lock">
-    <td>set_division_template_lock
-    </td>
-    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.
-    <p><code>is_locked = &lt;bool&gt;</code><br>Whether the division is locked or not.
-    </p>
-    </td>
+    <td>set_division_template_lock</td>
+    <td><code>division_template = &lt;string&gt;</code><br>Имя шаблона дивизии.<p><code>is_locked = &lt;bool&gt;</code><br>Заблокирована ли дивизия или нет.</p></td>
     <td><pre>set_division_template_lock = {
         division_template = "Infantry Division"
         is_locked = yes
     }
-    </pre>
+    </pre></td>
+    <td>Переключает статус блокировки шаблона дивизии для текущего контекста, что предотвращает его редактирование или удаление.</td>
     </td>
-    <td>Toggles the locked status on a division template for the current scope, which prevents editing or deletion.
-    </td>
-
-    </td>
-    <td>1.5
-    </td></tr>
+    <td>1.5</td></tr>
     <tr id="country_lock_all_division_template">
-    <td>country_lock_all_division_template
-    </td>
-    <td><code>&lt;bool&gt;</code><br>Boolean.
-    </td>
-    <td><pre>country_lock_all_division_template = yes</pre>
-    </td>
-    <td>Locks all division templates for the current scope.
-    </td>
-    <td>1.9
-    </td></tr>
+    <td>country_lock_all_division_template</td>
+    <td><code>&lt;bool&gt;</code><br>Булево значение.</td>
+    <td><pre>country_lock_all_division_template = yes</pre></td>
+    <td>Блокирует все шаблоны дивизий для текущего контекста.</td>
+    <td>1.9</td></tr>
     <tr id="set_division_force_allow_recruiting">
-    <td>set_division_force_allow_recruiting
-    </td>
-    <td><code>division_template = &lt;string&gt;</code><br>Template to modify.<br>
-    <p><code>force_allow_recruiting = &lt;bool&gt;</code><br>Whether to allow or disallow recruiting. Defaults to true if unset.
-    </p>
-    </td>
+    <td>set_division_force_allow_recruiting</td>
+    <td><code>division_template = &lt;string&gt;</code><br>Шаблон для изменения.<br><p><code>force_allow_recruiting = &lt;bool&gt;</code><br>Разрешить или запретить набор. По умолчанию true, если не задано.</p></td>
     <td><pre>set_division_force_allow_recruiting = {
         division_template = "My locked template"
-    }</pre>
+    }</pre></td>
+    <td>Изменяет возможность набора дивизий заблокированного шаблона без разблокировки шаблона.</td>
     </td>
-    <td>Changes whether it's possible to recruit divisions of a locked template without unlocking the template.
-    </td>
-
-    </td>
-    <td>1.12
-    </td></tr>
+    <td>1.12</td></tr>
     <tr id="set_division_template_cap">
-    <td>set_division_template_cap
-    </td>
-    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.<br>
-    <p><code>division_cap = &lt;int&gt;</code><br>The division cap.
-    </p>
-    </td>
+    <td>set_division_template_cap</td>
+    <td><code>division_template = &lt;string&gt;</code><br>Имя шаблона дивизии.<br><p><code>division_cap = &lt;int&gt;</code><br>Лимит дивизии.</p></td>
     <td><pre>set_division_template_cap = { 
         division_template = "Swiss Citizen Militia" 
         division_cap = SWI_militia_division_cap
     }
-    </pre>
-    </td>
-    <td>Sets the cap of a division template. The template has to be locked first.
-    </td>
-    <td>1.12
-    </td></tr>
+    </pre></td>
+    <td>Устанавливает лимит шаблона дивизии. Сначала шаблон должен быть заблокирован.</td>
+    <td>1.12</td></tr>
+    
     <tr id="clear_division_template_cap">
-    <td>clear_division_template_cap
-    </td>
-    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.
-    </td>
-    <td><pre>clear_division_template_cap = { 
+        <td>clear_division_template_cap</td>
+        <td><code>division_template = &lt;string&gt;</code><br>Имя шаблона дивизии.</td>
+        <td>
+            <pre>clear_division_template_cap = { 
         division_template = "Swiss Citizen Militia"
     }
     </pre>
-    </td>
-    <td>Clears the cap on the template, allowing it to have an unlimited amount of divisions.
-    </td>
-    <td>1.12
-    </td></tr>
+        </td>
+        <td>Снимает ограничение на шаблон, позволяя ему иметь неограниченное количество дивизий.</td>
+        <td>1.12</td>
+    </tr>
     <tr id="delete_unit_template_and_units">
-    <td>delete_unit_template_and_units
-    </td>
-    <td><code>division_template = &lt;string&gt;</code><br>The name of the division template.
-    </td>
-    <td><pre>delete_unit_template_and_units = {
+        <td>delete_unit_template_and_units</td>
+        <td><code>division_template = &lt;string&gt;</code><br>Имя шаблона дивизии.</td>
+        <td>
+            <pre>delete_unit_template_and_units = {
         division_template = "Infantry Division"
-        disband = yes #will refund equipment and manpower
+        disband = yes #вернуть снаряжение и людские ресурсы
     }
     </pre>
-    </td>
-    <td>Deletes the specified division template and all units using it for the current scope.
-    </td>
-
-    </td>
-    <td>1.5
-    </td></tr>
+        </td>
+        <td>Удаляет указанный шаблон дивизии и все её использования для текущего объема.</td>
+        <td>1.5</td>
+    </tr>
     <tr id="delete_unit">
-    <td>delete_unit
-    </td>
-    <td><code>state = &lt;number id&gt;</code><br>The id number of the state the unit must be in.<br>
-    <p><code>template = &lt;string&gt;</code><br>The template the units must use to be deleted.<br>
-    <code>id = &lt;int&gt;</code><br>The id given to the unit if created via the <code>create_unit</code> effect.
-    <code>disband = &lt;bool&gt;</code><br>If true, will refund equipment and manpower.
-    </p>
-    </td>
-    <td><pre>delete_unit = {
+        <td>delete_unit</td>
+        <td><code>state = &lt;номер идентификатора&gt;</code><br>Номер идентификатора состояния, в котором должна находиться дивизия.<br>
+            <p><code>template = &lt;string&gt;</code><br>Шаблон, который должны использовать юниты, чтобы быть удаленными.<br>
+                <code>id = &lt;int&gt;</code><br>Идентификатор, присвоенный юниту при создании с помощью эффекта <code>create_unit</code>.<br>
+                <code>disband = &lt;bool&gt;</code><br>Если значение true, будет возвращено снаряжение и людские ресурсы.</p>
+        </td>
+        <td>
+            <pre>delete_unit = {
         state = 787
-        disband = yes #will refund equipment and manpower
+        disband = yes #вернуть снаряжение и людские ресурсы
     }</pre>
-    <pre>delete_unit = {
+            <pre>delete_unit = {
         template = "Infantry Division"
     }</pre>
-    </td>
-    <td>Deletes all units that meet the filters.
-    </td>
-    <td>1.5
-    </td></tr>
+        </td>
+        <td>Удаляет все юниты, соответствующие указанным фильтрам.</td>
+        <td>1.5</td>
+    </tr>
     <tr id="delete_units">
-    <td>delete_units
-    </td>
-    <td><code>division_template = &lt;string&gt;</code><br>The template the units must use to be deleted.<br>
-    <p><code>disband = &lt;bool&gt;</code><br>If true, will refund equipment and manpower.
-    </p>
-    </td>
-    <td><pre>delete_units = {
+        <td>delete_units</td>
+        <td><code>division_template = &lt;string&gt;</code><br>Шаблон, который должны использовать юниты, чтобы быть удаленными.<br>
+            <p><code>disband = &lt;bool&gt;</code><br>Если значение true, будет возвращено снаряжение и людские ресурсы.</p>
+        </td>
+        <td>
+            <pre>delete_units = {
         division_template = "Infantry Division"
         disband = yes
     }</pre>
-    </td>
-    <td>Deletes all units with a certain template.
-    </td>
-    <td>1.9
-    </td></tr>
+        </td>
+        <td>Удаляет все юниты с определенным шаблоном.</td>
+        <td>1.9</td>
+    </tr>
+    
     <tr id="create_railway_gun">
-    <td>create_railway_gun
-    </td>
-    <td><code>equipment = &lt;type&gt;</code><br>Equipment type used by the railway gun.<br>
-    <p><code>name = &lt;string&gt;</code><br>The name used by the railway gun. Optional.<br>
-    <code>location = &lt;province&gt;</code><br>Location where the railway gun is created. Assumes the capital by default.
-    </p>
-    </td>
-    <td><pre>create_railway_gun = {
+        <td>create_railway_gun</td>
+        <td><code>equipment = &lt;тип&gt;</code><br>Тип снаряжения, используемый железнодорожной пушкой.<br>
+            <p><code>name = &lt;string&gt;</code><br>Имя, используемое железнодорожной пушкой. Опционально.<br>
+                <code>location = &lt;провинция&gt;</code><br>Место создания железнодорожной пушки. По умолчанию предполагается столица.</p>
+        </td>
+        <td>
+            <pre>create_railway_gun = {
         equipment = railway_gun_equipment_1
         name = TAG_new_railway_gun
         location = 12406
     }</pre>
-    </td>
-    <td>Creates a railway gun.
-    </td>
-    <td>1.11
-    </td></tr>
+        </td>
+        <td>Создает железнодорожную пушку.
+        </td>
+        <td>1.11
+        </td>
+    </tr>
     <tr id="teleport_railway_guns_to_deploy_province">
-    <td>teleport_railway_guns_to_deploy_province
-    </td>
-    <td><code>&lt;boolean&gt;</code><br>
-    </td>
-    <td><pre>teleport_railway_guns_to_deploy_province = yes</pre>
-    </td>
-    <td>Teleports all railway guns to the province where they get deployed.
-    </td>
-    <td>1.11
+        <td>teleport_railway_guns_to_deploy_province</td>
+        <td><code>&lt;boolean&gt;</code><br>
+        </td>
+        <td>
+            <pre>teleport_railway_guns_to_deploy_province = yes</pre>
+        </td>
+        <td>Телепортирует все железнодорожные пушки в провинцию, где они развертываются.
+        </td>
+        <td>1.11
+        </td>
+    </tr>
+    
     </td></tr></tbody><tfoot></tfoot>
                 </tbody>
                     </table>
@@ -4620,23 +4585,23 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="set_equipment_fraction">
     <td>set_equipment_fraction
     </td>
-    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>The fraction of equipment to remove.
+    <td><code>&lt;float&gt; / &lt;variable&gt;</code><br>Доля снаряжения, которую нужно удалить.
     </td>
     <td><pre>set_equipment_fraction = 0.5</pre>
     </td>
-    <td>Reduces the overall equipment stockpile by the specified fraction.
+    <td>Уменьшает общий запас снаряжения на указанную долю.
     </td>
-    <td>This should <b>not</b> be used in civil wars to simulate stockpile splitting. <code>start_civil_war</code> automatically divides stockpiles according to the respective size.
+    <td>Это не следует использовать в гражданских войнах для имитации разделения запасов. Команда <code>start_civil_war</code> автоматически делит запасы в соответствии с их размером.
     </td>
     <td>1.0
     </td></tr>
     <tr id="add_equipment_to_stockpile">
     <td>add_equipment_to_stockpile
     </td>
-    <td><code>type = &lt;equipment&gt;</code><br>The equipment to add. Either types and archetypes are accepted.<br>
-    <p><code>amount = &lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.<br>
-    <code>producer = &lt;scope&gt; / &lt;variable&gt;</code><br>Defines who produced the equipment. Optional, defaults to the current scope.<br>
-    <code>variant_name = &lt;string&gt;</code><br>The equipment variant to add. Mandatory if a variant needs to be created to produce the equipment, optional otherwise.<br>
+    <td><code>type = &lt;снаряжение&gt;</code><br>Снаряжение для добавления. Может быть типом или архетипом.<br>
+    <p><code>amount = &lt;int&gt; / &lt;variable&gt;</code><br>Количество для добавления.<br>
+    <code>producer = &lt;scope&gt; / &lt;variable&gt;</code><br>Определяет, кто произвел снаряжение. Необязательно, по умолчанию используется текущая область видимости.<br>
+    <code>variant_name = &lt;string&gt;</code><br>Вариант снаряжения для добавления. Обязателен, если требуется создание варианта для производства снаряжения, в противном случае необязателен.<br>
     </p>
     </td>
     <td><pre>add_equipment_to_stockpile = {
@@ -4650,17 +4615,17 @@ legitimacy = &lt;0-100&gt; }</pre>
         variant_name = "Panzer III"
     }</pre>
     </td>
-    <td>Edits the equipment stockpile of the current scope, adds or removes equipment of a specified type or archetype.
+    <td>Редактирует запас снаряжения текущей области видимости, добавляет или удаляет снаряжение указанного типа или архетипа.
     </td>
-    <td>With negative numbers, optionally specifying a producer will ensure only equipment with that producer gets removed. The equipment must be unlocked by the producer for the effect to succeed.
+    <td>С отрицательными значениями, при необходимости указания производителя, будет удалено только снаряжение, произведенное этим производителем. Производитель должен разблокировать снаряжение для успешного выполнения эффекта.
     </td>
     <td>1.0
     </td></tr>
     <tr id="send_equipment">
     <td>send_equipment
     </td>
-    <td><code>type = &lt;equipment&gt;</code><br>The equipment to add. Can be archetype.
-    <p><code>amount = &lt;int&gt; / &lt;variable&gt;</code><br>The amount to add.<br><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Which country receives the equipment.
+    <td><code>type = &lt;снаряжение&gt;</code><br>Снаряжение для добавления. Может быть типом или архетипом.
+    <p><code>amount = &lt;int&gt; / &lt;variable&gt;</code><br>Количество для добавления.<br><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Страна, которая получает снаряжение.
     </p>
     </td>
     <td><pre>send_equipment = {
@@ -4670,17 +4635,17 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Sends the specified amount of equipment to the specified target, removing said equipment from the current scope.
+    <td>Отправляет указанное количество снаряжения указанной цели, удаляя это снаряжение из текущей области видимости.
     </td>
-    <td>Cannot remove equipment into negatives, in which case equipment will not be received by the target in entirety.
+    <td>Нельзя удалять снаряжение до отрицательных значений, в таком случае снаряжение не будет полностью получено целью.
     </td>
     <td>1.0
     </td></tr>
     <tr id="send_equipment_fraction">
     <td>send_equipment_fraction
     </td>
-    <td><code>value = &lt;0-1&gt;</code><br>How much equipment to send.
-    <p><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Which country receives the equipment.
+    <td><code>value = &lt;0-1&gt;</code><br>Какую долю снаряжения отправить.
+    <p><code>target = &lt;scope&gt; / &lt;variable&gt;</code><br>Страна, которая получает снаряжение.
     </p>
     </td>
     <td><pre>send_equipment_fraction = {
@@ -4689,7 +4654,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Sends the specified fraction of equipment to the specified target, removing said equipment from the current scope.
+    <td>Отправляет указанную долю снаряжения указанной цели, удаляя это снаряжение из текущей области видимости.
     </td>
 
     </td>
@@ -4698,11 +4663,11 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="create_production_license">
     <td>create_production_license
     </td>
-    <td><code>target = &lt;scope&gt;</code><br>Which country receives the license.
-    <p><code>cost_factor = &lt;float&gt;</code><br>Modifies the production cost.<br>
-    <b>Equipment scope</b><br><code>type = &lt;equipment&gt;</code><br>The equipment the country is licensed to produce. Must be an non-archetype equipment.<br>
-    <code>version = &lt;int&gt;</code><br>The version indicates which variant should be licensed. The default is 0, meaning the base variant.<br>
-    <code>new_prioritised = &lt;boolean&gt;</code><br>Whether new equipment is prioritised or not. Yes by default.
+    <td><code>target = &lt;scope&gt;</code><br>Страна, которая получает лицензию.
+    <p><code>cost_factor = &lt;float&gt;</code><br>Модифицирует стоимость производства.<br>
+    <b>Область видимости снаряжения</b><br><code>type = &lt;снаряжение&gt;</code><br>Снаряжение, которое страна получает лицензию на производство. Должно быть не архетипом.<br>
+    <code>version = &lt;int&gt;</code><br>Версия указывает, какой вариант должен быть лицензирован. По умолчанию 0, что означает базовый вариант.<br>
+    <code>new_prioritised = &lt;boolean&gt;</code><br>Определяет, является ли новое снаряжение приоритетным или нет. По умолчанию да.
     </p>
     </td>
     <td><pre>create_production_license = {
@@ -4716,7 +4681,7 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Grants the specified country a license to produce the specified equipment from the current scope.
+    <td>Предоставляет указанной стране лицензию на производство указанного снаряжения из текущей области видимости.
     </td>
 
     </td>
@@ -4725,17 +4690,17 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="create_equipment_variant">
     <td>create_equipment_variant
     </td>
-    <td><code>name = &lt;string&gt;</code><br>The name of the variant.<br>
-    <p><code>type = &lt;equipment&gt;</code><br>The equipment type the variant is of.<br>
-    <code>parent_version = &lt;int&gt;</code><br>Ordering for multiple variants of the same equipment. 0 is the oldest, 1 is the second-oldest, etc. Optional, 0 by default.<br>
-    <code>obsolete = &lt;bool&gt;</code><br>Whether the equipment variant is flagged as obsolete within the GUI and for AI. Optional, no by default.<br>
-    <code>name_group = &lt;name group&gt;</code><br>The name group used for equipment. Stored in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/names_ships</span>. Optional, can only be defined for ships.<br>
-    <code>role_icon_index = &lt;int&gt;/auto</code><br>Index of the role icon that will be used, as an integer. If set to "auto", will pick automatically. If set to 0, will be unset. Optional, only can be defined for ships.<br>
-    <code>model = &lt;model name&gt;</code><br>Model that will be used by the equipment on the world map. Optional.<br>
-    <code>icon = &lt;sprite&gt;</code><br>The icon that will be used by equipment. Stored as a spriteType within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span>. Optional.<br>
-    <b>Upgrade scope</b><br><code>&lt;upgrade&gt; = &lt;amount&gt;</code><br>The upgrades configuration for the variant.<br>
-    <b>Module scope</b><br><code>&lt;slot&gt; = &lt;module&gt;</code><br>The modules configuration for the variant.
-    </p>
+    <td><code>name = &lt;string&gt;</code><br>Название варианта.<br>
+        <p><code>type = &lt;equipment&gt;</code><br>Тип снаряжения, к которому относится вариант.<br>
+        <code>parent_version = &lt;int&gt;</code><br>Порядок для нескольких вариантов одного и того же снаряжения. 0 - самый старый, 1 - второй по старости и так далее. По умолчанию 0.<br>
+        <code>obsolete = &lt;bool&gt;</code><br>Флаг, указывающий, является ли вариант снаряжения устаревшим в пользовательском интерфейсе и для искусственного интеллекта. По умолчанию нет.<br>
+        <code>name_group = &lt;name group&gt;</code><br>Группа имен, используемая для снаряжения. Хранится в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/names_ships</span>. Может быть задано только для кораблей.<br>
+        <code>role_icon_index = &lt;int&gt;/auto</code><br>Индекс значка роли, который будет использоваться в качестве целого числа. Если задано "auto", будет выбран автоматически. Если задано 0, не будет установлено. Может быть задано только для кораблей.<br>
+        <code>model = &lt;имя модели&gt;</code><br>Модель, которая будет использоваться снаряжением на карте мира. По желанию.<br>
+        <code>icon = &lt;спрайт&gt;</code><br>Значок, который будет использоваться для снаряжения. Хранится как spriteType в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/interface/*.gfx</span>. По желанию.<br>
+        <b>Область видимости улучшений</b><br><code>&lt;upgrade&gt; = &lt;amount&gt;</code><br>Настройки улучшений для варианта.<br>
+        <b>Область видимости модулей</b><br><code>&lt;slot&gt; = &lt;module&gt;</code><br>Настройки модулей для варианта.
+        </p>    
     </td>
     <td><pre>create_equipment_variant = {
         name = "Vetehinen Class"								
@@ -4771,12 +4736,12 @@ legitimacy = &lt;0-100&gt; }</pre>
         model = ENG_MKIV_light_tank_entity
     }</pre>
     </td>
-    <td>Creates the specified equipment variant for the current scope.
+    <td>Создает указанный вариант снаряжения для текущей области видимости.
     </td>
-    <td>Role icons for ships are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/gfx/army_icons/army_icons.txt</span>.<br>
-    <p>Upgrades are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/upgrades/*.txt</span>.<br>
-    Equipment types, including module slots for them, are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/*.txt</span>.<br>
-    Equipment modules are defined within <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/modules/*.txt</span>.<br>
+    <td>Значки ролей для кораблей определяются в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/gfx/army_icons/army_icons.txt</span>.<br>
+    <p>Улучшения определяются в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/upgrades/*.txt</span>.<br>
+    Типы снаряжения, включая слоты модулей, определяются в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/*.txt</span>.<br>
+    Модули снаряжения определяются в <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/units/equipment/modules/*.txt</span>.<br>
     </p>
     </td>
     <td>1.0
@@ -4784,8 +4749,8 @@ legitimacy = &lt;0-100&gt; }</pre>
     <tr id="add_equipment_production">
     <td>add_equipment_production
     </td>
-    <td><code>amount = &lt;int&gt;</code><br>The amount to produce. Optional.
-    <p><code>requested_factories = &lt;int&gt;</code><br>The number of factories to assigned initially. Optional.<br><code>progress = &lt;float&gt;</code><br>The initial production progress. Optional.<br><code>efficiency = &lt;float&gt;</code><br>The initial production efficiency. Optional.<br><b>Equipment scope</b><br><code>type = &lt;equipment&gt;</code><br>The name of the equipment to produce.<br><code>creator = &lt;scope&gt;</code><br>The country which is producing the equipment. Used if root scope isn't producer. Optional.<br><code>version_name = &lt;string&gt;</code>The name of the variant to produce. Optional.
+    <td><code>amount = &lt;int&gt;</code><br>Количество для производства. По желанию.
+    <p><code>requested_factories = &lt;int&gt;</code><br>Начальное количество назначенных фабрик. По желанию.<br><code>progress = &lt;float&gt;</code><br>Начальный прогресс производства. По желанию.<br><code>efficiency = &lt;float&gt;</code><br>Начальная эффективность производства. По желанию.<br><b>Область видимости снаряжения</b><br><code>type = &lt;equipment&gt;</code><br>Название снаряжения для производства.<br><code>creator = &lt;scope&gt;</code><br>Страна, которая производит снаряжение. Используется, если корневая область видимости не является производителем. По желанию.<br><code>version_name = &lt;string&gt;</code>Название варианта для производства. По желанию.
     </p>
     </td>
     <td><pre>add_equipment_production = {
@@ -4798,9 +4763,8 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Starts a production line for the specified equipment for the current scope.
+    <td>Запускает линию производства для указанного снаряжения в текущей области видимости.
     </td>
-
     </td>
     <td>1.0
     </td></tr></tbody><tfoot></tfoot>
