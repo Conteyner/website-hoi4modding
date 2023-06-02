@@ -4787,11 +4787,10 @@ legitimacy = &lt;0-100&gt; }</pre>
                                         
                                     </thead>
                             <tbody>                   
-    <tr id="destroy_ships">
-    <td>destroy_ships
-    </td>
-    <td><code>type = &lt;ship&gt;</code><br>The type of ship to destroy.
-    <p><code>count = &lt;int&gt; or all</code><br>The amount to destroy.
+<tr id="destroy_ships">
+    <td>destroy_ships</td>
+    <td><code>type = &lt;ship&gt;</code><br>Тип уничтожаемого корабля.
+    <p><code>count = &lt;int&gt; или all</code><br>Количество для уничтожения.
     </p>
     </td>
     <td><pre>destroy_ships = {
@@ -4800,36 +4799,32 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Destroys the specified type and amount of ships controlled by the current scope.
-    </td>
-
+    <td>Уничтожает указанный тип и количество кораблей, контролируемых текущим контекстом.
     </td>
     <td>1.5
-    </td></tr>
-    <tr id="transfer_navy">
-    <td>transfer_navy
     </td>
+</tr>
+<tr id="transfer_navy">
+    <td>transfer_navy</td>
     <td>
-    <p><code>target = &lt;scope&gt;</code><br>The target country.
+    <p><code>target = &lt;scope&gt;</code><br>Целевая страна.
     </p>
     </td>
     <td><pre>transfer_navy = {
         target = GER
     }</pre>
     </td>
-    <td>Transfers the current scope navy to the specified country.
-    </td>
-
+    <td>Передает текущий флот текущего контекста указанной стране.
     </td>
     <td>1.5
-    </td></tr>
-    <tr id="transfer_ship">
-    <td>transfer_ship
     </td>
-    <td><code>type = &lt;ship&gt;</code><br>The type of ship to transfer.
-    <p><code>target = &lt;scope&gt;<br>The target country.</code>
-    <code><code>prefer_name = &lt;string&gt;</code><br>Name of ship in origin navy that will preferably be transferred to target navy. Optional.
-    <code>exclude_refitting = &lt;yes/no&gt;&lt;/clode&gt;<br>Determines whether ships that are being refitted will be transferred. Optional.
+</tr>
+<tr id="transfer_ship">
+    <td>transfer_ship</td>
+    <td><code>type = &lt;ship&gt;</code><br>Тип передаваемого корабля.
+    <p><code>target = &lt;scope&gt;<br>Целевая страна.</code>
+    <code><code>prefer_name = &lt;string&gt;</code><br>Имя корабля в исходном флоте, которое предпочтительно передать в целевой флот. Необязательно.
+    <code>exclude_refitting = &lt;yes/no&gt;&lt;/clode&gt;<br>Определяет, будут ли передаваться корабли, находящиеся на ремонте. Необязательно.
     </code></code></p><code><code>
     </code></code></td>
     <td><pre>transfer_ship = {
@@ -4840,17 +4835,15 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Transfers the specified type of ship from the current scope to the specified country.
-    </td>
-
+    <td>Передает указанный тип корабля из текущего контекста в указанную страну.
     </td>
     <td>1.4
-    </td></tr>
-    <tr id="create_ship">
-    <td>create_ship
     </td>
-    <td><code>type = &lt;ship&gt;</code><br>The type of ship to create. <code>equipment_variant = &lt;string&gt;</code><br>The equipment variant to use.
-    <p><code>creator = &lt;scope&gt;</code><br>The country that created this ship. Optional. <code>name = &lt;string&gt;</code><br>Name of the ship. Optional.
+</tr>
+<tr id="create_ship">
+    <td>create_ship</td>
+    <td><code>type = &lt;ship&gt;</code><br>Тип создаваемого корабля. <code>equipment_variant = &lt;string&gt;</code><br>Вариант оборудования для использования.
+    <p><code>creator = &lt;scope&gt;</code><br>Страна, создавшая этот корабль. Необязательно. <code>name = &lt;string&gt;</code><br>Имя корабля. Необязательно.
     </p>
     </td>
     <td><pre>FRA = {
@@ -4863,30 +4856,26 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Create a ship from another country and assign it to the reserve fleet. If not set, it will be the scoped country.
-    </td>
-
+    <td>Создает корабль от другой страны и назначает его резервному флоту. Если не указано, будет использоваться текущая страна.
     </td>
     <td>1.9
-    </td></tr>
-    <tr id="add_mines">
-    <td>add_mines
     </td>
-    <td>Add mines to a strategic region for the current country.
+</tr>
+<tr id="add_mines">
+    <td>add_mines</td>
+    <td>Добавляет мины в стратегический регион для текущей страны.
     </td>
     <td><pre>add_mines = { region = 42 amount = 100 }</pre>
     </td>
-    <td>Add mines to a strategic region.
-    </td>
-
+    <td>Добавляет мины в стратегический регион.
     </td>
     <td>1.6
-    </td></tr>
-    <tr id="add_ace">
-    <td>add_ace
     </td>
-    <td><code>name = &lt;string&gt;</code><br>The name of the ace.
-    <p><code>surname = &lt;string&gt;</code><br>The surname of the ace.<br><code>callsign = &lt;string&gt;</code><br>The callsign of the ace.<br><code>type = &lt;type&gt;</code><br>The ace type.<br><code>is_female = &lt;bool&gt;</code><br>The gender of the ace.
+</tr>
+<tr id="add_ace">
+    <td>add_ace</td>
+    <td><code>name = &lt;string&gt;</code><br>Имя эйса.
+    <p><code>surname = &lt;string&gt;</code><br>Фамилия эйса.<br><code>callsign = &lt;string&gt;</code><br>Позывной эйса.<br><code>type = &lt;type&gt;</code><br>Тип эйса.<br><code>is_female = &lt;bool&gt;</code><br>Пол эйса.
     </p>
     </td>
     <td><pre>add_ace = {
@@ -4898,11 +4887,17 @@ legitimacy = &lt;0-100&gt; }</pre>
     }
     </pre>
     </td>
-    <td>Adds an ace for the current scope.
-    </td>
-    <td>Ace types found in <span class="inline-sup" style="background-color:#f9f9f9; color:DarkSlateGray; border:1px solid #dcdcdc; font-family: monospace,Courier; white-space:nowrap">/Hearts of Iron IV/common/aces/*.txt</span>.
+    <td>Добавляет эйса в текущий контекст.
     </td>
     <td>1.0
+    </td>
+</tr>
+
+
+
+
+
+
     </td></tr></tbody><tfoot></tfoot>
 
                             </tbody>
